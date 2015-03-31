@@ -9,7 +9,7 @@ The RESTAPI funtionality must be turned on through the use of a configuration op
 
 [Download](https://www.dropbox.com/s/sqwjwtd7w6h6n0z/TShockAdmin.zip?dl=0) | 
 [Source](https://github.com/Grandpa-G/RemoteAdminConsole) | 
-[Wiki Documentation](https://github.com/Grandpa-G/TShockRemoteAdmin/wiki/Remote-Admin-Overview)
+[Wiki Documentation](https://github.com/Grandpa-G/RemoteAdminConsole/wiki)
 
 ######Copyright Notice#
 The Remote Admin tool is the property of RG Consulting, Inc. Anyone may use this tool however no one may sell the tool or profit from its development other than the owner. The RESTAdminAPI is open source and may be used by anyone without restriction.
