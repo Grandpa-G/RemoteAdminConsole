@@ -3,11 +3,8 @@
 *.ko
 *.obj
 *.elf
-<<<<<<< HEAD
-dlls
-=======
+
 DLLS
->>>>>>> origin/master
 obj
 
 # Precompiled Headers
