@@ -6,9 +6,9 @@ An extension (dll) is required to augment the existing REST API functions to pro
 The RESTAPI funtionality must be turned on through the use of a configuration option. 
  
 ####Links#
- 
+
 [Download](https://www.dropbox.com/s/sqwjwtd7w6h6n0z/TShockAdmin.zip?dl=0) | 
-[Source](https://github.com/Grandpa-G/RemoteAdminConsole.git) | 
+[Source](https://github.com/Grandpa-G/RemoteAdminConsole) | 
 [Wiki Documentation](https://github.com/Grandpa-G/TShockRemoteAdmin/wiki/Remote-Admin-Overview)
 
 ######Copyright Notice#
