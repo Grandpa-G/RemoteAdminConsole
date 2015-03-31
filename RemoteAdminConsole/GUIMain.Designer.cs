@@ -391,6 +391,12 @@
             this.permissionsDataPermissons = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.permissionsDataNote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupDataList = new System.Windows.Forms.DataGridView();
+            this.groupDatagroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupDataParentList = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.groupDataChatColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGroupColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupDataPrefix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupDataSuffix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabLog = new System.Windows.Forms.TabPage();
             this.logFilename = new System.Windows.Forms.Label();
             this.logNumberOfLines = new System.Windows.Forms.TextBox();
@@ -415,12 +421,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblServerNamevalue = new System.Windows.Forms.Label();
             this.stopServer = new System.Windows.Forms.Button();
-            this.groupDatagroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupDataParentList = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.groupDataChatColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGroupColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupDataPrefix = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupDataSuffix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label69 = new System.Windows.Forms.Label();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -4177,6 +4178,43 @@
             this.groupDataList.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.groupDataList_UserDeletedRow);
             this.groupDataList.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.groupDataList_UserDeletingRow);
             // 
+            // groupDatagroup
+            // 
+            this.groupDatagroup.HeaderText = "Group";
+            this.groupDatagroup.Name = "groupDatagroup";
+            this.groupDatagroup.Width = 110;
+            // 
+            // groupDataParentList
+            // 
+            this.groupDataParentList.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.groupDataParentList.HeaderText = "Parent";
+            this.groupDataParentList.Name = "groupDataParentList";
+            this.groupDataParentList.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.groupDataParentList.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.groupDataParentList.Width = 110;
+            // 
+            // groupDataChatColor
+            // 
+            this.groupDataChatColor.HeaderText = "Chat Color";
+            this.groupDataChatColor.Name = "groupDataChatColor";
+            this.groupDataChatColor.Width = 80;
+            // 
+            // dataGroupColor
+            // 
+            this.dataGroupColor.HeaderText = "Color";
+            this.dataGroupColor.Name = "dataGroupColor";
+            this.dataGroupColor.Width = 40;
+            // 
+            // groupDataPrefix
+            // 
+            this.groupDataPrefix.HeaderText = "Prefix";
+            this.groupDataPrefix.Name = "groupDataPrefix";
+            // 
+            // groupDataSuffix
+            // 
+            this.groupDataSuffix.HeaderText = "Suffix";
+            this.groupDataSuffix.Name = "groupDataSuffix";
+            // 
             // tabLog
             // 
             this.tabLog.BackColor = System.Drawing.Color.AliceBlue;
@@ -4257,6 +4295,7 @@
             // tabAbout
             // 
             this.tabAbout.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabAbout.Controls.Add(this.label69);
             this.tabAbout.Controls.Add(this.lblIncludesSupportFor);
             this.tabAbout.Controls.Add(this.label68);
             this.tabAbout.Controls.Add(this.label67);
@@ -4288,7 +4327,7 @@
             // 
             this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label68.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label68.Location = new System.Drawing.Point(218, 368);
+            this.label68.Location = new System.Drawing.Point(218, 393);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(545, 23);
             this.label68.TabIndex = 16;
@@ -4420,42 +4459,16 @@
             this.stopServer.UseVisualStyleBackColor = false;
             this.stopServer.Click += new System.EventHandler(this.stopServer_Click);
             // 
-            // groupDatagroup
+            // label69
             // 
-            this.groupDatagroup.HeaderText = "Group";
-            this.groupDatagroup.Name = "groupDatagroup";
-            this.groupDatagroup.Width = 110;
-            // 
-            // groupDataParentList
-            // 
-            this.groupDataParentList.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.groupDataParentList.HeaderText = "Parent";
-            this.groupDataParentList.Name = "groupDataParentList";
-            this.groupDataParentList.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.groupDataParentList.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.groupDataParentList.Width = 110;
-            // 
-            // groupDataChatColor
-            // 
-            this.groupDataChatColor.HeaderText = "Chat Color";
-            this.groupDataChatColor.Name = "groupDataChatColor";
-            this.groupDataChatColor.Width = 80;
-            // 
-            // dataGroupColor
-            // 
-            this.dataGroupColor.HeaderText = "Color";
-            this.dataGroupColor.Name = "dataGroupColor";
-            this.dataGroupColor.Width = 40;
-            // 
-            // groupDataPrefix
-            // 
-            this.groupDataPrefix.HeaderText = "Prefix";
-            this.groupDataPrefix.Name = "groupDataPrefix";
-            // 
-            // groupDataSuffix
-            // 
-            this.groupDataSuffix.HeaderText = "Suffix";
-            this.groupDataSuffix.Name = "groupDataSuffix";
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label69.Location = new System.Drawing.Point(218, 367);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(545, 23);
+            this.label69.TabIndex = 18;
+            this.label69.Text = "Copyright 2015 R G Consulting, Inc";
+            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // GUIMain
             // 
@@ -4904,5 +4917,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGroupColor;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupDataPrefix;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupDataSuffix;
+        private System.Windows.Forms.Label label69;
     }
 }
