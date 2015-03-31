@@ -1,2 +1,2 @@
-# RemoteAdminConsole
-Allows remote administrator to manage TShock server
+# AdminConsole
+Provides a GUI console management tool for TShock server

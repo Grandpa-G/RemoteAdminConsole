@@ -1,0 +1,2797 @@
+-48`Platinum Bow`0`1`99`0`false`1
+-47`Platinum Hammer`0`1`7`0`false`0
+-46`Platinum Axe`0`1`10`0`false`0
+-45`Platinum Shortsword`0`1`6`0`false`0
+-44`Platinum Broadsword`0`1`4`0`false`0
+-43`Platinum Pickaxe`0`1`1`0`false`0
+-42`Tungsten Bow`0`1`99`0`false`1
+-41`Tungsten Hammer`0`1`7`0`false`0
+-40`Tungsten Axe`0`1`10`0`false`0
+-39`Tungsten Shortsword`0`1`6`0`false`0
+-38`Tungsten Broadsword`0`1`4`0`false`0
+-37`Tungsten Pickaxe`0`1`1`0`false`0
+-36`Lead Bow`0`1`99`0`false`1
+-35`Lead Hammer`0`1`7`0`false`0
+-34`Lead Axe`0`1`10`0`false`0
+-33`Lead Shortsword`0`1`6`0`false`0
+-32`Lead Broadsword`0`1`4`0`false`0
+-31`Lead Pickaxe`0`1`1`0`false`0
+-30`Tin Bow`0`1`99`0`false`1
+-29`Tin Hammer`0`1`7`0`false`0
+-28`Tin Axe`0`1`10`0`false`0
+-27`Tin Shortsword`0`1`6`0`false`0
+-26`Tin Broadsword`0`1`4`0`false`0
+-25`Tin Pickaxe`0`1`1`0`false`0
+-24`Yellow Phasesaber`0`1`203`0`false`0
+-23`White Phasesaber`0`1`202`0`false`0
+-22`Purple Phasesaber`0`1`201`0`false`0
+-21`Green Phasesaber`0`1`200`0`false`0
+-20`Red Phasesaber`0`1`199`0`false`0
+-19`Blue Phasesaber`0`1`198`0`false`0
+-18`Copper Bow`0`1`99`0`false`1
+-17`Copper Hammer`0`1`7`0`false`0
+-16`Copper Axe`0`1`10`0`false`0
+-15`Copper Shortsword`0`1`6`0`false`0
+-14`Copper Broadsword`0`1`4`0`false`0
+-13`Copper Pickaxe`0`1`1`0`false`0
+-12`Silver Bow`0`1`99`0`false`1
+-11`Silver Hammer`0`1`7`0`false`0
+-10`Silver Axe`0`1`10`0`false`0
+-9`Silver Shortsword`0`1`6`0`false`0
+-8`Silver Broadsword`0`1`4`0`false`0
+-7`Silver Pickaxe`0`1`1`0`false`0
+-6`Gold Bow`0`1`99`0`false`1
+-5`Gold Hammer`0`1`7`0`false`0
+-4`Gold Axe`0`1`10`0`false`0
+-3`Gold Shortsword`0`1`6`0`false`0
+-2`Gold Broadsword`0`1`4`0`false`0
+-1`Gold Pickaxe`0`1`1`0`false`0
+0``0`0`0`0`false`0
+1`Iron Pickaxe`0`1`1`0`false`0
+2`Dirt Block`0`999`2`0`false`0
+3`Stone Block`0`999`3`0`false`0
+4`Iron Broadsword`0`1`4`0`false`0
+5`Mushroom`0`99`5`0`false`0
+6`Iron Shortsword`0`1`6`0`false`0
+7`Iron Hammer`0`1`7`0`false`0
+8`Torch`0`99`8`0`false`0
+9`Wood`0`999`9`0`false`0
+10`Iron Axe`0`1`10`0`false`0
+11`Iron Ore`0`999`11`0`false`0
+12`Copper Ore`0`999`12`0`false`0
+13`Gold Ore`0`999`13`0`false`0
+14`Silver Ore`0`999`14`0`false`0
+15`Copper Watch`0`1`15`0`false`0
+16`Silver Watch`0`1`16`0`false`0
+17`Gold Watch`0`1`17`0`false`0
+18`Depth Meter`0`1`18`0`false`0
+19`Gold Bar`0`99`19`0`false`0
+20`Copper Bar`0`99`20`0`false`0
+21`Silver Bar`0`99`21`0`false`0
+22`Iron Bar`0`99`22`0`false`0
+23`Gel`0`999`23`23`false`0
+24`Wooden Sword`0`1`24`0`false`0
+25`Wooden Door`0`99`25`0`false`0
+26`Stone Wall`0`999`26`0`false`0
+27`Acorn`0`99`27`0`false`0
+28`Lesser Healing Potion`0`30`28`0`false`0
+29`Life Crystal`0`99`29`0`false`0
+30`Dirt Wall`0`999`30`0`false`0
+31`Bottle`0`99`31`0`false`0
+32`Wooden Table`0`99`32`0`false`0
+33`Furnace`0`99`33`0`false`0
+34`Wooden Chair`0`99`34`0`false`0
+35`Iron Anvil`0`99`35`0`false`0
+36`Work Bench`0`99`36`0`false`0
+37`Goggles`0`1`37`0`false`0
+38`Lens`0`99`38`0`false`0
+39`Wooden Bow`0`1`39`0`false`1
+40`Wooden Arrow`0`999`40`1`false`0
+41`Flaming Arrow`0`999`41`1`false`0
+42`Shuriken`0`999`42`0`false`0
+43`Suspicious Looking Eye`0`20`43`0`false`0
+44`Demon Bow`0`1`44`0`false`1
+45`War Axe of the Night`0`1`45`0`false`0
+46`Light's Bane`0`1`46`0`false`0
+47`Unholy Arrow`0`999`47`1`false`0
+48`Chest`0`99`48`0`false`0
+49`Band of Regeneration`0`1`49`0`false`0
+50`Magic Mirror`0`1`50`0`false`0
+51`Jester's Arrow`0`999`51`1`false`0
+52`Angel Statue`0`99`52`0`false`0
+53`Cloud in a Bottle`0`1`53`0`false`0
+54`Hermes Boots`0`1`54`0`false`0
+55`Enchanted Boomerang`0`1`55`0`false`0
+56`Demonite Ore`0`999`56`0`false`0
+57`Demonite Bar`0`99`57`0`false`0
+58`Heart`0`1`58`0`false`0
+59`Corrupt Seeds`0`99`59`0`false`0
+60`Vile Mushroom`0`99`60`0`false`0
+61`Ebonstone Block`0`999`61`0`false`0
+62`Grass Seeds`0`99`62`0`false`0
+63`Sunflower`0`99`63`0`false`0
+64`Vilethorn`0`1`64`0`false`0
+65`Starfury`0`1`65`0`false`0
+66`Purification Powder`0`99`66`0`false`0
+67`Vile Powder`0`99`67`0`false`0
+68`Rotten Chunk`0`99`68`0`false`0
+69`Worm Tooth`0`99`69`0`false`0
+70`Worm Food`0`20`70`0`false`0
+71`Copper Coin`0`100`71`71`true`0
+72`Silver Coin`0`100`72`71`true`0
+73`Gold Coin`0`100`73`71`true`0
+74`Platinum Coin`0`999`74`71`true`0
+75`Fallen Star`0`100`75`15`false`0
+76`Copper Greaves`0`1`76`0`false`0
+77`Iron Greaves`0`1`77`0`false`0
+78`Silver Greaves`0`1`78`0`false`0
+79`Gold Greaves`0`1`79`0`false`0
+80`Copper Chainmail`0`1`80`0`false`0
+81`Iron Chainmail`0`1`81`0`false`0
+82`Silver Chainmail`0`1`82`0`false`0
+83`Gold Chainmail`0`1`83`0`false`0
+84`Grappling Hook`0`1`84`0`false`0
+85`Chain`0`999`85`0`false`0
+86`Shadow Scale`0`99`86`0`false`0
+87`Piggy Bank`0`99`87`0`false`0
+88`Mining Helmet`0`1`88`0`false`0
+89`Copper Helmet`0`1`89`0`false`0
+90`Iron Helmet`0`1`90`0`false`0
+91`Silver Helmet`0`1`91`0`false`0
+92`Gold Helmet`0`1`92`0`false`0
+93`Wood Wall`0`999`93`0`false`0
+94`Wood Platform`0`99`94`0`false`0
+95`Flintlock Pistol`0`1`95`0`false`14
+96`Musket`0`1`96`0`false`14
+97`Musket Ball`0`999`97`14`false`0
+98`Minishark`0`1`98`0`false`14
+99`Iron Bow`0`1`99`0`false`1
+100`Shadow Greaves`0`1`100`0`false`0
+101`Shadow Scalemail`0`1`101`0`false`0
+102`Shadow Helmet`0`1`102`0`false`0
+103`Nightmare Pickaxe`0`1`103`0`false`0
+104`The Breaker`0`1`104`0`false`0
+105`Candle`0`99`105`0`false`0
+106`Copper Chandelier`0`99`106`0`false`0
+107`Silver Chandelier`0`99`107`0`false`0
+108`Gold Chandelier`0`99`108`0`false`0
+109`Mana Crystal`0`99`109`0`false`0
+110`Lesser Mana Potion`0`25`110`0`false`0
+111`Band of Starpower`0`1`111`0`false`0
+112`Flower of Fire`0`1`112`0`false`0
+113`Magic Missile`0`1`113`0`false`0
+114`Dirt Rod`0`1`114`0`false`0
+115`Shadow Orb`0`1`115`0`false`0
+116`Meteorite`0`999`116`0`false`0
+117`Meteorite Bar`0`99`117`0`false`0
+118`Hook`0`99`118`0`false`0
+119`Flamarang`0`1`119`0`false`0
+120`Molten Fury`0`1`120`0`false`1
+121`Fiery Greatsword`0`1`121`0`false`0
+122`Molten Pickaxe`0`1`122`0`false`0
+123`Meteor Helmet`0`1`123`0`false`0
+124`Meteor Suit`0`1`124`0`false`0
+125`Meteor Leggings`0`1`125`0`false`0
+126`Bottled Water`0`30`126`0`false`0
+127`Space Gun`0`1`127`0`false`0
+128`Rocket Boots`0`1`128`0`false`0
+129`Gray Brick`0`999`129`0`false`0
+130`Gray Brick Wall`0`999`130`0`false`0
+131`Red Brick`0`999`131`0`false`0
+132`Red Brick Wall`0`999`132`0`false`0
+133`Clay Block`0`999`133`0`false`0
+134`Blue Brick`0`999`134`0`false`0
+135`Blue Brick Wall`0`999`135`0`false`0
+136`Chain Lantern`0`999`136`0`false`0
+137`Green Brick`0`999`137`0`false`0
+138`Green Brick Wall`0`999`138`0`false`0
+139`Pink Brick`0`999`139`0`false`0
+140`Pink Brick Wall`0`999`140`0`false`0
+141`Gold Brick`0`999`141`0`false`0
+142`Gold Brick Wall`0`999`142`0`false`0
+143`Silver Brick`0`999`143`0`false`0
+144`Silver Brick Wall`0`999`144`0`false`0
+145`Copper Brick`0`999`145`0`false`0
+146`Copper Brick Wall`0`999`146`0`false`0
+147`Spike`0`999`147`0`false`0
+148`Water Candle`0`99`148`0`false`0
+149`Book`0`99`149`0`false`0
+150`Cobweb`0`999`150`0`false`0
+151`Necro Helmet`0`1`151`0`false`0
+152`Necro Breastplate`0`1`152`0`false`0
+153`Necro Greaves`0`1`153`0`false`0
+154`Bone`0`999`154`0`false`0
+155`Muramasa`0`1`155`0`false`0
+156`Cobalt Shield`0`1`156`0`false`0
+157`Aqua Scepter`0`1`157`0`false`0
+158`Lucky Horseshoe`0`1`158`0`false`0
+159`Shiny Red Balloon`0`1`159`0`false`0
+160`Harpoon`0`1`160`0`false`0
+161`Spiky Ball`0`999`161`0`false`0
+162`Ball O' Hurt`0`1`162`0`false`0
+163`Blue Moon`0`1`163`0`false`0
+164`Handgun`0`1`164`0`false`14
+165`Water Bolt`0`1`165`0`false`0
+166`Bomb`0`100`166`0`false`0
+167`Dynamite`0`30`167`0`false`0
+168`Grenade`0`99`168`0`false`0
+169`Sand Block`0`999`169`42`false`0
+170`Glass`0`999`170`0`false`0
+171`Sign`0`999`171`0`false`0
+172`Ash Block`0`999`172`0`false`0
+173`Obsidian`0`999`173`0`false`0
+174`Hellstone`0`999`174`0`false`0
+175`Hellstone Bar`0`99`175`0`false`0
+176`Mud Block`0`999`176`0`false`0
+177`Sapphire`0`999`177`0`false`0
+178`Ruby`0`999`178`0`false`0
+179`Emerald`0`999`179`0`false`0
+180`Topaz`0`999`180`0`false`0
+181`Amethyst`0`999`181`0`false`0
+182`Diamond`0`999`182`0`false`0
+183`Glowing Mushroom`0`999`183`0`false`0
+184`Star`0`1`184`0`false`0
+185`Ivy Whip`0`1`185`0`false`0
+186`Breathing Reed`0`1`186`0`false`0
+187`Flipper`0`1`187`0`false`0
+188`Healing Potion`0`30`188`0`false`0
+189`Mana Potion`0`50`189`0`false`0
+190`Blade of Grass`0`1`190`0`false`0
+191`Thorn Chakram`0`1`191`0`false`0
+192`Obsidian Brick`0`999`192`0`false`0
+193`Obsidian Skull`0`1`193`0`false`0
+194`Mushroom Grass Seeds`0`99`194`0`false`0
+195`Jungle Grass Seeds`0`99`195`0`false`0
+196`Wooden Hammer`0`1`196`0`false`0
+197`Star Cannon`0`1`197`0`false`15
+198`Blue Phaseblade`0`1`198`0`false`0
+199`Red Phaseblade`0`1`199`0`false`0
+200`Green Phaseblade`0`1`200`0`false`0
+201`Purple Phaseblade`0`1`201`0`false`0
+202`White Phaseblade`0`1`202`0`false`0
+203`Yellow Phaseblade`0`1`203`0`false`0
+204`Meteor Hamaxe`0`1`204`0`false`0
+205`Empty Bucket`0`99`205`0`false`0
+206`Water Bucket`0`99`206`0`false`0
+207`Lava Bucket`0`99`207`0`false`0
+208`Jungle Rose`0`1`208`0`false`0
+209`Stinger`0`99`209`0`false`0
+210`Vine`0`99`210`0`false`0
+211`Feral Claws`0`1`211`0`false`0
+212`Anklet of the Wind`0`1`212`0`false`0
+213`Staff of Regrowth`0`1`213`0`false`0
+214`Hellstone Brick`0`999`214`0`false`0
+215`Whoopie Cushion`0`1`215`0`false`0
+216`Shackle`0`1`216`0`false`0
+217`Molten Hamaxe`0`1`217`0`false`0
+218`Flamelash`0`1`218`0`false`0
+219`Phoenix Blaster`0`1`219`0`false`14
+220`Sunfury`0`1`220`0`false`0
+221`Hellforge`0`99`221`0`false`0
+222`Clay Pot`0`99`222`0`false`0
+223`Nature's Gift`0`1`223`0`false`0
+224`Bed`0`99`224`0`false`0
+225`Silk`0`999`225`0`false`0
+226`Lesser Restoration Potion`0`20`226`0`false`0
+227`Restoration Potion`0`20`227`0`false`0
+228`Jungle Hat`0`1`228`0`false`0
+229`Jungle Shirt`0`1`229`0`false`0
+230`Jungle Pants`0`1`230`0`false`0
+231`Molten Helmet`0`1`231`0`false`0
+232`Molten Breastplate`0`1`232`0`false`0
+233`Molten Greaves`0`1`233`0`false`0
+234`Meteor Shot`0`999`234`14`false`0
+235`Sticky Bomb`0`50`235`0`false`0
+236`Black Lens`0`99`236`0`false`0
+237`Sunglasses`0`1`237`0`false`0
+238`Wizard Hat`0`1`238`0`false`0
+239`Top Hat`0`1`239`0`false`0
+240`Tuxedo Shirt`0`1`240`0`false`0
+241`Tuxedo Pants`0`1`241`0`false`0
+242`Summer Hat`0`1`242`0`false`0
+243`Bunny Hood`0`1`243`0`false`0
+244`Plumber's Hat`0`1`244`0`false`0
+245`Plumber's Shirt`0`1`245`0`false`0
+246`Plumber's Pants`0`1`246`0`false`0
+247`Hero's Hat`0`1`247`0`false`0
+248`Hero's Shirt`0`1`248`0`false`0
+249`Hero's Pants`0`1`249`0`false`0
+250`Fish Bowl`0`99`250`0`false`0
+251`Archaeologist's Hat`0`1`251`0`false`0
+252`Archaeologist's Jacket`0`1`252`0`false`0
+253`Archaeologist's Pants`0`1`253`0`false`0
+254`Black Thread`0`99`254`0`false`0
+255`Green Thread`0`99`255`0`false`0
+256`Ninja Hood`0`1`256`0`false`0
+257`Ninja Shirt`0`1`257`0`false`0
+258`Ninja Pants`0`1`258`0`false`0
+259`Leather`0`99`259`0`false`0
+260`Red Hat`0`1`260`0`false`0
+261`Goldfish`0`999`261`0`false`0
+262`Robe`0`1`262`0`false`0
+263`Robot Hat`0`1`263`0`false`0
+264`Gold Crown`0`1`264`0`false`0
+265`Hellfire Arrow`0`999`265`1`false`0
+266`Sandgun`0`1`266`0`false`42
+267`Guide Voodoo Doll`0`1`267`0`false`0
+268`Diving Helmet`0`1`268`0`false`0
+269`Familiar Shirt`0`1`269`0`false`0
+270`Familiar Pants`0`1`270`0`false`0
+271`Familiar Wig`0`1`271`0`false`0
+272`Demon Scythe`0`1`272`0`false`0
+273`Night's Edge`0`1`273`0`false`0
+274`Dark Lance`0`1`274`0`false`0
+275`Coral`0`999`275`0`false`0
+276`Cactus`0`999`276`0`false`0
+277`Trident`0`1`277`0`false`0
+278`Silver Bullet`0`999`278`14`false`0
+279`Throwing Knife`0`999`279`0`false`0
+280`Spear`0`1`280`0`false`0
+281`Blowpipe`0`1`281`0`false`51
+282`Glowstick`0`99`282`0`false`0
+283`Seed`0`999`283`51`false`0
+284`Wooden Boomerang`0`1`284`0`false`0
+285`Aglet`0`1`285`0`false`0
+286`Sticky Glowstick`0`99`286`0`false`0
+287`Poisoned Knife`0`999`287`0`false`0
+288`Obsidian Skin Potion`0`30`288`0`false`0
+289`Regeneration Potion`0`30`289`0`false`0
+290`Swiftness Potion`0`30`290`0`false`0
+291`Gills Potion`0`30`291`0`false`0
+292`Ironskin Potion`0`30`292`0`false`0
+293`Mana Regeneration Potion`0`30`293`0`false`0
+294`Magic Power Potion`0`30`294`0`false`0
+295`Featherfall Potion`0`30`295`0`false`0
+296`Spelunker Potion`0`30`296`0`false`0
+297`Invisibility Potion`0`30`297`0`false`0
+298`Shine Potion`0`30`298`0`false`0
+299`Night Owl Potion`0`30`299`0`false`0
+300`Battle Potion`0`30`300`0`false`0
+301`Thorns Potion`0`30`301`0`false`0
+302`Water Walking Potion`0`30`302`0`false`0
+303`Archery Potion`0`30`303`0`false`0
+304`Hunter Potion`0`30`304`0`false`0
+305`Gravitation Potion`0`30`305`0`false`0
+306`Gold Chest`0`99`306`0`false`0
+307`Daybloom Seeds`0`99`307`0`false`0
+308`Moonglow Seeds`0`99`308`0`false`0
+309`Blinkroot Seeds`0`99`309`0`false`0
+310`Deathweed Seeds`0`99`310`0`false`0
+311`Waterleaf Seeds`0`99`311`0`false`0
+312`Fireblossom Seeds`0`99`312`0`false`0
+313`Daybloom`0`99`313`0`false`0
+314`Moonglow`0`99`314`0`false`0
+315`Blinkroot`0`99`315`0`false`0
+316`Deathweed`0`99`316`0`false`0
+317`Waterleaf`0`99`317`0`false`0
+318`Fireblossom`0`99`318`0`false`0
+319`Shark Fin`0`99`319`0`false`0
+320`Feather`0`99`320`0`false`0
+321`Tombstone`0`99`321`0`false`0
+322`Mime Mask`0`1`322`0`false`0
+323`Antlion Mandible`0`99`323`0`false`0
+324`Illegal Gun Parts`0`99`324`0`false`0
+325`The Doctor's Shirt`0`1`325`0`false`0
+326`The Doctor's Pants`0`1`326`0`false`0
+327`Golden Key`0`99`327`0`false`0
+328`Shadow Chest`0`99`328`0`false`0
+329`Shadow Key`0`1`329`0`false`0
+330`Obsidian Brick Wall`0`999`330`0`false`0
+331`Jungle Spores`0`99`331`0`false`0
+332`Loom`0`99`332`0`false`0
+333`Piano`0`99`333`0`false`0
+334`Dresser`0`99`334`0`false`0
+335`Bench`0`99`335`0`false`0
+336`Bathtub`0`99`336`0`false`0
+337`Red Banner`0`99`337`0`false`0
+338`Green Banner`0`99`338`0`false`0
+339`Blue Banner`0`99`339`0`false`0
+340`Yellow Banner`0`99`340`0`false`0
+341`Lamp Post`0`99`341`0`false`0
+342`Tiki Torch`0`99`342`0`false`0
+343`Barrel`0`99`343`0`false`0
+344`Chinese Lantern`0`99`344`0`false`0
+345`Cooking Pot`0`99`345`0`false`0
+346`Safe`0`99`346`0`false`0
+347`Skull Lantern`0`99`347`0`false`0
+348`Trash Can`0`99`348`0`false`0
+349`Candelabra`0`99`349`0`false`0
+350`Pink Vase`0`99`350`0`false`0
+351`Mug`0`99`351`0`false`0
+352`Keg`0`99`352`0`false`0
+353`Ale`0`30`353`0`false`0
+354`Bookcase`0`99`354`0`false`0
+355`Throne`0`99`355`0`false`0
+356`Bowl`0`99`356`0`false`0
+357`Bowl of Soup`0`30`357`0`false`0
+358`Toilet`0`99`358`0`false`0
+359`Grandfather Clock`0`99`359`0`false`0
+360`Armor Statue`0`99`360`0`false`0
+361`Goblin Battle Standard`0`1`361`0`false`0
+362`Tattered Cloth`0`99`362`0`false`0
+363`Sawmill`0`99`363`0`false`0
+364`Cobalt Ore`0`999`364`0`false`0
+365`Mythril Ore`0`999`365`0`false`0
+366`Adamantite Ore`0`999`366`0`false`0
+367`Pwnhammer`0`1`367`0`false`0
+368`Excalibur`0`1`368`0`false`0
+369`Hallowed Seeds`0`99`369`0`false`0
+370`Ebonsand Block`0`999`370`42`false`0
+371`Cobalt Hat`0`1`371`0`false`0
+372`Cobalt Helmet`0`1`372`0`false`0
+373`Cobalt Mask`0`1`373`0`false`0
+374`Cobalt Breastplate`0`1`374`0`false`0
+375`Cobalt Leggings`0`1`375`0`false`0
+376`Mythril Hood`0`1`376`0`false`0
+377`Mythril Helmet`0`1`377`0`false`0
+378`Mythril Hat`0`1`378`0`false`0
+379`Mythril Chainmail`0`1`379`0`false`0
+380`Mythril Greaves`0`1`380`0`false`0
+381`Cobalt Bar`0`99`381`0`false`0
+382`Mythril Bar`0`99`382`0`false`0
+383`Cobalt Chainsaw`0`1`383`0`false`0
+384`Mythril Chainsaw`0`1`384`0`false`0
+385`Cobalt Drill`0`1`385`0`false`0
+386`Mythril Drill`0`1`386`0`false`0
+387`Adamantite Chainsaw`0`1`387`0`false`0
+388`Adamantite Drill`0`1`388`0`false`0
+389`Dao of Pow`0`1`389`0`false`0
+390`Mythril Halberd`0`1`390`0`false`0
+391`Adamantite Bar`0`99`391`0`false`0
+392`Glass Wall`0`999`392`0`false`0
+393`Compass`0`1`393`0`false`0
+394`Diving Gear`0`1`394`0`false`0
+395`GPS`0`1`395`0`false`0
+396`Obsidian Horseshoe`0`1`396`0`false`0
+397`Obsidian Shield`0`1`397`0`false`0
+398`Tinkerer's Workshop`0`99`398`0`false`0
+399`Cloud in a Balloon`0`1`399`0`false`0
+400`Adamantite Headgear`0`1`400`0`false`0
+401`Adamantite Helmet`0`1`401`0`false`0
+402`Adamantite Mask`0`1`402`0`false`0
+403`Adamantite Breastplate`0`1`403`0`false`0
+404`Adamantite Leggings`0`1`404`0`false`0
+405`Spectre Boots`0`1`405`0`false`0
+406`Adamantite Glaive`0`1`406`0`false`0
+407`Toolbelt`0`1`407`0`false`0
+408`Pearlsand Block`0`999`408`42`false`0
+409`Pearlstone Block`0`999`409`0`false`0
+410`Mining Shirt`0`1`410`0`false`0
+411`Mining Pants`0`1`411`0`false`0
+412`Pearlstone Brick`0`999`412`0`false`0
+413`Iridescent Brick`0`999`413`0`false`0
+414`Mudstone Block`0`999`414`0`false`0
+415`Cobalt Brick`0`999`415`0`false`0
+416`Mythril Brick`0`999`416`0`false`0
+417`Pearlstone Brick Wall`0`999`417`0`false`0
+418`Iridescent Brick Wall`0`999`418`0`false`0
+419`Mudstone Brick Wall`0`999`419`0`false`0
+420`Cobalt Brick Wall`0`999`420`0`false`0
+421`Mythril Brick Wall`0`999`421`0`false`0
+422`Holy Water`0`999`422`0`false`0
+423`Unholy Water`0`999`423`0`false`0
+424`Silt Block`0`999`424`0`false`0
+425`Fairy Bell`0`1`425`0`false`0
+426`Breaker Blade`0`1`426`0`false`0
+427`Blue Torch`0`99`427`0`false`0
+428`Red Torch`0`99`428`0`false`0
+429`Green Torch`0`99`429`0`false`0
+430`Purple Torch`0`99`430`0`false`0
+431`White Torch`0`99`431`0`false`0
+432`Yellow Torch`0`99`432`0`false`0
+433`Demon Torch`0`99`433`0`false`0
+434`Clockwork Assault Rifle`0`1`434`0`false`14
+435`Cobalt Repeater`0`1`435`0`false`1
+436`Mythril Repeater`0`1`436`0`false`1
+437`Dual Hook`0`1`437`0`false`0
+438`Star Statue`0`99`438`0`false`0
+439`Sword Statue`0`99`439`0`false`0
+440`Slime Statue`0`99`440`0`false`0
+441`Goblin Statue`0`99`441`0`false`0
+442`Shield Statue`0`99`442`0`false`0
+443`Bat Statue`0`99`443`0`false`0
+444`Fish Statue`0`99`444`0`false`0
+445`Bunny Statue`0`99`445`0`false`0
+446`Skeleton Statue`0`99`446`0`false`0
+447`Reaper Statue`0`99`447`0`false`0
+448`Woman Statue`0`99`448`0`false`0
+449`Imp Statue`0`99`449`0`false`0
+450`Gargoyle Statue`0`99`450`0`false`0
+451`Gloom Statue`0`99`451`0`false`0
+452`Hornet Statue`0`99`452`0`false`0
+453`Bomb Statue`0`99`453`0`false`0
+454`Crab Statue`0`99`454`0`false`0
+455`Hammer Statue`0`99`455`0`false`0
+456`Potion Statue`0`99`456`0`false`0
+457`Spear Statue`0`99`457`0`false`0
+458`Cross Statue`0`99`458`0`false`0
+459`Jellyfish Statue`0`99`459`0`false`0
+460`Bow Statue`0`99`460`0`false`0
+461`Boomerang Statue`0`99`461`0`false`0
+462`Boot Statue`0`99`462`0`false`0
+463`Chest Statue`0`99`463`0`false`0
+464`Bird Statue`0`99`464`0`false`0
+465`Axe Statue`0`99`465`0`false`0
+466`Corrupt Statue`0`99`466`0`false`0
+467`Tree Statue`0`99`467`0`false`0
+468`Anvil Statue`0`99`468`0`false`0
+469`Pickaxe Statue`0`99`469`0`false`0
+470`Mushroom Statue`0`99`470`0`false`0
+471`Eyeball Statue`0`99`471`0`false`0
+472`Pillar Statue`0`99`472`0`false`0
+473`Heart Statue`0`99`473`0`false`0
+474`Pot Statue`0`99`474`0`false`0
+475`Sunflower Statue`0`99`475`0`false`0
+476`King Statue`0`99`476`0`false`0
+477`Queen Statue`0`99`477`0`false`0
+478`Piranha Statue`0`99`478`0`false`0
+479`Planked Wall`0`999`479`0`false`0
+480`Wooden Beam`0`999`480`0`false`0
+481`Adamantite Repeater`0`1`481`0`false`1
+482`Adamantite Sword`0`1`482`0`false`0
+483`Cobalt Sword`0`1`483`0`false`0
+484`Mythril Sword`0`1`484`0`false`0
+485`Moon Charm`0`1`485`0`false`0
+486`Ruler`0`1`486`0`false`0
+487`Crystal Ball`0`999`487`0`false`0
+488`Disco Ball`0`999`488`0`false`0
+489`Sorcerer Emblem`0`1`489`0`false`0
+490`Warrior Emblem`0`1`490`0`false`0
+491`Ranger Emblem`0`1`491`0`false`0
+492`Demon Wings`0`1`492`0`false`0
+493`Angel Wings`0`1`493`0`false`0
+494`Magical Harp`0`1`494`0`false`0
+495`Rainbow Rod`0`1`495`0`false`0
+496`Ice Rod`0`1`496`0`false`0
+497`Neptune's Shell`0`1`497`0`false`0
+498`Mannequin`0`999`498`0`false`0
+499`Greater Healing Potion`0`30`499`0`false`0
+500`Greater Mana Potion`0`75`500`0`false`0
+501`Pixie Dust`0`99`501`0`false`0
+502`Crystal Shard`0`999`502`0`false`0
+503`Clown Hat`0`1`503`0`false`0
+504`Clown Shirt`0`1`504`0`false`0
+505`Clown Pants`0`1`505`0`false`0
+506`Flamethrower`0`1`506`0`false`23
+507`Bell`0`1`507`0`false`0
+508`Harp`0`1`508`0`false`0
+509`Wrench`0`1`509`0`false`0
+510`Wire Cutter`0`1`510`0`false`0
+511`Active Stone Block`0`999`511`0`false`0
+512`Inactive Stone Block`0`999`512`0`false`0
+513`Lever`0`999`513`0`false`0
+514`Laser Rifle`0`1`514`0`false`0
+515`Crystal Bullet`0`999`515`14`false`0
+516`Holy Arrow`0`999`516`1`false`0
+517`Magic Dagger`0`1`517`0`false`0
+518`Crystal Storm`0`1`518`0`false`0
+519`Cursed Flames`0`1`519`0`false`0
+520`Soul of Light`0`999`520`0`false`0
+521`Soul of Night`0`999`521`0`false`0
+522`Cursed Flame`0`99`522`0`false`0
+523`Cursed Torch`0`99`523`0`false`0
+524`Adamantite Forge`0`99`524`0`false`0
+525`Mythril Anvil`0`99`525`0`false`0
+526`Unicorn Horn`0`99`526`0`false`0
+527`Dark Shard`0`99`527`0`false`0
+528`Light Shard`0`99`528`0`false`0
+529`Red Pressure Plate`0`999`529`0`false`0
+530`Wire`0`999`530`0`false`0
+531`Spell Tome`0`99`531`0`false`0
+532`Star Cloak`0`1`532`0`false`0
+533`Megashark`0`1`533`0`false`14
+534`Shotgun`0`1`534`0`false`14
+535`Philosopher's Stone`0`1`535`0`false`0
+536`Titan Glove`0`1`536`0`false`0
+537`Cobalt Naginata`0`1`537`0`false`0
+538`Switch`0`999`538`0`false`0
+539`Dart Trap`0`999`539`0`false`0
+540`Boulder`0`999`540`0`false`0
+541`Green Pressure Plate`0`999`541`0`false`0
+542`Gray Pressure Plate`0`999`542`0`false`0
+543`Brown Pressure Plate`0`999`543`0`false`0
+544`Mechanical Eye`0`20`544`0`false`0
+545`Cursed Arrow`0`999`545`1`false`0
+546`Cursed Bullet`0`999`546`14`false`0
+547`Soul of Fright`0`999`547`0`false`0
+548`Soul of Might`0`999`548`0`false`0
+549`Soul of Sight`0`999`549`0`false`0
+550`Gungnir`0`1`550`0`false`0
+551`Hallowed Plate Mail`0`1`551`0`false`0
+552`Hallowed Greaves`0`1`552`0`false`0
+553`Hallowed Helmet`0`1`553`0`false`0
+554`Cross Necklace`0`1`554`0`false`0
+555`Mana Flower`0`1`555`0`false`0
+556`Mechanical Worm`0`20`556`0`false`0
+557`Mechanical Skull`0`20`557`0`false`0
+558`Hallowed Headgear`0`1`558`0`false`0
+559`Hallowed Mask`0`1`559`0`false`0
+560`Slime Crown`0`20`560`0`false`0
+561`Light Disc`0`5`561`0`false`0
+562`Music Box (Overworld Day)`0`1`562`0`false`0
+563`Music Box (Eerie)`0`1`563`0`false`0
+564`Music Box (Night)`0`1`564`0`false`0
+565`Music Box (Title)`0`1`565`0`false`0
+566`Music Box (Underground)`0`1`566`0`false`0
+567`Music Box (Boss 1)`0`1`567`0`false`0
+568`Music Box (Jungle)`0`1`568`0`false`0
+569`Music Box (Corruption)`0`1`569`0`false`0
+570`Music Box (Underground Corruption)`0`1`570`0`false`0
+571`Music Box (The Hallow)`0`1`571`0`false`0
+572`Music Box (Boss 2)`0`1`572`0`false`0
+573`Music Box (Underground Hallow)`0`1`573`0`false`0
+574`Music Box (Boss 3)`0`1`574`0`false`0
+575`Soul of Flight`0`999`575`0`false`0
+576`Music Box`0`1`576`0`false`0
+577`Demonite Brick`0`999`577`0`false`0
+578`Hallowed Repeater`0`1`578`0`false`1
+579`Drax`0`1`579`0`false`0
+580`Explosives`0`999`580`0`false`0
+581`Inlet Pump`0`999`581`0`false`0
+582`Outlet Pump`0`999`582`0`false`0
+583`1 Second Timer`0`99`583`0`false`0
+584`3 Second Timer`0`99`584`0`false`0
+585`5 Second Timer`0`99`585`0`false`0
+586`Candy Cane Block`0`999`586`0`false`0
+587`Candy Cane Wall`0`999`587`0`false`0
+588`Santa Hat`0`1`588`0`false`0
+589`Santa Shirt`0`1`589`0`false`0
+590`Santa Pants`0`1`590`0`false`0
+591`Green Candy Cane Block`0`999`591`0`false`0
+592`Green Candy Cane Wall`0`999`592`0`false`0
+593`Snow Block`0`999`593`0`false`0
+594`Snow Brick`0`999`594`0`false`0
+595`Snow Brick Wall`0`999`595`0`false`0
+596`Blue Light`0`999`596`0`false`0
+597`Red Light`0`999`597`0`false`0
+598`Green Light`0`999`598`0`false`0
+599`Blue Present`0`1`599`0`false`0
+600`Green Present`0`1`600`0`false`0
+601`Yellow Present`0`1`601`0`false`0
+602`Snow Globe`0`1`602`0`false`0
+603`Carrot`0`1`603`0`false`0
+604`Adamantite Beam`0`999`604`0`false`0
+605`Adamantite Beam Wall`0`999`605`0`false`0
+606`Demonite Brick Wall`0`999`606`0`false`0
+607`Sandstone Brick`0`999`607`0`false`0
+608`Sandstone Brick Wall`0`999`608`0`false`0
+609`Ebonstone Brick`0`999`609`0`false`0
+610`Ebonstone Brick Wall`0`999`610`0`false`0
+611`Red Stucco`0`999`611`0`false`0
+612`Yellow Stucco`0`999`612`0`false`0
+613`Green Stucco`0`999`613`0`false`0
+614`Gray Stucco`0`999`614`0`false`0
+615`Red Stucco Wall`0`999`615`0`false`0
+616`Yellow Stucco Wall`0`999`616`0`false`0
+617`Green Stucco Wall`0`999`617`0`false`0
+618`Gray Stucco Wall`0`999`618`0`false`0
+619`Ebonwood`0`999`619`0`false`0
+620`Rich Mahogany`0`999`620`0`false`0
+621`Pearlwood`0`999`621`0`false`0
+622`Ebonwood Wall`0`999`622`0`false`0
+623`Rich Mahogany Wall`0`999`623`0`false`0
+624`Pearlwood Wall`0`999`624`0`false`0
+625`Ebonwood Chest`0`99`625`0`false`0
+626`Rich Mahogany Chest`0`99`626`0`false`0
+627`Pearlwood Chest`0`99`627`0`false`0
+628`Ebonwood Chair`0`99`628`0`false`0
+629`Rich Mahogany Chair`0`99`629`0`false`0
+630`Pearlwood Chair`0`99`630`0`false`0
+631`Ebonwood Platform`0`99`631`0`false`0
+632`Rich Mahogany Platform`0`99`632`0`false`0
+633`Pearlwood Platform`0`99`633`0`false`0
+634`Bone Platform`0`99`634`0`false`0
+635`Ebonwood Work Bench`0`99`635`0`false`0
+636`Rich Mahogany Work Bench`0`99`636`0`false`0
+637`Pearlwood Work Bench`0`99`637`0`false`0
+638`Ebonwood Table`0`99`638`0`false`0
+639`Rich Mahogany Table`0`99`639`0`false`0
+640`Pearlwood Table`0`99`640`0`false`0
+641`Ebonwood Piano`0`99`641`0`false`0
+642`Rich Mahogany Piano`0`99`642`0`false`0
+643`Pearlwood Piano`0`99`643`0`false`0
+644`Ebonwood Bed`0`99`644`0`false`0
+645`Rich Mahogany Bed`0`99`645`0`false`0
+646`Pearlwood Bed`0`99`646`0`false`0
+647`Ebonwood Dresser`0`99`647`0`false`0
+648`Rich Mahogany Dresser`0`99`648`0`false`0
+649`Pearlwood Dresser`0`99`649`0`false`0
+650`Ebonwood Door`0`99`650`0`false`0
+651`Rich Mahogany Door`0`99`651`0`false`0
+652`Pearlwood Door`0`99`652`0`false`0
+653`Ebonwood Sword`0`1`653`0`false`0
+654`Ebonwood Hammer`0`1`654`0`false`0
+655`Ebonwood Bow`0`1`655`0`false`1
+656`Rich Mahogany Sword`0`1`656`0`false`0
+657`Rich Mahogany Hammer`0`1`657`0`false`0
+658`Rich Mahogany Bow`0`1`658`0`false`1
+659`Pearlwood Sword`0`1`659`0`false`0
+660`Pearlwood Hammer`0`1`660`0`false`0
+661`Pearlwood Bow`0`1`661`0`false`1
+662`Rainbow Brick`0`999`662`0`false`0
+663`Rainbow Brick Wall`0`999`663`0`false`0
+664`Ice Block`0`999`664`0`false`0
+665`Red's Wings`0`1`665`0`false`0
+666`Red's Helmet`0`1`666`0`false`0
+667`Red's Breastplate`0`1`667`0`false`0
+668`Red's Leggings`0`1`668`0`false`0
+669`Fish`0`1`669`0`false`0
+670`Ice Boomerang`0`1`670`0`false`0
+671`Keybrand`0`1`671`0`false`0
+672`Cutlass`0`1`672`0`false`0
+673`Boreal Wood Work Bench`0`99`673`0`false`0
+674`True Excalibur`0`1`674`0`false`0
+675`True Night's Edge`0`1`675`0`false`0
+676`Frostbrand`0`1`676`0`false`0
+677`Boreal Wood Table`0`99`677`0`false`0
+678`Red Potion`0`30`678`0`false`0
+679`Tactical Shotgun`0`1`679`0`false`14
+680`Ivy Chest`0`99`680`0`false`0
+681`Ice Chest`0`99`681`0`false`0
+682`Marrow`0`1`682`0`false`1
+683`Unholy Trident`0`1`683`0`false`0
+684`Frost Helmet`0`1`684`0`false`0
+685`Frost Breastplate`0`1`685`0`false`0
+686`Frost Leggings`0`1`686`0`false`0
+687`Tin Helmet`0`1`687`0`false`0
+688`Tin Chainmail`0`1`688`0`false`0
+689`Tin Greaves`0`1`689`0`false`0
+690`Lead Helmet`0`1`690`0`false`0
+691`Lead Chainmail`0`1`691`0`false`0
+692`Lead Greaves`0`1`692`0`false`0
+693`Tungsten Helmet`0`1`693`0`false`0
+694`Tungsten Chainmail`0`1`694`0`false`0
+695`Tungsten Greaves`0`1`695`0`false`0
+696`Platinum Helmet`0`1`696`0`false`0
+697`Platinum Chainmail`0`1`697`0`false`0
+698`Platinum Greaves`0`1`698`0`false`0
+699`Tin Ore`0`999`699`0`false`0
+700`Lead Ore`0`999`700`0`false`0
+701`Tungsten Ore`0`999`701`0`false`0
+702`Platinum Ore`0`999`702`0`false`0
+703`Tin Bar`0`99`703`0`false`0
+704`Lead Bar`0`99`704`0`false`0
+705`Tungsten Bar`0`99`705`0`false`0
+706`Platinum Bar`0`99`706`0`false`0
+707`Tin Watch`0`1`707`0`false`0
+708`Tungsten Watch`0`1`708`0`false`0
+709`Platinum Watch`0`1`709`0`false`0
+710`Tin Chandelier`0`99`710`0`false`0
+711`Tungsten Chandelier`0`99`711`0`false`0
+712`Platinum Chandelier`0`99`712`0`false`0
+713`Platinum Candle`0`99`713`0`false`0
+714`Platinum Candelabra`0`99`714`0`false`0
+715`Platinum Crown`0`1`715`0`false`0
+716`Lead Anvil`0`99`716`0`false`0
+717`Tin Brick`0`999`717`0`false`0
+718`Tungsten Brick`0`999`718`0`false`0
+719`Platinum Brick`0`999`719`0`false`0
+720`Tin Brick Wall`0`999`720`0`false`0
+721`Tungsten Brick Wall`0`999`721`0`false`0
+722`Platinum Brick Wall`0`999`722`0`false`0
+723`Beam Sword`0`1`723`0`false`0
+724`Ice Blade`0`1`724`0`false`0
+725`Ice Bow`0`1`725`0`false`1
+726`Frost Staff`0`1`726`0`false`0
+727`Wood Helmet`0`1`727`0`false`0
+728`Wood Breastplate`0`1`728`0`false`0
+729`Wood Greaves`0`1`729`0`false`0
+730`Ebonwood Helmet`0`1`730`0`false`0
+731`Ebonwood Breastplate`0`1`731`0`false`0
+732`Ebonwood Greaves`0`1`732`0`false`0
+733`Rich Mahogany Helmet`0`1`733`0`false`0
+734`Rich Mahogany Breastplate`0`1`734`0`false`0
+735`Rich Mahogany Greaves`0`1`735`0`false`0
+736`Pearlwood Helmet`0`1`736`0`false`0
+737`Pearlwood Breastplate`0`1`737`0`false`0
+738`Pearlwood Greaves`0`1`738`0`false`0
+739`Amethyst Staff`0`1`739`0`false`0
+740`Topaz Staff`0`1`740`0`false`0
+741`Sapphire Staff`0`1`741`0`false`0
+742`Emerald Staff`0`1`742`0`false`0
+743`Ruby Staff`0`1`743`0`false`0
+744`Diamond Staff`0`1`744`0`false`0
+745`Grass Wall`0`999`745`0`false`0
+746`Jungle Wall`0`999`746`0`false`0
+747`Flower Wall`0`999`747`0`false`0
+748`Jetpack`0`1`748`0`false`0
+749`Butterfly Wings`0`1`749`0`false`0
+750`Cactus Wall`0`999`750`0`false`0
+751`Cloud`0`999`751`0`false`0
+752`Cloud Wall`0`999`752`0`false`0
+753`Seaweed`0`1`753`0`false`0
+754`Rune Hat`0`1`754`0`false`0
+755`Rune Robe`0`1`755`0`false`0
+756`Mushroom Spear`0`1`756`0`false`0
+757`Terra Blade`0`1`757`0`false`0
+758`Grenade Launcher`0`1`758`0`false`771
+759`Rocket Launcher`0`1`759`0`false`771
+760`Proximity Mine Launcher`0`1`760`0`false`771
+761`Fairy Wings`0`1`761`0`false`0
+762`Slime Block`0`999`762`0`false`0
+763`Flesh Block`0`999`763`0`false`0
+764`Mushroom Wall`0`999`764`0`false`0
+765`Rain Cloud`0`999`765`0`false`0
+766`Bone Block`0`999`766`0`false`0
+767`Frozen Slime Block`0`999`767`0`false`0
+768`Bone Block Wall`0`999`768`0`false`0
+769`Slime Block Wall`0`999`769`0`false`0
+770`Flesh Block Wall`0`999`770`0`false`0
+771`Rocket I`0`999`771`771`false`0
+772`Rocket II`0`999`772`771`false`0
+773`Rocket III`0`999`773`771`false`0
+774`Rocket IV`0`999`774`771`false`0
+775`Asphalt Block`0`999`775`0`false`0
+776`Cobalt Pickaxe`0`1`776`0`false`0
+777`Mythril Pickaxe`0`1`777`0`false`0
+778`Adamantite Pickaxe`0`1`778`0`false`0
+779`Clentaminator`0`1`779`0`false`780
+780`Green Solution`0`999`780`780`false`0
+781`Blue Solution`0`999`781`780`false`0
+782`Purple Solution`0`999`782`780`false`0
+783`Dark Blue Solution`0`999`783`780`false`0
+784`Red Solution`0`999`784`780`false`0
+785`Harpy Wings`0`1`785`0`false`0
+786`Bone Wings`0`1`786`0`false`0
+787`Hammush`0`1`787`0`false`0
+788`Nettle Burst`0`1`788`0`false`0
+789`Ankh Banner`0`99`789`0`false`0
+790`Snake Banner`0`99`790`0`false`0
+791`Omega Banner`0`99`791`0`false`0
+792`Crimson Helmet`0`1`792`0`false`0
+793`Crimson Scalemail`0`1`793`0`false`0
+794`Crimson Greaves`0`1`794`0`false`0
+795`Blood Butcherer`0`1`795`0`false`0
+796`Tendon Bow`0`1`796`0`false`1
+797`Flesh Grinder`0`1`797`0`false`0
+798`Deathbringer Pickaxe`0`1`798`0`false`0
+799`Blood Lust Cluster`0`1`799`0`false`0
+800`The Undertaker`0`1`800`0`false`14
+801`The Meatball`0`1`801`0`false`0
+802`The Rotted Fork`0`1`802`0`false`0
+803`Eskimo Hood`0`1`803`0`false`0
+804`Eskimo Coat`0`1`804`0`false`0
+805`Eskimo Pants`0`1`805`0`false`0
+806`Living Wood Chair`0`99`806`0`false`0
+807`Cactus Chair`0`99`807`0`false`0
+808`Bone Chair`0`99`808`0`false`0
+809`Flesh Chair`0`99`809`0`false`0
+810`Mushroom Chair`0`99`810`0`false`0
+811`Bone Work Bench`0`99`811`0`false`0
+812`Cactus Work Bench`0`99`812`0`false`0
+813`Flesh Work Bench`0`99`813`0`false`0
+814`Mushroom Work Bench`0`99`814`0`false`0
+815`Slime Work Bench`0`99`815`0`false`0
+816`Cactus Door`0`99`816`0`false`0
+817`Flesh Door`0`99`817`0`false`0
+818`Mushroom Door`0`99`818`0`false`0
+819`Living Wood Door`0`99`819`0`false`0
+820`Bone Door`0`99`820`0`false`0
+821`Flame Wings`0`1`821`0`false`0
+822`Frozen Wings`0`1`822`0`false`0
+823`Ghost Wings`0`1`823`0`false`0
+824`Sunplate Block`0`999`824`0`false`0
+825`Disc Wall`0`999`825`0`false`0
+826`Skyware Chair`0`99`826`0`false`0
+827`Bone Table`0`99`827`0`false`0
+828`Flesh Table`0`99`828`0`false`0
+829`Living Wood Table`0`99`829`0`false`0
+830`Skyware Table`0`99`830`0`false`0
+831`Living Wood Chest`0`99`831`0`false`0
+832`Living Wood Wand`0`1`832`0`false`0
+833`Purple Ice Block`0`999`833`0`false`0
+834`Pink Ice Block`0`999`834`0`false`0
+835`Red Ice Block`0`999`835`0`false`0
+836`Crimstone Block`0`999`836`0`false`0
+837`Skyware Door`0`99`837`0`false`0
+838`Skyware Chest`0`99`838`0`false`0
+839`Steampunk Hat`0`1`839`0`false`0
+840`Steampunk Shirt`0`1`840`0`false`0
+841`Steampunk Pants`0`1`841`0`false`0
+842`Bee Hat`0`1`842`0`false`0
+843`Bee Shirt`0`1`843`0`false`0
+844`Bee Pants`0`1`844`0`false`0
+845`World Banner`0`99`845`0`false`0
+846`Sun Banner`0`99`846`0`false`0
+847`Gravity Banner`0`99`847`0`false`0
+848`Pharaoh's Mask`0`1`848`0`false`0
+849`Actuator`0`999`849`0`false`0
+850`Blue Wrench`0`1`850`0`false`0
+851`Green Wrench`0`1`851`0`false`0
+852`Blue Pressure Plate`0`999`852`0`false`0
+853`Yellow Pressure Plate`0`999`853`0`false`0
+854`Discount Card`0`1`854`0`false`0
+855`Lucky Coin`0`1`855`0`false`0
+856`Unicorn on a Stick`0`1`856`0`false`0
+857`Sandstorm in a Bottle`0`1`857`0`false`0
+858`Boreal Wood Sofa`0`99`858`0`false`0
+859`Beach Ball`0`1`859`0`false`0
+860`Charm of Myths`0`1`860`0`false`0
+861`Moon Shell`0`1`861`0`false`0
+862`Star Veil`0`1`862`0`false`0
+863`Water Walking Boots`0`1`863`0`false`0
+864`Tiara`0`1`864`0`false`0
+865`Princess Dress`0`1`865`0`false`0
+866`Pharaoh's Robe`0`1`866`0`false`0
+867`Green Cap`0`1`867`0`false`0
+868`Mushroom Cap`0`1`868`0`false`0
+869`Tam O' Shanter`0`1`869`0`false`0
+870`Mummy Mask`0`1`870`0`false`0
+871`Mummy Shirt`0`1`871`0`false`0
+872`Mummy Pants`0`1`872`0`false`0
+873`Cowboy Hat`0`1`873`0`false`0
+874`Cowboy Jacket`0`1`874`0`false`0
+875`Cowboy Pants`0`1`875`0`false`0
+876`Pirate Hat`0`1`876`0`false`0
+877`Pirate Shirt`0`1`877`0`false`0
+878`Pirate Pants`0`1`878`0`false`0
+879`Viking Helmet`0`1`879`0`false`0
+880`Crimtane Ore`0`999`880`0`false`0
+881`Cactus Sword`0`1`881`0`false`0
+882`Cactus Pickaxe`0`1`882`0`false`0
+883`Ice Brick`0`999`883`0`false`0
+884`Ice Brick Wall`0`999`884`0`false`0
+885`Adhesive Bandage`0`1`885`0`false`0
+886`Armor Polish`0`1`886`0`false`0
+887`Bezoar`0`1`887`0`false`0
+888`Blindfold`0`1`888`0`false`0
+889`Fast Clock`0`1`889`0`false`0
+890`Megaphone`0`1`890`0`false`0
+891`Nazar`0`1`891`0`false`0
+892`Vitamins`0`1`892`0`false`0
+893`Trifold Map`0`1`893`0`false`0
+894`Cactus Helmet`0`1`894`0`false`0
+895`Cactus Breastplate`0`1`895`0`false`0
+896`Cactus Leggings`0`1`896`0`false`0
+897`Power Glove`0`1`897`0`false`0
+898`Lightning Boots`0`1`898`0`false`0
+899`Sun Stone`0`1`899`0`false`0
+900`Moon Stone`0`1`900`0`false`0
+901`Armor Bracing`0`1`901`0`false`0
+902`Medicated Bandage`0`1`902`0`false`0
+903`The Plan`0`1`903`0`false`0
+904`Countercurse Mantra`0`1`904`0`false`0
+905`Coin Gun`0`1`905`0`false`71
+906`Lava Charm`0`1`906`0`false`0
+907`Obsidian Water Walking Boots`0`1`907`0`false`0
+908`Lava Waders`0`1`908`0`false`0
+909`Pure Water Fountain`0`999`909`0`false`0
+910`Desert Water Fountain`0`999`910`0`false`0
+911`Shadewood`0`999`911`0`false`0
+912`Shadewood Door`0`99`912`0`false`0
+913`Shadewood Platform`0`99`913`0`false`0
+914`Shadewood Chest`0`99`914`0`false`0
+915`Shadewood Chair`0`99`915`0`false`0
+916`Shadewood Work Bench`0`99`916`0`false`0
+917`Shadewood Table`0`99`917`0`false`0
+918`Shadewood Dresser`0`99`918`0`false`0
+919`Shadewood Piano`0`99`919`0`false`0
+920`Shadewood Bed`0`99`920`0`false`0
+921`Shadewood Sword`0`1`921`0`false`0
+922`Shadewood Hammer`0`1`922`0`false`0
+923`Shadewood Bow`0`1`923`0`false`1
+924`Shadewood Helmet`0`1`924`0`false`0
+925`Shadewood Breastplate`0`1`925`0`false`0
+926`Shadewood Greaves`0`1`926`0`false`0
+927`Shadewood Wall`0`999`927`0`false`0
+928`Cannon`0`999`928`0`false`0
+929`Cannonball`0`999`929`0`false`0
+930`Flare Gun`0`1`930`0`false`931
+931`Flare`0`999`931`931`false`0
+932`Bone Wand`0`1`932`0`false`0
+933`Leaf Wand`0`1`933`0`false`0
+934`Flying Carpet`0`1`934`0`false`0
+935`Avenger Emblem`0`1`935`0`false`0
+936`Mechanical Glove`0`1`936`0`false`0
+937`Land Mine`0`999`937`0`false`0
+938`Paladin's Shield`0`1`938`0`false`0
+939`Web Slinger`0`1`939`0`false`0
+940`Jungle Water Fountain`0`999`940`0`false`0
+941`Icy Water Fountain`0`999`941`0`false`0
+942`Corrupt Water Fountain`0`999`942`0`false`0
+943`Crimson Water Fountain`0`999`943`0`false`0
+944`Hallowed Water Fountain`0`999`944`0`false`0
+945`Blood Water Fountain`0`999`945`0`false`0
+946`Umbrella`0`1`946`0`false`0
+947`Chlorophyte Ore`0`999`947`0`false`0
+948`Steampunk Wings`0`1`948`0`false`0
+949`Snowball`0`999`949`949`false`0
+950`Ice Skates`0`1`950`0`false`0
+951`Snowball Launcher`0`99`951`0`false`0
+952`Web Covered Chest`0`99`952`0`false`0
+953`Climbing Claws`0`1`953`0`false`0
+954`Ancient Iron Helmet`0`1`954`0`false`0
+955`Ancient Gold Helmet`0`1`955`0`false`0
+956`Ancient Shadow Helmet`0`1`956`0`false`0
+957`Ancient Shadow Scalemail`0`1`957`0`false`0
+958`Ancient Shadow Greaves`0`1`958`0`false`0
+959`Ancient Necro Helmet`0`1`959`0`false`0
+960`Ancient Cobalt Helmet`0`1`960`0`false`0
+961`Ancient Cobalt Breastplate`0`1`961`0`false`0
+962`Ancient Cobalt Leggings`0`1`962`0`false`0
+963`Black Belt`0`1`963`0`false`0
+964`Boomstick`0`1`964`0`false`14
+965`Rope`0`999`965`0`false`0
+966`Campfire`0`999`966`0`false`0
+967`Marshmallow`0`99`967`0`false`0
+968`Marshmallow on a Stick`0`1`968`0`false`0
+969`Cooked Marshmallow`0`30`969`0`false`0
+970`Red Rocket`0`99`970`0`false`0
+971`Green Rocket`0`99`971`0`false`0
+972`Blue Rocket`0`99`972`0`false`0
+973`Yellow Rocket`0`99`973`0`false`0
+974`Ice Torch`0`99`974`0`false`0
+975`Shoe Spikes`0`1`975`0`false`0
+976`Tiger Climbing Gear`0`1`976`0`false`0
+977`Tabi`0`1`977`0`false`0
+978`Pink Eskimo Hood`0`1`978`0`false`0
+979`Pink Eskimo Coat`0`1`979`0`false`0
+980`Pink Eskimo Pants`0`1`980`0`false`0
+981`Pink Thread`0`99`981`0`false`0
+982`Mana Regeneration Band`0`1`982`0`false`0
+983`Sandstorm in a Balloon`0`1`983`0`false`0
+984`Master Ninja Gear`0`1`984`0`false`0
+985`Rope Coil`0`999`985`0`false`0
+986`Blowgun`0`1`986`0`false`51
+987`Blizzard in a Bottle`0`1`987`0`false`0
+988`Frostburn Arrow`0`999`988`1`false`0
+989`Enchanted Sword`0`1`989`0`false`0
+990`Pickaxe Axe`0`1`990`0`false`0
+991`Cobalt Waraxe`0`1`991`0`false`0
+992`Mythril Waraxe`0`1`992`0`false`0
+993`Adamantite Waraxe`0`1`993`0`false`0
+994`Eater's Bone`0`1`994`0`false`0
+995`Blend-O-Matic`0`99`995`0`false`0
+996`Meat Grinder`0`99`996`0`false`0
+997`Extractinator`0`99`997`0`false`0
+998`Solidifier`0`99`998`0`false`0
+999`Amber`0`999`999`0`false`0
+1000`Confetti Gun`0`999`1000`0`false`0
+1001`Chlorophyte Mask`0`1`1001`0`false`0
+1002`Chlorophyte Helmet`0`1`1002`0`false`0
+1003`Chlorophyte Headgear`0`1`1003`0`false`0
+1004`Chlorophyte Plate Mail`0`1`1004`0`false`0
+1005`Chlorophyte Greaves`0`1`1005`0`false`0
+1006`Chlorophyte Bar`0`99`1006`0`false`0
+1007`Red Dye`0`99`1007`0`false`0
+1008`Orange Dye`0`99`1008`0`false`0
+1009`Yellow Dye`0`99`1009`0`false`0
+1010`Lime Dye`0`99`1010`0`false`0
+1011`Green Dye`0`99`1011`0`false`0
+1012`Teal Dye`0`99`1012`0`false`0
+1013`Cyan Dye`0`99`1013`0`false`0
+1014`Sky Blue Dye`0`99`1014`0`false`0
+1015`Blue Dye`0`99`1015`0`false`0
+1016`Purple Dye`0`99`1016`0`false`0
+1017`Violet Dye`0`99`1017`0`false`0
+1018`Pink Dye`0`99`1018`0`false`0
+1019`Red and Black Dye`0`99`1019`0`false`0
+1020`Orange and Black Dye`0`99`1020`0`false`0
+1021`Yellow and Black Dye`0`99`1021`0`false`0
+1022`Lime and Black Dye`0`99`1022`0`false`0
+1023`Green and Black Dye`0`99`1023`0`false`0
+1024`Teal and Black Dye`0`99`1024`0`false`0
+1025`Cyan and Black Dye`0`99`1025`0`false`0
+1026`Sky Blue and Black Dye`0`99`1026`0`false`0
+1027`Blue and Black Dye`0`99`1027`0`false`0
+1028`Purple and Black Dye`0`99`1028`0`false`0
+1029`Violet and Black Dye`0`99`1029`0`false`0
+1030`Pink and Black Dye`0`99`1030`0`false`0
+1031`Flame Dye`0`99`1031`0`false`0
+1032`Flame and Black Dye`0`99`1032`0`false`0
+1033`Green Flame Dye`0`99`1033`0`false`0
+1034`Green Flame and Black Dye`0`99`1034`0`false`0
+1035`Blue Flame Dye`0`99`1035`0`false`0
+1036`Blue Flame and Black Dye`0`99`1036`0`false`0
+1037`Silver Dye`0`99`1037`0`false`0
+1038`Bright Red Dye`0`99`1038`0`false`0
+1039`Bright Orange Dye`0`99`1039`0`false`0
+1040`Bright Yellow Dye`0`99`1040`0`false`0
+1041`Bright Lime Dye`0`99`1041`0`false`0
+1042`Bright Green Dye`0`99`1042`0`false`0
+1043`Bright Teal Dye`0`99`1043`0`false`0
+1044`Bright Cyan Dye`0`99`1044`0`false`0
+1045`Bright Sky Blue Dye`0`99`1045`0`false`0
+1046`Bright Blue Dye`0`99`1046`0`false`0
+1047`Bright Purple Dye`0`99`1047`0`false`0
+1048`Bright Violet Dye`0`99`1048`0`false`0
+1049`Bright Pink Dye`0`99`1049`0`false`0
+1050`Black Dye`0`99`1050`0`false`0
+1051`Red and Silver Dye`0`99`1051`0`false`0
+1052`Orange and Silver Dye`0`99`1052`0`false`0
+1053`Yellow and Silver Dye`0`99`1053`0`false`0
+1054`Lime and Silver Dye`0`99`1054`0`false`0
+1055`Green and Silver Dye`0`99`1055`0`false`0
+1056`Teal and Silver Dye`0`99`1056`0`false`0
+1057`Cyan and Silver Dye`0`99`1057`0`false`0
+1058`Sky Blue and Silver Dye`0`99`1058`0`false`0
+1059`Blue and Silver Dye`0`99`1059`0`false`0
+1060`Purple and Silver Dye`0`99`1060`0`false`0
+1061`Violet and Silver Dye`0`99`1061`0`false`0
+1062`Pink and Silver Dye`0`99`1062`0`false`0
+1063`Intense Flame Dye`0`99`1063`0`false`0
+1064`Intense Green Flame Dye`0`99`1064`0`false`0
+1065`Intense Blue Flame Dye`0`99`1065`0`false`0
+1066`Rainbow Dye`0`99`1066`0`false`0
+1067`Intense Rainbow Dye`0`99`1067`0`false`0
+1068`Yellow Gradient Dye`0`99`1068`0`false`0
+1069`Cyan Gradient Dye`0`99`1069`0`false`0
+1070`Violet Gradient Dye`0`99`1070`0`false`0
+1071`Paintbrush`0`1`1071`0`false`0
+1072`Paint Roller`0`1`1072`0`false`0
+1073`Red Paint`0`999`1073`0`false`0
+1074`Orange Paint`0`999`1074`0`false`0
+1075`Yellow Paint`0`999`1075`0`false`0
+1076`Lime Paint`0`999`1076`0`false`0
+1077`Green Paint`0`999`1077`0`false`0
+1078`Teal Paint`0`999`1078`0`false`0
+1079`Cyan Paint`0`999`1079`0`false`0
+1080`Sky Blue Paint`0`999`1080`0`false`0
+1081`Blue Paint`0`999`1081`0`false`0
+1082`Purple Paint`0`999`1082`0`false`0
+1083`Violet Paint`0`999`1083`0`false`0
+1084`Pink Paint`0`999`1084`0`false`0
+1085`Deep Red Paint`0`999`1085`0`false`0
+1086`Deep Orange Paint`0`999`1086`0`false`0
+1087`Deep Yellow Paint`0`999`1087`0`false`0
+1088`Deep Lime Paint`0`999`1088`0`false`0
+1089`Deep Green Paint`0`999`1089`0`false`0
+1090`Deep Teal Paint`0`999`1090`0`false`0
+1091`Deep Cyan Paint`0`999`1091`0`false`0
+1092`Deep Sky Blue Paint`0`999`1092`0`false`0
+1093`Deep Blue Paint`0`999`1093`0`false`0
+1094`Deep Purple Paint`0`999`1094`0`false`0
+1095`Deep Violet Paint`0`999`1095`0`false`0
+1096`Deep Pink Paint`0`999`1096`0`false`0
+1097`Black Paint`0`999`1097`0`false`0
+1098`White Paint`0`999`1098`0`false`0
+1099`Gray Paint`0`999`1099`0`false`0
+1100`Paint Scraper`0`1`1100`0`false`0
+1101`Lihzahrd Brick`0`999`1101`0`false`0
+1102`Lihzahrd Brick Wall`0`999`1102`0`false`0
+1103`Slush Block`0`999`1103`0`false`0
+1104`Palladium Ore`0`999`1104`0`false`0
+1105`Orichalcum Ore`0`999`1105`0`false`0
+1106`Titanium Ore`0`999`1106`0`false`0
+1107`Teal Mushroom`0`99`1107`0`false`0
+1108`Green Mushroom`0`99`1108`0`false`0
+1109`Sky Blue Flower`0`99`1109`0`false`0
+1110`Yellow Marigold`0`99`1110`0`false`0
+1111`Blue Berries`0`99`1111`0`false`0
+1112`Lime Kelp`0`99`1112`0`false`0
+1113`Pink Prickly Pear`0`99`1113`0`false`0
+1114`Orange Bloodroot`0`99`1114`0`false`0
+1115`Red Husk`0`99`1115`0`false`0
+1116`Cyan Husk`0`99`1116`0`false`0
+1117`Violet Husk`0`99`1117`0`false`0
+1118`Purple Mucos`0`99`1118`0`false`0
+1119`Black Ink`0`99`1119`0`false`0
+1120`Dye Vat`0`99`1120`0`false`0
+1121`Bee Gun`0`1`1121`0`false`0
+1122`Possessed Hatchet`0`1`1122`0`false`0
+1123`Bee Keeper`0`1`1123`0`false`0
+1124`Hive`0`999`1124`0`false`0
+1125`Honey Block`0`999`1125`0`false`0
+1126`Hive Wall`0`999`1126`0`false`0
+1127`Crispy Honey Block`0`999`1127`0`false`0
+1128`Honey Bucket`0`99`1128`0`false`0
+1129`Hive Wand`0`1`1129`0`false`0
+1130`Beenade`0`999`1130`0`false`0
+1131`Gravity Globe`0`1`1131`0`false`0
+1132`Honey Comb`0`1`1132`0`false`0
+1133`Abeemination`0`20`1133`0`false`0
+1134`Bottled Honey`0`30`1134`0`false`0
+1135`Rain Hat`0`1`1135`0`false`0
+1136`Rain Coat`0`1`1136`0`false`0
+1137`Lihzahrd Door`0`99`1137`0`false`0
+1138`Dungeon Door`0`99`1138`0`false`0
+1139`Lead Door`0`99`1139`0`false`0
+1140`Iron Door`0`99`1140`0`false`0
+1141`Temple Key`0`99`1141`0`false`0
+1142`Lihzahrd Chest`0`99`1142`0`false`0
+1143`Lihzahrd Chair`0`99`1143`0`false`0
+1144`Lihzahrd Table`0`99`1144`0`false`0
+1145`Lihzahrd Work Bench`0`99`1145`0`false`0
+1146`Super Dart Trap`0`999`1146`0`false`0
+1147`Flame Trap`0`999`1147`0`false`0
+1148`Spiky Ball Trap`0`999`1148`0`false`0
+1149`Spear Trap`0`999`1149`0`false`0
+1150`Wooden Spike`0`999`1150`0`false`0
+1151`Lihzahrd Pressure Plate`0`999`1151`0`false`0
+1152`Lihzahrd Statue`0`99`1152`0`false`0
+1153`Lihzahrd Watcher Statue`0`99`1153`0`false`0
+1154`Lihzahrd Guardian Statue`0`99`1154`0`false`0
+1155`Wasp Gun`0`1`1155`0`false`0
+1156`Piranha Gun`0`1`1156`0`false`0
+1157`Pygmy Staff`0`1`1157`0`false`0
+1158`Pygmy Necklace`0`1`1158`0`false`0
+1159`Tiki Mask`0`1`1159`0`false`0
+1160`Tiki Shirt`0`1`1160`0`false`0
+1161`Tiki Pants`0`1`1161`0`false`0
+1162`Leaf Wings`0`1`1162`0`false`0
+1163`Blizzard in a Balloon`0`1`1163`0`false`0
+1164`Bundle of Balloons`0`1`1164`0`false`0
+1165`Bat Wings`0`1`1165`0`false`0
+1166`Bone Sword`0`1`1166`0`false`0
+1167`Hercules Beetle`0`1`1167`0`false`0
+1168`Smoke Bomb`0`999`1168`0`false`0
+1169`Bone Key`0`1`1169`0`false`0
+1170`Nectar`0`1`1170`0`false`0
+1171`Tiki Totem`0`1`1171`0`false`0
+1172`Lizard Egg`0`1`1172`0`false`0
+1173`Grave Marker`0`99`1173`0`false`0
+1174`Cross Grave Marker`0`99`1174`0`false`0
+1175`Headstone`0`99`1175`0`false`0
+1176`Gravestone`0`99`1176`0`false`0
+1177`Obelisk`0`99`1177`0`false`0
+1178`Leaf Blower`0`1`1178`0`false`0
+1179`Chlorophyte Bullet`0`999`1179`14`false`0
+1180`Parrot Cracker`0`1`1180`0`false`0
+1181`Strange Glowing Mushroom`0`1`1181`0`false`0
+1182`Seedling`0`1`1182`0`false`0
+1183`Wisp in a Bottle`0`1`1183`0`false`0
+1184`Palladium Bar`0`99`1184`0`false`0
+1185`Palladium Sword`0`1`1185`0`false`0
+1186`Palladium Pike`0`1`1186`0`false`0
+1187`Palladium Repeater`0`1`1187`0`false`1
+1188`Palladium Pickaxe`0`1`1188`0`false`0
+1189`Palladium Drill`0`1`1189`0`false`0
+1190`Palladium Chainsaw`0`1`1190`0`false`0
+1191`Orichalcum Bar`0`99`1191`0`false`0
+1192`Orichalcum Sword`0`1`1192`0`false`0
+1193`Orichalcum Halberd`0`1`1193`0`false`0
+1194`Orichalcum Repeater`0`1`1194`0`false`1
+1195`Orichalcum Pickaxe`0`1`1195`0`false`0
+1196`Orichalcum Drill`0`1`1196`0`false`0
+1197`Orichalcum Chainsaw`0`1`1197`0`false`0
+1198`Titanium Bar`0`99`1198`0`false`0
+1199`Titanium Sword`0`1`1199`0`false`0
+1200`Titanium Trident`0`1`1200`0`false`0
+1201`Titanium Repeater`0`1`1201`0`false`1
+1202`Titanium Pickaxe`0`1`1202`0`false`0
+1203`Titanium Drill`0`1`1203`0`false`0
+1204`Titanium Chainsaw`0`1`1204`0`false`0
+1205`Palladium Mask`0`1`1205`0`false`0
+1206`Palladium Helmet`0`1`1206`0`false`0
+1207`Palladium Headgear`0`1`1207`0`false`0
+1208`Palladium Breastplate`0`1`1208`0`false`0
+1209`Palladium Leggings`0`1`1209`0`false`0
+1210`Orichalcum Mask`0`1`1210`0`false`0
+1211`Orichalcum Helmet`0`1`1211`0`false`0
+1212`Orichalcum Headgear`0`1`1212`0`false`0
+1213`Orichalcum Breastplate`0`1`1213`0`false`0
+1214`Orichalcum Leggings`0`1`1214`0`false`0
+1215`Titanium Mask`0`1`1215`0`false`0
+1216`Titanium Helmet`0`1`1216`0`false`0
+1217`Titanium Headgear`0`1`1217`0`false`0
+1218`Titanium Breastplate`0`1`1218`0`false`0
+1219`Titanium Leggings`0`1`1219`0`false`0
+1220`Orichalcum Anvil`0`99`1220`0`false`0
+1221`Titanium Forge`0`99`1221`0`false`0
+1222`Palladium Waraxe`0`1`1222`0`false`0
+1223`Orichalcum Waraxe`0`1`1223`0`false`0
+1224`Titanium Waraxe`0`1`1224`0`false`0
+1225`Hallowed Bar`0`99`1225`0`false`0
+1226`Chlorophyte Claymore`0`1`1226`0`false`0
+1227`Chlorophyte Saber`0`1`1227`0`false`0
+1228`Chlorophyte Partisan`0`1`1228`0`false`0
+1229`Chlorophyte Shotbow`0`1`1229`0`false`1
+1230`Chlorophyte Pickaxe`0`1`1230`0`false`0
+1231`Chlorophyte Drill`0`1`1231`0`false`0
+1232`Chlorophyte Chainsaw`0`1`1232`0`false`0
+1233`Chlorophyte Greataxe`0`1`1233`0`false`0
+1234`Chlorophyte Warhammer`0`1`1234`0`false`0
+1235`Chlorophyte Arrow`0`999`1235`1`false`0
+1236`Amethyst Hook`0`1`1236`0`false`0
+1237`Topaz Hook`0`1`1237`0`false`0
+1238`Sapphire Hook`0`1`1238`0`false`0
+1239`Emerald Hook`0`1`1239`0`false`0
+1240`Ruby Hook`0`1`1240`0`false`0
+1241`Diamond Hook`0`1`1241`0`false`0
+1242`Amber Mosquito`0`1`1242`0`false`0
+1243`Umbrella Hat`0`1`1243`0`false`0
+1244`Nimbus Rod`0`1`1244`0`false`0
+1245`Orange Torch`0`99`1245`0`false`0
+1246`Crimsand Block`0`999`1246`42`false`0
+1247`Bee Cloak`0`1`1247`0`false`0
+1248`Eye of the Golem`0`1`1248`0`false`0
+1249`Honey Balloon`0`1`1249`0`false`0
+1250`Blue Horseshoe Balloon`0`1`1250`0`false`0
+1251`White Horseshoe Balloon`0`1`1251`0`false`0
+1252`Yellow Horseshoe Balloon`0`1`1252`0`false`0
+1253`Frozen Turtle Shell`0`1`1253`0`false`0
+1254`Sniper Rifle`0`1`1254`0`false`14
+1255`Venus Magnum`0`1`1255`0`false`14
+1256`Crimson Rod`0`1`1256`0`false`0
+1257`Crimtane Bar`0`99`1257`0`false`0
+1258`Stynger`0`1`1258`0`false`246
+1259`Flower Pow`0`1`1259`0`false`0
+1260`Rainbow Gun`0`1`1260`0`false`0
+1261`Stynger Bolt`0`999`1261`246`false`0
+1262`Chlorophyte Jackhammer`0`1`1262`0`false`0
+1263`Teleporter`0`99`1263`0`false`0
+1264`Flower of Frost`0`1`1264`0`false`0
+1265`Uzi`0`1`1265`0`false`14
+1266`Magnet Sphere`0`1`1266`0`false`0
+1267`Purple Stained Glass`0`999`1267`0`false`0
+1268`Yellow Stained Glass`0`999`1268`0`false`0
+1269`Blue Stained Glass`0`999`1269`0`false`0
+1270`Green Stained Glass`0`999`1270`0`false`0
+1271`Red Stained Glass`0`999`1271`0`false`0
+1272`Multicolored Stained Glass`0`999`1272`0`false`0
+1273`Skeletron Hand`0`1`1273`0`false`0
+1274`Skull`0`1`1274`0`false`0
+1275`Balla Hat`0`1`1275`0`false`0
+1276`Gangsta Hat`0`1`1276`0`false`0
+1277`Sailor Hat`0`1`1277`0`false`0
+1278`Eye Patch`0`1`1278`0`false`0
+1279`Sailor Shirt`0`1`1279`0`false`0
+1280`Sailor Pants`0`1`1280`0`false`0
+1281`Skeletron Mask`0`1`1281`0`false`0
+1282`Amethyst Robe`0`1`1282`0`false`0
+1283`Topaz Robe`0`1`1283`0`false`0
+1284`Sapphire Robe`0`1`1284`0`false`0
+1285`Emerald Robe`0`1`1285`0`false`0
+1286`Ruby Robe`0`1`1286`0`false`0
+1287`Diamond Robe`0`1`1287`0`false`0
+1288`White Tuxedo Shirt`0`1`1288`0`false`0
+1289`White Tuxedo Pants`0`1`1289`0`false`0
+1290`Panic Necklace`0`1`1290`0`false`0
+1291`Life Fruit`0`99`1291`0`false`0
+1292`Lihzahrd Altar`0`99`1292`0`false`0
+1293`Lihzahrd Power Cell`0`99`1293`0`false`0
+1294`Picksaw`0`1`1294`0`false`0
+1295`Heat Ray`0`1`1295`0`false`0
+1296`Staff of Earth`0`1`1296`0`false`0
+1297`Golem Fist`0`1`1297`0`false`0
+1298`Water Chest`0`99`1298`0`false`0
+1299`Binoculars`0`1`1299`0`false`0
+1300`Rifle Scope`0`1`1300`0`false`0
+1301`Destroyer Emblem`0`1`1301`0`false`0
+1302`High Velocity Bullet`0`999`1302`14`false`0
+1303`Jellyfish Necklace`0`1`1303`0`false`0
+1304`Zombie Arm`0`1`1304`0`false`0
+1305`The Axe`0`1`1305`0`false`0
+1306`Ice Sickle`0`1`1306`0`false`0
+1307`Clothier Voodoo Doll`0`1`1307`0`false`0
+1308`Poison Staff`0`1`1308`0`false`0
+1309`Slime Staff`0`1`1309`0`false`0
+1310`Poison Dart`0`999`1310`51`false`0
+1311`Eye Spring`0`1`1311`0`false`0
+1312`Toy Sled`0`1`1312`0`false`0
+1313`Book of Skulls`0`1`1313`0`false`0
+1314`KO Cannon`0`1`1314`0`false`0
+1315`Pirate Map`0`1`1315`0`false`0
+1316`Turtle Helmet`0`1`1316`0`false`0
+1317`Turtle Scale Mail`0`1`1317`0`false`0
+1318`Turtle Leggings`0`1`1318`0`false`0
+1319`Snowball Cannon`0`1`1319`0`false`949
+1320`Bone Pickaxe`0`1`1320`0`false`0
+1321`Magic Quiver`0`1`1321`0`false`0
+1322`Magma Stone`0`1`1322`0`false`0
+1323`Obsidian Rose`0`1`1323`0`false`0
+1324`Bananarang`0`10`1324`0`false`0
+1325`Chain Knife`0`1`1325`0`false`0
+1326`Rod of Discord`0`1`1326`0`false`0
+1327`Death Sickle`0`1`1327`0`false`0
+1328`Turtle Shell`0`99`1328`0`false`0
+1329`Tissue Sample`0`99`1329`0`false`0
+1330`Vertebrae`0`99`1330`0`false`0
+1331`Bloody Spine`0`20`1331`0`false`0
+1332`Ichor`0`99`1332`0`false`0
+1333`Ichor Torch`0`99`1333`0`false`0
+1334`Ichor Arrow`0`999`1334`1`false`0
+1335`Ichor Bullet`0`999`1335`14`false`0
+1336`Golden Shower`0`1`1336`0`false`0
+1337`Bunny Cannon`0`999`1337`0`false`0
+1338`Explosive Bunny`0`999`1338`0`false`0
+1339`Vial of Venom`0`99`1339`0`false`0
+1340`Flask of Venom`0`30`1340`0`false`0
+1341`Venom Arrow`0`999`1341`1`false`0
+1342`Venom Bullet`0`999`1342`14`false`0
+1343`Fire Gauntlet`0`1`1343`0`false`0
+1344`Cog`0`999`1344`0`false`0
+1345`Confetti`0`99`1345`0`false`0
+1346`Nanites`0`99`1346`0`false`0
+1347`Explosive Powder`0`99`1347`0`false`0
+1348`Gold Dust`0`99`1348`0`false`0
+1349`Party Bullet`0`999`1349`14`false`0
+1350`Nano Bullet`0`999`1350`14`false`0
+1351`Exploding Bullet`0`999`1351`14`false`0
+1352`Golden Bullet`0`999`1352`14`false`0
+1353`Flask of Cursed Flames`0`30`1353`0`false`0
+1354`Flask of Fire`0`30`1354`0`false`0
+1355`Flask of Gold`0`30`1355`0`false`0
+1356`Flask of Ichor`0`30`1356`0`false`0
+1357`Flask of Nanites`0`30`1357`0`false`0
+1358`Flask of Party`0`30`1358`0`false`0
+1359`Flask of Poison`0`30`1359`0`false`0
+1360`Eye of Cthulhu Trophy`0`99`1360`0`false`0
+1361`Eater of Worlds Trophy`0`99`1361`0`false`0
+1362`Brain of Cthulhu Trophy`0`99`1362`0`false`0
+1363`Skeletron Trophy`0`99`1363`0`false`0
+1364`Queen Bee Trophy`0`99`1364`0`false`0
+1365`Wall of Flesh Trophy`0`99`1365`0`false`0
+1366`Destroyer Trophy`0`99`1366`0`false`0
+1367`Skeletron Prime Trophy`0`99`1367`0`false`0
+1368`Retinazer Trophy`0`99`1368`0`false`0
+1369`Spazmatism Trophy`0`99`1369`0`false`0
+1370`Plantera Trophy`0`99`1370`0`false`0
+1371`Golem Trophy`0`99`1371`0`false`0
+1372`Blood Moon Rising`0`99`1372`0`false`0
+1373`The Hanged Man`0`99`1373`0`false`0
+1374`Glory of the Fire`0`99`1374`0`false`0
+1375`Bone Warp`0`99`1375`0`false`0
+1376`Wall Skeleton`0`99`1376`0`false`0
+1377`Hanging Skeleton`0`99`1377`0`false`0
+1378`Blue Slab Wall`0`999`1378`0`false`0
+1379`Blue Tiled Wall`0`999`1379`0`false`0
+1380`Pink Slab Wall`0`999`1380`0`false`0
+1381`Pink Tiled Wall`0`999`1381`0`false`0
+1382`Green Slab Wall`0`999`1382`0`false`0
+1383`Green Tiled Wall`0`999`1383`0`false`0
+1384`Blue Brick Platform`0`99`1384`0`false`0
+1385`Pink Brick Platform`0`99`1385`0`false`0
+1386`Green Brick Platform`0`99`1386`0`false`0
+1387`Metal Shelf`0`99`1387`0`false`0
+1388`Brass Shelf`0`99`1388`0`false`0
+1389`Wood Shelf`0`99`1389`0`false`0
+1390`Brass Lantern`0`999`1390`0`false`0
+1391`Caged Lantern`0`999`1391`0`false`0
+1392`Carriage Lantern`0`999`1392`0`false`0
+1393`Alchemy Lantern`0`999`1393`0`false`0
+1394`Diablost Lamp`0`999`1394`0`false`0
+1395`Oil Rag Sconse`0`999`1395`0`false`0
+1396`Blue Dungeon Chair`0`99`1396`0`false`0
+1397`Blue Dungeon Table`0`99`1397`0`false`0
+1398`Blue Dungeon Work Bench`0`99`1398`0`false`0
+1399`Green Dungeon Chair`0`99`1399`0`false`0
+1400`Green Dungeon Table`0`99`1400`0`false`0
+1401`Green Dungeon Work Bench`0`99`1401`0`false`0
+1402`Pink Dungeon Chair`0`99`1402`0`false`0
+1403`Pink Dungeon Table`0`99`1403`0`false`0
+1404`Pink Dungeon Work Bench`0`99`1404`0`false`0
+1405`Blue Dungeon Candle`0`99`1405`0`false`0
+1406`Green Dungeon Candle`0`99`1406`0`false`0
+1407`Pink Dungeon Candle`0`99`1407`0`false`0
+1408`Blue Dungeon Vase`0`99`1408`0`false`0
+1409`Green Dungeon Vase`0`99`1409`0`false`0
+1410`Pink Dungeon Vase`0`99`1410`0`false`0
+1411`Blue Dungeon Door`0`99`1411`0`false`0
+1412`Green Dungeon Door`0`99`1412`0`false`0
+1413`Pink Dungeon Door`0`99`1413`0`false`0
+1414`Blue Dungeon Bookcase`0`99`1414`0`false`0
+1415`Green Dungeon Bookcase`0`99`1415`0`false`0
+1416`Pink Dungeon Bookcase`0`99`1416`0`false`0
+1417`Catacomb`0`99`1417`0`false`0
+1418`Dungeon Shelf`0`99`1418`0`false`0
+1419`Skellington J Skellingsworth`0`99`1419`0`false`0
+1420`The Cursed Man`0`99`1420`0`false`0
+1421`The Eye Sees the End`0`99`1421`0`false`0
+1422`Something Evil is Watching You`0`99`1422`0`false`0
+1423`The Twins Have Awoken`0`99`1423`0`false`0
+1424`The Screamer`0`99`1424`0`false`0
+1425`Goblins Playing Poker`0`99`1425`0`false`0
+1426`Dryadisque`0`99`1426`0`false`0
+1427`Sunflowers`0`99`1427`0`false`0
+1428`Terrarian Gothic`0`99`1428`0`false`0
+1429`Beanie`0`1`1429`0`false`0
+1430`Imbuing Station`0`99`1430`0`false`0
+1431`Star in a Bottle`0`999`1431`0`false`0
+1432`Empty Bullet`0`999`1432`0`false`0
+1433`Impact`0`99`1433`0`false`0
+1434`Powered by Birds`0`99`1434`0`false`0
+1435`The Destroyer`0`99`1435`0`false`0
+1436`The Persistency of Eyes`0`99`1436`0`false`0
+1437`Unicorn Crossing the Hallows`0`99`1437`0`false`0
+1438`Great Wave`0`99`1438`0`false`0
+1439`Starry Night`0`99`1439`0`false`0
+1440`Guide Picasso`0`99`1440`0`false`0
+1441`The Guardian's Gaze`0`99`1441`0`false`0
+1442`Father of Someone`0`99`1442`0`false`0
+1443`Nurse Lisa`0`99`1443`0`false`0
+1444`Shadowbeam Staff`0`1`1444`0`false`0
+1445`Inferno Fork`0`1`1445`0`false`0
+1446`Spectre Staff`0`1`1446`0`false`0
+1447`Wooden Fence`0`999`1447`0`false`0
+1448`Lead Fence`0`999`1448`0`false`0
+1449`Bubble Machine`0`99`1449`0`false`0
+1450`Bubble Wand`0`1`1450`0`false`0
+1451`Marching Bones Banner`0`99`1451`0`false`0
+1452`Necromantic Sign`0`99`1452`0`false`0
+1453`Rusted Company Standard`0`99`1453`0`false`0
+1454`Ragged Brotherhood Sigil`0`99`1454`0`false`0
+1455`Molten Legion Flag`0`99`1455`0`false`0
+1456`Diabolic Sigil`0`99`1456`0`false`0
+1457`Obsidian Platform`0`99`1457`0`false`0
+1458`Obsidian Door`0`99`1458`0`false`0
+1459`Obsidian Chair`0`99`1459`0`false`0
+1460`Obsidian Table`0`99`1460`0`false`0
+1461`Obsidian Work Bench`0`99`1461`0`false`0
+1462`Obsidian Vase`0`99`1462`0`false`0
+1463`Obsidian Bookcase`0`99`1463`0`false`0
+1464`Hellbound Banner`0`99`1464`0`false`0
+1465`Hell Hammer Banner`0`99`1465`0`false`0
+1466`Helltower Banner`0`99`1466`0`false`0
+1467`Lost Hopes of Man Banner`0`99`1467`0`false`0
+1468`Obsidian Watcher Banner`0`99`1468`0`false`0
+1469`Lava Erupts Banner`0`99`1469`0`false`0
+1470`Blue Dungeon Bed`0`99`1470`0`false`0
+1471`Green Dungeon Bed`0`99`1471`0`false`0
+1472`Pink Dungeon Bed`0`99`1472`0`false`0
+1473`Obsidian Bed`0`99`1473`0`false`0
+1474`Waldo`0`99`1474`0`false`0
+1475`Darkness`0`99`1475`0`false`0
+1476`Dark Soul Reaper`0`99`1476`0`false`0
+1477`Land`0`99`1477`0`false`0
+1478`Trapped Ghost`0`99`1478`0`false`0
+1479`Demon's Eye`0`99`1479`0`false`0
+1480`Finding Gold`0`99`1480`0`false`0
+1481`First Encounter`0`99`1481`0`false`0
+1482`Good Morning`0`99`1482`0`false`0
+1483`Underground Reward`0`99`1483`0`false`0
+1484`Through the Window`0`99`1484`0`false`0
+1485`Place Above the Clouds`0`99`1485`0`false`0
+1486`Do Not Step on the Grass`0`99`1486`0`false`0
+1487`Cold Waters in the White Land`0`99`1487`0`false`0
+1488`Lightless Chasms`0`99`1488`0`false`0
+1489`The Land of Deceiving Looks`0`99`1489`0`false`0
+1490`Daylight`0`99`1490`0`false`0
+1491`Secret of the Sands`0`99`1491`0`false`0
+1492`Deadland Comes Alive`0`99`1492`0`false`0
+1493`Evil Presence`0`99`1493`0`false`0
+1494`Sky Guardian`0`99`1494`0`false`0
+1495`American Explosive`0`99`1495`0`false`0
+1496`Discover`0`99`1496`0`false`0
+1497`Hand Earth`0`99`1497`0`false`0
+1498`Old Miner`0`99`1498`0`false`0
+1499`Skelehead`0`99`1499`0`false`0
+1500`Facing the Cerebral Mastermind`0`99`1500`0`false`0
+1501`Lake of Fire`0`99`1501`0`false`0
+1502`Trio Super Heroes`0`99`1502`0`false`0
+1503`Spectre Hood`0`1`1503`0`false`0
+1504`Spectre Robe`0`1`1504`0`false`0
+1505`Spectre Pants`0`1`1505`0`false`0
+1506`Spectre Pickaxe`0`1`1506`0`false`0
+1507`Spectre Hamaxe`0`1`1507`0`false`0
+1508`Ectoplasm`0`99`1508`0`false`0
+1509`Gothic Chair`0`99`1509`0`false`0
+1510`Gothic Table`0`99`1510`0`false`0
+1511`Gothic Work Bench`0`99`1511`0`false`0
+1512`Gothic Bookcase`0`99`1512`0`false`0
+1513`Paladin's Hammer`0`1`1513`0`false`0
+1514`SWAT Helmet`0`1`1514`0`false`0
+1515`Bee Wings`0`1`1515`0`false`0
+1516`Giant Harpy Feather`0`99`1516`0`false`0
+1517`Bone Feather`0`99`1517`0`false`0
+1518`Fire Feather`0`99`1518`0`false`0
+1519`Ice Feather`0`99`1519`0`false`0
+1520`Broken Bat Wing`0`99`1520`0`false`0
+1521`Tattered Bee Wing`0`99`1521`0`false`0
+1522`Large Amethyst`0`1`1522`0`false`0
+1523`Large Topaz`0`1`1523`0`false`0
+1524`Large Sapphire`0`1`1524`0`false`0
+1525`Large Emerald`0`1`1525`0`false`0
+1526`Large Ruby`0`1`1526`0`false`0
+1527`Large Diamond`0`1`1527`0`false`0
+1528`Jungle Chest`0`99`1528`0`false`0
+1529`Corruption Chest`0`99`1529`0`false`0
+1530`Crimson Chest`0`99`1530`0`false`0
+1531`Hallowed Chest`0`99`1531`0`false`0
+1532`Frozen Chest`0`99`1532`0`false`0
+1533`Jungle Key`0`99`1533`0`false`0
+1534`Corruption Key`0`99`1534`0`false`0
+1535`Crimson Key`0`99`1535`0`false`0
+1536`Hallowed Key`0`99`1536`0`false`0
+1537`Frozen Key`0`99`1537`0`false`0
+1538`Imp Face`0`99`1538`0`false`0
+1539`Ominous Presence`0`99`1539`0`false`0
+1540`Shining Moon`0`99`1540`0`false`0
+1541`Living Gore`0`99`1541`0`false`0
+1542`Flowing Magma`0`99`1542`0`false`0
+1543`Spectre Paintbrush`0`1`1543`0`false`0
+1544`Spectre Paint Roller`0`1`1544`0`false`0
+1545`Spectre Paint Scraper`0`1`1545`0`false`0
+1546`Shroomite Headgear`0`1`1546`0`false`0
+1547`Shroomite Mask`0`1`1547`0`false`0
+1548`Shroomite Helmet`0`1`1548`0`false`0
+1549`Shroomite Breastplate`0`1`1549`0`false`0
+1550`Shroomite Leggings`0`1`1550`0`false`0
+1551`Autohammer`0`99`1551`0`false`0
+1552`Shroomite Bar`0`99`1552`0`false`0
+1553`S.D.M.G.`0`1`1553`0`false`14
+1554`Cenx's Tiara`0`1`1554`0`false`0
+1555`Cenx's Breastplate`0`1`1555`0`false`0
+1556`Cenx's Leggings`0`1`1556`0`false`0
+1557`Crowno's Mask`0`1`1557`0`false`0
+1558`Crowno's Breastplate`0`1`1558`0`false`0
+1559`Crowno's Leggings`0`1`1559`0`false`0
+1560`Will's Helmet`0`1`1560`0`false`0
+1561`Will's Breastplate`0`1`1561`0`false`0
+1562`Will's Leggings`0`1`1562`0`false`0
+1563`Jim's Helmet`0`1`1563`0`false`0
+1564`Jim's Breastplate`0`1`1564`0`false`0
+1565`Jim's Leggings`0`1`1565`0`false`0
+1566`Aaron's Helmet`0`1`1566`0`false`0
+1567`Aaron's Breastplate`0`1`1567`0`false`0
+1568`Aaron's Leggings`0`1`1568`0`false`0
+1569`Vampire Knives`0`1`1569`0`false`0
+1570`Broken Hero Sword`0`99`1570`0`false`0
+1571`Scourge of the Corruptor`0`1`1571`0`false`0
+1572`Staff of the Frost Hydra`0`1`1572`0`false`0
+1573`The Creation of the Guide`0`99`1573`0`false`0
+1574`The Merchant`0`99`1574`0`false`0
+1575`Crowno Devours His Lunch`0`99`1575`0`false`0
+1576`Rare Enchantment`0`99`1576`0`false`0
+1577`Glorious Night`0`99`1577`0`false`0
+1578`Sweetheart Necklace`0`1`1578`0`false`0
+1579`Flurry Boots`0`1`1579`0`false`0
+1580`D-Town's Helmet`0`1`1580`0`false`0
+1581`D-Town's Breastplate`0`1`1581`0`false`0
+1582`D-Town's Leggings`0`1`1582`0`false`0
+1583`D-Town's Wings`0`1`1583`0`false`0
+1584`Will's Wings`0`1`1584`0`false`0
+1585`Crowno's Wings`0`1`1585`0`false`0
+1586`Cenx's Wings`0`1`1586`0`false`0
+1587`Cenx's Dress`0`1`1587`0`false`0
+1588`Cenx's Dress Pants`0`1`1588`0`false`0
+1589`Palladium Column`0`999`1589`0`false`0
+1590`Palladium Column Wall`0`999`1590`0`false`0
+1591`Bubblegum Block`0`999`1591`0`false`0
+1592`Bubblegum Block Wall`0`999`1592`0`false`0
+1593`Titanstone Block`0`999`1593`0`false`0
+1594`Titanstone Block Wall`0`999`1594`0`false`0
+1595`Magic Cuffs`0`1`1595`0`false`0
+1596`Music Box (Snow)`0`1`1596`0`false`0
+1597`Music Box (Space)`0`1`1597`0`false`0
+1598`Music Box (Crimson)`0`1`1598`0`false`0
+1599`Music Box (Boss 4)`0`1`1599`0`false`0
+1600`Music Box (Alt Overworld Day)`0`1`1600`0`false`0
+1601`Music Box (Rain)`0`1`1601`0`false`0
+1602`Music Box (Ice)`0`1`1602`0`false`0
+1603`Music Box (Desert)`0`1`1603`0`false`0
+1604`Music Box (Ocean)`0`1`1604`0`false`0
+1605`Music Box (Dungeon)`0`1`1605`0`false`0
+1606`Music Box (Plantera)`0`1`1606`0`false`0
+1607`Music Box (Boss 5)`0`1`1607`0`false`0
+1608`Music Box (Temple)`0`1`1608`0`false`0
+1609`Music Box (Eclipse)`0`1`1609`0`false`0
+1610`Music Box (Mushrooms)`0`1`1610`0`false`0
+1611`Butterfly Dust`0`99`1611`0`false`0
+1612`Ankh Charm`0`1`1612`0`false`0
+1613`Ankh Shield`0`1`1613`0`false`0
+1614`Blue Flare`0`999`1614`931`false`0
+1615`Angler Fish Banner`0`99`1615`0`false`0
+1616`Angry Nimbus Banner`0`99`1616`0`false`0
+1617`Anomura Fungus Banner`0`99`1617`0`false`0
+1618`Antlion Banner`0`99`1618`0`false`0
+1619`Arapaima Banner`0`99`1619`0`false`0
+1620`Armored Skeleton Banner`0`99`1620`0`false`0
+1621`Bat Banner`0`99`1621`0`false`0
+1622`Bird Banner`0`99`1622`0`false`0
+1623`Black Recluse Banner`0`99`1623`0`false`0
+1624`Blood Feeder Banner`0`99`1624`0`false`0
+1625`Blood Jelly Banner`0`99`1625`0`false`0
+1626`Blood Crawler Banner`0`99`1626`0`false`0
+1627`Bone Serpent Banner`0`99`1627`0`false`0
+1628`Bunny Banner`0`99`1628`0`false`0
+1629`Chaos Elemental Banner`0`99`1629`0`false`0
+1630`Mimic Banner`0`99`1630`0`false`0
+1631`Clown Banner`0`99`1631`0`false`0
+1632`Corrupt Bunny Banner`0`99`1632`0`false`0
+1633`Corrupt Goldfish Banner`0`99`1633`0`false`0
+1634`Crab Banner`0`99`1634`0`false`0
+1635`Crimera Banner`0`99`1635`0`false`0
+1636`Crimson Axe Banner`0`99`1636`0`false`0
+1637`Cursed Hammer Banner`0`99`1637`0`false`0
+1638`Demon Banner`0`99`1638`0`false`0
+1639`Demon Eye Banner`0`99`1639`0`false`0
+1640`Derpling Banner`0`99`1640`0`false`0
+1641`Eater of Souls Banner`0`99`1641`0`false`0
+1642`Enchanted Sword Banner`0`99`1642`0`false`0
+1643`Zombie Eskimo Banner`0`99`1643`0`false`0
+1644`Face Monster Banner`0`99`1644`0`false`0
+1645`Floaty Gross Banner`0`99`1645`0`false`0
+1646`Flying Fish Banner`0`99`1646`0`false`0
+1647`Flying Snake Banner`0`99`1647`0`false`0
+1648`Frankenstein Banner`0`99`1648`0`false`0
+1649`Fungi Bulb Banner`0`99`1649`0`false`0
+1650`Fungo Fish Banner`0`99`1650`0`false`0
+1651`Gastropod Banner`0`99`1651`0`false`0
+1652`Goblin Archer Banner`0`99`1652`0`false`0
+1653`Goblin Sorcerer Banner`0`99`1653`0`false`0
+1654`Goblin Scout Banner`0`99`1654`0`false`0
+1655`Goblin Thief Banner`0`99`1655`0`false`0
+1656`Goblin Warrior Banner`0`99`1656`0`false`0
+1657`Goldfish Banner`0`99`1657`0`false`0
+1658`Harpy Banner`0`99`1658`0`false`0
+1659`Hellbat Banner`0`99`1659`0`false`0
+1660`Herpling Banner`0`99`1660`0`false`0
+1661`Hornet Banner`0`99`1661`0`false`0
+1662`Ice Elemental Banner`0`99`1662`0`false`0
+1663`Icy Merman Banner`0`99`1663`0`false`0
+1664`Fire Imp Banner`0`99`1664`0`false`0
+1665`Jellyfish Banner`0`99`1665`0`false`0
+1666`Jungle Creeper Banner`0`99`1666`0`false`0
+1667`Lihzahrd Banner`0`99`1667`0`false`0
+1668`Man Eater Banner`0`99`1668`0`false`0
+1669`Meteor Head Banner`0`99`1669`0`false`0
+1670`Moth Banner`0`99`1670`0`false`0
+1671`Mummy Banner`0`99`1671`0`false`0
+1672`Mushi Ladybug Banner`0`99`1672`0`false`0
+1673`Parrot Banner`0`99`1673`0`false`0
+1674`Pigron Banner`0`99`1674`0`false`0
+1675`Piranha Banner`0`99`1675`0`false`0
+1676`Pirate Banner`0`99`1676`0`false`0
+1677`Pixie Banner`0`99`1677`0`false`0
+1678`Raincoat Zombie Banner`0`99`1678`0`false`0
+1679`Reaper Banner`0`99`1679`0`false`0
+1680`Shark Banner`0`99`1680`0`false`0
+1681`Skeleton Banner`0`99`1681`0`false`0
+1682`Skeleton Mage Banner`0`99`1682`0`false`0
+1683`Slime Banner`0`99`1683`0`false`0
+1684`Snow Flinx Banner`0`99`1684`0`false`0
+1685`Spider Banner`0`99`1685`0`false`0
+1686`Spore Zombie Banner`0`99`1686`0`false`0
+1687`Swamp Thing Banner`0`99`1687`0`false`0
+1688`Tortoise Banner`0`99`1688`0`false`0
+1689`Toxic Sludge Banner`0`99`1689`0`false`0
+1690`Umbrella Slime Banner`0`99`1690`0`false`0
+1691`Unicorn Banner`0`99`1691`0`false`0
+1692`Vampire Banner`0`99`1692`0`false`0
+1693`Vulture Banner`0`99`1693`0`false`0
+1694`Nymph Banner`0`99`1694`0`false`0
+1695`Werewolf Banner`0`99`1695`0`false`0
+1696`Wolf Banner`0`99`1696`0`false`0
+1697`World Feeder Banner`0`99`1697`0`false`0
+1698`Worm Banner`0`99`1698`0`false`0
+1699`Wraith Banner`0`99`1699`0`false`0
+1700`Wyvern Banner`0`99`1700`0`false`0
+1701`Zombie Banner`0`99`1701`0`false`0
+1702`Glass Platform`0`99`1702`0`false`0
+1703`Glass Chair`0`99`1703`0`false`0
+1704`Golden Chair`0`99`1704`0`false`0
+1705`Golden Toilet`0`99`1705`0`false`0
+1706`Bar Stool`0`99`1706`0`false`0
+1707`Honey Chair`0`99`1707`0`false`0
+1708`Steampunk Chair`0`99`1708`0`false`0
+1709`Glass Door`0`99`1709`0`false`0
+1710`Golden Door`0`99`1710`0`false`0
+1711`Honey Door`0`99`1711`0`false`0
+1712`Steampunk Door`0`99`1712`0`false`0
+1713`Glass Table`0`99`1713`0`false`0
+1714`Banquet Table`0`99`1714`0`false`0
+1715`Bar`0`99`1715`0`false`0
+1716`Golden Table`0`99`1716`0`false`0
+1717`Honey Table`0`99`1717`0`false`0
+1718`Steampunk Table`0`99`1718`0`false`0
+1719`Glass Bed`0`99`1719`0`false`0
+1720`Golden Bed`0`99`1720`0`false`0
+1721`Honey Bed`0`99`1721`0`false`0
+1722`Steampunk Bed`0`99`1722`0`false`0
+1723`Living Wood Wall`0`999`1723`0`false`0
+1724`Fart in a Jar`0`1`1724`0`false`0
+1725`Pumpkin`0`999`1725`0`false`0
+1726`Pumpkin Wall`0`999`1726`0`false`0
+1727`Hay`0`999`1727`0`false`0
+1728`Hay Wall`0`999`1728`0`false`0
+1729`Spooky Wood`0`999`1729`0`false`0
+1730`Spooky Wood Wall`0`999`1730`0`false`0
+1731`Pumpkin Helmet`0`1`1731`0`false`0
+1732`Pumpkin Breastplate`0`1`1732`0`false`0
+1733`Pumpkin Leggings`0`1`1733`0`false`0
+1734`Candy Apple`0`1`1734`0`false`0
+1735`Soul Cake`0`1`1735`0`false`0
+1736`Nurse Hat`0`1`1736`0`false`0
+1737`Nurse Shirt`0`1`1737`0`false`0
+1738`Nurse Pants`0`1`1738`0`false`0
+1739`Wizard's Hat`0`1`1739`0`false`0
+1740`Guy Fawkes Mask`0`1`1740`0`false`0
+1741`Dye Trader Robe`0`1`1741`0`false`0
+1742`Steampunk Goggles`0`1`1742`0`false`0
+1743`Cyborg Helmet`0`1`1743`0`false`0
+1744`Cyborg Shirt`0`1`1744`0`false`0
+1745`Cyborg Pants`0`1`1745`0`false`0
+1746`Creeper Mask`0`1`1746`0`false`0
+1747`Creeper Shirt`0`1`1747`0`false`0
+1748`Creeper Pants`0`1`1748`0`false`0
+1749`Cat Mask`0`1`1749`0`false`0
+1750`Cat Shirt`0`1`1750`0`false`0
+1751`Cat Pants`0`1`1751`0`false`0
+1752`Ghost Mask`0`1`1752`0`false`0
+1753`Ghost Shirt`0`1`1753`0`false`0
+1754`Pumpkin Mask`0`1`1754`0`false`0
+1755`Pumpkin Shirt`0`1`1755`0`false`0
+1756`Pumpkin Pants`0`1`1756`0`false`0
+1757`Robot Mask`0`1`1757`0`false`0
+1758`Robot Shirt`0`1`1758`0`false`0
+1759`Robot Pants`0`1`1759`0`false`0
+1760`Unicorn Mask`0`1`1760`0`false`0
+1761`Unicorn Shirt`0`1`1761`0`false`0
+1762`Unicorn Pants`0`1`1762`0`false`0
+1763`Vampire Mask`0`1`1763`0`false`0
+1764`Vampire Shirt`0`1`1764`0`false`0
+1765`Vampire Pants`0`1`1765`0`false`0
+1766`Witch Hat`0`1`1766`0`false`0
+1767`Leprechaun Hat`0`1`1767`0`false`0
+1768`Leprechaun Shirt`0`1`1768`0`false`0
+1769`Leprechaun Pants`0`1`1769`0`false`0
+1770`Pixie Shirt`0`1`1770`0`false`0
+1771`Pixie Pants`0`1`1771`0`false`0
+1772`Princess Hat`0`1`1772`0`false`0
+1773`Princess Dress`0`1`1773`0`false`0
+1774`Goodie Bag`0`99`1774`0`false`0
+1775`Witch Dress`0`1`1775`0`false`0
+1776`Witch Boots`0`1`1776`0`false`0
+1777`Bride of Frankenstein Mask`0`1`1777`0`false`0
+1778`Bride of Frankenstein Dress`0`1`1778`0`false`0
+1779`Karate Tortoise Mask`0`1`1779`0`false`0
+1780`Karate Tortoise Shirt`0`1`1780`0`false`0
+1781`Karate Tortoise Pants`0`1`1781`0`false`0
+1782`Candy Corn Rifle`0`1`1782`0`false`311
+1783`Candy Corn`0`999`1783`311`false`0
+1784`Jack 'O Lantern Launcher`0`1`1784`0`false`312
+1785`Explosive Jack 'O Lantern`0`999`1785`312`false`0
+1786`Sickle`0`1`1786`0`false`0
+1787`Pumpkin Pie`0`30`1787`0`false`0
+1788`Scarecrow Hat`0`1`1788`0`false`0
+1789`Scarecrow Shirt`0`1`1789`0`false`0
+1790`Scarecrow Pants`0`1`1790`0`false`0
+1791`Cauldron`0`99`1791`0`false`0
+1792`Pumpkin Chair`0`99`1792`0`false`0
+1793`Pumpkin Door`0`99`1793`0`false`0
+1794`Pumpkin Table`0`99`1794`0`false`0
+1795`Pumpkin Work Bench`0`99`1795`0`false`0
+1796`Pumpkin Platform`0`99`1796`0`false`0
+1797`Tattered Fairy Wings`0`1`1797`0`false`0
+1798`Spider Egg`0`1`1798`0`false`0
+1799`Magical Pumpkin Seed`0`1`1799`0`false`0
+1800`Bat Hook`0`1`1800`0`false`0
+1801`Bat Scepter`0`1`1801`0`false`0
+1802`Raven Staff`0`1`1802`0`false`0
+1803`Jungle Key Mold`0`99`1803`0`false`0
+1804`Corruption Key Mold`0`99`1804`0`false`0
+1805`Crimson Key Mold`0`99`1805`0`false`0
+1806`Hallowed Key Mold`0`99`1806`0`false`0
+1807`Frozen Key Mold`0`99`1807`0`false`0
+1808`Hanging Jack 'O Lantern`0`999`1808`0`false`0
+1809`Rotten Egg`0`999`1809`0`false`0
+1810`Unlucky Yarn`0`1`1810`0`false`0
+1811`Black Fairy Dust`0`99`1811`0`false`0
+1812`Jackelier`0`99`1812`0`false`0
+1813`Jack 'O Lantern`0`99`1813`0`false`0
+1814`Spooky Chair`0`99`1814`0`false`0
+1815`Spooky Door`0`99`1815`0`false`0
+1816`Spooky Table`0`99`1816`0`false`0
+1817`Spooky Work Bench`0`99`1817`0`false`0
+1818`Spooky Platform`0`99`1818`0`false`0
+1819`Reaper Hood`0`1`1819`0`false`0
+1820`Reaper Robe`0`1`1820`0`false`0
+1821`Fox Mask`0`1`1821`0`false`0
+1822`Fox Shirt`0`1`1822`0`false`0
+1823`Fox Pants`0`1`1823`0`false`0
+1824`Cat Ears`0`1`1824`0`false`0
+1825`Bloody Machete`0`1`1825`0`false`0
+1826`The Horseman's Blade`0`1`1826`0`false`0
+1827`Bladed Glove`0`1`1827`0`false`0
+1828`Pumpkin Seed`0`99`1828`0`false`0
+1829`Spooky Hook`0`1`1829`0`false`0
+1830`Spooky Wings`0`1`1830`0`false`0
+1831`Spooky Twig`0`99`1831`0`false`0
+1832`Spooky Helmet`0`1`1832`0`false`0
+1833`Spooky Breastplate`0`1`1833`0`false`0
+1834`Spooky Leggings`0`1`1834`0`false`0
+1835`Stake Launcher`0`1`1835`0`false`323
+1836`Stake`0`999`1836`323`false`0
+1837`Cursed Sapling`0`1`1837`0`false`0
+1838`Space Creature Mask`0`1`1838`0`false`0
+1839`Space Creature Shirt`0`1`1839`0`false`0
+1840`Space Creature Pants`0`1`1840`0`false`0
+1841`Wolf Mask`0`1`1841`0`false`0
+1842`Wolf Shirt`0`1`1842`0`false`0
+1843`Wolf Pants`0`1`1843`0`false`0
+1844`Pumpkin Moon Medallion`0`20`1844`0`false`0
+1845`Necromantic Scroll`0`1`1845`0`false`0
+1846`Jacking Skeletron`0`99`1846`0`false`0
+1847`Bitter Harvest`0`99`1847`0`false`0
+1848`Blood Moon Countess`0`99`1848`0`false`0
+1849`Hallow's Eve`0`99`1849`0`false`0
+1850`Morbid Curiosity`0`99`1850`0`false`0
+1851`Treasure Hunter Shirt`0`1`1851`0`false`0
+1852`Treasure Hunter Pants`0`1`1852`0`false`0
+1853`Dryad Coverings`0`1`1853`0`false`0
+1854`Dryad Loincloth`0`1`1854`0`false`0
+1855`Mourning Wood Trophy`0`99`1855`0`false`0
+1856`Pumpking Trophy`0`99`1856`0`false`0
+1857`Jack 'O Lantern Mask`0`1`1857`0`false`0
+1858`Sniper Scope`0`1`1858`0`false`0
+1859`Heart Lantern`0`999`1859`0`false`0
+1860`Jellyfish Diving Gear`0`1`1860`0`false`0
+1861`Arctic Diving Gear`0`1`1861`0`false`0
+1862`Frostspark Boots`0`1`1862`0`false`0
+1863`Fart in a Balloon`0`1`1863`0`false`0
+1864`Papyrus Scarab`0`1`1864`0`false`0
+1865`Celestial Stone`0`1`1865`0`false`0
+1866`Hoverboard`0`1`1866`0`false`0
+1867`Candy Cane`0`1`1867`0`false`0
+1868`Sugar Plum`0`1`1868`0`false`0
+1869`Present`0`999`1869`0`false`0
+1870`Red Ryder`0`1`1870`0`false`14
+1871`Festive Wings`0`1`1871`0`false`0
+1872`Pine Tree Block`0`999`1872`0`false`0
+1873`Christmas Tree`0`999`1873`0`false`0
+1874`Star Topper 1`0`999`1874`0`false`0
+1875`Star Topper 2`0`999`1875`0`false`0
+1876`Star Topper 3`0`999`1876`0`false`0
+1877`Bow Topper`0`999`1877`0`false`0
+1878`White Garland`0`999`1878`0`false`0
+1879`White and Red Garland`0`999`1879`0`false`0
+1880`Red Garland`0`999`1880`0`false`0
+1881`Red and Green Garland`0`999`1881`0`false`0
+1882`Green Garland`0`999`1882`0`false`0
+1883`Green and White Garland`0`999`1883`0`false`0
+1884`Multicolored Bulb`0`999`1884`0`false`0
+1885`Red Bulb`0`999`1885`0`false`0
+1886`Yellow Bulb`0`999`1886`0`false`0
+1887`Green Bulb`0`999`1887`0`false`0
+1888`Red and Green Bulb`0`999`1888`0`false`0
+1889`Yellow and Green Bulb`0`999`1889`0`false`0
+1890`Red and Yellow Bulb`0`999`1890`0`false`0
+1891`White Bulb`0`999`1891`0`false`0
+1892`White and Red Bulb`0`999`1892`0`false`0
+1893`White and Yellow Bulb`0`999`1893`0`false`0
+1894`White and Green Bulb`0`999`1894`0`false`0
+1895`Multicolored Lights`0`999`1895`0`false`0
+1896`Red Lights`0`999`1896`0`false`0
+1897`Green Lights`0`999`1897`0`false`0
+1898`Blue Lights`0`999`1898`0`false`0
+1899`Yellow Lights`0`999`1899`0`false`0
+1900`Red and Yellow Lights`0`999`1900`0`false`0
+1901`Red and Green Lights`0`999`1901`0`false`0
+1902`Yellow and Green Lights`0`999`1902`0`false`0
+1903`Blue and Green Lights`0`999`1903`0`false`0
+1904`Red and Blue Lights`0`999`1904`0`false`0
+1905`Blue and Yellow Lights`0`999`1905`0`false`0
+1906`Giant Bow`0`1`1906`0`false`0
+1907`Reindeer Antlers`0`1`1907`0`false`0
+1908`Holly`0`99`1908`0`false`0
+1909`Candy Cane Sword`0`1`1909`0`false`0
+1910`Elf Melter`0`1`1910`0`false`23
+1911`Christmas Pudding`0`30`1911`0`false`0
+1912`Eggnog`0`30`1912`0`false`0
+1913`Star Anise`0`999`1913`0`false`0
+1914`Reindeer Bells`0`1`1914`0`false`0
+1915`Candy Cane Hook`0`1`1915`0`false`0
+1916`Christmas Hook`0`1`1916`0`false`0
+1917`Candy Cane Pickaxe`0`1`1917`0`false`0
+1918`Fruitcake Chakram`0`1`1918`0`false`0
+1919`Sugar Cookie`0`30`1919`0`false`0
+1920`Gingerbread Cookie`0`30`1920`0`false`0
+1921`Hand Warmer`0`1`1921`0`false`0
+1922`Coal`0`1`1922`0`false`0
+1923`Toolbox`0`1`1923`0`false`0
+1924`Pine Door`0`99`1924`0`false`0
+1925`Pine Chair`0`99`1925`0`false`0
+1926`Pine Table`0`99`1926`0`false`0
+1927`Dog Whistle`0`1`1927`0`false`0
+1928`Christmas Tree Sword`0`1`1928`0`false`0
+1929`Chain Gun`0`1`1929`0`false`14
+1930`Razorpine`0`1`1930`0`false`0
+1931`Blizzard Staff`0`1`1931`0`false`0
+1932`Mrs. Claus Hat`0`1`1932`0`false`0
+1933`Mrs. Claus Shirt`0`1`1933`0`false`0
+1934`Mrs. Claus Heels`0`1`1934`0`false`0
+1935`Parka Hood`0`1`1935`0`false`0
+1936`Parka Coat`0`1`1936`0`false`0
+1937`Parka Pants`0`1`1937`0`false`0
+1938`Snow Hat`0`1`1938`0`false`0
+1939`Ugly Sweater`0`1`1939`0`false`0
+1940`Tree Mask`0`1`1940`0`false`0
+1941`Tree Shirt`0`1`1941`0`false`0
+1942`Tree Trunks`0`1`1942`0`false`0
+1943`Elf Hat`0`1`1943`0`false`0
+1944`Elf Shirt`0`1`1944`0`false`0
+1945`Elf Pants`0`1`1945`0`false`0
+1946`Snowman Cannon`0`1`1946`0`false`771
+1947`North Pole`0`1`1947`0`false`0
+1948`Christmas Tree Wallpaper`0`999`1948`0`false`0
+1949`Ornament Wallpaper`0`999`1949`0`false`0
+1950`Candy Cane Wallpaper`0`999`1950`0`false`0
+1951`Festive Wallpaper`0`999`1951`0`false`0
+1952`Stars Wallpaper`0`999`1952`0`false`0
+1953`Squiggles Wallpaper`0`999`1953`0`false`0
+1954`Snowflake Wallpaper`0`999`1954`0`false`0
+1955`Krampus Horn Wallpaper`0`999`1955`0`false`0
+1956`Bluegreen Wallpaper`0`999`1956`0`false`0
+1957`Grinch Finger Wallpaper`0`999`1957`0`false`0
+1958`Naughty Present`0`20`1958`0`false`0
+1959`Baby Grinch's Mischief Whistle`0`1`1959`0`false`0
+1960`Ice Queen Trophy`0`99`1960`0`false`0
+1961`Santa-NK1 Trophy`0`99`1961`0`false`0
+1962`Everscream Trophy`0`99`1962`0`false`0
+1963`Music Box (Pumpkin Moon)`0`1`1963`0`false`0
+1964`Music Box (Alt Underground)`0`1`1964`0`false`0
+1965`Music Box (Frost Moon)`0`1`1965`0`false`0
+1966`Brown Paint`0`999`1966`0`false`0
+1967`Shadow Paint`0`999`1967`0`false`0
+1968`Negative Paint`0`999`1968`0`false`0
+1969`Team Dye`0`99`1969`0`false`0
+1970`Amethyst Gemspark Block`0`999`1970`0`false`0
+1971`Topaz Gemspark Block`0`999`1971`0`false`0
+1972`Sapphire Gemspark Block`0`999`1972`0`false`0
+1973`Emerald Gemspark Block`0`999`1973`0`false`0
+1974`Ruby Gemspark Block`0`999`1974`0`false`0
+1975`Diamond Gemspark Block`0`999`1975`0`false`0
+1976`Amber Gemspark Block`0`999`1976`0`false`0
+1977`Life Hair Dye`0`99`1977`0`false`0
+1978`Mana Hair Dye`0`99`1978`0`false`0
+1979`Depth Hair Dye`0`99`1979`0`false`0
+1980`Money Hair Dye`0`99`1980`0`false`0
+1981`Time Hair Dye`0`99`1981`0`false`0
+1982`Team Hair Dye`0`99`1982`0`false`0
+1983`Biome Hair Dye`0`99`1983`0`false`0
+1984`Party Hair Dye`0`99`1984`0`false`0
+1985`Rainbow Hair Dye`0`99`1985`0`false`0
+1986`Speed Hair Dye`0`99`1986`0`false`0
+1987`Angel Halo`0`1`1987`0`false`0
+1988`Fez`0`1`1988`0`false`0
+1989`Womannequin`0`999`1989`0`false`0
+1990`Hair Dye Remover`0`99`1990`0`false`0
+1991`Bug Net`0`1`1991`0`false`0
+1992`Firefly`0`999`1992`0`false`0
+1993`Firefly in a Bottle`0`999`1993`0`false`0
+1994`Monarch Butterfly`0`999`1994`0`false`0
+1995`Purple Emperor Butterfly`0`999`1995`0`false`0
+1996`Red Admiral Butterfly`0`999`1996`0`false`0
+1997`Ulysses Butterfly`0`999`1997`0`false`0
+1998`Sulphur Butterfly`0`999`1998`0`false`0
+1999`Tree Nymph Butterfly`0`999`1999`0`false`0
+2000`Zebra Swallowtail Butterfly`0`999`2000`0`false`0
+2001`Julia Butterfly`0`999`2001`0`false`0
+2002`Worm`0`999`2002`0`false`0
+2003`Mouse`0`999`2003`0`false`0
+2004`Lightning Bug`0`999`2004`0`false`0
+2005`Lightning Bug in a Bottle`0`999`2005`0`false`0
+2006`Snail`0`999`2006`0`false`0
+2007`Glowing Snail`0`999`2007`0`false`0
+2008`Fancy Grey Wallpaper`0`999`2008`0`false`0
+2009`Ice Floe Wallpaper`0`999`2009`0`false`0
+2010`Music Wallpaper`0`999`2010`0`false`0
+2011`Purple Rain Wallpaper`0`999`2011`0`false`0
+2012`Rainbow Wallpaper`0`999`2012`0`false`0
+2013`Sparkle Stone Wallpaper`0`999`2013`0`false`0
+2014`Starlit Heaven Wallpaper`0`999`2014`0`false`0
+2015`Bird`0`999`2015`0`false`0
+2016`Blue Jay`0`999`2016`0`false`0
+2017`Cardinal`0`999`2017`0`false`0
+2018`Squirrel`0`999`2018`0`false`0
+2019`Bunny`0`999`2019`0`false`0
+2020`Cactus Bookcase`0`99`2020`0`false`0
+2021`Ebonwood Bookcase`0`99`2021`0`false`0
+2022`Flesh Bookcase`0`99`2022`0`false`0
+2023`Honey Bookcase`0`99`2023`0`false`0
+2024`Steampunk Bookcase`0`99`2024`0`false`0
+2025`Glass Bookcase`0`99`2025`0`false`0
+2026`Rich Mahogany Bookcase`0`99`2026`0`false`0
+2027`Pearlwood Bookcase`0`99`2027`0`false`0
+2028`Spooky Bookcase`0`99`2028`0`false`0
+2029`Skyware Bookcase`0`99`2029`0`false`0
+2030`Lihzahrd Bookcase`0`99`2030`0`false`0
+2031`Frozen Bookcase`0`99`2031`0`false`0
+2032`Cactus Lantern`0`999`2032`0`false`0
+2033`Ebonwood Lantern`0`999`2033`0`false`0
+2034`Flesh Lantern`0`999`2034`0`false`0
+2035`Honey Lantern`0`999`2035`0`false`0
+2036`Steampunk Lantern`0`999`2036`0`false`0
+2037`Glass Lantern`0`999`2037`0`false`0
+2038`Rich Mahogany Lantern`0`999`2038`0`false`0
+2039`Pearlwood Lantern`0`999`2039`0`false`0
+2040`Frozen Lantern`0`999`2040`0`false`0
+2041`Lihzahrd Lantern`0`999`2041`0`false`0
+2042`Skyware Lantern`0`999`2042`0`false`0
+2043`Spooky Lantern`0`999`2043`0`false`0
+2044`Frozen Door`0`99`2044`0`false`0
+2045`Cactus Candle`0`99`2045`0`false`0
+2046`Ebonwood Candle`0`99`2046`0`false`0
+2047`Flesh Candle`0`99`2047`0`false`0
+2048`Glass Candle`0`99`2048`0`false`0
+2049`Frozen Candle`0`99`2049`0`false`0
+2050`Rich Mahogany Candle`0`99`2050`0`false`0
+2051`Pearlwood Candle`0`99`2051`0`false`0
+2052`Lihzahrd Candle`0`99`2052`0`false`0
+2053`Skyware Candle`0`99`2053`0`false`0
+2054`Pumpkin Candle`0`99`2054`0`false`0
+2055`Cactus Chandelier`0`99`2055`0`false`0
+2056`Ebonwood Chandelier`0`99`2056`0`false`0
+2057`Flesh Chandelier`0`99`2057`0`false`0
+2058`Honey Chandelier`0`99`2058`0`false`0
+2059`Frozen Chandelier`0`99`2059`0`false`0
+2060`Rich Mahogany Chandelier`0`99`2060`0`false`0
+2061`Pearlwood Chandelier`0`99`2061`0`false`0
+2062`Lihzahrd Chandelier`0`99`2062`0`false`0
+2063`Skyware Chandelier`0`99`2063`0`false`0
+2064`Spooky Chandelier`0`99`2064`0`false`0
+2065`Glass Chandelier`0`99`2065`0`false`0
+2066`Cactus Bed`0`99`2066`0`false`0
+2067`Flesh Bed`0`99`2067`0`false`0
+2068`Frozen Bed`0`99`2068`0`false`0
+2069`Lihzahrd Bed`0`99`2069`0`false`0
+2070`Skyware Bed`0`99`2070`0`false`0
+2071`Spooky Bed`0`99`2071`0`false`0
+2072`Cactus Bathtub`0`99`2072`0`false`0
+2073`Ebonwood Bathtub`0`99`2073`0`false`0
+2074`Flesh Bathtub`0`99`2074`0`false`0
+2075`Glass Bathtub`0`99`2075`0`false`0
+2076`Frozen Bathtub`0`99`2076`0`false`0
+2077`Rich Mahogany Bathtub`0`99`2077`0`false`0
+2078`Pearlwood Bathtub`0`99`2078`0`false`0
+2079`Lihzahrd Bathtub`0`99`2079`0`false`0
+2080`Skyware Bathtub`0`99`2080`0`false`0
+2081`Spooky Bathtub`0`99`2081`0`false`0
+2082`Cactus Lamp`0`99`2082`0`false`0
+2083`Ebonwood Lamp`0`99`2083`0`false`0
+2084`Flesh Lamp`0`99`2084`0`false`0
+2085`Glass Lamp`0`99`2085`0`false`0
+2086`Frozen Lamp`0`99`2086`0`false`0
+2087`Rich Mahogany Lamp`0`99`2087`0`false`0
+2088`Pearlwood Lamp`0`99`2088`0`false`0
+2089`Lihzahrd Lamp`0`99`2089`0`false`0
+2090`Skyware Lamp`0`99`2090`0`false`0
+2091`Spooky Lamp`0`99`2091`0`false`0
+2092`Cactus Candelabra`0`99`2092`0`false`0
+2093`Ebonwood Candelabra`0`99`2093`0`false`0
+2094`Flesh Candelabra`0`99`2094`0`false`0
+2095`Honey Candelabra`0`99`2095`0`false`0
+2096`Steampunk Candelabra`0`99`2096`0`false`0
+2097`Glass Candelabra`0`99`2097`0`false`0
+2098`Rich Mahogany Candelabra`0`99`2098`0`false`0
+2099`Pearlwood Candelabra`0`99`2099`0`false`0
+2100`Frozen Candelabra`0`99`2100`0`false`0
+2101`Lihzahrd Candelabra`0`99`2101`0`false`0
+2102`Skyware Candelabra`0`99`2102`0`false`0
+2103`Spooky Candelabra`0`99`2103`0`false`0
+2104`Brain of Cthulhu Mask`0`1`2104`0`false`0
+2105`Wall of Flesh Mask`0`1`2105`0`false`0
+2106`Twin Mask`0`1`2106`0`false`0
+2107`Skeletron Prime Mask`0`1`2107`0`false`0
+2108`Queen Bee Mask`0`1`2108`0`false`0
+2109`Plantera Mask`0`1`2109`0`false`0
+2110`Golem Mask`0`1`2110`0`false`0
+2111`Eater of Worlds Mask`0`1`2111`0`false`0
+2112`Eye of Cthulhu Mask`0`1`2112`0`false`0
+2113`Destroyer Mask`0`1`2113`0`false`0
+2114`Blacksmith Rack`0`99`2114`0`false`0
+2115`Carpentry Rack`0`99`2115`0`false`0
+2116`Helmet Rack`0`99`2116`0`false`0
+2117`Spear Rack`0`99`2117`0`false`0
+2118`Sword Rack`0`99`2118`0`false`0
+2119`Stone Slab`0`999`2119`0`false`0
+2120`Sandstone Slab`0`999`2120`0`false`0
+2121`Frog`0`999`2121`0`false`0
+2122`Mallard Duck`0`999`2122`0`false`0
+2123`Duck`0`999`2123`0`false`0
+2124`Honey Bathtub`0`99`2124`0`false`0
+2125`Steampunk Bathtub`0`99`2125`0`false`0
+2126`Living Wood Bathtub`0`99`2126`0`false`0
+2127`Shadewood Bathtub`0`99`2127`0`false`0
+2128`Bone Bathtub`0`99`2128`0`false`0
+2129`Honey Lamp`0`99`2129`0`false`0
+2130`Steampunk Lamp`0`99`2130`0`false`0
+2131`Living Wood Lamp`0`99`2131`0`false`0
+2132`Shadewood Lamp`0`99`2132`0`false`0
+2133`Golden Lamp`0`99`2133`0`false`0
+2134`Bone Lamp`0`99`2134`0`false`0
+2135`Living Wood Bookcase`0`99`2135`0`false`0
+2136`Shadewood Bookcase`0`99`2136`0`false`0
+2137`Golden Bookcase`0`99`2137`0`false`0
+2138`Bone Bookcase`0`99`2138`0`false`0
+2139`Living Wood Bed`0`99`2139`0`false`0
+2140`Bone Bed`0`99`2140`0`false`0
+2141`Living Wood Chandelier`0`99`2141`0`false`0
+2142`Shadewood Chandelier`0`99`2142`0`false`0
+2143`Golden Chandelier`0`99`2143`0`false`0
+2144`Bone Chandelier`0`99`2144`0`false`0
+2145`Living Wood Lantern`0`999`2145`0`false`0
+2146`Shadewood Lantern`0`999`2146`0`false`0
+2147`Golden Lantern`0`999`2147`0`false`0
+2148`Bone Lantern`0`999`2148`0`false`0
+2149`Living Wood Candelabra`0`99`2149`0`false`0
+2150`Shadewood Candelabra`0`99`2150`0`false`0
+2151`Golden Candelabra`0`99`2151`0`false`0
+2152`Bone Candelabra`0`99`2152`0`false`0
+2153`Living Wood Candle`0`99`2153`0`false`0
+2154`Shadewood Candle`0`99`2154`0`false`0
+2155`Golden Candle`0`99`2155`0`false`0
+2156`Black Scorpion`0`999`2156`0`false`0
+2157`Scorpion`0`999`2157`0`false`0
+2158`Bubble Wallpaper`0`999`2158`0`false`0
+2159`Copper Pipe Wallpaper`0`999`2159`0`false`0
+2160`Ducky Wallpaper`0`999`2160`0`false`0
+2161`Frost Core`0`999`2161`0`false`0
+2162`Bunny Cage`0`99`2162`0`false`0
+2163`Squirrel Cage`0`99`2163`0`false`0
+2164`Mallard Duck Cage`0`99`2164`0`false`0
+2165`Duck Cage`0`99`2165`0`false`0
+2166`Bird Cage`0`99`2166`0`false`0
+2167`Blue Jay Cage`0`99`2167`0`false`0
+2168`Cardinal Cage`0`99`2168`0`false`0
+2169`Waterfall Wall`0`999`2169`0`false`0
+2170`Lavafall Wall`0`999`2170`0`false`0
+2171`Crimson Seeds`0`99`2171`0`false`0
+2172`Heavy Work Bench`0`99`2172`0`false`0
+2173`Copper Plating`0`999`2173`0`false`0
+2174`Snail Cage`0`99`2174`0`false`0
+2175`Glowing Snail Cage`0`99`2175`0`false`0
+2176`Shroomite Digging Claw`0`1`2176`0`false`0
+2177`Ammo Box`0`999`2177`0`false`0
+2178`Monarch Butterfly Jar`0`99`2178`0`false`0
+2179`Purple Emperor Butterfly Jar`0`99`2179`0`false`0
+2180`Red Admiral Butterfly Jar`0`99`2180`0`false`0
+2181`Ulysses Butterfly Jar`0`99`2181`0`false`0
+2182`Sulphur Butterfly Jar`0`99`2182`0`false`0
+2183`Tree Nymph Butterfly Jar`0`99`2183`0`false`0
+2184`Zebra Swallowtail Butterfly Jar`0`99`2184`0`false`0
+2185`Julia Butterfly Jar`0`99`2185`0`false`0
+2186`Scorpion Cage`0`99`2186`0`false`0
+2187`Black Scorpion Cage`0`99`2187`0`false`0
+2188`Venom Staff`0`1`2188`0`false`0
+2189`Spectre Mask`0`1`2189`0`false`0
+2190`Frog Cage`0`99`2190`0`false`0
+2191`Mouse Cage`0`99`2191`0`false`0
+2192`Bone Welder`0`99`2192`0`false`0
+2193`Flesh Cloning Vat`0`99`2193`0`false`0
+2194`Glass Kiln`0`99`2194`0`false`0
+2195`Lihzahrd Furnace`0`99`2195`0`false`0
+2196`Living Loom`0`99`2196`0`false`0
+2197`Sky Mill`0`99`2197`0`false`0
+2198`Ice Machine`0`99`2198`0`false`0
+2199`Beetle Helmet`0`1`2199`0`false`0
+2200`Beetle Scale Mail`0`1`2200`0`false`0
+2201`Beetle Shell`0`1`2201`0`false`0
+2202`Beetle Leggings`0`1`2202`0`false`0
+2203`Steampunk Boiler`0`99`2203`0`false`0
+2204`Honey Dispenser`0`99`2204`0`false`0
+2205`Penguin`0`999`2205`0`false`0
+2206`Penguin Cage`0`99`2206`0`false`0
+2207`Worm Cage`0`99`2207`0`false`0
+2208`Terrarium`0`99`2208`0`false`0
+2209`Super Mana Potion`0`99`2209`0`false`0
+2210`Ebonwood Fence`0`999`2210`0`false`0
+2211`Rich Mahogany Fence`0`999`2211`0`false`0
+2212`Pearlwood Fence`0`999`2212`0`false`0
+2213`Shadewood Fence`0`999`2213`0`false`0
+2214`Brick Layer`0`1`2214`0`false`0
+2215`Extendo Grip`0`1`2215`0`false`0
+2216`Paint Sprayer`0`1`2216`0`false`0
+2217`Portable Cement Mixer`0`1`2217`0`false`0
+2218`Beetle Husk`0`99`2218`0`false`0
+2219`Celestial Magnet`0`1`2219`0`false`0
+2220`Celestial Emblem`0`1`2220`0`false`0
+2221`Celestial Cuffs`0`1`2221`0`false`0
+2222`Peddler's Hat`0`1`2222`0`false`0
+2223`Pulse Bow`0`1`2223`0`false`1
+2224`Large Dynasty Lantern`0`99`2224`0`false`0
+2225`Dynasty Lamp`0`99`2225`0`false`0
+2226`Dynasty Lantern`0`999`2226`0`false`0
+2227`Large Dynasty Candle`0`99`2227`0`false`0
+2228`Dynasty Chair`0`99`2228`0`false`0
+2229`Dynasty Work Bench`0`99`2229`0`false`0
+2230`Dynasty Chest`0`99`2230`0`false`0
+2231`Dynasty Bed`0`99`2231`0`false`0
+2232`Dynasty Bathtub`0`99`2232`0`false`0
+2233`Dynasty Bookcase`0`99`2233`0`false`0
+2234`Dynasty Cup`0`99`2234`0`false`0
+2235`Dynasty Bowl`0`99`2235`0`false`0
+2236`Dynasty Candle`0`99`2236`0`false`0
+2237`Dynasty Clock`0`99`2237`0`false`0
+2238`Golden Clock`0`99`2238`0`false`0
+2239`Glass Clock`0`99`2239`0`false`0
+2240`Honey Clock`0`99`2240`0`false`0
+2241`Steampunk Clock`0`99`2241`0`false`0
+2242`Fancy Dishes`0`99`2242`0`false`0
+2243`Glass Bowl`0`99`2243`0`false`0
+2244`Wine Glass`0`99`2244`0`false`0
+2245`Living Wood Piano`0`99`2245`0`false`0
+2246`Flesh Piano`0`99`2246`0`false`0
+2247`Frozen Piano`0`99`2247`0`false`0
+2248`Frozen Table`0`99`2248`0`false`0
+2249`Honey Chest`0`99`2249`0`false`0
+2250`Steampunk Chest`0`99`2250`0`false`0
+2251`Honey Work Bench`0`99`2251`0`false`0
+2252`Frozen Work Bench`0`99`2252`0`false`0
+2253`Steampunk Work Bench`0`99`2253`0`false`0
+2254`Glass Piano`0`99`2254`0`false`0
+2255`Honey Piano`0`99`2255`0`false`0
+2256`Steampunk Piano`0`99`2256`0`false`0
+2257`Honey Cup`0`99`2257`0`false`0
+2258`Chalice`0`99`2258`0`false`0
+2259`Dynasty Table`0`99`2259`0`false`0
+2260`Dynasty Wood`0`999`2260`0`false`0
+2261`Red Dynasty Shingles`0`999`2261`0`false`0
+2262`Blue Dynasty Shingles`0`999`2262`0`false`0
+2263`White Dynasty Wall`0`999`2263`0`false`0
+2264`Blue Dynasty Wall`0`999`2264`0`false`0
+2265`Dynasty Door`0`99`2265`0`false`0
+2266`Sake`0`30`2266`0`false`0
+2267`Pad Thai`0`30`2267`0`false`0
+2268`Pho`0`30`2268`0`false`0
+2269`Revolver`0`1`2269`0`false`14
+2270`Gatligator`0`1`2270`0`false`14
+2271`Arcane Rune Wall`0`999`2271`0`false`0
+2272`Water Gun`0`1`2272`0`false`0
+2273`Katana`0`1`2273`0`false`0
+2274`Ultrabright Torch`0`99`2274`0`false`0
+2275`Magic Hat`0`1`2275`0`false`0
+2276`Diamond Ring`0`1`2276`0`false`0
+2277`Gi`0`1`2277`0`false`0
+2278`Kimono`0`1`2278`0`false`0
+2279`Gypsy Robe`0`1`2279`0`false`0
+2280`Beetle Wings`0`1`2280`0`false`0
+2281`Tiger Skin`0`99`2281`0`false`0
+2282`Leopard Skin`0`99`2282`0`false`0
+2283`Zebra Skin`0`99`2283`0`false`0
+2284`Crimson Cloak`0`1`2284`0`false`0
+2285`Mysterious Cape`0`1`2285`0`false`0
+2286`Red Cape`0`1`2286`0`false`0
+2287`Winter Cape`0`1`2287`0`false`0
+2288`Frozen Chair`0`99`2288`0`false`0
+2289`Wood Fishing Pole`0`1`2289`0`false`0
+2290`Bass`0`999`2290`0`false`0
+2291`Reinforced Fishing Pole`0`1`2291`0`false`0
+2292`Fiberglass Fishing Pole`0`1`2292`0`false`0
+2293`Fisher of Souls`0`1`2293`0`false`0
+2294`Golden Fishing Rod`0`1`2294`0`false`0
+2295`Mechanic's Rod`0`1`2295`0`false`0
+2296`Sitting Duck's Fishing Pole`0`1`2296`0`false`0
+2297`Trout`0`999`2297`0`false`0
+2298`Salmon`0`999`2298`0`false`0
+2299`Atlantic Cod`0`999`2299`0`false`0
+2300`Tuna`0`999`2300`0`false`0
+2301`Red Snapper`0`999`2301`0`false`0
+2302`Neon Tetra`0`999`2302`0`false`0
+2303`Armored Cavefish`0`999`2303`0`false`0
+2304`Damselfish`0`999`2304`0`false`0
+2305`Crimson Tigerfish`0`999`2305`0`false`0
+2306`Frost Minnow`0`999`2306`0`false`0
+2307`Princess Fish`0`999`2307`0`false`0
+2308`Golden Carp`0`999`2308`0`false`0
+2309`Specular Fish`0`999`2309`0`false`0
+2310`Prismite`0`999`2310`0`false`0
+2311`Variegated Lardfish`0`999`2311`0`false`0
+2312`Flarefin Koi`0`999`2312`0`false`0
+2313`Double Cod`0`999`2313`0`false`0
+2314`Honeyfin`0`30`2314`0`false`0
+2315`Obsidifish`0`999`2315`0`false`0
+2316`Shrimp`0`999`2316`0`false`0
+2317`Chaos Fish`0`999`2317`0`false`0
+2318`Ebonkoi`0`999`2318`0`false`0
+2319`Hemopiranha`0`999`2319`0`false`0
+2320`Rockfish`0`1`2320`0`false`0
+2321`Stinkfish`0`999`2321`0`false`0
+2322`Mining Potion`0`30`2322`0`false`0
+2323`Heartreach Potion`0`30`2323`0`false`0
+2324`Calming Potion`0`30`2324`0`false`0
+2325`Builder Potion`0`30`2325`0`false`0
+2326`Titan Potion`0`30`2326`0`false`0
+2327`Flipper Potion`0`30`2327`0`false`0
+2328`Summoning Potion`0`30`2328`0`false`0
+2329`Dangersense Potion`0`30`2329`0`false`0
+2330`Purple Clubberfish`0`1`2330`0`false`0
+2331`Obsidian Swordfish`0`1`2331`0`false`0
+2332`Swordfish`0`1`2332`0`false`0
+2333`Iron Fence`0`999`2333`0`false`0
+2334`Wooden Crate`0`99`2334`0`false`0
+2335`Iron Crate`0`99`2335`0`false`0
+2336`Golden Crate`0`99`2336`0`false`0
+2337`Old Shoe`0`99`2337`0`false`0
+2338`Seaweed`0`99`2338`0`false`0
+2339`Tin Can`0`99`2339`0`false`0
+2340`Minecart Track`0`999`2340`0`false`0
+2341`Reaver Shark`0`1`2341`0`false`0
+2342`Sawtooth Shark`0`1`2342`0`false`0
+2343`Minecart`0`1`2343`0`false`0
+2344`Ammo Reservation Potion`0`30`2344`0`false`0
+2345`Lifeforce Potion`0`30`2345`0`false`0
+2346`Endurance Potion`0`30`2346`0`false`0
+2347`Rage Potion`0`30`2347`0`false`0
+2348`Inferno Potion`0`30`2348`0`false`0
+2349`Wrath Potion`0`30`2349`0`false`0
+2350`Recall Potion`0`30`2350`0`false`0
+2351`Teleportation Potion`0`30`2351`0`false`0
+2352`Love Potion`0`99`2352`0`false`0
+2353`Stink Potion`0`99`2353`0`false`0
+2354`Fishing Potion`0`30`2354`0`false`0
+2355`Sonar Potion`0`30`2355`0`false`0
+2356`Crate Potion`0`30`2356`0`false`0
+2357`Shiverthorn Seeds`0`99`2357`0`false`0
+2358`Shiverthorn`0`99`2358`0`false`0
+2359`Warmth Potion`0`30`2359`0`false`0
+2360`Fish Hook`0`1`2360`0`false`0
+2361`Bee Headgear`0`1`2361`0`false`0
+2362`Bee Breastplate`0`1`2362`0`false`0
+2363`Bee Greaves`0`1`2363`0`false`0
+2364`Hornet Staff`0`1`2364`0`false`0
+2365`Imp Staff`0`1`2365`0`false`0
+2366`Queen Spider Staff`0`1`2366`0`false`0
+2367`Angler Hat`0`1`2367`0`false`0
+2368`Angler Vest`0`1`2368`0`false`0
+2369`Angler Pants`0`1`2369`0`false`0
+2370`Spider Mask`0`1`2370`0`false`0
+2371`Spider Breastplate`0`1`2371`0`false`0
+2372`Spider Greaves`0`1`2372`0`false`0
+2373`High Test Fishing Line`0`1`2373`0`false`0
+2374`Angler Earring`0`1`2374`0`false`0
+2375`Tackle Box`0`1`2375`0`false`0
+2376`Blue Dungeon Piano`0`99`2376`0`false`0
+2377`Green Dungeon Piano`0`99`2377`0`false`0
+2378`Pink Dungeon Piano`0`99`2378`0`false`0
+2379`Golden Piano`0`99`2379`0`false`0
+2380`Obsidian Piano`0`99`2380`0`false`0
+2381`Bone Piano`0`99`2381`0`false`0
+2382`Cactus Piano`0`99`2382`0`false`0
+2383`Spooky Piano`0`99`2383`0`false`0
+2384`Skyware Piano`0`99`2384`0`false`0
+2385`Lihzahrd Piano`0`99`2385`0`false`0
+2386`Blue Dungeon Dresser`0`99`2386`0`false`0
+2387`Green Dungeon Dresser`0`99`2387`0`false`0
+2388`Pink Dungeon Dresser`0`99`2388`0`false`0
+2389`Golden Dresser`0`99`2389`0`false`0
+2390`Obsidian Dresser`0`99`2390`0`false`0
+2391`Bone Dresser`0`99`2391`0`false`0
+2392`Cactus Dresser`0`99`2392`0`false`0
+2393`Spooky Dresser`0`99`2393`0`false`0
+2394`Skyware Dresser`0`99`2394`0`false`0
+2395`Honey Dresser`0`99`2395`0`false`0
+2396`Lihzahrd Dresser`0`99`2396`0`false`0
+2397`Sofa`0`99`2397`0`false`0
+2398`Ebonwood Sofa`0`99`2398`0`false`0
+2399`Rich Mahogany Sofa`0`99`2399`0`false`0
+2400`Pearlwood Sofa`0`99`2400`0`false`0
+2401`Shadewood Sofa`0`99`2401`0`false`0
+2402`Blue Dungeon Sofa`0`99`2402`0`false`0
+2403`Green Dungeon Sofa`0`99`2403`0`false`0
+2404`Pink Dungeon Sofa`0`99`2404`0`false`0
+2405`Golden Sofa`0`99`2405`0`false`0
+2406`Obsidian Sofa`0`99`2406`0`false`0
+2407`Bone Sofa`0`99`2407`0`false`0
+2408`Cactus Sofa`0`99`2408`0`false`0
+2409`Spooky Sofa`0`99`2409`0`false`0
+2410`Skyware Sofa`0`99`2410`0`false`0
+2411`Honey Sofa`0`99`2411`0`false`0
+2412`Steampunk Sofa`0`99`2412`0`false`0
+2413`Mushroom Sofa`0`99`2413`0`false`0
+2414`Glass Sofa`0`99`2414`0`false`0
+2415`Pumpkin Sofa`0`99`2415`0`false`0
+2416`Lihzahrd Sofa`0`99`2416`0`false`0
+2417`Seashell Hairpin`0`1`2417`0`false`0
+2418`Mermaid Adornment`0`1`2418`0`false`0
+2419`Mermaid Tail`0`1`2419`0`false`0
+2420`Zephyr Fish`0`1`2420`0`false`0
+2421`Fleshcatcher`0`1`2421`0`false`0
+2422`Hotline Fishing Hook`0`1`2422`0`false`0
+2423`Frog Leg`0`1`2423`0`false`0
+2424`Anchor`0`1`2424`0`false`0
+2425`Cooked Fish`0`30`2425`0`false`0
+2426`Cooked Shrimp`0`30`2426`0`false`0
+2427`Sashimi`0`30`2427`0`false`0
+2428`Fuzzy Carrot`0`1`2428`0`false`0
+2429`Scaly Truffle`0`1`2429`0`false`0
+2430`Slimy Saddle`0`1`2430`0`false`0
+2431`Bee Wax`0`99`2431`0`false`0
+2432`Copper Plating Wall`0`999`2432`0`false`0
+2433`Stone Slab Wall`0`999`2433`0`false`0
+2434`Sail`0`999`2434`0`false`0
+2435`Coralstone Block`0`999`2435`0`false`0
+2436`Blue Jellyfish`0`999`2436`0`false`0
+2437`Green Jellyfish`0`999`2437`0`false`0
+2438`Pink Jellyfish`0`999`2438`0`false`0
+2439`Blue Jellyfish Jar`0`99`2439`0`false`0
+2440`Green Jellyfish Jar`0`99`2440`0`false`0
+2441`Pink Jellyfish Jar`0`99`2441`0`false`0
+2442`Life Preserver`0`99`2442`0`false`0
+2443`Ship's Wheel`0`99`2443`0`false`0
+2444`Compass Rose`0`99`2444`0`false`0
+2445`Wall Anchor`0`99`2445`0`false`0
+2446`Goldfish Trophy`0`99`2446`0`false`0
+2447`Bunnyfish Trophy`0`99`2447`0`false`0
+2448`Swordfish Trophy`0`99`2448`0`false`0
+2449`Sharkteeth Trophy`0`99`2449`0`false`0
+2450`Batfish`0`1`2450`0`false`0
+2451`Bumblebee Tuna`0`1`2451`0`false`0
+2452`Catfish`0`1`2452`0`false`0
+2453`Cloudfish`0`1`2453`0`false`0
+2454`Cursedfish`0`1`2454`0`false`0
+2455`Dirtfish`0`1`2455`0`false`0
+2456`Dynamite Fish`0`1`2456`0`false`0
+2457`Eater of Plankton`0`1`2457`0`false`0
+2458`Fallen Starfish`0`1`2458`0`false`0
+2459`The Fish of Cthulhu`0`1`2459`0`false`0
+2460`Fishotron`0`1`2460`0`false`0
+2461`Harpyfish`0`1`2461`0`false`0
+2462`Hungerfish`0`1`2462`0`false`0
+2463`Ichorfish`0`1`2463`0`false`0
+2464`Jewelfish`0`1`2464`0`false`0
+2465`Mirage Fish`0`1`2465`0`false`0
+2466`Mutant Flinxfin`0`1`2466`0`false`0
+2467`Pengfish`0`1`2467`0`false`0
+2468`Pixiefish`0`1`2468`0`false`0
+2469`Spiderfish`0`1`2469`0`false`0
+2470`Tundra Trout`0`1`2470`0`false`0
+2471`Unicorn Fish`0`1`2471`0`false`0
+2472`Guide Voodoo Fish`0`1`2472`0`false`0
+2473`Wyverntail`0`1`2473`0`false`0
+2474`Zombie Fish`0`1`2474`0`false`0
+2475`Amanitia Fungifin`0`1`2475`0`false`0
+2476`Angelfish`0`1`2476`0`false`0
+2477`Bloody Manowar`0`1`2477`0`false`0
+2478`Bonefish`0`1`2478`0`false`0
+2479`Bunnyfish`0`1`2479`0`false`0
+2480`Cap'n Tunabeard`0`1`2480`0`false`0
+2481`Clownfish`0`1`2481`0`false`0
+2482`Demonic Hellfish`0`1`2482`0`false`0
+2483`Derpfish`0`1`2483`0`false`0
+2484`Fishron`0`1`2484`0`false`0
+2485`Infected Scabbardfish`0`1`2485`0`false`0
+2486`Mudfish`0`1`2486`0`false`0
+2487`Slimefish`0`1`2487`0`false`0
+2488`Tropical Barracuda`0`1`2488`0`false`0
+2489`King Slime Trophy`0`99`2489`0`false`0
+2490`Ship in a Bottle`0`99`2490`0`false`0
+2491`Hardy Saddle`0`1`2491`0`false`0
+2492`Pressure Plate Track`0`99`2492`0`false`0
+2493`King Slime Mask`0`1`2493`0`false`0
+2494`Fin Wings`0`1`2494`0`false`0
+2495`Treasure Map`0`99`2495`0`false`0
+2496`Seaweed Planter`0`99`2496`0`false`0
+2497`Pillagin Me Pixels`0`99`2497`0`false`0
+2498`Fish Costume Mask`0`1`2498`0`false`0
+2499`Fish Costume Shirt`0`1`2499`0`false`0
+2500`Fish Costume Finskirt`0`1`2500`0`false`0
+2501`Ginger Beard`0`1`2501`0`false`0
+2502`Honeyed Goggles`0`1`2502`0`false`0
+2503`Boreal Wood`0`999`2503`0`false`0
+2504`Palm Wood`0`999`2504`0`false`0
+2505`Boreal Wood Wall`0`999`2505`0`false`0
+2506`Palm Wood Wall`0`999`2506`0`false`0
+2507`Boreal Wood Fence`0`999`2507`0`false`0
+2508`Palm Wood Fence`0`999`2508`0`false`0
+2509`Boreal Wood Helmet`0`1`2509`0`false`0
+2510`Boreal Wood Breastplate`0`1`2510`0`false`0
+2511`Boreal Wood Greaves`0`1`2511`0`false`0
+2512`Palm Wood Helmet`0`1`2512`0`false`0
+2513`Palm Wood Breastplate`0`1`2513`0`false`0
+2514`Palm Wood Greaves`0`1`2514`0`false`0
+2515`Palm Wood Bow`0`1`2515`0`false`1
+2516`Palm Wood Hammer`0`1`2516`0`false`0
+2517`Palm Wood Sword`0`1`2517`0`false`0
+2518`Palm Wood Platform`0`99`2518`0`false`0
+2519`Palm Wood Bathtub`0`99`2519`0`false`0
+2520`Palm Wood Bed`0`99`2520`0`false`0
+2521`Palm Wood Bench`0`99`2521`0`false`0
+2522`Palm Wood Candelabra`0`99`2522`0`false`0
+2523`Palm Wood Candle`0`99`2523`0`false`0
+2524`Palm Wood Chair`0`99`2524`0`false`0
+2525`Palm Wood Chandelier`0`99`2525`0`false`0
+2526`Palm Wood Chest`0`99`2526`0`false`0
+2527`Palm Wood Sofa`0`99`2527`0`false`0
+2528`Palm Wood Door`0`99`2528`0`false`0
+2529`Palm Wood Dresser`0`99`2529`0`false`0
+2530`Palm Wood Lantern`0`999`2530`0`false`0
+2531`Palm Wood Piano`0`99`2531`0`false`0
+2532`Palm Wood Table`0`99`2532`0`false`0
+2533`Palm Wood Lamp`0`99`2533`0`false`0
+2534`Palm Wood Work Bench`0`99`2534`0`false`0
+2535`Optic Staff`0`1`2535`0`false`0
+2536`Palm Wood Bookcase`0`99`2536`0`false`0
+2537`Mushroom Bathtub`0`99`2537`0`false`0
+2538`Mushroom Bed`0`99`2538`0`false`0
+2539`Mushroom Bench`0`99`2539`0`false`0
+2540`Mushroom Bookcase`0`99`2540`0`false`0
+2541`Mushroom Candelabra`0`99`2541`0`false`0
+2542`Mushroom Candle`0`99`2542`0`false`0
+2543`Mushroom Chandelier`0`99`2543`0`false`0
+2544`Mushroom Chest`0`99`2544`0`false`0
+2545`Mushroom Dresser`0`99`2545`0`false`0
+2546`Mushroom Lantern`0`999`2546`0`false`0
+2547`Mushroom Lamp`0`99`2547`0`false`0
+2548`Mushroom Piano`0`99`2548`0`false`0
+2549`Mushroom Platform`0`99`2549`0`false`0
+2550`Mushroom Table`0`99`2550`0`false`0
+2551`Spider Staff`0`1`2551`0`false`0
+2552`Boreal Wood Bathtub`0`99`2552`0`false`0
+2553`Boreal Wood Bed`0`99`2553`0`false`0
+2554`Boreal Wood Bookcase`0`99`2554`0`false`0
+2555`Boreal Wood Candelabra`0`99`2555`0`false`0
+2556`Boreal Wood Candle`0`99`2556`0`false`0
+2557`Boreal Wood Chair`0`99`2557`0`false`0
+2558`Boreal Wood Chandelier`0`99`2558`0`false`0
+2559`Boreal Wood Chest`0`99`2559`0`false`0
+2560`Boreal Wood Clock`0`99`2560`0`false`0
+2561`Boreal Wood Door`0`99`2561`0`false`0
+2562`Boreal Wood Dresser`0`99`2562`0`false`0
+2563`Boreal Wood Lamp`0`99`2563`0`false`0
+2564`Boreal Wood Lantern`0`999`2564`0`false`0
+2565`Boreal Wood Piano`0`99`2565`0`false`0
+2566`Boreal Wood Platform`0`99`2566`0`false`0
+2567`Slime Bathtub`0`99`2567`0`false`0
+2568`Slime Bed`0`99`2568`0`false`0
+2569`Slime Bookcase`0`99`2569`0`false`0
+2570`Slime Candelabra`0`99`2570`0`false`0
+2571`Slime Candle`0`99`2571`0`false`0
+2572`Slime Chair`0`99`2572`0`false`0
+2573`Slime Chandelier`0`99`2573`0`false`0
+2574`Slime Chest`0`99`2574`0`false`0
+2575`Slime Clock`0`99`2575`0`false`0
+2576`Slime Door`0`99`2576`0`false`0
+2577`Slime Dresser`0`99`2577`0`false`0
+2578`Slime Lamp`0`99`2578`0`false`0
+2579`Slime Lantern`0`999`2579`0`false`0
+2580`Slime Piano`0`99`2580`0`false`0
+2581`Slime Platform`0`99`2581`0`false`0
+2582`Slime Sofa`0`99`2582`0`false`0
+2583`Slime Table`0`99`2583`0`false`0
+2584`Pirate Staff`0`1`2584`0`false`0
+2585`Slime Hook`0`1`2585`0`false`0
+2586`Sticky Grenade`0`99`2586`0`false`0
+2587`Tartar Sauce`0`1`2587`0`false`0
+2588`Duke Fishron Mask`0`1`2588`0`false`0
+2589`Duke Fishron Trophy`0`99`2589`0`false`0
+2590`Molotov Cocktail`0`99`2590`0`false`0
+2591`Bone Clock`0`99`2591`0`false`0
+2592`Cactus Clock`0`99`2592`0`false`0
+2593`Ebonwood Clock`0`99`2593`0`false`0
+2594`Frozen Clock`0`99`2594`0`false`0
+2595`Lihzahrd Clock`0`99`2595`0`false`0
+2596`Living Wood Clock`0`99`2596`0`false`0
+2597`Rich Mahogany Clock`0`99`2597`0`false`0
+2598`Flesh Clock`0`99`2598`0`false`0
+2599`Mushroom Clock`0`99`2599`0`false`0
+2600`Obsidian Clock`0`99`2600`0`false`0
+2601`Palm Wood Clock`0`99`2601`0`false`0
+2602`Pearlwood Clock`0`99`2602`0`false`0
+2603`Pumpkin Clock`0`99`2603`0`false`0
+2604`Shadewood Clock`0`99`2604`0`false`0
+2605`Spooky Clock`0`99`2605`0`false`0
+2606`Sunplate Clock`0`99`2606`0`false`0
+2607`Spider Fang`0`99`2607`0`false`0
+2608`Falcon Blade`0`1`2608`0`false`0
+2609`Fishron Wings`0`1`2609`0`false`0
+2610`Slime Gun`0`1`2610`0`false`0
+2611`Flairon`0`1`2611`0`false`0
+2612`Green Dungeon Chest`0`99`2612`0`false`0
+2613`Pink Dungeon Chest`0`99`2613`0`false`0
+2614`Blue Dungeon Chest`0`99`2614`0`false`0
+2615`Bone Chest`0`99`2615`0`false`0
+2616`Cactus Chest`0`99`2616`0`false`0
+2617`Flesh Chest`0`99`2617`0`false`0
+2618`Obsidian Chest`0`99`2618`0`false`0
+2619`Pumpkin Chest`0`99`2619`0`false`0
+2620`Spooky Chest`0`99`2620`0`false`0
+2621`Tempest Staff`0`1`2621`0`false`0
+2622`Razorblade Typhoon`0`1`2622`0`false`0
+2623`Bubble Gun`0`1`2623`0`false`0
+2624`Tsunami`0`1`2624`0`false`1
+2625`Seashell`0`99`2625`0`false`0
+2626`Starfish`0`99`2626`0`false`0
+2627`Steampunk Platform`0`99`2627`0`false`0
+2628`Skyware Platform`0`99`2628`0`false`0
+2629`Living Wood Platform`0`99`2629`0`false`0
+2630`Honey Platform`0`99`2630`0`false`0
+2631`Skyware Work Bench`0`99`2631`0`false`0
+2632`Glass Work Bench`0`99`2632`0`false`0
+2633`Living Wood Work Bench`0`99`2633`0`false`0
+2634`Flesh Sofa`0`99`2634`0`false`0
+2635`Frozen Sofa`0`99`2635`0`false`0
+2636`Living Wood Sofa`0`99`2636`0`false`0
+2637`Pumpkin Dresser`0`99`2637`0`false`0
+2638`Steampunk Dresser`0`99`2638`0`false`0
+2639`Glass Dresser`0`99`2639`0`false`0
+2640`Flesh Dresser`0`99`2640`0`false`0
+2641`Pumpkin Lantern`0`999`2641`0`false`0
+2642`Obsidian Lantern`0`999`2642`0`false`0
+2643`Pumpkin Lamp`0`99`2643`0`false`0
+2644`Obsidian Lamp`0`99`2644`0`false`0
+2645`Blue Dungeon Lamp`0`99`2645`0`false`0
+2646`Green Dungeon Lamp`0`99`2646`0`false`0
+2647`Pink Dungeon Lamp`0`99`2647`0`false`0
+2648`Honey Candle`0`99`2648`0`false`0
+2649`Steampunk Candle`0`99`2649`0`false`0
+2650`Spooky Candle`0`99`2650`0`false`0
+2651`Obsidian Candle`0`99`2651`0`false`0
+2652`Blue Dungeon Chandelier`0`99`2652`0`false`0
+2653`Green Dungeon Chandelier`0`99`2653`0`false`0
+2654`Pink Dungeon Chandelier`0`99`2654`0`false`0
+2655`Steampunk Chandelier`0`99`2655`0`false`0
+2656`Pumpkin Chandelier`0`99`2656`0`false`0
+2657`Obsidian Chandelier`0`99`2657`0`false`0
+2658`Blue Dungeon Bathtub`0`99`2658`0`false`0
+2659`Green Dungeon Bathtub`0`99`2659`0`false`0
+2660`Pink Dungeon Bathtub`0`99`2660`0`false`0
+2661`Pumpkin Bathtub`0`99`2661`0`false`0
+2662`Obsidian Bathtub`0`99`2662`0`false`0
+2663`Golden Bathtub`0`99`2663`0`false`0
+2664`Blue Dungeon Candelabra`0`99`2664`0`false`0
+2665`Green Dungeon Candelabra`0`99`2665`0`false`0
+2666`Pink Dungeon Candelabra`0`99`2666`0`false`0
+2667`Obsidian Candelabra`0`99`2667`0`false`0
+2668`Pumpkin Candelabra`0`99`2668`0`false`0
+2669`Pumpkin Bed`0`99`2669`0`false`0
+2670`Pumpkin Bookcase`0`99`2670`0`false`0
+2671`Pumpkin Piano`0`99`2671`0`false`0
+2672`Shark Statue`0`99`2672`0`false`0
+2673`Truffle Worm`0`999`2673`0`false`0
+2674`Apprentice Bait`0`999`2674`0`false`0
+2675`Journeyman Bait`0`999`2675`0`false`0
+2676`Master Bait`0`999`2676`0`false`0
+2677`Amber Gemspark Wall`0`999`2677`0`false`0
+2678`Offline Amber Gemspark Wall`0`999`2678`0`false`0
+2679`Amethyst Gemspark Wall`0`999`2679`0`false`0
+2680`Offline Amethyst Gemspark Wall`0`999`2680`0`false`0
+2681`Diamond Gemspark Wall`0`999`2681`0`false`0
+2682`Offline Diamond Gemspark Wall`0`999`2682`0`false`0
+2683`Emerald Gemspark Wall`0`999`2683`0`false`0
+2684`Offline Emerald Gemspark Wall`0`999`2684`0`false`0
+2685`Ruby Gemspark Wall`0`999`2685`0`false`0
+2686`Offline Ruby Gemspark Wall`0`999`2686`0`false`0
+2687`Sapphire Gemspark Wall`0`999`2687`0`false`0
+2688`Offline Sapphire Gemspark Wall`0`999`2688`0`false`0
+2689`Topaz Gemspark Wall`0`999`2689`0`false`0
+2690`Offline Topaz Gemspark Wall`0`999`2690`0`false`0
+2691`Tin Plating Wall`0`999`2691`0`false`0
+2692`Tin Plating`0`999`2692`0`false`0
+2693`Waterfall Block`0`999`2693`0`false`0
+2694`Lavafall Block`0`999`2694`0`false`0
+2695`Confetti Block`0`999`2695`0`false`0
+2696`Confetti Wall`0`999`2696`0`false`0
+2697`Midnight Confetti Block`0`999`2697`0`false`0
+2698`Midnight Confetti Wall`0`999`2698`0`false`0
+2699`Weapon Rack`0`99`2699`0`false`0
+2700`Fireworks Box`0`99`2700`0`false`0
+2701`Living Fire Block`0`999`2701`0`false`0
+2702`'0' Statue`0`99`2702`0`false`0
+2703`'1' Statue`0`99`2703`0`false`0
+2704`'2' Statue`0`99`2704`0`false`0
+2705`'3' Statue`0`99`2705`0`false`0
+2706`'4' Statue`0`99`2706`0`false`0
+2707`'5' Statue`0`99`2707`0`false`0
+2708`'6' Statue`0`99`2708`0`false`0
+2709`'7' Statue`0`99`2709`0`false`0
+2710`'8' Statue`0`99`2710`0`false`0
+2711`'9' Statue`0`99`2711`0`false`0
+2712`'A' Statue`0`99`2712`0`false`0
+2713`'B' Statue`0`99`2713`0`false`0
+2714`'C' Statue`0`99`2714`0`false`0
+2715`'D' Statue`0`99`2715`0`false`0
+2716`'E' Statue`0`99`2716`0`false`0
+2717`'F' Statue`0`99`2717`0`false`0
+2718`'G' Statue`0`99`2718`0`false`0
+2719`'H' Statue`0`99`2719`0`false`0
+2720`'I' Statue`0`99`2720`0`false`0
+2721`'J' Statue`0`99`2721`0`false`0
+2722`'K' Statue`0`99`2722`0`false`0
+2723`'L' Statue`0`99`2723`0`false`0
+2724`'M' Statue`0`99`2724`0`false`0
+2725`'N' Statue`0`99`2725`0`false`0
+2726`'O' Statue`0`99`2726`0`false`0
+2727`'P' Statue`0`99`2727`0`false`0
+2728`'Q' Statue`0`99`2728`0`false`0
+2729`'R' Statue`0`99`2729`0`false`0
+2730`'S' Statue`0`99`2730`0`false`0
+2731`'T' Statue`0`99`2731`0`false`0
+2732`'U' Statue`0`99`2732`0`false`0
+2733`'V' Statue`0`99`2733`0`false`0
+2734`'W' Statue`0`99`2734`0`false`0
+2735`'X' Statue`0`99`2735`0`false`0
+2736`'Y' Statue`0`99`2736`0`false`0
+2737`'Z' Statue`0`99`2737`0`false`0
+2738`Firework Fountain`0`99`2738`0`false`0
+2739`Booster Track`0`99`2739`0`false`0
+2740`Grasshopper`0`999`2740`0`false`0
+2741`Grasshopper Cage`0`99`2741`0`false`0
+2742`Music Box (Underground Crimson)`0`1`2742`0`false`0
+2743`Cactus Table`0`99`2743`0`false`0
+2744`Cactus Platform`0`99`2744`0`false`0
+2745`Boreal Wood Sword`0`1`2745`0`false`0
+2746`Boreal Wood Hammer`0`1`2746`0`false`0
+2747`Boreal Wood Bow`0`1`2747`0`false`1
+2748`Glass Chest`0`99`2748`0`false`0
