@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>adminconsole.ico</ApplicationIcon>
+    <ApplicationIcon>rac.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -126,6 +126,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminconsole.ico" />
+    <Content Include="rac.ico" />
+    <None Include="assests\rac.png" />
+    <None Include="assests\remoteadminconsole.png" />
+    <None Include="assests\user.png" />
     <None Include="assests\itemlistsorted.txt" />
     <None Include="assests\prefixlist.txt" />
     <None Include="assests\itemlist.txt" />

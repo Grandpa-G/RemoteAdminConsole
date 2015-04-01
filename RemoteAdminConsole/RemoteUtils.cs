@@ -17,20 +17,41 @@ namespace RemoteAdminConsole
 
         public RemoteUtils()
         {
-            conn = new Connecton("Grandpa", "gp", "192.168.0.18:7878");
+            conn = new Connecton();
         }
         private string token = "";
 
+        public Boolean validateCredentials() {
+            return true;
+        }
         public bool getToken()
         {
-
+            string errorResponse = "{ 'status': '100' }";
+            JObject response = JObject.Parse(errorResponse);
+            
+            if (conn.Server == null)
+            {
+                MessageBox.Show("Invalid userid/password/server", GUIMain.PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            // And now use this to connect server
+            if (conn.Server.Length == 0)
+            {
+                MessageBox.Show("Invalid userid/password/server", GUIMain.PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            
             string sendCommand = "http://" + conn.Server + "/" + "v2/token/create/" + conn.Password + "?username=" + conn.UserId;
 
+            if (GUIMain.DEBUG)
+                Console.WriteLine(sendCommand);
             JObject results = Utils.GetHTTP(sendCommand);
+            if (GUIMain.DEBUG)
+                Console.WriteLine(results);
 
             if (results == null)
             {
-                MessageBox.Show("Invalid userid/password/server", "Remote Log Maintenance", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid userid/password/server", GUIMain.PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             // this can be a string or null
@@ -51,22 +72,17 @@ namespace RemoteAdminConsole
 
         public JObject communicateWithTerraria(String command, String options)
         {
-
-           
             string errorResponse = "{ 'status': '100' }";
             JObject response = JObject.Parse(errorResponse);
 
+            if (conn.Server == null)
+                return response;
             // And now use this to connect server
             if (conn.Server.Length == 0)
-            {
-                //			JOptionPane.showMessageDialog(null, "The server cannot be contacted\n", PROGRAMNAME, JOptionPane.ERROR_MESSAGE);
-                return response;
-            }
+                 return response;
 
-            if (token.Length == 0 && conn.Server.Length > 0)
-            {
+            if (token.Length == 0)
                 return response;
-            }
 
             String sendCommand;
             if (command.Length > 0)

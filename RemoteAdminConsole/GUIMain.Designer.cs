@@ -405,7 +405,18 @@
             this.refreshLog = new System.Windows.Forms.Button();
             this.logDataList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabSettings = new System.Windows.Forms.TabPage();
+            this.btnClearDefaults = new System.Windows.Forms.Button();
+            this.btnSaveDefaults = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.txtURL = new System.Windows.Forms.TextBox();
+            this.passwordField = new System.Windows.Forms.TextBox();
+            this.txtUserId = new System.Windows.Forms.TextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
             this.tabAbout = new System.Windows.Forms.TabPage();
+            this.label69 = new System.Windows.Forms.Label();
             this.lblIncludesSupportFor = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
@@ -421,7 +432,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblServerNamevalue = new System.Windows.Forms.Label();
             this.stopServer = new System.Windows.Forms.Button();
-            this.label69 = new System.Windows.Forms.Label();
+            this.userLoggedIn = new System.Windows.Forms.Label();
+            this.userIcon = new System.Windows.Forms.PictureBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.lblPortValue = new System.Windows.Forms.Label();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -449,8 +463,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupDataPermissions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupDataList)).BeginInit();
             this.tabLog.SuspendLayout();
+            this.tabSettings.SuspendLayout();
             this.tabAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPane
@@ -463,8 +479,9 @@
             this.tabPane.Controls.Add(this.tabInventory);
             this.tabPane.Controls.Add(this.tabGroup);
             this.tabPane.Controls.Add(this.tabLog);
+            this.tabPane.Controls.Add(this.tabSettings);
             this.tabPane.Controls.Add(this.tabAbout);
-            this.tabPane.Location = new System.Drawing.Point(19, 139);
+            this.tabPane.Location = new System.Drawing.Point(19, 149);
             this.tabPane.Name = "tabPane";
             this.tabPane.SelectedIndex = 0;
             this.tabPane.Size = new System.Drawing.Size(950, 565);
@@ -2484,6 +2501,7 @@
             this.banClearSearch.Size = new System.Drawing.Size(30, 23);
             this.banClearSearch.TabIndex = 23;
             this.banClearSearch.UseVisualStyleBackColor = true;
+            this.banClearSearch.Visible = false;
             this.banClearSearch.Click += new System.EventHandler(this.banClearSearch_Click);
             // 
             // banStartSearch
@@ -2494,6 +2512,7 @@
             this.banStartSearch.Size = new System.Drawing.Size(30, 23);
             this.banStartSearch.TabIndex = 22;
             this.banStartSearch.UseVisualStyleBackColor = true;
+            this.banStartSearch.Visible = false;
             this.banStartSearch.Click += new System.EventHandler(this.banStartSearch_Click);
             // 
             // banFuzzyIP
@@ -2505,6 +2524,7 @@
             this.banFuzzyIP.TabIndex = 21;
             this.banFuzzyIP.Text = "Fuzzy Search (%xxx%)";
             this.banFuzzyIP.UseVisualStyleBackColor = true;
+            this.banFuzzyIP.Visible = false;
             // 
             // banSearchIP
             // 
@@ -2513,6 +2533,7 @@
             this.banSearchIP.Name = "banSearchIP";
             this.banSearchIP.Size = new System.Drawing.Size(229, 20);
             this.banSearchIP.TabIndex = 19;
+            this.banSearchIP.Visible = false;
             // 
             // label38
             // 
@@ -2524,6 +2545,7 @@
             this.label38.TabIndex = 17;
             this.label38.Text = "IP:";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label38.Visible = false;
             // 
             // banFuzzyName
             // 
@@ -2534,6 +2556,7 @@
             this.banFuzzyName.TabIndex = 15;
             this.banFuzzyName.Text = "Fuzzy Search (%xxx%)";
             this.banFuzzyName.UseVisualStyleBackColor = true;
+            this.banFuzzyName.Visible = false;
             // 
             // banSearchName
             // 
@@ -2542,6 +2565,7 @@
             this.banSearchName.Name = "banSearchName";
             this.banSearchName.Size = new System.Drawing.Size(229, 20);
             this.banSearchName.TabIndex = 14;
+            this.banSearchName.Visible = false;
             // 
             // label36
             // 
@@ -2553,6 +2577,7 @@
             this.label36.TabIndex = 13;
             this.label36.Text = "Name:";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label36.Visible = false;
             // 
             // label3
             // 
@@ -2562,6 +2587,7 @@
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Search by:";
+            this.label3.Visible = false;
             // 
             // refreshBan
             // 
@@ -2904,6 +2930,7 @@
             this.usersDataList.TabIndex = 0;
             this.usersDataList.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.usersDataList_CellBeginEdit);
             this.usersDataList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDataList_CellClick);
+            this.usersDataList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.usersDataList_RowsAdded);
             this.usersDataList.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.usersDataList_UserDeletedRow);
             this.usersDataList.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.usersDataList_UserDeletingRow);
             // 
@@ -4292,6 +4319,111 @@
             // 
             this.columnHeader1.Width = 890;
             // 
+            // tabSettings
+            // 
+            this.tabSettings.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabSettings.Controls.Add(this.btnClearDefaults);
+            this.tabSettings.Controls.Add(this.btnSaveDefaults);
+            this.tabSettings.Controls.Add(this.btnLogin);
+            this.tabSettings.Controls.Add(this.txtURL);
+            this.tabSettings.Controls.Add(this.passwordField);
+            this.tabSettings.Controls.Add(this.txtUserId);
+            this.tabSettings.Controls.Add(this.label72);
+            this.tabSettings.Controls.Add(this.label73);
+            this.tabSettings.Controls.Add(this.label75);
+            this.tabSettings.Location = new System.Drawing.Point(4, 22);
+            this.tabSettings.Name = "tabSettings";
+            this.tabSettings.Size = new System.Drawing.Size(942, 539);
+            this.tabSettings.TabIndex = 10;
+            this.tabSettings.Text = "Settings";
+            // 
+            // btnClearDefaults
+            // 
+            this.btnClearDefaults.Location = new System.Drawing.Point(231, 297);
+            this.btnClearDefaults.Name = "btnClearDefaults";
+            this.btnClearDefaults.Size = new System.Drawing.Size(101, 23);
+            this.btnClearDefaults.TabIndex = 30;
+            this.btnClearDefaults.Text = "Clear Defaults";
+            this.btnClearDefaults.UseVisualStyleBackColor = true;
+            this.btnClearDefaults.Click += new System.EventHandler(this.btnClearDefaults_Click);
+            // 
+            // btnSaveDefaults
+            // 
+            this.btnSaveDefaults.Location = new System.Drawing.Point(231, 241);
+            this.btnSaveDefaults.Name = "btnSaveDefaults";
+            this.btnSaveDefaults.Size = new System.Drawing.Size(101, 23);
+            this.btnSaveDefaults.TabIndex = 29;
+            this.btnSaveDefaults.Text = "Save Defaults";
+            this.btnSaveDefaults.UseVisualStyleBackColor = true;
+            this.btnSaveDefaults.Click += new System.EventHandler(this.btnSaveDefaults_Click);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(383, 127);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 28;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // txtURL
+            // 
+            this.txtURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtURL.Location = new System.Drawing.Point(231, 157);
+            this.txtURL.Name = "txtURL";
+            this.txtURL.Size = new System.Drawing.Size(272, 20);
+            this.txtURL.TabIndex = 27;
+            // 
+            // passwordField
+            // 
+            this.passwordField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.passwordField.Location = new System.Drawing.Point(231, 130);
+            this.passwordField.Name = "passwordField";
+            this.passwordField.Size = new System.Drawing.Size(129, 20);
+            this.passwordField.TabIndex = 26;
+            // 
+            // txtUserId
+            // 
+            this.txtUserId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUserId.Location = new System.Drawing.Point(231, 103);
+            this.txtUserId.Name = "txtUserId";
+            this.txtUserId.Size = new System.Drawing.Size(129, 20);
+            this.txtUserId.TabIndex = 25;
+            // 
+            // label72
+            // 
+            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label72.Location = new System.Drawing.Point(122, 154);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(100, 23);
+            this.label72.TabIndex = 22;
+            this.label72.Text = "Server:";
+            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label73
+            // 
+            this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label73.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label73.Location = new System.Drawing.Point(122, 127);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(100, 23);
+            this.label73.TabIndex = 21;
+            this.label73.Text = "Password:";
+            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label75
+            // 
+            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label75.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label75.Location = new System.Drawing.Point(122, 100);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(100, 23);
+            this.label75.TabIndex = 19;
+            this.label75.Text = "UserId:";
+            this.label75.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // tabAbout
             // 
             this.tabAbout.BackColor = System.Drawing.Color.AliceBlue;
@@ -4314,6 +4446,17 @@
             this.tabAbout.TabIndex = 3;
             this.tabAbout.Text = "About";
             // 
+            // label69
+            // 
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label69.Location = new System.Drawing.Point(218, 367);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(545, 23);
+            this.label69.TabIndex = 18;
+            this.label69.Text = "Copyright 2015 R G Consulting, Inc";
+            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // lblIncludesSupportFor
             // 
             this.lblIncludesSupportFor.Location = new System.Drawing.Point(313, 158);
@@ -4331,7 +4474,7 @@
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(545, 23);
             this.label68.TabIndex = 16;
-            this.label68.Text = "Special thanks to Zaicon for many suggestions and hours of testing.";
+            this.label68.Text = "Special thanks to Zaicon for many suggestions.";
             this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label67
@@ -4424,18 +4567,18 @@
             // 
             // label25
             // 
-            this.label25.Image = global::RemoteAdminConsole.Properties.Resources.adminconsole;
-            this.label25.Location = new System.Drawing.Point(320, 25);
+            this.label25.Image = global::RemoteAdminConsole.Properties.Resources.remoteadminconsole;
+            this.label25.Location = new System.Drawing.Point(198, 17);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(244, 37);
+            this.label25.Size = new System.Drawing.Size(459, 45);
             this.label25.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::RemoteAdminConsole.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(19, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(23, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(265, 99);
+            this.pictureBox2.Size = new System.Drawing.Size(271, 130);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
@@ -4444,7 +4587,7 @@
             this.lblServerNamevalue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServerNamevalue.Location = new System.Drawing.Point(300, 28);
             this.lblServerNamevalue.Name = "lblServerNamevalue";
-            this.lblServerNamevalue.Size = new System.Drawing.Size(490, 38);
+            this.lblServerNamevalue.Size = new System.Drawing.Size(349, 38);
             this.lblServerNamevalue.TabIndex = 2;
             this.lblServerNamevalue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -4459,16 +4602,43 @@
             this.stopServer.UseVisualStyleBackColor = false;
             this.stopServer.Click += new System.EventHandler(this.stopServer_Click);
             // 
-            // label69
+            // userLoggedIn
             // 
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label69.Location = new System.Drawing.Point(218, 367);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(545, 23);
-            this.label69.TabIndex = 18;
-            this.label69.Text = "Copyright 2015 R G Consulting, Inc";
-            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userLoggedIn.Location = new System.Drawing.Point(39, 132);
+            this.userLoggedIn.Name = "userLoggedIn";
+            this.userLoggedIn.Size = new System.Drawing.Size(344, 15);
+            this.userLoggedIn.TabIndex = 19;
+            this.userLoggedIn.Text = "Not Logged In";
+            this.userLoggedIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // userIcon
+            // 
+            this.userIcon.Image = global::RemoteAdminConsole.Properties.Resources.user;
+            this.userIcon.Location = new System.Drawing.Point(19, 131);
+            this.userIcon.Name = "userIcon";
+            this.userIcon.Size = new System.Drawing.Size(16, 16);
+            this.userIcon.TabIndex = 20;
+            this.userIcon.TabStop = false;
+            this.userIcon.Visible = false;
+            // 
+            // label70
+            // 
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.Location = new System.Drawing.Point(655, 28);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(63, 38);
+            this.label70.TabIndex = 21;
+            this.label70.Text = "Port:";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblPortValue
+            // 
+            this.lblPortValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPortValue.Location = new System.Drawing.Point(713, 28);
+            this.lblPortValue.Name = "lblPortValue";
+            this.lblPortValue.Size = new System.Drawing.Size(73, 38);
+            this.lblPortValue.TabIndex = 22;
+            this.lblPortValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // GUIMain
             // 
@@ -4476,6 +4646,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 716);
+            this.Controls.Add(this.lblPortValue);
+            this.Controls.Add(this.label70);
+            this.Controls.Add(this.userIcon);
+            this.Controls.Add(this.userLoggedIn);
             this.Controls.Add(this.stopServer);
             this.Controls.Add(this.lblServerNamevalue);
             this.Controls.Add(this.pictureBox2);
@@ -4517,8 +4691,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupDataList)).EndInit();
             this.tabLog.ResumeLayout(false);
             this.tabLog.PerformLayout();
+            this.tabSettings.ResumeLayout(false);
+            this.tabSettings.PerformLayout();
             this.tabAbout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4918,5 +5095,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn groupDataPrefix;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupDataSuffix;
         private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.TabPage tabSettings;
+        private System.Windows.Forms.Label userLoggedIn;
+        private System.Windows.Forms.PictureBox userIcon;
+        private System.Windows.Forms.Button btnClearDefaults;
+        private System.Windows.Forms.Button btnSaveDefaults;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.TextBox txtURL;
+        private System.Windows.Forms.TextBox passwordField;
+        private System.Windows.Forms.TextBox txtUserId;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label lblPortValue;
     }
 }

@@ -121,9 +121,6 @@
   <data name="ac" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assests\ac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="adminconsole" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assests\adminconsole.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="clear_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assests\clear_left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,5 +156,17 @@
   </data>
   <data name="prefixlist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assests\prefixlist.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assests\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remoteadminconsole" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assests\remoteadminconsole.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="adminconsole" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assests\adminconsole.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rac" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assests\rac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
