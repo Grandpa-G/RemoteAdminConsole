@@ -655,6 +655,8 @@ namespace RemoteAdminConsole
             String expiration = null;
             String dateBanned = null;
             String dateExpiration = null;
+            DateTime BannedDt;
+            DateTime ExpirationDt;
 
             string whereClause = "";
             string andClause = " where ";
@@ -705,16 +707,30 @@ namespace RemoteAdminConsole
                     banningUser = (String)innerObj["banninguser"];
                     try
                     {
-                        dateBanned = ((String)innerObj["date"]).Replace('T', ' ');
+                        dateBanned = (String)innerObj["date"];
+                        if (dateBanned != null && dateBanned.Length > 0)
+                        {
+                            BannedDt = DateTime.Parse(dateBanned);
+                            dateBanned = String.Format("{0:G}", BannedDt.ToLocalTime());
+                        }
+                        else
+                            lastAccessed = "";
                     }
                     catch (NullReferenceException e)
                     {
                         dateBanned = "";
-                    }
+                     }
 
                     try
                     {
-                        dateExpiration = ((String)innerObj["expiration"]).Replace('T', ' ');
+                        dateExpiration = (String)innerObj["expiration"];
+                        if (dateExpiration != null && dateExpiration.Length > 0)
+                        {
+                            ExpirationDt = DateTime.Parse(dateExpiration);
+                            dateExpiration = String.Format("{0:G}", ExpirationDt.ToLocalTime());
+                        }
+                        else
+                            lastAccessed = "";
                     }
                     catch (NullReferenceException e)
                     {
