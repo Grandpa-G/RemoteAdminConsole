@@ -31,8 +31,7 @@ namespace RemoteAdminConsole
         private const int INVENTORYTAB = USERSTAB + 1;
         private const int GROUPSTAB = INVENTORYTAB + 1;
         private const int LOGTAB = GROUPSTAB + 1;
-        private const int SETTINGSTAB = LOGTAB + 1;
-        private const int ABOUTTAB = SETTINGSTAB + 1;
+        private const int ABOUTTAB = LOGTAB + 1;
 
         public static String PROGRAMNAME = "Remote Admin Console";
         public static bool DEBUG = false;
@@ -99,13 +98,16 @@ namespace RemoteAdminConsole
             }
 
             getDefaults();
-            if (ru.getToken()) { 
+            if (ru.getToken())
+            {
                 userIcon.Visible = true;
-                userLoggedIn.Text = "Logged in as " + ru.conn.UserId;
+                userLoggedIn.Text = "Logged in as " + ru.conn.UserId + ".";
             }
+
             getServerDetails();
             getItemSpriteImage();
             loadItemNames();
+            setupAbout();
 
             this.serverDataPlayers.CellClick += serverDataPlayers_Click;
             this.banDataBan.CellClick += this.banDataBan_CellClick;
@@ -115,10 +117,12 @@ namespace RemoteAdminConsole
             this.usersDataList.CellClick += this.usersDataList_CellClick;
             this.usersDataList.CellBeginEdit += this.usersDataList_CellBeginEdit;
             tabInventory.Enabled = false;
+
             banDataBan.RowHeadersWidth = 22;
             groupDataList.RowHeadersWidth = 22;
             groupDataPermissions.RowHeadersWidth = 10;
             usersDataList.RowHeadersWidth = 22;
+
             if (DEBUG)
                 query.Visible = true;
         }
@@ -128,7 +132,7 @@ namespace RemoteAdminConsole
             switch (e.TabPageIndex)
             {
                 case BANTAB:
- //                   getBannedList(true);
+                    //                   getBannedList(true);
                     break;
                 case USERSTAB:
                     //                   getUsers();
@@ -137,13 +141,10 @@ namespace RemoteAdminConsole
                     getInventory();
                     break;
                 case GROUPSTAB:
- //                   getGroupList();
+                    //                   getGroupList();
                     break;
                 case LOGTAB:
- //                   getLog();
-                    break;
-                case SETTINGSTAB:
-//                    validateUser();
+                    //                   getLog();
                     break;
                 case ABOUTTAB:
                     setupAbout();
@@ -169,14 +170,14 @@ namespace RemoteAdminConsole
         //  Server Tab
         private void stopServer_Click(object sender, EventArgs e)
         {
-                        DialogResult usersChoice =
-                MessageBox.Show("Are you sure you want to shutdown this server?", PROGRAMNAME, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult usersChoice =
+    MessageBox.Show("Are you sure you want to shutdown this server?", PROGRAMNAME, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // cancel the delete event
             if (usersChoice == DialogResult.No)
                 return;
- 
-                            // And now use this to connect server
+
+            // And now use this to connect server
             JObject results = ru.communicateWithTerraria("v2/server/off", "&confirm=true&nosave=false");
             string status = (string)results["status"];
             if (status.Equals("200"))
@@ -207,8 +208,6 @@ namespace RemoteAdminConsole
             Boolean state;
             String extraAdminRESTVersion = "";
             String dbSupported = "";
-
-            tabPlayer.Enabled = false;
 
             JObject results = ru.communicateWithTerraria("v2/server/status", "players=true&rules=true");
             string status = (string)results["status"];
@@ -636,7 +635,7 @@ namespace RemoteAdminConsole
 
         #region  Ban Tab
         //      Ban Tab
-        
+
         /// <summary>
         /// ///////////
         /// </summary>
@@ -657,74 +656,80 @@ namespace RemoteAdminConsole
             String dateBanned = null;
             String dateExpiration = null;
 
-           string whereClause = "";
-           string andClause = " where ";
-           string searchString = "%";
+            string whereClause = "";
+            string andClause = " where ";
+            string searchString = "%";
 
-           if (banSearchName.Text != null)
-               if (banSearchName.Text.Length > 0)
-               {
-                   searchString = banSearchName.Text;
-                   if (banFuzzyName != null && banFuzzyName.Checked)
-                       whereClause = whereClause + andClause + " Name like '%" + banSearchName.Text + "%'";
-                   else
-                       whereClause = whereClause + andClause + " Name like '" + banSearchName.Text + "'";
-                   andClause = " and ";
-               }
+            if (banSearchName.Text != null)
+                if (banSearchName.Text.Length > 0)
+                {
+                    searchString = banSearchName.Text;
+                    if (banFuzzyName != null && banFuzzyName.Checked)
+                        whereClause = whereClause + andClause + " Name like '%" + banSearchName.Text + "%'";
+                    else
+                        whereClause = whereClause + andClause + " Name like '" + banSearchName.Text + "'";
+                    andClause = " and ";
+                }
 
-           if (banSearchIP.Text != null)
-               if (banSearchIP.Text.Length > 0)
-               {
-                   searchString = banSearchIP.Text;
-                   if (banFuzzyIP != null && banFuzzyIP.Checked)
-                       whereClause = whereClause + andClause + " IP like '%" + banSearchIP.Text + "%'";
-                   else
-                       whereClause = whereClause + andClause + " IP like '" + banSearchIP.Text + "'";
-                   andClause = " and ";
-               } query.Text = whereClause;
+            if (banSearchIP.Text != null)
+                if (banSearchIP.Text.Length > 0)
+                {
+                    searchString = banSearchIP.Text;
+                    if (banFuzzyIP != null && banFuzzyIP.Checked)
+                        whereClause = whereClause + andClause + " IP like '%" + banSearchIP.Text + "%'";
+                    else
+                        whereClause = whereClause + andClause + " IP like '" + banSearchIP.Text + "'";
+                    andClause = " and ";
+                } query.Text = whereClause;
 
 
-           banUnBan.Enabled = false;
-           banDataBan.Rows.Clear();
+            banUnBan.Enabled = false;
+            banDataBan.Rows.Clear();
 
             // And now use this to connect server 
             JObject results = ru.communicateWithTerraria("AdminREST/BanList", "&search=" + whereClause);
             string status = (string)results["status"];
             if (status.Equals("200"))
             {
-			bans = (JArray)results["bans"];
-			String registered = "";
-			String lastAccessed = "";
+                bans = (JArray)results["bans"];
+                String registered = "";
+                String lastAccessed = "";
 
-                for(int i=0; i < bans.Count; i++)
-                { 
-				JObject innerObj = (JObject) bans[i];
-				name = (String)innerObj["name"];
-				userId = (String)innerObj["userid"];
-				ip = (String)innerObj["ip"];
-				reason = (String)innerObj["reason"];
-				banningUser = (String)innerObj["banninguser"];
-				try {
-					dateBanned = ((String) innerObj["date"]).Replace('T', ' ');
-					} catch (NullReferenceException e) {
-					dateBanned = "";
-				}
-                
-				try {
-					dateExpiration = ((String) innerObj["expiration"]).Replace('T', ' ');
-					} catch (NullReferenceException e) {
-					dateExpiration = "";
-				}
+                for (int i = 0; i < bans.Count; i++)
+                {
+                    JObject innerObj = (JObject)bans[i];
+                    name = (String)innerObj["name"];
+                    userId = (String)innerObj["userid"];
+                    ip = (String)innerObj["ip"];
+                    reason = (String)innerObj["reason"];
+                    banningUser = (String)innerObj["banninguser"];
+                    try
+                    {
+                        dateBanned = ((String)innerObj["date"]).Replace('T', ' ');
+                    }
+                    catch (NullReferenceException e)
+                    {
+                        dateBanned = "";
+                    }
 
-              banDataBan.Rows.Add(false, name, ip, reason, banningUser, dateBanned, dateExpiration);
- 			} 
+                    try
+                    {
+                        dateExpiration = ((String)innerObj["expiration"]).Replace('T', ' ');
+                    }
+                    catch (NullReferenceException e)
+                    {
+                        dateExpiration = "";
+                    }
+
+                    banDataBan.Rows.Add(false, name, ip, reason, banningUser, dateBanned, dateExpiration);
+                }
             }
-      
-           this.banDataBan.Sort(this.banDataUser, ListSortDirection.Ascending);
-  
+
+            this.banDataBan.Sort(this.banDataUser, ListSortDirection.Ascending);
+
         }
 
-                private void refreshBan_Click(object sender, EventArgs e)
+        private void refreshBan_Click(object sender, EventArgs e)
         {
             banSearchName.Text = "";
             banSearchIP.Text = "";
@@ -764,18 +769,19 @@ namespace RemoteAdminConsole
                     {
                         DataGridViewCheckBoxCell unBan = new DataGridViewCheckBoxCell();
                         unBan = (DataGridViewCheckBoxCell)row.Cells[0];
-                                if (unBan.Value.ToString().Equals("True")) {
-                        // And now use this to connect server
-                        JObject results = ru.communicateWithTerraria("v2/bans/destroy", "type=name&ban=" + ((DataGridViewCell)row.Cells[1]).Value.ToString());
-                        string status = (string)results["status"];
-                        if (status.Equals("200"))
+                        if (unBan.Value.ToString().Equals("True"))
                         {
+                            // And now use this to connect server
+                            JObject results = ru.communicateWithTerraria("v2/bans/destroy", "type=name&ban=" + ((DataGridViewCell)row.Cells[1]).Value.ToString());
+                            string status = (string)results["status"];
+                            if (status.Equals("200"))
+                            {
 
+                            }
+                            //                        if (unBan.Value.ToString().Equals("True"))
+                            //                            TShock.Bans.RemoveBan(((DataGridViewCell)row.Cells[1]).Value.ToString(), true, true, true);
+                            someUnBanned = true;
                         }
-                        //                        if (unBan.Value.ToString().Equals("True"))
-                        //                            TShock.Bans.RemoveBan(((DataGridViewCell)row.Cells[1]).Value.ToString(), true, true, true);
-                        someUnBanned = true;
-                                }
                     }
                 }
             }
@@ -813,9 +819,8 @@ namespace RemoteAdminConsole
 
             usersDataGroup.Items.Clear();
             groupDataList.Rows.Clear();
-            groupDataParentList.Items.Clear();
             groupDataPermissions.Rows.Clear();
-            groupList.Clear();
+            groupDataParentList.Items.Clear();
             // And now use this to connect server
             JObject results = ru.communicateWithTerraria("AdminREST/GroupList", "");
             string status = (string)results["status"];
@@ -873,11 +878,7 @@ namespace RemoteAdminConsole
                 }
             }
             groupDataParentList.Sorted = true;
-            usersDataGroup.Sorted = true;
             this.groupDataList.Sort(this.groupDatagroup, ListSortDirection.Ascending);
-            groupDataList.RowHeadersWidth = 22;
-            groupDataPermissions.RowHeadersWidth = 10;
-            
         }
 
         private System.Drawing.Color tabColorDecode(string colorString)
@@ -966,12 +967,12 @@ namespace RemoteAdminConsole
             foreach (DataGridViewRow row in groupDataPermissions.Rows)
             {
                 if (row.IsNewRow)
-                        if (row.Cells[1] != null)
-                            if (row.Cells[1].Value != null)
-                            {
-                                if (row.Cells[1].Value.ToString().Equals("*"))
-                                    continue;
-                            }
+                    if (row.Cells[1] != null)
+                        if (row.Cells[1].Value != null)
+                        {
+                            if (row.Cells[1].Value.ToString().Equals("*"))
+                                continue;
+                        }
 
                 if (row.Cells[0] != null)
                     if (row.Cells[0].Value != null)
@@ -985,12 +986,12 @@ namespace RemoteAdminConsole
                 action = action + "&permissions=" + permissions;
             }
 
-                        if (group.Length == 0)
+            if (group.Length == 0)
             {
                 usersChoice = MessageBox.Show("No group given.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
- 
+
             if (groupsModified)
             {
                 // And now use this to connect server
@@ -1017,7 +1018,42 @@ namespace RemoteAdminConsole
                 else
                     usersChoice = MessageBox.Show("Group " + group + " already exists!\r\n" + (string)results["error"], PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-                 getGroupList();
+            getGroupList();
+            /*
+                            try
+                            {
+                                TShock.Groups.AddGroup(group, parent, permissions, chatColor);
+                            }
+                            catch (GroupExistsException e1)
+                            {
+                                Console.WriteLine("Group " + group + " already exists!");
+                                usersChoice = MessageBox.Show("Group " + group + " already exists!", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                            TShock.Log.ConsoleInfo(PROGRAMNAME + " added  group " + group);
+                        }
+                        try
+                        {
+                            TShock.Groups.UpdateGroup(group, parent, permissions, chatColor, suffix, prefix);
+                        }
+                        catch (GroupNotExistsException e1)
+                        {
+                            Console.WriteLine("Group " + group + " does not exist!");
+                            usersChoice = MessageBox.Show("Group " + group + " does not exist!", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        if (DEBUG)
+                            Console.WriteLine("update g " + group);
+
+                        if (deletedPermissions.Count > 0)
+                        {
+                            result = TShock.Groups.DeletePermissions(group, deletedPermissions);
+
+                            if (DEBUG)
+                                Console.WriteLine("del p " + group + ":" + result);
+                        }
+                        getGroupList();
+                         * */
         }
 
         private void groupDataList_RowsAdded(object sender, System.Windows.Forms.DataGridViewRowsAddedEventArgs e)
@@ -1032,12 +1068,12 @@ namespace RemoteAdminConsole
         {
             if (e.RowIndex == -1) return; //check if row index is not selected
             DataGridViewRow row = groupDataPermissions.Rows[e.RowIndex];
-            row.Selected= true;
+            row.Selected = true;
         }
 
         private void groupDataList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             if (e.RowIndex == -1) return; //check if row index is not selected
             DataGridViewRow row = groupDataList.Rows[e.RowIndex];
             groupsNewRow = e.RowIndex;
@@ -1054,59 +1090,60 @@ namespace RemoteAdminConsole
             groupDataPermissions.Rows.Clear();
             deletedPermissions.Clear();
 
-            if(row.Cells[0].Value != null) {
-            string name = row.Cells[0].Value.ToString();
-
-            JArray totalPermissions;
-            JArray permissions;
-            if (groupsModified && name.Length > 0)
+            if (row.Cells[0].Value != null)
             {
-                // And now use this to connect server
-                JObject presults = ru.communicateWithTerraria("v2/groups/read", "group=" + name);
+                string name = row.Cells[0].Value.ToString();
 
-                totalPermissions = null;
-                if (((string)presults["status"]).Equals("200"))
+                JArray totalPermissions;
+                JArray permissions;
+                if (groupsModified && name.Length > 0)
                 {
-                    try
-                    {
-                        permissions = (JArray)presults["permissions"];
-                        totalPermissions = (JArray)presults["totalpermissions"];
-                        if (totalPermissions != null)
-                            if (totalPermissions.Count > 0)
-                            {
-                                string Inherited = "";
-                                string[,] permissionList = new String[totalPermissions.Count, 2];
-                                for (int i = 0; i < totalPermissions.Count; i++)
-                                {
-                                    Inherited = "*";
-                                    for (int j = 0; j < permissions.Count; j++)
-                                    {
-                                        if (totalPermissions[i].Equals(permissions[j]))
-                                        {
-                                            Inherited = "";
-                                            break;
-                                        }
-                                    }
-                                    String s = totalPermissions[i].ToString();
-                                    permissionList[i, 0] = totalPermissions[i].ToString();
-                                    permissionList[i, 1] = Inherited;
-                                }
+                    // And now use this to connect server
+                    JObject presults = ru.communicateWithTerraria("v2/groups/read", "group=" + name);
 
-                                for (int i = 0; i < totalPermissions.Count; i++)
-                                    groupDataPermissions.Rows.Add(permissionList[i, 0], permissionList[i, 1]);
-                            }
-                        this.groupDataPermissions.Sort(this.permissionsDataPermissons, ListSortDirection.Ascending);
-                    }
-                    catch (NullReferenceException e1)
+                    totalPermissions = null;
+                    if (((string)presults["status"]).Equals("200"))
                     {
-                        totalPermissions = null;
+                        try
+                        {
+                            permissions = (JArray)presults["permissions"];
+                            totalPermissions = (JArray)presults["totalpermissions"];
+                            if (totalPermissions != null)
+                                if (totalPermissions.Count > 0)
+                                {
+                                    string Inherited = "";
+                                    string[,] permissionList = new String[totalPermissions.Count, 2];
+                                    for (int i = 0; i < totalPermissions.Count; i++)
+                                    {
+                                        Inherited = "*";
+                                        for (int j = 0; j < permissions.Count; j++)
+                                        {
+                                            if (totalPermissions[i].Equals(permissions[j]))
+                                            {
+                                                Inherited = "";
+                                                break;
+                                            }
+                                        }
+                                        String s = totalPermissions[i].ToString();
+                                        permissionList[i, 0] = totalPermissions[i].ToString();
+                                        permissionList[i, 1] = Inherited;
+                                    }
+
+                                    for (int i = 0; i < totalPermissions.Count; i++)
+                                        groupDataPermissions.Rows.Add(permissionList[i, 0], permissionList[i, 1]);
+                                }
+                            this.groupDataPermissions.Sort(this.permissionsDataPermissons, ListSortDirection.Ascending);
+                        }
+                        catch (NullReferenceException e1)
+                        {
+                            totalPermissions = null;
+                        }
                     }
-                }
                 }
                 //                   totalPermissions = (JArray)innerObj["totalPermissions"];
                 usersDataGroup.Items.Add(name);
             }
-             
+
         }
 
         private void tabGroupRefresh_Click(object sender, EventArgs e)
@@ -1126,7 +1163,7 @@ namespace RemoteAdminConsole
 
         private void groupDataPermissions_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
-         }
+        }
 
         private void groupDataList_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
@@ -1174,9 +1211,9 @@ namespace RemoteAdminConsole
             string groupSuffix;
             JArray totalPermissions;
 
+            groupList.Clear();
             usersDataGroup.Items.Clear();
             groupDataParentList.Items.Clear();
-
             // And now use this to connect server
             JObject results = ru.communicateWithTerraria("AdminREST/GroupList", "");
             string status = (string)results["status"];
@@ -1216,8 +1253,14 @@ namespace RemoteAdminConsole
                         groupList.Add(g);
                     }
                 }
+
+                groupList.Sort(
+    delegate(Group p1, Group p2)
+    {
+        return p1.Name.CompareTo(p2.Name);
+    }
+);
                 usersDataGroup.Sorted = true;
-                groupDataParentList.Sorted = true;
             }
             return;
         }
@@ -1230,6 +1273,8 @@ namespace RemoteAdminConsole
             String group = null;
             String dateRegistered = null;
             String dateLastAccessed = null;
+            DateTime registeredDt;
+            DateTime lastAccessedDt;
 
             string knownIPs;
             string[] IPString;
@@ -1336,7 +1381,10 @@ namespace RemoteAdminConsole
                     try
                     {
                         registered = (String)innerObj["Registered"];
-                        registered = registered.Replace("T", " ");
+//                        registered = registered.Replace("T", " ");
+                        registeredDt = DateTime.Parse(registered);
+                        registered = String.Format("{0:G}", registeredDt.ToLocalTime());
+                        Console.WriteLine(registeredDt);
                     }
                     catch (NullReferenceException e)
                     {
@@ -1346,7 +1394,14 @@ namespace RemoteAdminConsole
                     try
                     {
                         lastAccessed = (String)innerObj["LastAccessed"];
-                        lastAccessed = lastAccessed.Replace("T", " ");
+//                        lastAccessed = lastAccessed.Replace("T", " ");
+                        if (lastAccessed != null)
+                        {
+                            lastAccessedDt = DateTime.Parse(lastAccessed);
+                            lastAccessed = String.Format("{0:G}", lastAccessedDt.ToLocalTime());
+                        }
+                        else
+                            lastAccessed = "";
                     }
                     catch (NullReferenceException e)
                     {
@@ -1365,15 +1420,9 @@ namespace RemoteAdminConsole
 
             this.usersDataList.Sort(this.usersDataUser, ListSortDirection.Ascending);
             usersAddUser.Enabled = false;
-            usersDataList.RowHeadersWidth = 22;
 
         }
-        private void refreshUsers_Click(object sender, EventArgs e)
-        {
-            loadDefaultGroups();
-            getUsers();
-        }
-
+        private Boolean usersModified;
         private void usersDataList_RowsAdded(object sender, System.Windows.Forms.DataGridViewRowsAddedEventArgs e)
         {
             for (int index = e.RowIndex; index <= e.RowIndex + e.RowCount - 1; index++)
@@ -1382,6 +1431,12 @@ namespace RemoteAdminConsole
                 usersModified = !row.IsNewRow;
             }
         }
+        private void refreshUsers_Click(object sender, EventArgs e)
+        {
+            loadDefaultGroups();
+            getUsers();
+        }
+
 
         private void usersDataList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1433,7 +1488,6 @@ namespace RemoteAdminConsole
             usersAddUser.Enabled = true;
         }
         private int usersNewRow;
-        private Boolean usersModified;
         private void searchUsers_Click(object sender, EventArgs e)
         {
             if (groupList == null || groupList.Count == 0)
@@ -1458,7 +1512,7 @@ namespace RemoteAdminConsole
 
         private void usersAddUser_Click(object sender, EventArgs e)
         {
-            string action = "&type=name";
+            string action = action = "&type=name";
             DataGridViewRow selectedRow = usersDataList.Rows[usersNewRow];
 
             string name = "";
@@ -1473,8 +1527,10 @@ namespace RemoteAdminConsole
                 if (selectedRow.Cells[1].Value != null)
                 {
                     group = selectedRow.Cells[1].Value.ToString();
+
                     action = action + "&group=" + group;
                 }
+
             if (name.Length == 0)
             {
                 usersChoice = MessageBox.Show("No name given.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -1485,7 +1541,6 @@ namespace RemoteAdminConsole
                 usersChoice = MessageBox.Show("No group given.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             if (usersModified)
             {
                 // And now use this to connect server
@@ -1511,7 +1566,6 @@ namespace RemoteAdminConsole
                     usersChoice = MessageBox.Show("Invalid password.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
                 action = action + "&password=" + password;
                 // And now use this to connect server
                 JObject results = ru.communicateWithTerraria("v2/users/create", action);
@@ -1586,7 +1640,7 @@ namespace RemoteAdminConsole
         // Log Tab
 
         private void getLog()
-        {     
+        {
             int lineCount;
             lineCount = int.Parse(logNumberOfLines.Text);
 
@@ -1598,7 +1652,7 @@ namespace RemoteAdminConsole
                 JArray log = (JArray)results["log"];
 
                 logDataList.Items.Clear();
-                for (int i = 0; i < log.Count; i++) 
+                for (int i = 0; i < log.Count; i++)
                 {
                     ListViewItem item = new ListViewItem(log[i].ToString());
                     logDataList.Items.Add(item);
@@ -1606,7 +1660,7 @@ namespace RemoteAdminConsole
                 String OriginalPath = (String)results["file"];
                 logFilename.Text = OriginalPath;
             }
-            
+
             /*
             //            var directory = new DirectoryInfo(TShock.Config.LogPath);
             //                        String searchPattern = @"(19|20)\d\d[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01]).*.log";
@@ -1769,7 +1823,7 @@ namespace RemoteAdminConsole
         {
             String output = "";
             consoleMOTD.Text = "";
-          
+
             // And now use this to connect server
             JObject results = ru.communicateWithTerraria("v3/server/motd", "");
             string status = (string)results["status"];
@@ -1778,7 +1832,7 @@ namespace RemoteAdminConsole
 
                 JArray motd = (JArray)results["motd"];
                 // get an array from the JSON object 
-  
+
                 for (int i = 0; i < motd.Count(); i++)
                 {
                     output = output + motd[i] + "\n";
@@ -1786,7 +1840,7 @@ namespace RemoteAdminConsole
 
             }
             consoleMOTD.Text = output;
-            
+
             /*
              string motdFilePath = Path.Combine(TShock.SavePath, "motd.txt");
              consoleMOTD.Text = "";
@@ -1820,10 +1874,10 @@ namespace RemoteAdminConsole
                 // add text to it; we want to make it scroll
                 for (int i = 0; i < response.Count; i++)
                 {
-                  output = output + response[i].ToString().Replace('[', ' ').Replace(']', ' ') + "\r\n";
+                    output = output + response[i].ToString().Replace('[', ' ').Replace(']', ' ') + "\r\n";
                 }
             }
-             consoleOutput.Text = output;
+            consoleOutput.Text = output;
             /*
       HashMap results = communicateWithTerraria( "v3/server/rawcmd", "cmd=/" + textCommandLine.getText());
       JSONArray response = (JSONArray)results.get("response");
@@ -1855,14 +1909,14 @@ namespace RemoteAdminConsole
                 // get an array from the JSON object 
 
                 // add text to it; we want to make it scroll
-               consoleBroadcast.Text = response;
+                consoleBroadcast.Text = response;
             }
-           /*
-            TShock.Utils.Broadcast(
-                    "(Server Broadcast) " + consoleBroadcast.Text,
-                    Convert.ToByte(TShock.Config.BroadcastRGB[0]), Convert.ToByte(TShock.Config.BroadcastRGB[1]),
-                    Convert.ToByte(TShock.Config.BroadcastRGB[2]));
-             * */
+            /*
+             TShock.Utils.Broadcast(
+                     "(Server Broadcast) " + consoleBroadcast.Text,
+                     Convert.ToByte(TShock.Config.BroadcastRGB[0]), Convert.ToByte(TShock.Config.BroadcastRGB[1]),
+                     Convert.ToByte(TShock.Config.BroadcastRGB[2]));
+              * */
         }
 
         private void consoleSubmitMOTD_Click(object sender, EventArgs e)
@@ -2020,62 +2074,70 @@ namespace RemoteAdminConsole
 
         #endregion
 
-        #region  Settings Tab
-        //          Settings Tab
-
-      private Boolean validateUser()
-      {
-          ru.conn.Server = txtURL.Text;
-                    ru.conn.UserId = txtUserId.Text;
-          ru.conn.Password = passwordField.Text;
-          userLoggedIn.Text = "Not Logged in.";
-          lblServerNamevalue.Text = "";
-          userIcon.Visible = false;
- 
-          if(!ru.getToken()) {
-              MessageBox.Show("Invalid userid/password/server", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
-           }
-          userLoggedIn.Text = "Logged in as " + ru.conn.UserId + ".";
-          lblServerNamevalue.Text = ru.conn.Server;
-          userIcon.Visible = true;
-          return true;
-      }
-        
-        private void btnSaveDefaults_Click(object sender, EventArgs e)
+        #region Settings
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-           Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteAdminConsole");
-            exampleRegistryKey.SetValue("UserId", ru.conn.UserId);
-            exampleRegistryKey.SetValue("Password", ru.conn.Password);
-            exampleRegistryKey.SetValue("Server", ru.conn.Server);
-            exampleRegistryKey.Close();     
+            ru.conn.UserId = txtUserId.Text;
+            ru.conn.Password = passwordField.Text;
+            ru.conn.Server = txtURL.Text;
+
+            userIcon.Visible = false;
+            userLoggedIn.Text = "Not Logged In.";
+            if (txtURL.Text.Length == 0)
+            {
+                MessageBox.Show("Invalid userid/password/server", GUIMain.PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!ru.getToken())
+            {
+                MessageBox.Show("Invalid userid/password/server", GUIMain.PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            userIcon.Visible = true;
+            userLoggedIn.Text = "Logged in as " + ru.conn.UserId + ".";
+            getServerDetails();
+            tabPane.SelectedTab = tabServer;
         }
 
-        private void getDefaults()
+        #endregion
+
+        private void btnSaveDefaults_Click(object sender, EventArgs e)
         {
-            Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteAdminConsole");
+            Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteLogMaintenance");
+            exampleRegistryKey.SetValue("UserId", txtUserId.Text);
+            exampleRegistryKey.SetValue("Password", passwordField.Text);
+            exampleRegistryKey.SetValue("Server", txtURL.Text);
             ru.conn.UserId = (string)exampleRegistryKey.GetValue("UserId");
             ru.conn.Password = (string)exampleRegistryKey.GetValue("Password");
             ru.conn.Server = (string)exampleRegistryKey.GetValue("Server");
-
+            exampleRegistryKey.Close();
+        }
+        private void getDefaults()
+        {
+            Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteLogMaintenance");
+            ru.conn.UserId = (string)exampleRegistryKey.GetValue("UserId");
+            ru.conn.Password = (string)exampleRegistryKey.GetValue("Password");
+            ru.conn.Server = (string)exampleRegistryKey.GetValue("Server");
             txtUserId.Text = ru.conn.UserId;
             passwordField.Text = ru.conn.Password;
             txtURL.Text = ru.conn.Server;
 
-            exampleRegistryKey.Close();
         }
         private void btnClearDefaults_Click(object sender, EventArgs e)
         {
-            Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteAdminConsole");
+            Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteLogMaintenance");
+            exampleRegistryKey.SetValue("UserId", "");
+            exampleRegistryKey.SetValue("Password", "");
+            exampleRegistryKey.SetValue("Server", "");
             ru.conn.UserId = "";
             ru.conn.Password = "";
             ru.conn.Server = "";
+            txtUserId.Text = ru.conn.UserId;
+            passwordField.Text = ru.conn.Password;
+            txtURL.Text = ru.conn.Server;
             exampleRegistryKey.Close();
+
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            validateUser();
-        }
     }
-        #endregion
 }

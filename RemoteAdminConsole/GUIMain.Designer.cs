@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPane = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
             this.serverDaytime = new System.Windows.Forms.PictureBox();
@@ -267,13 +269,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.usersDataList = new System.Windows.Forms.DataGridView();
-            this.usersDataUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersDataGroup = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.usersDataRegistered = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersDataLastOn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersDataIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersDataInventory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabInventory = new System.Windows.Forms.TabPage();
             this.label59 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
@@ -406,12 +401,12 @@
             this.logDataList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabSettings = new System.Windows.Forms.TabPage();
-            this.btnClearDefaults = new System.Windows.Forms.Button();
-            this.btnSaveDefaults = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.txtURL = new System.Windows.Forms.TextBox();
             this.passwordField = new System.Windows.Forms.TextBox();
             this.txtUserId = new System.Windows.Forms.TextBox();
+            this.btnClearDefaults = new System.Windows.Forms.Button();
+            this.btnSaveDefaults = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.label72 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
@@ -433,9 +428,16 @@
             this.lblServerNamevalue = new System.Windows.Forms.Label();
             this.stopServer = new System.Windows.Forms.Button();
             this.userLoggedIn = new System.Windows.Forms.Label();
-            this.userIcon = new System.Windows.Forms.PictureBox();
+            this.userIcon = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.lblPortValue = new System.Windows.Forms.Label();
+            this.usersDataUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersDataGroup = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.usersDataRegistered = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersDataLastOn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersDataIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersDataInventory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -466,7 +468,6 @@
             this.tabSettings.SuspendLayout();
             this.tabAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPane
@@ -481,7 +482,7 @@
             this.tabPane.Controls.Add(this.tabLog);
             this.tabPane.Controls.Add(this.tabSettings);
             this.tabPane.Controls.Add(this.tabAbout);
-            this.tabPane.Location = new System.Drawing.Point(19, 149);
+            this.tabPane.Location = new System.Drawing.Point(19, 157);
             this.tabPane.Name = "tabPane";
             this.tabPane.SelectedIndex = 0;
             this.tabPane.Size = new System.Drawing.Size(950, 565);
@@ -2710,7 +2711,7 @@
             this.usersAddUser.Name = "usersAddUser";
             this.usersAddUser.Size = new System.Drawing.Size(75, 23);
             this.usersAddUser.TabIndex = 69;
-            this.usersAddUser.Text = "Add User";
+            this.usersAddUser.Text = "Update User";
             this.usersAddUser.UseVisualStyleBackColor = false;
             this.usersAddUser.Click += new System.EventHandler(this.usersAddUser_Click);
             // 
@@ -2933,56 +2934,6 @@
             this.usersDataList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.usersDataList_RowsAdded);
             this.usersDataList.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.usersDataList_UserDeletedRow);
             this.usersDataList.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.usersDataList_UserDeletingRow);
-            // 
-            // usersDataUser
-            // 
-            this.usersDataUser.HeaderText = "User";
-            this.usersDataUser.Name = "usersDataUser";
-            this.usersDataUser.Width = 110;
-            // 
-            // usersDataGroup
-            // 
-            this.usersDataGroup.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.usersDataGroup.HeaderText = "Group";
-            this.usersDataGroup.Name = "usersDataGroup";
-            this.usersDataGroup.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.usersDataGroup.Sorted = true;
-            this.usersDataGroup.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // usersDataRegistered
-            // 
-            this.usersDataRegistered.HeaderText = "Registered";
-            this.usersDataRegistered.Name = "usersDataRegistered";
-            this.usersDataRegistered.ReadOnly = true;
-            // 
-            // usersDataLastOn
-            // 
-            this.usersDataLastOn.HeaderText = "Last On";
-            this.usersDataLastOn.Name = "usersDataLastOn";
-            this.usersDataLastOn.ReadOnly = true;
-            // 
-            // usersDataIP
-            // 
-            this.usersDataIP.HeaderText = "IPs";
-            this.usersDataIP.Name = "usersDataIP";
-            this.usersDataIP.ReadOnly = true;
-            this.usersDataIP.Width = 90;
-            // 
-            // usersDataID
-            // 
-            this.usersDataID.HeaderText = "Id";
-            this.usersDataID.Name = "usersDataID";
-            this.usersDataID.ReadOnly = true;
-            this.usersDataID.Width = 40;
-            // 
-            // usersDataInventory
-            // 
-            this.usersDataInventory.HeaderText = "Inv?";
-            this.usersDataInventory.Name = "usersDataInventory";
-            this.usersDataInventory.ReadOnly = true;
-            this.usersDataInventory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.usersDataInventory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.usersDataInventory.Width = 50;
             // 
             // tabInventory
             // 
@@ -4176,8 +4127,8 @@
             // 
             // permissionsDataNote
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle3;
             this.permissionsDataNote.HeaderText = "Note";
             this.permissionsDataNote.Name = "permissionsDataNote";
             this.permissionsDataNote.ReadOnly = true;
@@ -4322,12 +4273,12 @@
             // tabSettings
             // 
             this.tabSettings.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabSettings.Controls.Add(this.btnClearDefaults);
-            this.tabSettings.Controls.Add(this.btnSaveDefaults);
-            this.tabSettings.Controls.Add(this.btnLogin);
             this.tabSettings.Controls.Add(this.txtURL);
             this.tabSettings.Controls.Add(this.passwordField);
             this.tabSettings.Controls.Add(this.txtUserId);
+            this.tabSettings.Controls.Add(this.btnClearDefaults);
+            this.tabSettings.Controls.Add(this.btnSaveDefaults);
+            this.tabSettings.Controls.Add(this.btnLogin);
             this.tabSettings.Controls.Add(this.label72);
             this.tabSettings.Controls.Add(this.label73);
             this.tabSettings.Controls.Add(this.label75);
@@ -4337,65 +4288,66 @@
             this.tabSettings.TabIndex = 10;
             this.tabSettings.Text = "Settings";
             // 
+            // txtURL
+            // 
+            this.txtURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtURL.Location = new System.Drawing.Point(259, 178);
+            this.txtURL.Name = "txtURL";
+            this.txtURL.Size = new System.Drawing.Size(157, 20);
+            this.txtURL.TabIndex = 30;
+            // 
+            // passwordField
+            // 
+            this.passwordField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.passwordField.Location = new System.Drawing.Point(259, 152);
+            this.passwordField.Name = "passwordField";
+            this.passwordField.PasswordChar = '*';
+            this.passwordField.Size = new System.Drawing.Size(100, 20);
+            this.passwordField.TabIndex = 29;
+            // 
+            // txtUserId
+            // 
+            this.txtUserId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUserId.Location = new System.Drawing.Point(259, 124);
+            this.txtUserId.Name = "txtUserId";
+            this.txtUserId.Size = new System.Drawing.Size(100, 20);
+            this.txtUserId.TabIndex = 28;
+            // 
             // btnClearDefaults
             // 
-            this.btnClearDefaults.Location = new System.Drawing.Point(231, 297);
+            this.btnClearDefaults.Location = new System.Drawing.Point(282, 306);
             this.btnClearDefaults.Name = "btnClearDefaults";
-            this.btnClearDefaults.Size = new System.Drawing.Size(101, 23);
-            this.btnClearDefaults.TabIndex = 30;
+            this.btnClearDefaults.Size = new System.Drawing.Size(111, 23);
+            this.btnClearDefaults.TabIndex = 27;
             this.btnClearDefaults.Text = "Clear Defaults";
             this.btnClearDefaults.UseVisualStyleBackColor = true;
             this.btnClearDefaults.Click += new System.EventHandler(this.btnClearDefaults_Click);
             // 
             // btnSaveDefaults
             // 
-            this.btnSaveDefaults.Location = new System.Drawing.Point(231, 241);
+            this.btnSaveDefaults.Location = new System.Drawing.Point(282, 254);
             this.btnSaveDefaults.Name = "btnSaveDefaults";
-            this.btnSaveDefaults.Size = new System.Drawing.Size(101, 23);
-            this.btnSaveDefaults.TabIndex = 29;
+            this.btnSaveDefaults.Size = new System.Drawing.Size(111, 23);
+            this.btnSaveDefaults.TabIndex = 26;
             this.btnSaveDefaults.Text = "Save Defaults";
             this.btnSaveDefaults.UseVisualStyleBackColor = true;
             this.btnSaveDefaults.Click += new System.EventHandler(this.btnSaveDefaults_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(383, 127);
+            this.btnLogin.Location = new System.Drawing.Point(397, 149);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 28;
+            this.btnLogin.TabIndex = 25;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // txtURL
-            // 
-            this.txtURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtURL.Location = new System.Drawing.Point(231, 157);
-            this.txtURL.Name = "txtURL";
-            this.txtURL.Size = new System.Drawing.Size(272, 20);
-            this.txtURL.TabIndex = 27;
-            // 
-            // passwordField
-            // 
-            this.passwordField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.passwordField.Location = new System.Drawing.Point(231, 130);
-            this.passwordField.Name = "passwordField";
-            this.passwordField.Size = new System.Drawing.Size(129, 20);
-            this.passwordField.TabIndex = 26;
-            // 
-            // txtUserId
-            // 
-            this.txtUserId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUserId.Location = new System.Drawing.Point(231, 103);
-            this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(129, 20);
-            this.txtUserId.TabIndex = 25;
             // 
             // label72
             // 
             this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label72.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label72.Location = new System.Drawing.Point(122, 154);
+            this.label72.Location = new System.Drawing.Point(153, 175);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(100, 23);
             this.label72.TabIndex = 22;
@@ -4406,7 +4358,7 @@
             // 
             this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label73.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label73.Location = new System.Drawing.Point(122, 127);
+            this.label73.Location = new System.Drawing.Point(153, 148);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(100, 23);
             this.label73.TabIndex = 21;
@@ -4417,7 +4369,7 @@
             // 
             this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label75.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label75.Location = new System.Drawing.Point(122, 100);
+            this.label75.Location = new System.Drawing.Point(153, 121);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(100, 23);
             this.label75.TabIndex = 19;
@@ -4474,7 +4426,7 @@
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(545, 23);
             this.label68.TabIndex = 16;
-            this.label68.Text = "Special thanks to Zaicon for many suggestions.";
+            this.label68.Text = "Special thanks to Zaicon for many suggestions and hours of testing.";
             this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label67
@@ -4567,25 +4519,25 @@
             // 
             // label25
             // 
-            this.label25.Image = global::RemoteAdminConsole.Properties.Resources.remoteadminconsole;
-            this.label25.Location = new System.Drawing.Point(198, 17);
+            this.label25.Image = ((System.Drawing.Image)(resources.GetObject("label25.Image")));
+            this.label25.Location = new System.Drawing.Point(218, 25);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(459, 45);
+            this.label25.Size = new System.Drawing.Size(417, 37);
             this.label25.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::RemoteAdminConsole.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(23, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(8, 11);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(271, 130);
+            this.pictureBox2.Size = new System.Drawing.Size(295, 124);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // lblServerNamevalue
             // 
             this.lblServerNamevalue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServerNamevalue.Location = new System.Drawing.Point(300, 28);
+            this.lblServerNamevalue.Location = new System.Drawing.Point(309, 28);
             this.lblServerNamevalue.Name = "lblServerNamevalue";
             this.lblServerNamevalue.Size = new System.Drawing.Size(349, 38);
             this.lblServerNamevalue.TabIndex = 2;
@@ -4604,48 +4556,105 @@
             // 
             // userLoggedIn
             // 
-            this.userLoggedIn.Location = new System.Drawing.Point(39, 132);
+            this.userLoggedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userLoggedIn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.userLoggedIn.Location = new System.Drawing.Point(42, 138);
             this.userLoggedIn.Name = "userLoggedIn";
-            this.userLoggedIn.Size = new System.Drawing.Size(344, 15);
+            this.userLoggedIn.Size = new System.Drawing.Size(545, 15);
             this.userLoggedIn.TabIndex = 19;
-            this.userLoggedIn.Text = "Not Logged In";
+            this.userLoggedIn.Text = "Not Logged In.";
             this.userLoggedIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // userIcon
             // 
-            this.userIcon.Image = global::RemoteAdminConsole.Properties.Resources.user;
-            this.userIcon.Location = new System.Drawing.Point(19, 131);
+            this.userIcon.Image = ((System.Drawing.Image)(resources.GetObject("userIcon.Image")));
+            this.userIcon.Location = new System.Drawing.Point(25, 137);
             this.userIcon.Name = "userIcon";
             this.userIcon.Size = new System.Drawing.Size(16, 16);
-            this.userIcon.TabIndex = 20;
-            this.userIcon.TabStop = false;
+            this.userIcon.TabIndex = 19;
             this.userIcon.Visible = false;
             // 
             // label70
             // 
             this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.Location = new System.Drawing.Point(655, 28);
+            this.label70.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label70.Location = new System.Drawing.Point(654, 28);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(63, 38);
-            this.label70.TabIndex = 21;
+            this.label70.Size = new System.Drawing.Size(67, 38);
+            this.label70.TabIndex = 20;
             this.label70.Text = "Port:";
             this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblPortValue
             // 
             this.lblPortValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPortValue.Location = new System.Drawing.Point(713, 28);
+            this.lblPortValue.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPortValue.Location = new System.Drawing.Point(723, 28);
             this.lblPortValue.Name = "lblPortValue";
-            this.lblPortValue.Size = new System.Drawing.Size(73, 38);
-            this.lblPortValue.TabIndex = 22;
+            this.lblPortValue.Size = new System.Drawing.Size(67, 38);
+            this.lblPortValue.TabIndex = 21;
             this.lblPortValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // usersDataUser
+            // 
+            this.usersDataUser.HeaderText = "User";
+            this.usersDataUser.Name = "usersDataUser";
+            this.usersDataUser.Width = 110;
+            // 
+            // usersDataGroup
+            // 
+            this.usersDataGroup.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.usersDataGroup.HeaderText = "Group";
+            this.usersDataGroup.Name = "usersDataGroup";
+            this.usersDataGroup.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.usersDataGroup.Sorted = true;
+            this.usersDataGroup.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // usersDataRegistered
+            // 
+            this.usersDataRegistered.HeaderText = "Registered";
+            this.usersDataRegistered.Name = "usersDataRegistered";
+            this.usersDataRegistered.ReadOnly = true;
+            this.usersDataRegistered.Width = 110;
+            // 
+            // usersDataLastOn
+            // 
+            this.usersDataLastOn.HeaderText = "Last On";
+            this.usersDataLastOn.Name = "usersDataLastOn";
+            this.usersDataLastOn.ReadOnly = true;
+            this.usersDataLastOn.Width = 110;
+            // 
+            // usersDataIP
+            // 
+            this.usersDataIP.HeaderText = "IPs";
+            this.usersDataIP.Name = "usersDataIP";
+            this.usersDataIP.ReadOnly = true;
+            this.usersDataIP.Width = 90;
+            // 
+            // usersDataID
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle4;
+            this.usersDataID.HeaderText = "Id";
+            this.usersDataID.Name = "usersDataID";
+            this.usersDataID.ReadOnly = true;
+            this.usersDataID.Width = 40;
+            // 
+            // usersDataInventory
+            // 
+            this.usersDataInventory.HeaderText = "Inv?";
+            this.usersDataInventory.Name = "usersDataInventory";
+            this.usersDataInventory.ReadOnly = true;
+            this.usersDataInventory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.usersDataInventory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.usersDataInventory.Width = 40;
             // 
             // GUIMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(984, 716);
+            this.ClientSize = new System.Drawing.Size(984, 727);
             this.Controls.Add(this.lblPortValue);
             this.Controls.Add(this.label70);
             this.Controls.Add(this.userIcon);
@@ -4695,7 +4704,6 @@
             this.tabSettings.PerformLayout();
             this.tabAbout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4940,13 +4948,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn banDataBanningUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn banDataDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn banDataExpiration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataUser;
-        private System.Windows.Forms.DataGridViewComboBoxColumn usersDataGroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataRegistered;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataLastOn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataIP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataID;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn usersDataInventory;
         private System.Windows.Forms.TabPage tabConsole;
         private System.Windows.Forms.TextBox consoleOutput;
         private System.Windows.Forms.Button consoleSubmitCommand;
@@ -5096,18 +5097,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn groupDataSuffix;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.TabPage tabSettings;
-        private System.Windows.Forms.Label userLoggedIn;
-        private System.Windows.Forms.PictureBox userIcon;
-        private System.Windows.Forms.Button btnClearDefaults;
-        private System.Windows.Forms.Button btnSaveDefaults;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtURL;
         private System.Windows.Forms.TextBox passwordField;
         private System.Windows.Forms.TextBox txtUserId;
+        private System.Windows.Forms.Button btnClearDefaults;
+        private System.Windows.Forms.Button btnSaveDefaults;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label userLoggedIn;
+        private System.Windows.Forms.Label userIcon;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label lblPortValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataUser;
+        private System.Windows.Forms.DataGridViewComboBoxColumn usersDataGroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataRegistered;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataLastOn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataID;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn usersDataInventory;
     }
 }

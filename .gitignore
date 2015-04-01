@@ -6,6 +6,7 @@
 
 DLLS
 obj
+DEBUG
 
 # Precompiled Headers
 *.gch
@@ -18,7 +19,7 @@ obj
 *.lo
 
 # Shared objects (inc. Windows DLLs)
-*.dll
+*.dllx
 *.so
 *.so.*
 *.dylib
