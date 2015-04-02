@@ -28,10 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPane = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
             this.serverDaytime = new System.Windows.Forms.PictureBox();
@@ -39,6 +45,12 @@
             this.serverBloodmoon = new System.Windows.Forms.PictureBox();
             this.label66 = new System.Windows.Forms.Label();
             this.serverDataPlayers = new System.Windows.Forms.DataGridView();
+            this.serverDataNickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverDataUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverDataGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverDataIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverDataId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverDataAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serverPvPMode = new System.Windows.Forms.Label();
             this.serverSpawnProtectionRadius = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
@@ -394,6 +406,15 @@
             this.dataGroupColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupDataPrefix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupDataSuffix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabConfig = new System.Windows.Forms.TabPage();
+            this.refreshConfig = new System.Windows.Forms.Button();
+            this.configDataList = new System.Windows.Forms.DataGridView();
+            this.configDataKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.configDataValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.configDataDefinition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.configDataDefault = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabSSCConfig = new System.Windows.Forms.TabPage();
+            this.refreshSSCConfig = new System.Windows.Forms.Button();
             this.tabLog = new System.Windows.Forms.TabPage();
             this.logFilename = new System.Windows.Forms.Label();
             this.logNumberOfLines = new System.Windows.Forms.TextBox();
@@ -433,12 +454,9 @@
             this.userIcon = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.lblPortValue = new System.Windows.Forms.Label();
-            this.serverDataNickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverDataUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverDataGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverDataIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverDataId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverDataAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sscconfigDataList = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -465,10 +483,14 @@
             this.tabGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupDataPermissions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupDataList)).BeginInit();
+            this.tabConfig.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.configDataList)).BeginInit();
+            this.tabSSCConfig.SuspendLayout();
             this.tabLog.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.tabAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sscconfigDataList)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPane
@@ -480,6 +502,8 @@
             this.tabPane.Controls.Add(this.tabUsers);
             this.tabPane.Controls.Add(this.tabInventory);
             this.tabPane.Controls.Add(this.tabGroup);
+            this.tabPane.Controls.Add(this.tabConfig);
+            this.tabPane.Controls.Add(this.tabSSCConfig);
             this.tabPane.Controls.Add(this.tabLog);
             this.tabPane.Controls.Add(this.tabSettings);
             this.tabPane.Controls.Add(this.tabAbout);
@@ -613,6 +637,47 @@
             this.serverDataPlayers.Size = new System.Drawing.Size(431, 300);
             this.serverDataPlayers.TabIndex = 51;
             this.serverDataPlayers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serverDataPlayers_Click);
+            // 
+            // serverDataNickname
+            // 
+            this.serverDataNickname.HeaderText = "Nickname";
+            this.serverDataNickname.Name = "serverDataNickname";
+            this.serverDataNickname.ReadOnly = true;
+            // 
+            // serverDataUserName
+            // 
+            this.serverDataUserName.HeaderText = "User Name";
+            this.serverDataUserName.Name = "serverDataUserName";
+            this.serverDataUserName.ReadOnly = true;
+            // 
+            // serverDataGroup
+            // 
+            this.serverDataGroup.HeaderText = "Group";
+            this.serverDataGroup.Name = "serverDataGroup";
+            this.serverDataGroup.ReadOnly = true;
+            // 
+            // serverDataIP
+            // 
+            this.serverDataIP.HeaderText = "IP";
+            this.serverDataIP.Name = "serverDataIP";
+            this.serverDataIP.ReadOnly = true;
+            this.serverDataIP.Width = 90;
+            // 
+            // serverDataId
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle1;
+            this.serverDataId.HeaderText = "Id";
+            this.serverDataId.Name = "serverDataId";
+            this.serverDataId.ReadOnly = true;
+            this.serverDataId.Width = 30;
+            // 
+            // serverDataAccount
+            // 
+            this.serverDataAccount.HeaderText = "Account";
+            this.serverDataAccount.Name = "serverDataAccount";
+            this.serverDataAccount.ReadOnly = true;
+            this.serverDataAccount.Visible = false;
             // 
             // serverPvPMode
             // 
@@ -4200,6 +4265,100 @@
             this.groupDataSuffix.HeaderText = "Suffix";
             this.groupDataSuffix.Name = "groupDataSuffix";
             // 
+            // tabConfig
+            // 
+            this.tabConfig.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabConfig.Controls.Add(this.refreshConfig);
+            this.tabConfig.Controls.Add(this.configDataList);
+            this.tabConfig.Location = new System.Drawing.Point(4, 22);
+            this.tabConfig.Name = "tabConfig";
+            this.tabConfig.Padding = new System.Windows.Forms.Padding(3);
+            this.tabConfig.Size = new System.Drawing.Size(942, 539);
+            this.tabConfig.TabIndex = 11;
+            this.tabConfig.Text = "Config.json";
+            // 
+            // refreshConfig
+            // 
+            this.refreshConfig.Image = global::RemoteAdminConsole.Properties.Resources.refresh;
+            this.refreshConfig.Location = new System.Drawing.Point(5, 3);
+            this.refreshConfig.Name = "refreshConfig";
+            this.refreshConfig.Size = new System.Drawing.Size(30, 30);
+            this.refreshConfig.TabIndex = 12;
+            this.refreshConfig.UseVisualStyleBackColor = true;
+            this.refreshConfig.Click += new System.EventHandler(this.refreshConfig_Click);
+            // 
+            // configDataList
+            // 
+            this.configDataList.AllowUserToAddRows = false;
+            this.configDataList.BackgroundColor = System.Drawing.Color.White;
+            this.configDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.configDataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.configDataKey,
+            this.configDataValue,
+            this.configDataDefinition,
+            this.configDataDefault});
+            this.configDataList.Location = new System.Drawing.Point(6, 39);
+            this.configDataList.Name = "configDataList";
+            this.configDataList.RowHeadersVisible = false;
+            this.configDataList.Size = new System.Drawing.Size(930, 494);
+            this.configDataList.TabIndex = 1;
+            // 
+            // configDataKey
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.configDataKey.DefaultCellStyle = dataGridViewCellStyle4;
+            this.configDataKey.HeaderText = "Key";
+            this.configDataKey.Name = "configDataKey";
+            this.configDataKey.ReadOnly = true;
+            this.configDataKey.Width = 200;
+            // 
+            // configDataValue
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataValue.DefaultCellStyle = dataGridViewCellStyle5;
+            this.configDataValue.HeaderText = "Value";
+            this.configDataValue.Name = "configDataValue";
+            this.configDataValue.ReadOnly = true;
+            this.configDataValue.Width = 150;
+            // 
+            // configDataDefinition
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefinition.DefaultCellStyle = dataGridViewCellStyle6;
+            this.configDataDefinition.HeaderText = "Definition";
+            this.configDataDefinition.Name = "configDataDefinition";
+            this.configDataDefinition.ReadOnly = true;
+            this.configDataDefinition.Width = 450;
+            // 
+            // configDataDefault
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefault.DefaultCellStyle = dataGridViewCellStyle7;
+            this.configDataDefault.HeaderText = "Default";
+            this.configDataDefault.Name = "configDataDefault";
+            this.configDataDefault.ReadOnly = true;
+            // 
+            // tabSSCConfig
+            // 
+            this.tabSSCConfig.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabSSCConfig.Controls.Add(this.sscconfigDataList);
+            this.tabSSCConfig.Controls.Add(this.refreshSSCConfig);
+            this.tabSSCConfig.Location = new System.Drawing.Point(4, 22);
+            this.tabSSCConfig.Name = "tabSSCConfig";
+            this.tabSSCConfig.Size = new System.Drawing.Size(942, 539);
+            this.tabSSCConfig.TabIndex = 12;
+            this.tabSSCConfig.Text = "SSCConfig.json";
+            // 
+            // refreshSSCConfig
+            // 
+            this.refreshSSCConfig.Image = global::RemoteAdminConsole.Properties.Resources.refresh;
+            this.refreshSSCConfig.Location = new System.Drawing.Point(5, 3);
+            this.refreshSSCConfig.Name = "refreshSSCConfig";
+            this.refreshSSCConfig.Size = new System.Drawing.Size(30, 30);
+            this.refreshSSCConfig.TabIndex = 12;
+            this.refreshSSCConfig.UseVisualStyleBackColor = true;
+            this.refreshSSCConfig.Click += new System.EventHandler(this.refreshSSCConfig_Click);
+            // 
             // tabLog
             // 
             this.tabLog.BackColor = System.Drawing.Color.AliceBlue;
@@ -4602,46 +4761,39 @@
             this.lblPortValue.TabIndex = 21;
             this.lblPortValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // serverDataNickname
+            // sscconfigDataList
             // 
-            this.serverDataNickname.HeaderText = "Nickname";
-            this.serverDataNickname.Name = "serverDataNickname";
-            this.serverDataNickname.ReadOnly = true;
+            this.sscconfigDataList.AllowUserToAddRows = false;
+            this.sscconfigDataList.BackgroundColor = System.Drawing.Color.White;
+            this.sscconfigDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sscconfigDataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.sscconfigDataList.Location = new System.Drawing.Point(6, 39);
+            this.sscconfigDataList.Name = "sscconfigDataList";
+            this.sscconfigDataList.RowHeadersVisible = false;
+            this.sscconfigDataList.Size = new System.Drawing.Size(930, 494);
+            this.sscconfigDataList.TabIndex = 13;
             // 
-            // serverDataUserName
+            // dataGridViewTextBoxColumn1
             // 
-            this.serverDataUserName.HeaderText = "User Name";
-            this.serverDataUserName.Name = "serverDataUserName";
-            this.serverDataUserName.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "sscconfigDataKey";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Key";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 200;
             // 
-            // serverDataGroup
+            // dataGridViewTextBoxColumn2
             // 
-            this.serverDataGroup.HeaderText = "Group";
-            this.serverDataGroup.Name = "serverDataGroup";
-            this.serverDataGroup.ReadOnly = true;
-            // 
-            // serverDataIP
-            // 
-            this.serverDataIP.HeaderText = "IP";
-            this.serverDataIP.Name = "serverDataIP";
-            this.serverDataIP.ReadOnly = true;
-            this.serverDataIP.Width = 90;
-            // 
-            // serverDataId
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle1;
-            this.serverDataId.HeaderText = "Id";
-            this.serverDataId.Name = "serverDataId";
-            this.serverDataId.ReadOnly = true;
-            this.serverDataId.Width = 30;
-            // 
-            // serverDataAccount
-            // 
-            this.serverDataAccount.HeaderText = "Account";
-            this.serverDataAccount.Name = "serverDataAccount";
-            this.serverDataAccount.ReadOnly = true;
-            this.serverDataAccount.Visible = false;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "sscconfigDataValue";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Value";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
             // 
             // GUIMain
             // 
@@ -4692,12 +4844,16 @@
             this.tabGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupDataPermissions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupDataList)).EndInit();
+            this.tabConfig.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.configDataList)).EndInit();
+            this.tabSSCConfig.ResumeLayout(false);
             this.tabLog.ResumeLayout(false);
             this.tabLog.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.tabSettings.PerformLayout();
             this.tabAbout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sscconfigDataList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5111,5 +5267,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn serverDataIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn serverDataId;
         private System.Windows.Forms.DataGridViewTextBoxColumn serverDataAccount;
+        private System.Windows.Forms.TabPage tabConfig;
+        private System.Windows.Forms.Button refreshConfig;
+        private System.Windows.Forms.DataGridView configDataList;
+        private System.Windows.Forms.TabPage tabSSCConfig;
+        private System.Windows.Forms.Button refreshSSCConfig;
+        private System.Windows.Forms.DataGridViewTextBoxColumn configDataKey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn configDataValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn configDataDefinition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn configDataDefault;
+        private System.Windows.Forms.DataGridView sscconfigDataList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

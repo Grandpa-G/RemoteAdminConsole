@@ -507,7 +507,7 @@ namespace RemoteAdminConsole
                     int netId = findInventoryItem(slot[0].Trim());
                     slot[0] = netId.ToString();
                     newInventory[counter++] = slot[0].ToString() + "," + slot[1] + "," + slot[2];
- //                   newInventory[counter++] = slot[0].ToString() + "," + slot[1];
+                    //                   newInventory[counter++] = slot[0].ToString() + "," + slot[1];
                 }
                 for (int i = 0; i < armorItems.Length; i++)
                 {
@@ -607,7 +607,7 @@ namespace RemoteAdminConsole
                     itemTip.IsBalloon = false;
                     itemTip.ShowAlways = true;
                     if (prefix > 0 && prefix <= prefixList.Length)
-                        itemTip.SetToolTip(lbl, prefixList[prefix-1].Name + " " + itemList[ITEMOFFSET + netId].Name);
+                        itemTip.SetToolTip(lbl, prefixList[prefix - 1].Name + " " + itemList[ITEMOFFSET + netId].Name);
                     else
                         itemTip.SetToolTip(lbl, itemList[ITEMOFFSET + netId].Name);
                 }
@@ -622,8 +622,6 @@ namespace RemoteAdminConsole
 
         #endregion
 
-
-
         #region  About Tab
         private void setupAbout()
         {
@@ -637,13 +635,7 @@ namespace RemoteAdminConsole
         #region  Ban Tab
         //      Ban Tab
 
-        /// <summary>
-        /// ///////////
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// 
-        private void getBannedList(bool fullSearch)
+         private void getBannedList(bool fullSearch)
         {
             JArray bans = null;
             String name = null;
@@ -691,7 +683,7 @@ namespace RemoteAdminConsole
             if (status.Equals("200"))
             {
                 bans = (JArray)results["bans"];
- 
+
                 for (int i = 0; i < bans.Count; i++)
                 {
                     JObject innerObj = (JObject)bans[i];
@@ -713,7 +705,7 @@ namespace RemoteAdminConsole
                     catch (NullReferenceException e)
                     {
                         dateBanned = "";
-                     }
+                    }
 
                     try
                     {
@@ -1391,7 +1383,7 @@ namespace RemoteAdminConsole
                     try
                     {
                         registered = (String)innerObj["Registered"];
-//                        registered = registered.Replace("T", " ");
+                        //                        registered = registered.Replace("T", " ");
                         registeredDt = DateTime.Parse(registered);
                         registered = String.Format("{0:G}", registeredDt.ToLocalTime());
                         Console.WriteLine(registeredDt);
@@ -1404,7 +1396,7 @@ namespace RemoteAdminConsole
                     try
                     {
                         lastAccessed = (String)innerObj["LastAccessed"];
-//                        lastAccessed = lastAccessed.Replace("T", " ");
+                        //                        lastAccessed = lastAccessed.Replace("T", " ");
                         if (lastAccessed != null)
                         {
                             lastAccessedDt = DateTime.Parse(lastAccessed);
@@ -1965,7 +1957,7 @@ namespace RemoteAdminConsole
         #endregion
 
         #region  Inventory Tab
-        // Player Tab
+        // Inventory Tab
         /// <summary>
         /// Gets a list of SSCInventoryLog entries. 
         /// </summary>
@@ -2111,6 +2103,101 @@ namespace RemoteAdminConsole
 
         #endregion
 
+        #region  Config Tab
+        // Player Config
+        /// <summary>
+ 
+        Dictionary<string, JObject> configDescription = new Dictionary<string, JObject>();
+        private void getConfig()
+        {
+            JObject results;
+            string status;
+            if (configDescription.Count == 0)
+            {
+                // And now use this to connect server 
+                results = ru.communicateWithTerraria("AdminREST/getConfigDescription", "configFile=config.json");
+                status = (string)results["status"];
+                if (status.Equals("200"))
+                {
+                    string key;
+
+                    JObject cd = (JObject)results["description"];
+                    foreach (JProperty prop in cd.Properties())
+                    {
+                        key = prop.Name;
+                        JObject d = (JObject)prop.Value;
+                        string x = (string)d["definition"];
+                        configDescription.Add(key, d);
+                    }
+                }
+            }
+            configDataList.Rows.Clear();
+            // And now use this to connect server 
+            results = ru.communicateWithTerraria("AdminREST/getConfig", "config=config.json");
+            status = (string)results["status"];
+            if (status.Equals("200"))
+            {
+                string key;
+                String definition = "";
+                String defaultx = "";
+                object rawOption;
+                JObject description;
+                JObject configOptions = (JObject)results["config"];
+                foreach (JProperty prop in configOptions.Properties())
+                {
+                    key = prop.Name;
+                    rawOption = prop.Value;
+                    try
+                    {
+                        description = (JObject)configDescription[key];
+                        definition = (string)description["definition"];
+                        defaultx = (string)description["default"];
+                    }
+                    catch (KeyNotFoundException)
+                    {
+                        definition = "";
+                        defaultx = "";
+                    }
+                    configDataList.Rows.Add(key, rawOption, definition, defaultx);
+                }
+            }
+        }
+        private void refreshConfig_Click(object sender, EventArgs e)
+        {
+            getConfig();
+        }
+        #endregion
+
+        #region  SSCConfig Tab
+        // Player SSCConfig
+        /// <summary>
+  
+        private void getSSCConfig()
+        {
+
+            sscconfigDataList.Rows.Clear();
+            // And now use this to connect server 
+            JObject results = ru.communicateWithTerraria("AdminREST/getConfig", "config=sscconfig.json");
+            string status = (string)results["status"];
+            if (status.Equals("200"))
+            {
+                string key;
+                object rawOption;
+                JObject configOptions = (JObject)results["config"];
+                foreach (JProperty prop in configOptions.Properties())
+                {
+                    key = prop.Name;
+                    rawOption = prop.Value;
+                    sscconfigDataList.Rows.Add(key, rawOption);
+                }
+            }
+        }
+        private void refreshSSCConfig_Click(object sender, EventArgs e)
+        {
+            getSSCConfig();
+        }
+        #endregion
+
         private void btnSaveDefaults_Click(object sender, EventArgs e)
         {
             Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteLogMaintenance");
@@ -2148,6 +2235,9 @@ namespace RemoteAdminConsole
             exampleRegistryKey.Close();
 
         }
+
+
+
 
     }
 }
