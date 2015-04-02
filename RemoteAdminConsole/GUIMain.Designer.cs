@@ -35,9 +35,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
             this.tabPane = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
             this.serverDaytime = new System.Windows.Forms.PictureBox();
@@ -284,6 +284,7 @@
             this.usersDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersDataInventory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabInventory = new System.Windows.Forms.TabPage();
+            this.inventoryUpdate = new System.Windows.Forms.Button();
             this.label59 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
@@ -414,6 +415,9 @@
             this.configDataDefinition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.configDataDefault = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabSSCConfig = new System.Windows.Forms.TabPage();
+            this.sscconfigDataList = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.refreshSSCConfig = new System.Windows.Forms.Button();
             this.tabLog = new System.Windows.Forms.TabPage();
             this.logFilename = new System.Windows.Forms.Label();
@@ -454,9 +458,6 @@
             this.userIcon = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.lblPortValue = new System.Windows.Forms.Label();
-            this.sscconfigDataList = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -486,11 +487,11 @@
             this.tabConfig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.configDataList)).BeginInit();
             this.tabSSCConfig.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sscconfigDataList)).BeginInit();
             this.tabLog.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.tabAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sscconfigDataList)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPane
@@ -3010,6 +3011,7 @@
             // tabInventory
             // 
             this.tabInventory.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabInventory.Controls.Add(this.inventoryUpdate);
             this.tabInventory.Controls.Add(this.label59);
             this.tabInventory.Controls.Add(this.label60);
             this.tabInventory.Controls.Add(this.label61);
@@ -3122,6 +3124,18 @@
             this.tabInventory.Size = new System.Drawing.Size(942, 539);
             this.tabInventory.TabIndex = 9;
             this.tabInventory.Text = "Inventory";
+            // 
+            // inventoryUpdate
+            // 
+            this.inventoryUpdate.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.inventoryUpdate.Location = new System.Drawing.Point(473, 20);
+            this.inventoryUpdate.Name = "inventoryUpdate";
+            this.inventoryUpdate.Size = new System.Drawing.Size(75, 23);
+            this.inventoryUpdate.TabIndex = 244;
+            this.inventoryUpdate.Text = "Update";
+            this.inventoryUpdate.UseVisualStyleBackColor = false;
+            this.inventoryUpdate.Visible = false;
+            this.inventoryUpdate.Click += new System.EventHandler(this.inventoryUpdate_Click);
             // 
             // label59
             // 
@@ -4349,6 +4363,40 @@
             this.tabSSCConfig.TabIndex = 12;
             this.tabSSCConfig.Text = "SSCConfig.json";
             // 
+            // sscconfigDataList
+            // 
+            this.sscconfigDataList.AllowUserToAddRows = false;
+            this.sscconfigDataList.BackgroundColor = System.Drawing.Color.White;
+            this.sscconfigDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sscconfigDataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.sscconfigDataList.Location = new System.Drawing.Point(6, 39);
+            this.sscconfigDataList.Name = "sscconfigDataList";
+            this.sscconfigDataList.RowHeadersVisible = false;
+            this.sscconfigDataList.Size = new System.Drawing.Size(930, 494);
+            this.sscconfigDataList.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "sscconfigDataKey";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Key";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "sscconfigDataValue";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Value";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
             // refreshSSCConfig
             // 
             this.refreshSSCConfig.Image = global::RemoteAdminConsole.Properties.Resources.refresh;
@@ -4761,40 +4809,6 @@
             this.lblPortValue.TabIndex = 21;
             this.lblPortValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // sscconfigDataList
-            // 
-            this.sscconfigDataList.AllowUserToAddRows = false;
-            this.sscconfigDataList.BackgroundColor = System.Drawing.Color.White;
-            this.sscconfigDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sscconfigDataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.sscconfigDataList.Location = new System.Drawing.Point(6, 39);
-            this.sscconfigDataList.Name = "sscconfigDataList";
-            this.sscconfigDataList.RowHeadersVisible = false;
-            this.sscconfigDataList.Size = new System.Drawing.Size(930, 494);
-            this.sscconfigDataList.TabIndex = 13;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "sscconfigDataKey";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Key";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "sscconfigDataValue";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Value";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
             // GUIMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4847,13 +4861,13 @@
             this.tabConfig.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.configDataList)).EndInit();
             this.tabSSCConfig.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sscconfigDataList)).EndInit();
             this.tabLog.ResumeLayout(false);
             this.tabLog.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.tabSettings.PerformLayout();
             this.tabAbout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sscconfigDataList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5279,5 +5293,6 @@
         private System.Windows.Forms.DataGridView sscconfigDataList;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button inventoryUpdate;
     }
 }

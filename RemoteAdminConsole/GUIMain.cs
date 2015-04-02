@@ -98,7 +98,7 @@ namespace RemoteAdminConsole
             }
 
             getDefaults();
-            if (ru.getToken())
+            if (ru.conn.Server.Length > 0 && ru.getToken())
             {
                 userIcon.Visible = true;
                 userLoggedIn.Text = "Logged in as " + ru.conn.UserId + ".";
@@ -743,7 +743,9 @@ namespace RemoteAdminConsole
         private void banDataBan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return; //check if row index is not selected
-            DataGridViewCheckBoxCell cbc = (DataGridViewCheckBoxCell)banDataBan.CurrentCell;
+            if (e.ColumnIndex != 0)
+                return;
+//            DataGridViewCheckBoxCell cbc = (DataGridViewCheckBoxCell)banDataBan.CurrentCell;
             DataGridViewCheckBoxCell unBan = new DataGridViewCheckBoxCell();
             unBan = (DataGridViewCheckBoxCell)banDataBan.Rows[e.RowIndex].Cells[0];
             if (unBan.Value == null)
@@ -1707,6 +1709,44 @@ namespace RemoteAdminConsole
         #endregion
 
         #region Utility
+        private void btnSaveDefaults_Click(object sender, EventArgs e)
+        {
+            Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteAdminConsole");
+            exampleRegistryKey.SetValue("UserId", txtUserId.Text);
+            exampleRegistryKey.SetValue("Password", passwordField.Text);
+            exampleRegistryKey.SetValue("Server", txtURL.Text);
+            ru.conn.UserId = (string)exampleRegistryKey.GetValue("UserId");
+            ru.conn.Password = (string)exampleRegistryKey.GetValue("Password");
+            ru.conn.Server = (string)exampleRegistryKey.GetValue("Server");
+            exampleRegistryKey.Close();
+        }
+        private void getDefaults()
+        {
+            Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteAdminConsole");
+            ru.conn.UserId = (string)exampleRegistryKey.GetValue("UserId");
+            ru.conn.Password = (string)exampleRegistryKey.GetValue("Password");
+            ru.conn.Server = (string)exampleRegistryKey.GetValue("Server");
+            txtUserId.Text = ru.conn.UserId;
+            passwordField.Text = ru.conn.Password;
+            txtURL.Text = ru.conn.Server;
+
+        }
+        private void btnClearDefaults_Click(object sender, EventArgs e)
+        {
+            Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteAdminConsole");
+            exampleRegistryKey.SetValue("UserId", "");
+            exampleRegistryKey.SetValue("Password", "");
+            exampleRegistryKey.SetValue("Server", "");
+            ru.conn.UserId = "";
+            ru.conn.Password = "";
+            ru.conn.Server = "";
+            txtUserId.Text = ru.conn.UserId;
+            passwordField.Text = ru.conn.Password;
+            txtURL.Text = ru.conn.Server;
+            exampleRegistryKey.Close();
+
+        }
+
         private System.Drawing.Color getColor(Color value)
         {
             return System.Drawing.Color.FromArgb(value.R, value.G, value.B);
@@ -1837,7 +1877,7 @@ namespace RemoteAdminConsole
 
                 for (int i = 0; i < motd.Count(); i++)
                 {
-                    output = output + motd[i] + "\n";
+                    output = output + motd[i] + "\r\n";
                 }
 
             }
@@ -2072,7 +2112,34 @@ namespace RemoteAdminConsole
             return 0;
 
         }
+        public int? EncodeColor(Color? color)
+        {
+            if (color == null)
+                return null;
 
+            return BitConverter.ToInt32(new[] { color.Value.R, color.Value.G, color.Value.B, color.Value.A }, 0);
+        }
+
+        private void inventoryUpdate_Click(object sender, EventArgs e)
+        {
+            string update = "UPDATE tsCharacter set ";
+            update += " HairColor=" + EncodeColor(sscHairColor.BackColor).ToString();
+            update += ",EyeColor=" + EncodeColor(sscEyeColor.BackColor).ToString();
+            update += ",SkinColor=" + EncodeColor(sscSkinColor.BackColor).ToString();
+            update += ",ShirtColor=" + EncodeColor(sscShirtColor.BackColor).ToString();
+            update += ",UnderShirtColor=" + EncodeColor(sscUnderShirtColor.BackColor).ToString();
+            update += ",PantsColor=" + EncodeColor(sscPantsColor.BackColor).ToString();
+            update += ",ShoeColor=" + EncodeColor(sscShoesColor.BackColor).ToString();
+ 
+
+            // And now use this to connect server
+            JObject results = ru.communicateWithTerraria("update", "&update=" + update);
+            string status = (string)results["status"];
+            if (status.Equals("200"))
+            {
+            }
+
+        }
 
         #endregion
 
@@ -2198,46 +2265,7 @@ namespace RemoteAdminConsole
         }
         #endregion
 
-        private void btnSaveDefaults_Click(object sender, EventArgs e)
-        {
-            Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteLogMaintenance");
-            exampleRegistryKey.SetValue("UserId", txtUserId.Text);
-            exampleRegistryKey.SetValue("Password", passwordField.Text);
-            exampleRegistryKey.SetValue("Server", txtURL.Text);
-            ru.conn.UserId = (string)exampleRegistryKey.GetValue("UserId");
-            ru.conn.Password = (string)exampleRegistryKey.GetValue("Password");
-            ru.conn.Server = (string)exampleRegistryKey.GetValue("Server");
-            exampleRegistryKey.Close();
-        }
-        private void getDefaults()
-        {
-            Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteLogMaintenance");
-            ru.conn.UserId = (string)exampleRegistryKey.GetValue("UserId");
-            ru.conn.Password = (string)exampleRegistryKey.GetValue("Password");
-            ru.conn.Server = (string)exampleRegistryKey.GetValue("Server");
-            txtUserId.Text = ru.conn.UserId;
-            passwordField.Text = ru.conn.Password;
-            txtURL.Text = ru.conn.Server;
-
-        }
-        private void btnClearDefaults_Click(object sender, EventArgs e)
-        {
-            Microsoft.Win32.RegistryKey exampleRegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RemoteLogMaintenance");
-            exampleRegistryKey.SetValue("UserId", "");
-            exampleRegistryKey.SetValue("Password", "");
-            exampleRegistryKey.SetValue("Server", "");
-            ru.conn.UserId = "";
-            ru.conn.Password = "";
-            ru.conn.Server = "";
-            txtUserId.Text = ru.conn.UserId;
-            passwordField.Text = ru.conn.Password;
-            txtURL.Text = ru.conn.Server;
-            exampleRegistryKey.Close();
-
-        }
-
-
-
+ 
 
     }
 }
