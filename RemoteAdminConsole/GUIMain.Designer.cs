@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPane = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
             this.serverDaytime = new System.Windows.Forms.PictureBox();
@@ -38,12 +39,6 @@
             this.serverBloodmoon = new System.Windows.Forms.PictureBox();
             this.label66 = new System.Windows.Forms.Label();
             this.serverDataPlayers = new System.Windows.Forms.DataGridView();
-            this.serverDataNickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverDataUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverDataGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverDataIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverDataId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverDataAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serverPvPMode = new System.Windows.Forms.Label();
             this.serverSpawnProtectionRadius = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
@@ -269,6 +264,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.usersDataList = new System.Windows.Forms.DataGridView();
+            this.usersDataUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersDataGroup = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.usersDataRegistered = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersDataLastOn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersDataIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersDataInventory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabInventory = new System.Windows.Forms.TabPage();
             this.label59 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
@@ -431,13 +433,12 @@
             this.userIcon = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.lblPortValue = new System.Windows.Forms.Label();
-            this.usersDataUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersDataGroup = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.usersDataRegistered = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersDataLastOn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersDataIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersDataInventory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.serverDataNickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverDataUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverDataGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverDataIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverDataId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverDataAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -612,45 +613,6 @@
             this.serverDataPlayers.Size = new System.Drawing.Size(431, 300);
             this.serverDataPlayers.TabIndex = 51;
             this.serverDataPlayers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serverDataPlayers_Click);
-            // 
-            // serverDataNickname
-            // 
-            this.serverDataNickname.HeaderText = "Nickname";
-            this.serverDataNickname.Name = "serverDataNickname";
-            this.serverDataNickname.ReadOnly = true;
-            // 
-            // serverDataUserName
-            // 
-            this.serverDataUserName.HeaderText = "User Name";
-            this.serverDataUserName.Name = "serverDataUserName";
-            this.serverDataUserName.ReadOnly = true;
-            // 
-            // serverDataGroup
-            // 
-            this.serverDataGroup.HeaderText = "Group";
-            this.serverDataGroup.Name = "serverDataGroup";
-            this.serverDataGroup.ReadOnly = true;
-            // 
-            // serverDataIP
-            // 
-            this.serverDataIP.HeaderText = "IP";
-            this.serverDataIP.Name = "serverDataIP";
-            this.serverDataIP.ReadOnly = true;
-            this.serverDataIP.Width = 90;
-            // 
-            // serverDataId
-            // 
-            this.serverDataId.HeaderText = "Id";
-            this.serverDataId.Name = "serverDataId";
-            this.serverDataId.ReadOnly = true;
-            this.serverDataId.Width = 30;
-            // 
-            // serverDataAccount
-            // 
-            this.serverDataAccount.HeaderText = "Account";
-            this.serverDataAccount.Name = "serverDataAccount";
-            this.serverDataAccount.ReadOnly = true;
-            this.serverDataAccount.Visible = false;
             // 
             // serverPvPMode
             // 
@@ -2502,7 +2464,6 @@
             this.banClearSearch.Size = new System.Drawing.Size(30, 23);
             this.banClearSearch.TabIndex = 23;
             this.banClearSearch.UseVisualStyleBackColor = true;
-            this.banClearSearch.Visible = false;
             this.banClearSearch.Click += new System.EventHandler(this.banClearSearch_Click);
             // 
             // banStartSearch
@@ -2513,7 +2474,6 @@
             this.banStartSearch.Size = new System.Drawing.Size(30, 23);
             this.banStartSearch.TabIndex = 22;
             this.banStartSearch.UseVisualStyleBackColor = true;
-            this.banStartSearch.Visible = false;
             this.banStartSearch.Click += new System.EventHandler(this.banStartSearch_Click);
             // 
             // banFuzzyIP
@@ -2525,7 +2485,6 @@
             this.banFuzzyIP.TabIndex = 21;
             this.banFuzzyIP.Text = "Fuzzy Search (%xxx%)";
             this.banFuzzyIP.UseVisualStyleBackColor = true;
-            this.banFuzzyIP.Visible = false;
             // 
             // banSearchIP
             // 
@@ -2534,7 +2493,6 @@
             this.banSearchIP.Name = "banSearchIP";
             this.banSearchIP.Size = new System.Drawing.Size(229, 20);
             this.banSearchIP.TabIndex = 19;
-            this.banSearchIP.Visible = false;
             // 
             // label38
             // 
@@ -2546,7 +2504,6 @@
             this.label38.TabIndex = 17;
             this.label38.Text = "IP:";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label38.Visible = false;
             // 
             // banFuzzyName
             // 
@@ -2557,7 +2514,6 @@
             this.banFuzzyName.TabIndex = 15;
             this.banFuzzyName.Text = "Fuzzy Search (%xxx%)";
             this.banFuzzyName.UseVisualStyleBackColor = true;
-            this.banFuzzyName.Visible = false;
             // 
             // banSearchName
             // 
@@ -2566,7 +2522,6 @@
             this.banSearchName.Name = "banSearchName";
             this.banSearchName.Size = new System.Drawing.Size(229, 20);
             this.banSearchName.TabIndex = 14;
-            this.banSearchName.Visible = false;
             // 
             // label36
             // 
@@ -2578,7 +2533,6 @@
             this.label36.TabIndex = 13;
             this.label36.Text = "Name:";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label36.Visible = false;
             // 
             // label3
             // 
@@ -2588,7 +2542,6 @@
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Search by:";
-            this.label3.Visible = false;
             // 
             // refreshBan
             // 
@@ -2934,6 +2887,60 @@
             this.usersDataList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.usersDataList_RowsAdded);
             this.usersDataList.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.usersDataList_UserDeletedRow);
             this.usersDataList.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.usersDataList_UserDeletingRow);
+            // 
+            // usersDataUser
+            // 
+            this.usersDataUser.HeaderText = "User";
+            this.usersDataUser.Name = "usersDataUser";
+            this.usersDataUser.Width = 110;
+            // 
+            // usersDataGroup
+            // 
+            this.usersDataGroup.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.usersDataGroup.HeaderText = "Group";
+            this.usersDataGroup.Name = "usersDataGroup";
+            this.usersDataGroup.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.usersDataGroup.Sorted = true;
+            this.usersDataGroup.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // usersDataRegistered
+            // 
+            this.usersDataRegistered.HeaderText = "Registered";
+            this.usersDataRegistered.Name = "usersDataRegistered";
+            this.usersDataRegistered.ReadOnly = true;
+            this.usersDataRegistered.Width = 110;
+            // 
+            // usersDataLastOn
+            // 
+            this.usersDataLastOn.HeaderText = "Last On";
+            this.usersDataLastOn.Name = "usersDataLastOn";
+            this.usersDataLastOn.ReadOnly = true;
+            this.usersDataLastOn.Width = 110;
+            // 
+            // usersDataIP
+            // 
+            this.usersDataIP.HeaderText = "IPs";
+            this.usersDataIP.Name = "usersDataIP";
+            this.usersDataIP.ReadOnly = true;
+            this.usersDataIP.Width = 90;
+            // 
+            // usersDataID
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle2;
+            this.usersDataID.HeaderText = "Id";
+            this.usersDataID.Name = "usersDataID";
+            this.usersDataID.ReadOnly = true;
+            this.usersDataID.Width = 40;
+            // 
+            // usersDataInventory
+            // 
+            this.usersDataInventory.HeaderText = "Inv?";
+            this.usersDataInventory.Name = "usersDataInventory";
+            this.usersDataInventory.ReadOnly = true;
+            this.usersDataInventory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.usersDataInventory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.usersDataInventory.Width = 40;
             // 
             // tabInventory
             // 
@@ -4595,59 +4602,46 @@
             this.lblPortValue.TabIndex = 21;
             this.lblPortValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // usersDataUser
+            // serverDataNickname
             // 
-            this.usersDataUser.HeaderText = "User";
-            this.usersDataUser.Name = "usersDataUser";
-            this.usersDataUser.Width = 110;
+            this.serverDataNickname.HeaderText = "Nickname";
+            this.serverDataNickname.Name = "serverDataNickname";
+            this.serverDataNickname.ReadOnly = true;
             // 
-            // usersDataGroup
+            // serverDataUserName
             // 
-            this.usersDataGroup.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.usersDataGroup.HeaderText = "Group";
-            this.usersDataGroup.Name = "usersDataGroup";
-            this.usersDataGroup.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.usersDataGroup.Sorted = true;
-            this.usersDataGroup.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.serverDataUserName.HeaderText = "User Name";
+            this.serverDataUserName.Name = "serverDataUserName";
+            this.serverDataUserName.ReadOnly = true;
             // 
-            // usersDataRegistered
+            // serverDataGroup
             // 
-            this.usersDataRegistered.HeaderText = "Registered";
-            this.usersDataRegistered.Name = "usersDataRegistered";
-            this.usersDataRegistered.ReadOnly = true;
-            this.usersDataRegistered.Width = 110;
+            this.serverDataGroup.HeaderText = "Group";
+            this.serverDataGroup.Name = "serverDataGroup";
+            this.serverDataGroup.ReadOnly = true;
             // 
-            // usersDataLastOn
+            // serverDataIP
             // 
-            this.usersDataLastOn.HeaderText = "Last On";
-            this.usersDataLastOn.Name = "usersDataLastOn";
-            this.usersDataLastOn.ReadOnly = true;
-            this.usersDataLastOn.Width = 110;
+            this.serverDataIP.HeaderText = "IP";
+            this.serverDataIP.Name = "serverDataIP";
+            this.serverDataIP.ReadOnly = true;
+            this.serverDataIP.Width = 90;
             // 
-            // usersDataIP
+            // serverDataId
             // 
-            this.usersDataIP.HeaderText = "IPs";
-            this.usersDataIP.Name = "usersDataIP";
-            this.usersDataIP.ReadOnly = true;
-            this.usersDataIP.Width = 90;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle1;
+            this.serverDataId.HeaderText = "Id";
+            this.serverDataId.Name = "serverDataId";
+            this.serverDataId.ReadOnly = true;
+            this.serverDataId.Width = 30;
             // 
-            // usersDataID
+            // serverDataAccount
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle4;
-            this.usersDataID.HeaderText = "Id";
-            this.usersDataID.Name = "usersDataID";
-            this.usersDataID.ReadOnly = true;
-            this.usersDataID.Width = 40;
-            // 
-            // usersDataInventory
-            // 
-            this.usersDataInventory.HeaderText = "Inv?";
-            this.usersDataInventory.Name = "usersDataInventory";
-            this.usersDataInventory.ReadOnly = true;
-            this.usersDataInventory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.usersDataInventory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.usersDataInventory.Width = 40;
+            this.serverDataAccount.HeaderText = "Account";
+            this.serverDataAccount.Name = "serverDataAccount";
+            this.serverDataAccount.ReadOnly = true;
+            this.serverDataAccount.Visible = false;
             // 
             // GUIMain
             // 
@@ -5080,12 +5074,6 @@
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label aboutExtraAdminRestVersion;
         private System.Windows.Forms.Label lable45;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataNickname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataUserName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataGroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataIP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataAccount;
         private System.Windows.Forms.Label lblBanningUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn permissionsDataPermissons;
         private System.Windows.Forms.DataGridViewTextBoxColumn permissionsDataNote;
@@ -5117,5 +5105,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usersDataIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn usersDataID;
         private System.Windows.Forms.DataGridViewCheckBoxColumn usersDataInventory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataNickname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataUserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataGroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataAccount;
     }
 }

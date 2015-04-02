@@ -204,6 +204,7 @@ namespace RemoteAdminConsole
             int account;
             string group = "";
             string nickName = "";
+            string ip = "";
             int index = 0;
             Boolean state;
             String extraAdminRESTVersion = "";
@@ -326,12 +327,13 @@ namespace RemoteAdminConsole
                             JObject innerObj = (JObject)players[i];
                             index = (int)innerObj["index"];
                             account = (int)innerObj["account"];
+                            ip = (string)innerObj["ip"];
                             nickname = (string)innerObj["nickname"];
                             username = (string)innerObj["username"];
                             group = (string)innerObj["group"];
                             if (nickname != null)
                             {
-                                serverDataPlayers.Rows.Add(nickname, username, group.ToString(), "", index, account);
+                                serverDataPlayers.Rows.Add(nickname, username, group.ToString(), ip, index, account);
                             }
                         }
                     }
@@ -504,8 +506,8 @@ namespace RemoteAdminConsole
                     slot = inventory[i].Split(':');
                     int netId = findInventoryItem(slot[0].Trim());
                     slot[0] = netId.ToString();
-                    //            newInventory[i] = slot[0].ToString() + ":" + slot[1] +"," + slot[2];
-                    newInventory[counter++] = slot[0].ToString() + "," + slot[1];
+                    newInventory[counter++] = slot[0].ToString() + "," + slot[1] + "," + slot[2];
+ //                   newInventory[counter++] = slot[0].ToString() + "," + slot[1];
                 }
                 for (int i = 0; i < armorItems.Length; i++)
                 {
@@ -599,14 +601,13 @@ namespace RemoteAdminConsole
                             lbl.Text = stacks;
                     }
 
-
                     lbl.Image = sprites[ITEMOFFSET + netId];
 
                     ToolTip itemTip = new ToolTip();
                     itemTip.IsBalloon = false;
                     itemTip.ShowAlways = true;
                     if (prefix > 0 && prefix <= prefixList.Length)
-                        itemTip.SetToolTip(lbl, prefixList[prefix].Name + " " + itemList[ITEMOFFSET + netId].Name);
+                        itemTip.SetToolTip(lbl, prefixList[prefix-1].Name + " " + itemList[ITEMOFFSET + netId].Name);
                     else
                         itemTip.SetToolTip(lbl, itemList[ITEMOFFSET + netId].Name);
                 }
@@ -644,15 +645,11 @@ namespace RemoteAdminConsole
         /// 
         private void getBannedList(bool fullSearch)
         {
-            String response = null;
             JArray bans = null;
             String name = null;
-            String userId = null;
             String reason = null;
             String ip = null;
             String banningUser = null;
-            String date = null;
-            String expiration = null;
             String dateBanned = null;
             String dateExpiration = null;
             DateTime BannedDt;
@@ -667,7 +664,7 @@ namespace RemoteAdminConsole
                 {
                     searchString = banSearchName.Text;
                     if (banFuzzyName != null && banFuzzyName.Checked)
-                        whereClause = whereClause + andClause + " Name like '%" + banSearchName.Text + "%'";
+                        whereClause = whereClause + andClause + " Name like '%25" + banSearchName.Text + "%25'";
                     else
                         whereClause = whereClause + andClause + " Name like '" + banSearchName.Text + "'";
                     andClause = " and ";
@@ -678,7 +675,7 @@ namespace RemoteAdminConsole
                 {
                     searchString = banSearchIP.Text;
                     if (banFuzzyIP != null && banFuzzyIP.Checked)
-                        whereClause = whereClause + andClause + " IP like '%" + banSearchIP.Text + "%'";
+                        whereClause = whereClause + andClause + " IP like '%25" + banSearchIP.Text + "%25'";
                     else
                         whereClause = whereClause + andClause + " IP like '" + banSearchIP.Text + "'";
                     andClause = " and ";
@@ -689,32 +686,29 @@ namespace RemoteAdminConsole
             banDataBan.Rows.Clear();
 
             // And now use this to connect server 
-            JObject results = ru.communicateWithTerraria("AdminREST/BanList", "&search=" + whereClause);
+            JObject results = ru.communicateWithTerraria("AdminREST/BanList", "&where=" + whereClause);
             string status = (string)results["status"];
             if (status.Equals("200"))
             {
                 bans = (JArray)results["bans"];
-                String registered = "";
-                String lastAccessed = "";
-
+ 
                 for (int i = 0; i < bans.Count; i++)
                 {
                     JObject innerObj = (JObject)bans[i];
-                    name = (String)innerObj["name"];
-                    userId = (String)innerObj["userid"];
-                    ip = (String)innerObj["ip"];
-                    reason = (String)innerObj["reason"];
-                    banningUser = (String)innerObj["banninguser"];
+                    name = (String)innerObj["Name"];
+                    ip = (String)innerObj["IP"];
+                    reason = (String)innerObj["Reason"];
+                    banningUser = (String)innerObj["BanningUser"];
                     try
                     {
-                        dateBanned = (String)innerObj["date"];
+                        dateBanned = (String)innerObj["Date"];
                         if (dateBanned != null && dateBanned.Length > 0)
                         {
                             BannedDt = DateTime.Parse(dateBanned);
                             dateBanned = String.Format("{0:G}", BannedDt.ToLocalTime());
                         }
                         else
-                            lastAccessed = "";
+                            dateBanned = "";
                     }
                     catch (NullReferenceException e)
                     {
@@ -723,14 +717,14 @@ namespace RemoteAdminConsole
 
                     try
                     {
-                        dateExpiration = (String)innerObj["expiration"];
+                        dateExpiration = (String)innerObj["Expiration"];
                         if (dateExpiration != null && dateExpiration.Length > 0)
                         {
                             ExpirationDt = DateTime.Parse(dateExpiration);
                             dateExpiration = String.Format("{0:G}", ExpirationDt.ToLocalTime());
                         }
                         else
-                            lastAccessed = "";
+                            dateExpiration = "";
                     }
                     catch (NullReferenceException e)
                     {

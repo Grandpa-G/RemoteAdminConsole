@@ -11,4 +11,4 @@ The RESTAPI funtionality must be turned on through the use of a configuration op
 [Wiki Documentation](https://github.com/Grandpa-G/RemoteAdminConsole/wiki/Remote-Admin-Console-Overview)
 
 ######Copyright Notice#
-The Remote Admin tool is the property of RG Consulting, Inc. Anyone may use this tool however no one may sell the tool or profit from its development other than the owner. The RESTAdminAPI is open source and may be used by anyone without restriction.
+The Remote Admin Console tool is the copyrighted by RG Consulting, Inc. Anyone may use this tool however no one may sell the tool or profit from its development other than the owner. The RESTAdminAPI is open source and may be used by anyone without restriction.
