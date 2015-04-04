@@ -354,6 +354,7 @@ namespace RemoteAdminConsole
                         }
                     }
                 }
+
                 tabPlayer.Enabled = false;
                 playerFound = false;
 
@@ -420,6 +421,7 @@ namespace RemoteAdminConsole
                     lblWorldId.Text = worldId.ToString();
                 }
                 lblServerRefresh.Text = DateTime.Now.ToString("ddd h:mm:ss tt");
+                serverDataPlayers.ClearSelection();
             }
         }
         private void serverRefresh_Click(object sender, EventArgs e)
