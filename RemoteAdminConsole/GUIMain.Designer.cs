@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
             this.tabPane = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
@@ -233,6 +233,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.lblPlayerName = new System.Windows.Forms.Label();
             this.tabBan = new System.Windows.Forms.TabPage();
+            this.banSearchResults = new System.Windows.Forms.Label();
             this.lblBanningUser = new System.Windows.Forms.Label();
             this.banClearSearch = new System.Windows.Forms.Button();
             this.banStartSearch = new System.Windows.Forms.Button();
@@ -254,8 +255,9 @@
             this.banDataDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.banDataExpiration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabUsers = new System.Windows.Forms.TabPage();
+            this.usersUpdateStatus = new System.Windows.Forms.Label();
+            this.usersSearchResults = new System.Windows.Forms.Label();
             this.usersAddUser = new System.Windows.Forms.Button();
-            this.query = new System.Windows.Forms.Label();
             this.usersListPermissions = new System.Windows.Forms.ListView();
             this.usersListPermission = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.usersKnowIPs = new System.Windows.Forms.TextBox();
@@ -284,96 +286,113 @@
             this.usersDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersDataInventory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabInventory = new System.Windows.Forms.TabPage();
-            this.inventoryUpdate = new System.Windows.Forms.Button();
+            this.itemPreviewText = new System.Windows.Forms.Label();
+            this.inventoryUpdateStatus = new System.Windows.Forms.Label();
+            this.inventorySlotReplace = new System.Windows.Forms.Button();
+            this.sscItem1 = new System.Windows.Forms.Button();
+            this.label77 = new System.Windows.Forms.Label();
+            this.txtItemFilter = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.clearPreviewItem = new System.Windows.Forms.Button();
+            this.cmbxUserItemPrefix = new System.Windows.Forms.ComboBox();
+            this.label74 = new System.Windows.Forms.Label();
+            this.txtStackSize = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.inventoryItemsList = new System.Windows.Forms.ListView();
+            this.inventoryItemListName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.inventoryItemListNetId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.inventoryItemListStackSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.inventoryItemListPrefix = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.inventoryUpdate = new System.Windows.Forms.Button();
+            this.itemPreview = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.sscItem64 = new System.Windows.Forms.Label();
-            this.sscItem72 = new System.Windows.Forms.Label();
-            this.sscItem80 = new System.Windows.Forms.Label();
-            this.sscItem14 = new System.Windows.Forms.Label();
-            this.sscItem34 = new System.Windows.Forms.Label();
-            this.sscItem24 = new System.Windows.Forms.Label();
-            this.sscItem44 = new System.Windows.Forms.Label();
-            this.sscItem4 = new System.Windows.Forms.Label();
-            this.sscItem15 = new System.Windows.Forms.Label();
-            this.sscItem35 = new System.Windows.Forms.Label();
-            this.sscItem67 = new System.Windows.Forms.Label();
-            this.sscItem66 = new System.Windows.Forms.Label();
-            this.sscItem65 = new System.Windows.Forms.Label();
-            this.sscItem26 = new System.Windows.Forms.Label();
-            this.sscItem63 = new System.Windows.Forms.Label();
-            this.sscItem62 = new System.Windows.Forms.Label();
-            this.sscItem61 = new System.Windows.Forms.Label();
-            this.sscItem75 = new System.Windows.Forms.Label();
-            this.sscItem74 = new System.Windows.Forms.Label();
-            this.sscItem73 = new System.Windows.Forms.Label();
-            this.sscItem36 = new System.Windows.Forms.Label();
-            this.sscItem71 = new System.Windows.Forms.Label();
-            this.sscItem70 = new System.Windows.Forms.Label();
-            this.sscItem69 = new System.Windows.Forms.Label();
-            this.sscItem83 = new System.Windows.Forms.Label();
-            this.sscItem82 = new System.Windows.Forms.Label();
-            this.sscItem81 = new System.Windows.Forms.Label();
-            this.sscItem16 = new System.Windows.Forms.Label();
-            this.sscItem79 = new System.Windows.Forms.Label();
-            this.sscItem78 = new System.Windows.Forms.Label();
-            this.sscItem77 = new System.Windows.Forms.Label();
-            this.sscItem5 = new System.Windows.Forms.Label();
-            this.sscItem58 = new System.Windows.Forms.Label();
-            this.sscItem25 = new System.Windows.Forms.Label();
-            this.sscItem57 = new System.Windows.Forms.Label();
-            this.sscItem54 = new System.Windows.Forms.Label();
-            this.sscItem53 = new System.Windows.Forms.Label();
-            this.sscItem56 = new System.Windows.Forms.Label();
-            this.sscItem52 = new System.Windows.Forms.Label();
-            this.sscItem19 = new System.Windows.Forms.Label();
-            this.sscItem39 = new System.Windows.Forms.Label();
-            this.sscItem29 = new System.Windows.Forms.Label();
-            this.sscItem49 = new System.Windows.Forms.Label();
-            this.sscItem9 = new System.Windows.Forms.Label();
-            this.sscItem20 = new System.Windows.Forms.Label();
-            this.sscItem30 = new System.Windows.Forms.Label();
-            this.sscItem40 = new System.Windows.Forms.Label();
-            this.sscItem50 = new System.Windows.Forms.Label();
-            this.sscItem2 = new System.Windows.Forms.Label();
-            this.sscItem42 = new System.Windows.Forms.Label();
-            this.sscItem32 = new System.Windows.Forms.Label();
-            this.sscItem12 = new System.Windows.Forms.Label();
-            this.sscItem3 = new System.Windows.Forms.Label();
-            this.sscItem41 = new System.Windows.Forms.Label();
-            this.sscItem6 = new System.Windows.Forms.Label();
-            this.sscItem43 = new System.Windows.Forms.Label();
-            this.sscItem21 = new System.Windows.Forms.Label();
-            this.sscItem17 = new System.Windows.Forms.Label();
-            this.sscItem37 = new System.Windows.Forms.Label();
-            this.sscItem33 = new System.Windows.Forms.Label();
-            this.sscItem31 = new System.Windows.Forms.Label();
-            this.sscItem27 = new System.Windows.Forms.Label();
-            this.sscItem47 = new System.Windows.Forms.Label();
-            this.sscItem22 = new System.Windows.Forms.Label();
-            this.sscItem60 = new System.Windows.Forms.Label();
-            this.sscItem68 = new System.Windows.Forms.Label();
-            this.sscItem76 = new System.Windows.Forms.Label();
-            this.sscItem55 = new System.Windows.Forms.Label();
-            this.sscItem51 = new System.Windows.Forms.Label();
-            this.sscItem7 = new System.Windows.Forms.Label();
-            this.sscItem18 = new System.Windows.Forms.Label();
-            this.sscItem38 = new System.Windows.Forms.Label();
-            this.sscItem28 = new System.Windows.Forms.Label();
-            this.sscItem48 = new System.Windows.Forms.Label();
-            this.sscItem8 = new System.Windows.Forms.Label();
-            this.sscItem46 = new System.Windows.Forms.Label();
-            this.sscItem45 = new System.Windows.Forms.Label();
-            this.sscItem13 = new System.Windows.Forms.Label();
-            this.sscItem1 = new System.Windows.Forms.Label();
-            this.sscItem11 = new System.Windows.Forms.Label();
-            this.sscItem23 = new System.Windows.Forms.Label();
-            this.sscItem10 = new System.Windows.Forms.Label();
+            this.sscItem64 = new System.Windows.Forms.Button();
+            this.sscItem72 = new System.Windows.Forms.Button();
+            this.sscItem80 = new System.Windows.Forms.Button();
+            this.sscItem14 = new System.Windows.Forms.Button();
+            this.sscItem34 = new System.Windows.Forms.Button();
+            this.sscItem24 = new System.Windows.Forms.Button();
+            this.sscItem44 = new System.Windows.Forms.Button();
+            this.sscItem4 = new System.Windows.Forms.Button();
+            this.sscItem15 = new System.Windows.Forms.Button();
+            this.sscItem35 = new System.Windows.Forms.Button();
+            this.sscItem67 = new System.Windows.Forms.Button();
+            this.sscItem66 = new System.Windows.Forms.Button();
+            this.sscItem65 = new System.Windows.Forms.Button();
+            this.sscItem26 = new System.Windows.Forms.Button();
+            this.sscItem63 = new System.Windows.Forms.Button();
+            this.sscItem62 = new System.Windows.Forms.Button();
+            this.sscItem61 = new System.Windows.Forms.Button();
+            this.sscItem75 = new System.Windows.Forms.Button();
+            this.sscItem74 = new System.Windows.Forms.Button();
+            this.sscItem73 = new System.Windows.Forms.Button();
+            this.sscItem36 = new System.Windows.Forms.Button();
+            this.sscItem71 = new System.Windows.Forms.Button();
+            this.sscItem70 = new System.Windows.Forms.Button();
+            this.sscItem69 = new System.Windows.Forms.Button();
+            this.sscItem83 = new System.Windows.Forms.Button();
+            this.sscItem82 = new System.Windows.Forms.Button();
+            this.sscItem81 = new System.Windows.Forms.Button();
+            this.sscItem16 = new System.Windows.Forms.Button();
+            this.sscItem79 = new System.Windows.Forms.Button();
+            this.sscItem78 = new System.Windows.Forms.Button();
+            this.sscItem77 = new System.Windows.Forms.Button();
+            this.sscItem5 = new System.Windows.Forms.Button();
+            this.sscItem58 = new System.Windows.Forms.Button();
+            this.sscItem25 = new System.Windows.Forms.Button();
+            this.sscItem57 = new System.Windows.Forms.Button();
+            this.sscItem54 = new System.Windows.Forms.Button();
+            this.sscItem53 = new System.Windows.Forms.Button();
+            this.sscItem56 = new System.Windows.Forms.Button();
+            this.sscItem52 = new System.Windows.Forms.Button();
+            this.sscItem19 = new System.Windows.Forms.Button();
+            this.sscItem39 = new System.Windows.Forms.Button();
+            this.sscItem29 = new System.Windows.Forms.Button();
+            this.sscItem49 = new System.Windows.Forms.Button();
+            this.sscItem9 = new System.Windows.Forms.Button();
+            this.sscItem20 = new System.Windows.Forms.Button();
+            this.sscItem30 = new System.Windows.Forms.Button();
+            this.sscItem40 = new System.Windows.Forms.Button();
+            this.sscItem50 = new System.Windows.Forms.Button();
+            this.sscItem2 = new System.Windows.Forms.Button();
+            this.sscItem42 = new System.Windows.Forms.Button();
+            this.sscItem32 = new System.Windows.Forms.Button();
+            this.sscItem12 = new System.Windows.Forms.Button();
+            this.sscItem3 = new System.Windows.Forms.Button();
+            this.sscItem41 = new System.Windows.Forms.Button();
+            this.sscItem6 = new System.Windows.Forms.Button();
+            this.sscItem43 = new System.Windows.Forms.Button();
+            this.sscItem21 = new System.Windows.Forms.Button();
+            this.sscItem17 = new System.Windows.Forms.Button();
+            this.sscItem37 = new System.Windows.Forms.Button();
+            this.sscItem33 = new System.Windows.Forms.Button();
+            this.sscItem31 = new System.Windows.Forms.Button();
+            this.sscItem27 = new System.Windows.Forms.Button();
+            this.sscItem47 = new System.Windows.Forms.Button();
+            this.sscItem22 = new System.Windows.Forms.Button();
+            this.sscItem60 = new System.Windows.Forms.Button();
+            this.sscItem68 = new System.Windows.Forms.Button();
+            this.sscItem76 = new System.Windows.Forms.Button();
+            this.sscItem55 = new System.Windows.Forms.Button();
+            this.sscItem51 = new System.Windows.Forms.Button();
+            this.sscItem7 = new System.Windows.Forms.Button();
+            this.sscItem18 = new System.Windows.Forms.Button();
+            this.sscItem38 = new System.Windows.Forms.Button();
+            this.sscItem28 = new System.Windows.Forms.Button();
+            this.sscItem48 = new System.Windows.Forms.Button();
+            this.sscItem8 = new System.Windows.Forms.Button();
+            this.sscItem46 = new System.Windows.Forms.Button();
+            this.sscItem45 = new System.Windows.Forms.Button();
+            this.sscItem13 = new System.Windows.Forms.Button();
+            this.sscItem11 = new System.Windows.Forms.Button();
+            this.sscItem23 = new System.Windows.Forms.Button();
+            this.sscItem10 = new System.Windows.Forms.Button();
             this.label158 = new System.Windows.Forms.Label();
             this.sscShoesColor = new System.Windows.Forms.Label();
             this.sscPantsColor = new System.Windows.Forms.Label();
@@ -393,6 +412,7 @@
             this.label175 = new System.Windows.Forms.Label();
             this.sscAccountName = new System.Windows.Forms.Label();
             this.tabGroup = new System.Windows.Forms.TabPage();
+            this.groupsUpdateStatus = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.tabUpdatePermissions = new System.Windows.Forms.Button();
@@ -666,8 +686,8 @@
             // 
             // serverDataId
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle10;
             this.serverDataId.HeaderText = "Id";
             this.serverDataId.Name = "serverDataId";
             this.serverDataId.ReadOnly = true;
@@ -1412,7 +1432,7 @@
             // trashcan59
             // 
             this.trashcan59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.trashcan59.Location = new System.Drawing.Point(551, 250);
+            this.trashcan59.Location = new System.Drawing.Point(553, 265);
             this.trashcan59.Name = "trashcan59";
             this.trashcan59.Size = new System.Drawing.Size(42, 42);
             this.trashcan59.TabIndex = 132;
@@ -1422,7 +1442,7 @@
             // label129
             // 
             this.label129.AutoSize = true;
-            this.label129.Location = new System.Drawing.Point(895, 28);
+            this.label129.Location = new System.Drawing.Point(897, 43);
             this.label129.Name = "label129";
             this.label129.Size = new System.Drawing.Size(34, 13);
             this.label129.TabIndex = 131;
@@ -1431,7 +1451,7 @@
             // label128
             // 
             this.label128.AutoSize = true;
-            this.label128.Location = new System.Drawing.Point(846, 28);
+            this.label128.Location = new System.Drawing.Point(848, 43);
             this.label128.Name = "label128";
             this.label128.Size = new System.Drawing.Size(36, 13);
             this.label128.TabIndex = 130;
@@ -1440,7 +1460,7 @@
             // label127
             // 
             this.label127.AutoSize = true;
-            this.label127.Location = new System.Drawing.Point(803, 28);
+            this.label127.Location = new System.Drawing.Point(805, 43);
             this.label127.Name = "label127";
             this.label127.Size = new System.Drawing.Size(26, 13);
             this.label127.TabIndex = 129;
@@ -1449,7 +1469,7 @@
             // label126
             // 
             this.label126.AutoSize = true;
-            this.label126.Location = new System.Drawing.Point(726, 28);
+            this.label126.Location = new System.Drawing.Point(728, 43);
             this.label126.Name = "label126";
             this.label126.Size = new System.Drawing.Size(36, 13);
             this.label126.TabIndex = 128;
@@ -1458,7 +1478,7 @@
             // label125
             // 
             this.label125.AutoSize = true;
-            this.label125.Location = new System.Drawing.Point(663, 28);
+            this.label125.Location = new System.Drawing.Point(665, 43);
             this.label125.Name = "label125";
             this.label125.Size = new System.Drawing.Size(33, 13);
             this.label125.TabIndex = 127;
@@ -1467,7 +1487,7 @@
             // label124
             // 
             this.label124.AutoSize = true;
-            this.label124.Location = new System.Drawing.Point(251, 28);
+            this.label124.Location = new System.Drawing.Point(253, 43);
             this.label124.Name = "label124";
             this.label124.Size = new System.Drawing.Size(51, 13);
             this.label124.TabIndex = 126;
@@ -1476,7 +1496,7 @@
             // inventoryItem64
             // 
             this.inventoryItem64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem64.Location = new System.Drawing.Point(891, 250);
+            this.inventoryItem64.Location = new System.Drawing.Point(893, 265);
             this.inventoryItem64.Name = "inventoryItem64";
             this.inventoryItem64.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem64.TabIndex = 125;
@@ -1485,7 +1505,7 @@
             // inventoryItem72
             // 
             this.inventoryItem72.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem72.Location = new System.Drawing.Point(843, 250);
+            this.inventoryItem72.Location = new System.Drawing.Point(845, 265);
             this.inventoryItem72.Name = "inventoryItem72";
             this.inventoryItem72.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem72.TabIndex = 124;
@@ -1494,7 +1514,7 @@
             // inventoryItem80
             // 
             this.inventoryItem80.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem80.Location = new System.Drawing.Point(795, 250);
+            this.inventoryItem80.Location = new System.Drawing.Point(797, 265);
             this.inventoryItem80.Name = "inventoryItem80";
             this.inventoryItem80.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem80.TabIndex = 123;
@@ -1503,7 +1523,7 @@
             // inventoryItem14
             // 
             this.inventoryItem14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem14.Location = new System.Drawing.Point(187, 98);
+            this.inventoryItem14.Location = new System.Drawing.Point(189, 113);
             this.inventoryItem14.Name = "inventoryItem14";
             this.inventoryItem14.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem14.TabIndex = 122;
@@ -1512,7 +1532,7 @@
             // inventoryItem34
             // 
             this.inventoryItem34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem34.Location = new System.Drawing.Point(188, 198);
+            this.inventoryItem34.Location = new System.Drawing.Point(190, 213);
             this.inventoryItem34.Name = "inventoryItem34";
             this.inventoryItem34.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem34.TabIndex = 121;
@@ -1521,7 +1541,7 @@
             // inventoryItem24
             // 
             this.inventoryItem24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem24.Location = new System.Drawing.Point(187, 150);
+            this.inventoryItem24.Location = new System.Drawing.Point(189, 165);
             this.inventoryItem24.Name = "inventoryItem24";
             this.inventoryItem24.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem24.TabIndex = 120;
@@ -1530,7 +1550,7 @@
             // inventoryItem44
             // 
             this.inventoryItem44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem44.Location = new System.Drawing.Point(187, 250);
+            this.inventoryItem44.Location = new System.Drawing.Point(189, 265);
             this.inventoryItem44.Name = "inventoryItem44";
             this.inventoryItem44.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem44.TabIndex = 119;
@@ -1539,7 +1559,7 @@
             // inventoryItem4
             // 
             this.inventoryItem4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem4.Location = new System.Drawing.Point(188, 48);
+            this.inventoryItem4.Location = new System.Drawing.Point(190, 63);
             this.inventoryItem4.Name = "inventoryItem4";
             this.inventoryItem4.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem4.TabIndex = 118;
@@ -1548,7 +1568,7 @@
             // inventoryItem15
             // 
             this.inventoryItem15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem15.Location = new System.Drawing.Point(236, 98);
+            this.inventoryItem15.Location = new System.Drawing.Point(238, 113);
             this.inventoryItem15.Name = "inventoryItem15";
             this.inventoryItem15.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem15.TabIndex = 117;
@@ -1557,7 +1577,7 @@
             // inventoryItem35
             // 
             this.inventoryItem35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem35.Location = new System.Drawing.Point(237, 198);
+            this.inventoryItem35.Location = new System.Drawing.Point(239, 213);
             this.inventoryItem35.Name = "inventoryItem35";
             this.inventoryItem35.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem35.TabIndex = 116;
@@ -1602,7 +1622,7 @@
             // inventoryItem67
             // 
             this.inventoryItem67.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem67.Location = new System.Drawing.Point(891, 407);
+            this.inventoryItem67.Location = new System.Drawing.Point(893, 422);
             this.inventoryItem67.Name = "inventoryItem67";
             this.inventoryItem67.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem67.TabIndex = 111;
@@ -1611,7 +1631,7 @@
             // inventoryItem66
             // 
             this.inventoryItem66.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem66.Location = new System.Drawing.Point(891, 355);
+            this.inventoryItem66.Location = new System.Drawing.Point(893, 370);
             this.inventoryItem66.Name = "inventoryItem66";
             this.inventoryItem66.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem66.TabIndex = 110;
@@ -1620,7 +1640,7 @@
             // inventoryItem65
             // 
             this.inventoryItem65.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem65.Location = new System.Drawing.Point(891, 301);
+            this.inventoryItem65.Location = new System.Drawing.Point(893, 316);
             this.inventoryItem65.Name = "inventoryItem65";
             this.inventoryItem65.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem65.TabIndex = 109;
@@ -1629,7 +1649,7 @@
             // inventoryItem26
             // 
             this.inventoryItem26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem26.Location = new System.Drawing.Point(285, 150);
+            this.inventoryItem26.Location = new System.Drawing.Point(287, 165);
             this.inventoryItem26.Name = "inventoryItem26";
             this.inventoryItem26.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem26.TabIndex = 108;
@@ -1638,7 +1658,7 @@
             // inventoryItem63
             // 
             this.inventoryItem63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem63.Location = new System.Drawing.Point(891, 198);
+            this.inventoryItem63.Location = new System.Drawing.Point(893, 213);
             this.inventoryItem63.Name = "inventoryItem63";
             this.inventoryItem63.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem63.TabIndex = 107;
@@ -1647,7 +1667,7 @@
             // inventoryItem62
             // 
             this.inventoryItem62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem62.Location = new System.Drawing.Point(891, 148);
+            this.inventoryItem62.Location = new System.Drawing.Point(893, 163);
             this.inventoryItem62.Name = "inventoryItem62";
             this.inventoryItem62.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem62.TabIndex = 106;
@@ -1656,7 +1676,7 @@
             // inventoryItem61
             // 
             this.inventoryItem61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem61.Location = new System.Drawing.Point(891, 98);
+            this.inventoryItem61.Location = new System.Drawing.Point(893, 113);
             this.inventoryItem61.Name = "inventoryItem61";
             this.inventoryItem61.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem61.TabIndex = 105;
@@ -1665,7 +1685,7 @@
             // inventoryItem75
             // 
             this.inventoryItem75.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem75.Location = new System.Drawing.Point(843, 407);
+            this.inventoryItem75.Location = new System.Drawing.Point(845, 422);
             this.inventoryItem75.Name = "inventoryItem75";
             this.inventoryItem75.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem75.TabIndex = 104;
@@ -1674,7 +1694,7 @@
             // inventoryItem74
             // 
             this.inventoryItem74.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem74.Location = new System.Drawing.Point(843, 355);
+            this.inventoryItem74.Location = new System.Drawing.Point(845, 370);
             this.inventoryItem74.Name = "inventoryItem74";
             this.inventoryItem74.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem74.TabIndex = 103;
@@ -1683,7 +1703,7 @@
             // inventoryItem73
             // 
             this.inventoryItem73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem73.Location = new System.Drawing.Point(843, 301);
+            this.inventoryItem73.Location = new System.Drawing.Point(845, 316);
             this.inventoryItem73.Name = "inventoryItem73";
             this.inventoryItem73.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem73.TabIndex = 102;
@@ -1692,7 +1712,7 @@
             // inventoryItem36
             // 
             this.inventoryItem36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem36.Location = new System.Drawing.Point(286, 198);
+            this.inventoryItem36.Location = new System.Drawing.Point(288, 213);
             this.inventoryItem36.Name = "inventoryItem36";
             this.inventoryItem36.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem36.TabIndex = 101;
@@ -1701,7 +1721,7 @@
             // inventoryItem71
             // 
             this.inventoryItem71.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem71.Location = new System.Drawing.Point(843, 198);
+            this.inventoryItem71.Location = new System.Drawing.Point(845, 213);
             this.inventoryItem71.Name = "inventoryItem71";
             this.inventoryItem71.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem71.TabIndex = 100;
@@ -1710,7 +1730,7 @@
             // inventoryItem70
             // 
             this.inventoryItem70.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem70.Location = new System.Drawing.Point(843, 148);
+            this.inventoryItem70.Location = new System.Drawing.Point(845, 163);
             this.inventoryItem70.Name = "inventoryItem70";
             this.inventoryItem70.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem70.TabIndex = 99;
@@ -1719,7 +1739,7 @@
             // inventoryItem69
             // 
             this.inventoryItem69.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem69.Location = new System.Drawing.Point(843, 98);
+            this.inventoryItem69.Location = new System.Drawing.Point(845, 113);
             this.inventoryItem69.Name = "inventoryItem69";
             this.inventoryItem69.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem69.TabIndex = 98;
@@ -1728,7 +1748,7 @@
             // inventoryItem83
             // 
             this.inventoryItem83.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem83.Location = new System.Drawing.Point(795, 407);
+            this.inventoryItem83.Location = new System.Drawing.Point(797, 422);
             this.inventoryItem83.Name = "inventoryItem83";
             this.inventoryItem83.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem83.TabIndex = 97;
@@ -1737,7 +1757,7 @@
             // inventoryItem82
             // 
             this.inventoryItem82.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem82.Location = new System.Drawing.Point(795, 355);
+            this.inventoryItem82.Location = new System.Drawing.Point(797, 370);
             this.inventoryItem82.Name = "inventoryItem82";
             this.inventoryItem82.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem82.TabIndex = 96;
@@ -1746,7 +1766,7 @@
             // inventoryItem81
             // 
             this.inventoryItem81.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem81.Location = new System.Drawing.Point(795, 301);
+            this.inventoryItem81.Location = new System.Drawing.Point(797, 316);
             this.inventoryItem81.Name = "inventoryItem81";
             this.inventoryItem81.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem81.TabIndex = 95;
@@ -1755,7 +1775,7 @@
             // inventoryItem16
             // 
             this.inventoryItem16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem16.Location = new System.Drawing.Point(285, 98);
+            this.inventoryItem16.Location = new System.Drawing.Point(287, 113);
             this.inventoryItem16.Name = "inventoryItem16";
             this.inventoryItem16.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem16.TabIndex = 94;
@@ -1764,7 +1784,7 @@
             // inventoryItem79
             // 
             this.inventoryItem79.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem79.Location = new System.Drawing.Point(795, 198);
+            this.inventoryItem79.Location = new System.Drawing.Point(797, 213);
             this.inventoryItem79.Name = "inventoryItem79";
             this.inventoryItem79.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem79.TabIndex = 93;
@@ -1773,7 +1793,7 @@
             // inventoryItem78
             // 
             this.inventoryItem78.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem78.Location = new System.Drawing.Point(795, 148);
+            this.inventoryItem78.Location = new System.Drawing.Point(797, 163);
             this.inventoryItem78.Name = "inventoryItem78";
             this.inventoryItem78.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem78.TabIndex = 92;
@@ -1782,7 +1802,7 @@
             // inventoryItem77
             // 
             this.inventoryItem77.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem77.Location = new System.Drawing.Point(795, 98);
+            this.inventoryItem77.Location = new System.Drawing.Point(797, 113);
             this.inventoryItem77.Name = "inventoryItem77";
             this.inventoryItem77.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem77.TabIndex = 91;
@@ -1791,7 +1811,7 @@
             // inventoryItem5
             // 
             this.inventoryItem5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem5.Location = new System.Drawing.Point(237, 48);
+            this.inventoryItem5.Location = new System.Drawing.Point(239, 63);
             this.inventoryItem5.Name = "inventoryItem5";
             this.inventoryItem5.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem5.TabIndex = 90;
@@ -1800,7 +1820,7 @@
             // inventoryItem58
             // 
             this.inventoryItem58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem58.Location = new System.Drawing.Point(723, 198);
+            this.inventoryItem58.Location = new System.Drawing.Point(725, 213);
             this.inventoryItem58.Name = "inventoryItem58";
             this.inventoryItem58.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem58.TabIndex = 89;
@@ -1809,7 +1829,7 @@
             // inventoryItem25
             // 
             this.inventoryItem25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem25.Location = new System.Drawing.Point(236, 150);
+            this.inventoryItem25.Location = new System.Drawing.Point(238, 165);
             this.inventoryItem25.Name = "inventoryItem25";
             this.inventoryItem25.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem25.TabIndex = 88;
@@ -1818,7 +1838,7 @@
             // inventoryItem57
             // 
             this.inventoryItem57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem57.Location = new System.Drawing.Point(723, 148);
+            this.inventoryItem57.Location = new System.Drawing.Point(725, 163);
             this.inventoryItem57.Name = "inventoryItem57";
             this.inventoryItem57.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem57.TabIndex = 87;
@@ -1827,7 +1847,7 @@
             // inventoryItem54
             // 
             this.inventoryItem54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem54.Location = new System.Drawing.Point(658, 198);
+            this.inventoryItem54.Location = new System.Drawing.Point(660, 213);
             this.inventoryItem54.Name = "inventoryItem54";
             this.inventoryItem54.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem54.TabIndex = 86;
@@ -1836,7 +1856,7 @@
             // inventoryItem53
             // 
             this.inventoryItem53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem53.Location = new System.Drawing.Point(658, 148);
+            this.inventoryItem53.Location = new System.Drawing.Point(660, 163);
             this.inventoryItem53.Name = "inventoryItem53";
             this.inventoryItem53.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem53.TabIndex = 85;
@@ -1845,7 +1865,7 @@
             // inventoryItem56
             // 
             this.inventoryItem56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem56.Location = new System.Drawing.Point(723, 98);
+            this.inventoryItem56.Location = new System.Drawing.Point(725, 113);
             this.inventoryItem56.Name = "inventoryItem56";
             this.inventoryItem56.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem56.TabIndex = 84;
@@ -1854,7 +1874,7 @@
             // inventoryItem52
             // 
             this.inventoryItem52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem52.Location = new System.Drawing.Point(658, 98);
+            this.inventoryItem52.Location = new System.Drawing.Point(660, 113);
             this.inventoryItem52.Name = "inventoryItem52";
             this.inventoryItem52.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem52.TabIndex = 83;
@@ -1863,7 +1883,7 @@
             // inventoryItem19
             // 
             this.inventoryItem19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem19.Location = new System.Drawing.Point(432, 98);
+            this.inventoryItem19.Location = new System.Drawing.Point(434, 113);
             this.inventoryItem19.Name = "inventoryItem19";
             this.inventoryItem19.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem19.TabIndex = 82;
@@ -1872,7 +1892,7 @@
             // inventoryItem39
             // 
             this.inventoryItem39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem39.Location = new System.Drawing.Point(433, 198);
+            this.inventoryItem39.Location = new System.Drawing.Point(435, 213);
             this.inventoryItem39.Name = "inventoryItem39";
             this.inventoryItem39.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem39.TabIndex = 81;
@@ -1881,7 +1901,7 @@
             // inventoryItem29
             // 
             this.inventoryItem29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem29.Location = new System.Drawing.Point(432, 150);
+            this.inventoryItem29.Location = new System.Drawing.Point(434, 165);
             this.inventoryItem29.Name = "inventoryItem29";
             this.inventoryItem29.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem29.TabIndex = 80;
@@ -1890,7 +1910,7 @@
             // inventoryItem49
             // 
             this.inventoryItem49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem49.Location = new System.Drawing.Point(432, 250);
+            this.inventoryItem49.Location = new System.Drawing.Point(434, 265);
             this.inventoryItem49.Name = "inventoryItem49";
             this.inventoryItem49.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem49.TabIndex = 79;
@@ -1899,7 +1919,7 @@
             // inventoryItem9
             // 
             this.inventoryItem9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem9.Location = new System.Drawing.Point(433, 48);
+            this.inventoryItem9.Location = new System.Drawing.Point(435, 63);
             this.inventoryItem9.Name = "inventoryItem9";
             this.inventoryItem9.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem9.TabIndex = 78;
@@ -1908,7 +1928,7 @@
             // inventoryItem20
             // 
             this.inventoryItem20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem20.Location = new System.Drawing.Point(481, 98);
+            this.inventoryItem20.Location = new System.Drawing.Point(483, 113);
             this.inventoryItem20.Name = "inventoryItem20";
             this.inventoryItem20.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem20.TabIndex = 77;
@@ -1917,7 +1937,7 @@
             // inventoryItem30
             // 
             this.inventoryItem30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem30.Location = new System.Drawing.Point(481, 148);
+            this.inventoryItem30.Location = new System.Drawing.Point(483, 163);
             this.inventoryItem30.Name = "inventoryItem30";
             this.inventoryItem30.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem30.TabIndex = 76;
@@ -1926,7 +1946,7 @@
             // inventoryItem40
             // 
             this.inventoryItem40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem40.Location = new System.Drawing.Point(481, 198);
+            this.inventoryItem40.Location = new System.Drawing.Point(483, 213);
             this.inventoryItem40.Name = "inventoryItem40";
             this.inventoryItem40.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem40.TabIndex = 75;
@@ -1935,7 +1955,7 @@
             // inventoryItem50
             // 
             this.inventoryItem50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem50.Location = new System.Drawing.Point(481, 250);
+            this.inventoryItem50.Location = new System.Drawing.Point(483, 265);
             this.inventoryItem50.Name = "inventoryItem50";
             this.inventoryItem50.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem50.TabIndex = 74;
@@ -1944,7 +1964,7 @@
             // inventoryItem2
             // 
             this.inventoryItem2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem2.Location = new System.Drawing.Point(90, 48);
+            this.inventoryItem2.Location = new System.Drawing.Point(92, 63);
             this.inventoryItem2.Name = "inventoryItem2";
             this.inventoryItem2.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem2.TabIndex = 73;
@@ -1953,7 +1973,7 @@
             // inventoryItem42
             // 
             this.inventoryItem42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem42.Location = new System.Drawing.Point(89, 250);
+            this.inventoryItem42.Location = new System.Drawing.Point(91, 265);
             this.inventoryItem42.Name = "inventoryItem42";
             this.inventoryItem42.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem42.TabIndex = 69;
@@ -1962,7 +1982,7 @@
             // inventoryItem32
             // 
             this.inventoryItem32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem32.Location = new System.Drawing.Point(90, 198);
+            this.inventoryItem32.Location = new System.Drawing.Point(92, 213);
             this.inventoryItem32.Name = "inventoryItem32";
             this.inventoryItem32.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem32.TabIndex = 65;
@@ -1971,7 +1991,7 @@
             // inventoryItem12
             // 
             this.inventoryItem12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem12.Location = new System.Drawing.Point(89, 98);
+            this.inventoryItem12.Location = new System.Drawing.Point(91, 113);
             this.inventoryItem12.Name = "inventoryItem12";
             this.inventoryItem12.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem12.TabIndex = 61;
@@ -1980,7 +2000,7 @@
             // inventoryItem3
             // 
             this.inventoryItem3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem3.Location = new System.Drawing.Point(139, 48);
+            this.inventoryItem3.Location = new System.Drawing.Point(141, 63);
             this.inventoryItem3.Name = "inventoryItem3";
             this.inventoryItem3.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem3.TabIndex = 58;
@@ -1989,7 +2009,7 @@
             // inventoryItem41
             // 
             this.inventoryItem41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem41.Location = new System.Drawing.Point(40, 250);
+            this.inventoryItem41.Location = new System.Drawing.Point(42, 265);
             this.inventoryItem41.Name = "inventoryItem41";
             this.inventoryItem41.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem41.TabIndex = 57;
@@ -1998,7 +2018,7 @@
             // inventoryItem6
             // 
             this.inventoryItem6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem6.Location = new System.Drawing.Point(286, 48);
+            this.inventoryItem6.Location = new System.Drawing.Point(288, 63);
             this.inventoryItem6.Name = "inventoryItem6";
             this.inventoryItem6.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem6.TabIndex = 55;
@@ -2007,7 +2027,7 @@
             // inventoryItem43
             // 
             this.inventoryItem43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem43.Location = new System.Drawing.Point(138, 250);
+            this.inventoryItem43.Location = new System.Drawing.Point(140, 265);
             this.inventoryItem43.Name = "inventoryItem43";
             this.inventoryItem43.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem43.TabIndex = 54;
@@ -2016,7 +2036,7 @@
             // inventoryItem21
             // 
             this.inventoryItem21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem21.Location = new System.Drawing.Point(40, 150);
+            this.inventoryItem21.Location = new System.Drawing.Point(42, 165);
             this.inventoryItem21.Name = "inventoryItem21";
             this.inventoryItem21.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem21.TabIndex = 53;
@@ -2025,7 +2045,7 @@
             // inventoryItem17
             // 
             this.inventoryItem17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem17.Location = new System.Drawing.Point(334, 98);
+            this.inventoryItem17.Location = new System.Drawing.Point(336, 113);
             this.inventoryItem17.Name = "inventoryItem17";
             this.inventoryItem17.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem17.TabIndex = 52;
@@ -2034,7 +2054,7 @@
             // inventoryItem37
             // 
             this.inventoryItem37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem37.Location = new System.Drawing.Point(335, 198);
+            this.inventoryItem37.Location = new System.Drawing.Point(337, 213);
             this.inventoryItem37.Name = "inventoryItem37";
             this.inventoryItem37.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem37.TabIndex = 51;
@@ -2043,7 +2063,7 @@
             // inventoryItem33
             // 
             this.inventoryItem33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem33.Location = new System.Drawing.Point(139, 198);
+            this.inventoryItem33.Location = new System.Drawing.Point(141, 213);
             this.inventoryItem33.Name = "inventoryItem33";
             this.inventoryItem33.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem33.TabIndex = 50;
@@ -2052,7 +2072,7 @@
             // inventoryItem31
             // 
             this.inventoryItem31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem31.Location = new System.Drawing.Point(41, 198);
+            this.inventoryItem31.Location = new System.Drawing.Point(43, 213);
             this.inventoryItem31.Name = "inventoryItem31";
             this.inventoryItem31.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem31.TabIndex = 49;
@@ -2061,7 +2081,7 @@
             // inventoryItem27
             // 
             this.inventoryItem27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem27.Location = new System.Drawing.Point(334, 150);
+            this.inventoryItem27.Location = new System.Drawing.Point(336, 165);
             this.inventoryItem27.Name = "inventoryItem27";
             this.inventoryItem27.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem27.TabIndex = 48;
@@ -2070,7 +2090,7 @@
             // inventoryItem47
             // 
             this.inventoryItem47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem47.Location = new System.Drawing.Point(334, 250);
+            this.inventoryItem47.Location = new System.Drawing.Point(336, 265);
             this.inventoryItem47.Name = "inventoryItem47";
             this.inventoryItem47.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem47.TabIndex = 47;
@@ -2079,7 +2099,7 @@
             // inventoryItem22
             // 
             this.inventoryItem22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem22.Location = new System.Drawing.Point(89, 150);
+            this.inventoryItem22.Location = new System.Drawing.Point(91, 165);
             this.inventoryItem22.Name = "inventoryItem22";
             this.inventoryItem22.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem22.TabIndex = 46;
@@ -2088,7 +2108,7 @@
             // inventoryItem60
             // 
             this.inventoryItem60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem60.Location = new System.Drawing.Point(891, 48);
+            this.inventoryItem60.Location = new System.Drawing.Point(893, 63);
             this.inventoryItem60.Name = "inventoryItem60";
             this.inventoryItem60.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem60.TabIndex = 45;
@@ -2097,7 +2117,7 @@
             // inventoryItem68
             // 
             this.inventoryItem68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem68.Location = new System.Drawing.Point(843, 48);
+            this.inventoryItem68.Location = new System.Drawing.Point(845, 63);
             this.inventoryItem68.Name = "inventoryItem68";
             this.inventoryItem68.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem68.TabIndex = 44;
@@ -2106,7 +2126,7 @@
             // inventoryItem76
             // 
             this.inventoryItem76.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem76.Location = new System.Drawing.Point(795, 48);
+            this.inventoryItem76.Location = new System.Drawing.Point(797, 63);
             this.inventoryItem76.Name = "inventoryItem76";
             this.inventoryItem76.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem76.TabIndex = 43;
@@ -2115,7 +2135,7 @@
             // inventoryItem55
             // 
             this.inventoryItem55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem55.Location = new System.Drawing.Point(723, 48);
+            this.inventoryItem55.Location = new System.Drawing.Point(725, 63);
             this.inventoryItem55.Name = "inventoryItem55";
             this.inventoryItem55.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem55.TabIndex = 42;
@@ -2124,7 +2144,7 @@
             // inventoryItem51
             // 
             this.inventoryItem51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem51.Location = new System.Drawing.Point(658, 48);
+            this.inventoryItem51.Location = new System.Drawing.Point(660, 63);
             this.inventoryItem51.Name = "inventoryItem51";
             this.inventoryItem51.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem51.TabIndex = 41;
@@ -2133,7 +2153,7 @@
             // inventoryItem7
             // 
             this.inventoryItem7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem7.Location = new System.Drawing.Point(335, 48);
+            this.inventoryItem7.Location = new System.Drawing.Point(337, 63);
             this.inventoryItem7.Name = "inventoryItem7";
             this.inventoryItem7.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem7.TabIndex = 40;
@@ -2142,7 +2162,7 @@
             // inventoryItem18
             // 
             this.inventoryItem18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem18.Location = new System.Drawing.Point(383, 98);
+            this.inventoryItem18.Location = new System.Drawing.Point(385, 113);
             this.inventoryItem18.Name = "inventoryItem18";
             this.inventoryItem18.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem18.TabIndex = 39;
@@ -2151,7 +2171,7 @@
             // inventoryItem38
             // 
             this.inventoryItem38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem38.Location = new System.Drawing.Point(384, 198);
+            this.inventoryItem38.Location = new System.Drawing.Point(386, 213);
             this.inventoryItem38.Name = "inventoryItem38";
             this.inventoryItem38.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem38.TabIndex = 38;
@@ -2160,7 +2180,7 @@
             // inventoryItem28
             // 
             this.inventoryItem28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem28.Location = new System.Drawing.Point(383, 150);
+            this.inventoryItem28.Location = new System.Drawing.Point(385, 165);
             this.inventoryItem28.Name = "inventoryItem28";
             this.inventoryItem28.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem28.TabIndex = 37;
@@ -2169,7 +2189,7 @@
             // inventoryItem48
             // 
             this.inventoryItem48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem48.Location = new System.Drawing.Point(383, 250);
+            this.inventoryItem48.Location = new System.Drawing.Point(385, 265);
             this.inventoryItem48.Name = "inventoryItem48";
             this.inventoryItem48.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem48.TabIndex = 36;
@@ -2178,7 +2198,7 @@
             // inventoryItem8
             // 
             this.inventoryItem8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem8.Location = new System.Drawing.Point(384, 48);
+            this.inventoryItem8.Location = new System.Drawing.Point(386, 63);
             this.inventoryItem8.Name = "inventoryItem8";
             this.inventoryItem8.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem8.TabIndex = 35;
@@ -2187,7 +2207,7 @@
             // inventoryItem46
             // 
             this.inventoryItem46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem46.Location = new System.Drawing.Point(285, 250);
+            this.inventoryItem46.Location = new System.Drawing.Point(287, 265);
             this.inventoryItem46.Name = "inventoryItem46";
             this.inventoryItem46.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem46.TabIndex = 34;
@@ -2196,7 +2216,7 @@
             // inventoryItem45
             // 
             this.inventoryItem45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem45.Location = new System.Drawing.Point(236, 250);
+            this.inventoryItem45.Location = new System.Drawing.Point(238, 265);
             this.inventoryItem45.Name = "inventoryItem45";
             this.inventoryItem45.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem45.TabIndex = 33;
@@ -2205,7 +2225,7 @@
             // inventoryItem13
             // 
             this.inventoryItem13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem13.Location = new System.Drawing.Point(138, 98);
+            this.inventoryItem13.Location = new System.Drawing.Point(140, 113);
             this.inventoryItem13.Name = "inventoryItem13";
             this.inventoryItem13.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem13.TabIndex = 32;
@@ -2214,7 +2234,7 @@
             // inventoryItem1
             // 
             this.inventoryItem1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem1.Location = new System.Drawing.Point(41, 48);
+            this.inventoryItem1.Location = new System.Drawing.Point(43, 63);
             this.inventoryItem1.Name = "inventoryItem1";
             this.inventoryItem1.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem1.TabIndex = 31;
@@ -2223,7 +2243,7 @@
             // inventoryItem11
             // 
             this.inventoryItem11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem11.Location = new System.Drawing.Point(40, 98);
+            this.inventoryItem11.Location = new System.Drawing.Point(42, 113);
             this.inventoryItem11.Name = "inventoryItem11";
             this.inventoryItem11.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem11.TabIndex = 30;
@@ -2250,7 +2270,7 @@
             // inventoryItem23
             // 
             this.inventoryItem23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem23.Location = new System.Drawing.Point(138, 150);
+            this.inventoryItem23.Location = new System.Drawing.Point(140, 165);
             this.inventoryItem23.Name = "inventoryItem23";
             this.inventoryItem23.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem23.TabIndex = 27;
@@ -2259,7 +2279,7 @@
             // inventoryItem10
             // 
             this.inventoryItem10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inventoryItem10.Location = new System.Drawing.Point(482, 48);
+            this.inventoryItem10.Location = new System.Drawing.Point(484, 63);
             this.inventoryItem10.Name = "inventoryItem10";
             this.inventoryItem10.Size = new System.Drawing.Size(42, 42);
             this.inventoryItem10.TabIndex = 26;
@@ -2267,14 +2287,14 @@
             // 
             // lblKickBanStatus
             // 
-            this.lblKickBanStatus.Location = new System.Drawing.Point(321, 440);
+            this.lblKickBanStatus.Location = new System.Drawing.Point(323, 455);
             this.lblKickBanStatus.Name = "lblKickBanStatus";
             this.lblKickBanStatus.Size = new System.Drawing.Size(358, 13);
             this.lblKickBanStatus.TabIndex = 25;
             // 
             // btnBan
             // 
-            this.btnBan.Location = new System.Drawing.Point(518, 390);
+            this.btnBan.Location = new System.Drawing.Point(520, 405);
             this.btnBan.Name = "btnBan";
             this.btnBan.Size = new System.Drawing.Size(75, 23);
             this.btnBan.TabIndex = 24;
@@ -2284,7 +2304,7 @@
             // 
             // btnKick
             // 
-            this.btnKick.Location = new System.Drawing.Point(378, 390);
+            this.btnKick.Location = new System.Drawing.Point(380, 405);
             this.btnKick.Name = "btnKick";
             this.btnKick.Size = new System.Drawing.Size(75, 23);
             this.btnKick.TabIndex = 23;
@@ -2295,7 +2315,7 @@
             // txtKickBanReason
             // 
             this.txtKickBanReason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKickBanReason.Location = new System.Drawing.Point(324, 346);
+            this.txtKickBanReason.Location = new System.Drawing.Point(326, 361);
             this.txtKickBanReason.Name = "txtKickBanReason";
             this.txtKickBanReason.Size = new System.Drawing.Size(355, 20);
             this.txtKickBanReason.TabIndex = 22;
@@ -2303,7 +2323,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(479, 322);
+            this.label24.Location = new System.Drawing.Point(481, 337);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(44, 13);
             this.label24.TabIndex = 21;
@@ -2314,7 +2334,7 @@
             this.panelPlayerShoesColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPlayerShoesColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPlayerShoesColor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.panelPlayerShoesColor.Location = new System.Drawing.Point(137, 482);
+            this.panelPlayerShoesColor.Location = new System.Drawing.Point(139, 497);
             this.panelPlayerShoesColor.Name = "panelPlayerShoesColor";
             this.panelPlayerShoesColor.Size = new System.Drawing.Size(76, 18);
             this.panelPlayerShoesColor.TabIndex = 20;
@@ -2325,7 +2345,7 @@
             this.panelPlayerPantsColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPlayerPantsColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPlayerPantsColor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.panelPlayerPantsColor.Location = new System.Drawing.Point(137, 457);
+            this.panelPlayerPantsColor.Location = new System.Drawing.Point(139, 472);
             this.panelPlayerPantsColor.Name = "panelPlayerPantsColor";
             this.panelPlayerPantsColor.Size = new System.Drawing.Size(76, 18);
             this.panelPlayerPantsColor.TabIndex = 19;
@@ -2336,7 +2356,7 @@
             this.panelPlayerUnderShirtColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPlayerUnderShirtColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPlayerUnderShirtColor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.panelPlayerUnderShirtColor.Location = new System.Drawing.Point(137, 432);
+            this.panelPlayerUnderShirtColor.Location = new System.Drawing.Point(139, 447);
             this.panelPlayerUnderShirtColor.Name = "panelPlayerUnderShirtColor";
             this.panelPlayerUnderShirtColor.Size = new System.Drawing.Size(76, 18);
             this.panelPlayerUnderShirtColor.TabIndex = 18;
@@ -2347,7 +2367,7 @@
             this.panelPlayerShirtColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPlayerShirtColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPlayerShirtColor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.panelPlayerShirtColor.Location = new System.Drawing.Point(137, 407);
+            this.panelPlayerShirtColor.Location = new System.Drawing.Point(139, 422);
             this.panelPlayerShirtColor.Name = "panelPlayerShirtColor";
             this.panelPlayerShirtColor.Size = new System.Drawing.Size(76, 18);
             this.panelPlayerShirtColor.TabIndex = 17;
@@ -2358,7 +2378,7 @@
             this.panelPlayerEyeColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPlayerEyeColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPlayerEyeColor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.panelPlayerEyeColor.Location = new System.Drawing.Point(137, 382);
+            this.panelPlayerEyeColor.Location = new System.Drawing.Point(139, 397);
             this.panelPlayerEyeColor.Name = "panelPlayerEyeColor";
             this.panelPlayerEyeColor.Size = new System.Drawing.Size(76, 18);
             this.panelPlayerEyeColor.TabIndex = 16;
@@ -2369,7 +2389,7 @@
             this.panelPlayerSkinColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPlayerSkinColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPlayerSkinColor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.panelPlayerSkinColor.Location = new System.Drawing.Point(137, 357);
+            this.panelPlayerSkinColor.Location = new System.Drawing.Point(139, 372);
             this.panelPlayerSkinColor.Name = "panelPlayerSkinColor";
             this.panelPlayerSkinColor.Size = new System.Drawing.Size(76, 18);
             this.panelPlayerSkinColor.TabIndex = 15;
@@ -2380,7 +2400,7 @@
             this.panelPlayerHairColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPlayerHairColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPlayerHairColor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.panelPlayerHairColor.Location = new System.Drawing.Point(137, 332);
+            this.panelPlayerHairColor.Location = new System.Drawing.Point(139, 347);
             this.panelPlayerHairColor.Name = "panelPlayerHairColor";
             this.panelPlayerHairColor.Size = new System.Drawing.Size(76, 18);
             this.panelPlayerHairColor.TabIndex = 14;
@@ -2390,7 +2410,7 @@
             // 
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label23.Location = new System.Drawing.Point(48, 405);
+            this.label23.Location = new System.Drawing.Point(50, 420);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(83, 23);
             this.label23.TabIndex = 13;
@@ -2401,7 +2421,7 @@
             // 
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label22.Location = new System.Drawing.Point(48, 380);
+            this.label22.Location = new System.Drawing.Point(50, 395);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(83, 23);
             this.label22.TabIndex = 12;
@@ -2412,7 +2432,7 @@
             // 
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label21.Location = new System.Drawing.Point(9, 430);
+            this.label21.Location = new System.Drawing.Point(11, 445);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(122, 23);
             this.label21.TabIndex = 11;
@@ -2423,7 +2443,7 @@
             // 
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label20.Location = new System.Drawing.Point(29, 455);
+            this.label20.Location = new System.Drawing.Point(31, 470);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(102, 23);
             this.label20.TabIndex = 10;
@@ -2434,7 +2454,7 @@
             // 
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label19.Location = new System.Drawing.Point(48, 480);
+            this.label19.Location = new System.Drawing.Point(50, 495);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(83, 23);
             this.label19.TabIndex = 9;
@@ -2445,7 +2465,7 @@
             // 
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label17.Location = new System.Drawing.Point(55, 355);
+            this.label17.Location = new System.Drawing.Point(57, 370);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(76, 23);
             this.label17.TabIndex = 8;
@@ -2456,7 +2476,7 @@
             // 
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label16.Location = new System.Drawing.Point(55, 330);
+            this.label16.Location = new System.Drawing.Point(57, 345);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(76, 23);
             this.label16.TabIndex = 7;
@@ -2467,7 +2487,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(109, 300);
+            this.label14.Location = new System.Drawing.Point(111, 315);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(64, 26);
             this.label14.TabIndex = 6;
@@ -2477,7 +2497,7 @@
             // 
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label18.Location = new System.Drawing.Point(6, 5);
+            this.label18.Location = new System.Drawing.Point(8, 20);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(76, 23);
             this.label18.TabIndex = 5;
@@ -2487,15 +2507,16 @@
             // lblPlayerName
             // 
             this.lblPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerName.Location = new System.Drawing.Point(88, 5);
+            this.lblPlayerName.Location = new System.Drawing.Point(90, 20);
             this.lblPlayerName.Name = "lblPlayerName";
-            this.lblPlayerName.Size = new System.Drawing.Size(367, 23);
+            this.lblPlayerName.Size = new System.Drawing.Size(505, 23);
             this.lblPlayerName.TabIndex = 4;
             this.lblPlayerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabBan
             // 
             this.tabBan.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabBan.Controls.Add(this.banSearchResults);
             this.tabBan.Controls.Add(this.lblBanningUser);
             this.tabBan.Controls.Add(this.banClearSearch);
             this.tabBan.Controls.Add(this.banStartSearch);
@@ -2515,9 +2536,16 @@
             this.tabBan.TabIndex = 4;
             this.tabBan.Text = "Ban";
             // 
+            // banSearchResults
+            // 
+            this.banSearchResults.Location = new System.Drawing.Point(430, 18);
+            this.banSearchResults.Name = "banSearchResults";
+            this.banSearchResults.Size = new System.Drawing.Size(235, 13);
+            this.banSearchResults.TabIndex = 71;
+            // 
             // lblBanningUser
             // 
-            this.lblBanningUser.Location = new System.Drawing.Point(423, 444);
+            this.lblBanningUser.Location = new System.Drawing.Point(423, 449);
             this.lblBanningUser.Name = "lblBanningUser";
             this.lblBanningUser.Size = new System.Drawing.Size(103, 13);
             this.lblBanningUser.TabIndex = 24;
@@ -2525,7 +2553,7 @@
             // banClearSearch
             // 
             this.banClearSearch.Image = global::RemoteAdminConsole.Properties.Resources.clear_left;
-            this.banClearSearch.Location = new System.Drawing.Point(386, 9);
+            this.banClearSearch.Location = new System.Drawing.Point(393, 13);
             this.banClearSearch.Name = "banClearSearch";
             this.banClearSearch.Size = new System.Drawing.Size(30, 23);
             this.banClearSearch.TabIndex = 23;
@@ -2535,7 +2563,7 @@
             // banStartSearch
             // 
             this.banStartSearch.Image = global::RemoteAdminConsole.Properties.Resources.Search;
-            this.banStartSearch.Location = new System.Drawing.Point(344, 9);
+            this.banStartSearch.Location = new System.Drawing.Point(351, 13);
             this.banStartSearch.Name = "banStartSearch";
             this.banStartSearch.Size = new System.Drawing.Size(30, 23);
             this.banStartSearch.TabIndex = 22;
@@ -2545,7 +2573,7 @@
             // banFuzzyIP
             // 
             this.banFuzzyIP.AutoSize = true;
-            this.banFuzzyIP.Location = new System.Drawing.Point(433, 69);
+            this.banFuzzyIP.Location = new System.Drawing.Point(440, 73);
             this.banFuzzyIP.Name = "banFuzzyIP";
             this.banFuzzyIP.Size = new System.Drawing.Size(130, 17);
             this.banFuzzyIP.TabIndex = 21;
@@ -2555,7 +2583,7 @@
             // banSearchIP
             // 
             this.banSearchIP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.banSearchIP.Location = new System.Drawing.Point(187, 67);
+            this.banSearchIP.Location = new System.Drawing.Point(194, 71);
             this.banSearchIP.Name = "banSearchIP";
             this.banSearchIP.Size = new System.Drawing.Size(229, 20);
             this.banSearchIP.TabIndex = 19;
@@ -2564,7 +2592,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label38.Location = new System.Drawing.Point(161, 71);
+            this.label38.Location = new System.Drawing.Point(168, 75);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(20, 13);
             this.label38.TabIndex = 17;
@@ -2574,7 +2602,7 @@
             // banFuzzyName
             // 
             this.banFuzzyName.AutoSize = true;
-            this.banFuzzyName.Location = new System.Drawing.Point(433, 39);
+            this.banFuzzyName.Location = new System.Drawing.Point(440, 43);
             this.banFuzzyName.Name = "banFuzzyName";
             this.banFuzzyName.Size = new System.Drawing.Size(130, 17);
             this.banFuzzyName.TabIndex = 15;
@@ -2584,7 +2612,7 @@
             // banSearchName
             // 
             this.banSearchName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.banSearchName.Location = new System.Drawing.Point(187, 37);
+            this.banSearchName.Location = new System.Drawing.Point(194, 41);
             this.banSearchName.Name = "banSearchName";
             this.banSearchName.Size = new System.Drawing.Size(229, 20);
             this.banSearchName.TabIndex = 14;
@@ -2593,7 +2621,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label36.Location = new System.Drawing.Point(143, 41);
+            this.label36.Location = new System.Drawing.Point(150, 45);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(38, 13);
             this.label36.TabIndex = 13;
@@ -2603,7 +2631,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 14);
+            this.label3.Location = new System.Drawing.Point(287, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 12;
@@ -2623,7 +2651,7 @@
             // 
             this.banUnBan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.banUnBan.Enabled = false;
-            this.banUnBan.Location = new System.Drawing.Point(437, 460);
+            this.banUnBan.Location = new System.Drawing.Point(445, 460);
             this.banUnBan.Name = "banUnBan";
             this.banUnBan.Size = new System.Drawing.Size(75, 23);
             this.banUnBan.TabIndex = 1;
@@ -2644,7 +2672,7 @@
             this.banDataBanningUser,
             this.banDataDate,
             this.banDataExpiration});
-            this.banDataBan.Location = new System.Drawing.Point(28, 122);
+            this.banDataBan.Location = new System.Drawing.Point(35, 126);
             this.banDataBan.Name = "banDataBan";
             this.banDataBan.Size = new System.Drawing.Size(894, 300);
             this.banDataBan.TabIndex = 0;
@@ -2696,8 +2724,9 @@
             // tabUsers
             // 
             this.tabUsers.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabUsers.Controls.Add(this.usersUpdateStatus);
+            this.tabUsers.Controls.Add(this.usersSearchResults);
             this.tabUsers.Controls.Add(this.usersAddUser);
-            this.tabUsers.Controls.Add(this.query);
             this.tabUsers.Controls.Add(this.usersListPermissions);
             this.tabUsers.Controls.Add(this.usersKnowIPs);
             this.tabUsers.Controls.Add(this.label35);
@@ -2723,25 +2752,31 @@
             this.tabUsers.TabIndex = 5;
             this.tabUsers.Text = "Users";
             // 
+            // usersUpdateStatus
+            // 
+            this.usersUpdateStatus.Location = new System.Drawing.Point(112, 128);
+            this.usersUpdateStatus.Name = "usersUpdateStatus";
+            this.usersUpdateStatus.Size = new System.Drawing.Size(254, 15);
+            this.usersUpdateStatus.TabIndex = 261;
+            this.usersUpdateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // usersSearchResults
+            // 
+            this.usersSearchResults.Location = new System.Drawing.Point(437, 18);
+            this.usersSearchResults.Name = "usersSearchResults";
+            this.usersSearchResults.Size = new System.Drawing.Size(235, 13);
+            this.usersSearchResults.TabIndex = 70;
+            // 
             // usersAddUser
             // 
             this.usersAddUser.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.usersAddUser.Location = new System.Drawing.Point(26, 142);
+            this.usersAddUser.Location = new System.Drawing.Point(26, 124);
             this.usersAddUser.Name = "usersAddUser";
             this.usersAddUser.Size = new System.Drawing.Size(75, 23);
             this.usersAddUser.TabIndex = 69;
             this.usersAddUser.Text = "Update User";
             this.usersAddUser.UseVisualStyleBackColor = false;
             this.usersAddUser.Click += new System.EventHandler(this.usersAddUser_Click);
-            // 
-            // query
-            // 
-            this.query.Location = new System.Drawing.Point(437, 13);
-            this.query.Name = "query";
-            this.query.Size = new System.Drawing.Size(489, 23);
-            this.query.TabIndex = 68;
-            this.query.Text = "label40";
-            this.query.Visible = false;
             // 
             // usersListPermissions
             // 
@@ -2992,8 +3027,8 @@
             // 
             // usersDataID
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle11;
             this.usersDataID.HeaderText = "Id";
             this.usersDataID.Name = "usersDataID";
             this.usersDataID.ReadOnly = true;
@@ -3010,9 +3045,24 @@
             // 
             // tabInventory
             // 
+            this.tabInventory.AllowDrop = true;
             this.tabInventory.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabInventory.Controls.Add(this.inventoryUpdate);
+            this.tabInventory.Controls.Add(this.itemPreviewText);
+            this.tabInventory.Controls.Add(this.inventoryUpdateStatus);
+            this.tabInventory.Controls.Add(this.inventorySlotReplace);
+            this.tabInventory.Controls.Add(this.sscItem1);
+            this.tabInventory.Controls.Add(this.label77);
+            this.tabInventory.Controls.Add(this.txtItemFilter);
+            this.tabInventory.Controls.Add(this.label76);
+            this.tabInventory.Controls.Add(this.clearPreviewItem);
+            this.tabInventory.Controls.Add(this.cmbxUserItemPrefix);
+            this.tabInventory.Controls.Add(this.label74);
+            this.tabInventory.Controls.Add(this.txtStackSize);
             this.tabInventory.Controls.Add(this.label59);
+            this.tabInventory.Controls.Add(this.label71);
+            this.tabInventory.Controls.Add(this.inventoryItemsList);
+            this.tabInventory.Controls.Add(this.inventoryUpdate);
+            this.tabInventory.Controls.Add(this.itemPreview);
             this.tabInventory.Controls.Add(this.label60);
             this.tabInventory.Controls.Add(this.label61);
             this.tabInventory.Controls.Add(this.label62);
@@ -3097,7 +3147,6 @@
             this.tabInventory.Controls.Add(this.sscItem46);
             this.tabInventory.Controls.Add(this.sscItem45);
             this.tabInventory.Controls.Add(this.sscItem13);
-            this.tabInventory.Controls.Add(this.sscItem1);
             this.tabInventory.Controls.Add(this.sscItem11);
             this.tabInventory.Controls.Add(this.sscItem23);
             this.tabInventory.Controls.Add(this.sscItem10);
@@ -3125,27 +3174,191 @@
             this.tabInventory.TabIndex = 9;
             this.tabInventory.Text = "Inventory";
             // 
+            // itemPreviewText
+            // 
+            this.itemPreviewText.Location = new System.Drawing.Point(389, 397);
+            this.itemPreviewText.Name = "itemPreviewText";
+            this.itemPreviewText.Size = new System.Drawing.Size(236, 13);
+            this.itemPreviewText.TabIndex = 260;
+            this.itemPreviewText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // inventoryUpdateStatus
+            // 
+            this.inventoryUpdateStatus.Location = new System.Drawing.Point(441, 480);
+            this.inventoryUpdateStatus.Name = "inventoryUpdateStatus";
+            this.inventoryUpdateStatus.Size = new System.Drawing.Size(132, 13);
+            this.inventoryUpdateStatus.TabIndex = 259;
+            this.inventoryUpdateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // inventorySlotReplace
+            // 
+            this.inventorySlotReplace.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.inventorySlotReplace.Location = new System.Drawing.Point(470, 419);
+            this.inventorySlotReplace.Name = "inventorySlotReplace";
+            this.inventorySlotReplace.Size = new System.Drawing.Size(75, 23);
+            this.inventorySlotReplace.TabIndex = 258;
+            this.inventorySlotReplace.Text = "Replace";
+            this.inventorySlotReplace.UseVisualStyleBackColor = false;
+            this.inventorySlotReplace.Click += new System.EventHandler(this.inventorySlotReplace_Click);
+            // 
+            // sscItem1
+            // 
+            this.sscItem1.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem1.Location = new System.Drawing.Point(43, 63);
+            this.sscItem1.Name = "sscItem1";
+            this.sscItem1.Size = new System.Drawing.Size(42, 42);
+            this.sscItem1.TabIndex = 158;
+            this.sscItem1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem1.Click += new System.EventHandler(this.sscItem_Click);
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(833, 370);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(66, 13);
+            this.label77.TabIndex = 254;
+            this.label77.Text = "Item Lookup";
+            this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtItemFilter
+            // 
+            this.txtItemFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtItemFilter.Location = new System.Drawing.Point(815, 392);
+            this.txtItemFilter.MaxLength = 32000;
+            this.txtItemFilter.Name = "txtItemFilter";
+            this.txtItemFilter.Size = new System.Drawing.Size(103, 20);
+            this.txtItemFilter.TabIndex = 253;
+            this.txtItemFilter.TextChanged += new System.EventHandler(this.txtItemFilter_TextChanged);
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(847, 446);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(33, 13);
+            this.label76.TabIndex = 252;
+            this.label76.Text = "Prefix";
+            this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // clearPreviewItem
+            // 
+            this.clearPreviewItem.Image = global::RemoteAdminConsole.Properties.Resources.clear_left;
+            this.clearPreviewItem.Location = new System.Drawing.Point(534, 355);
+            this.clearPreviewItem.Name = "clearPreviewItem";
+            this.clearPreviewItem.Size = new System.Drawing.Size(30, 23);
+            this.clearPreviewItem.TabIndex = 251;
+            this.clearPreviewItem.UseVisualStyleBackColor = true;
+            this.clearPreviewItem.Click += new System.EventHandler(this.clearPreviewItem_Click);
+            // 
+            // cmbxUserItemPrefix
+            // 
+            this.cmbxUserItemPrefix.DropDownHeight = 110;
+            this.cmbxUserItemPrefix.FormattingEnabled = true;
+            this.cmbxUserItemPrefix.IntegralHeight = false;
+            this.cmbxUserItemPrefix.Location = new System.Drawing.Point(803, 463);
+            this.cmbxUserItemPrefix.Name = "cmbxUserItemPrefix";
+            this.cmbxUserItemPrefix.Size = new System.Drawing.Size(121, 21);
+            this.cmbxUserItemPrefix.TabIndex = 250;
+            this.cmbxUserItemPrefix.SelectedIndexChanged += new System.EventHandler(this.cmbxUserItemPrefix_SelectedIndexChanged);
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(803, 423);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(61, 13);
+            this.label74.TabIndex = 249;
+            this.label74.Text = "Stack Size:";
+            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtStackSize
+            // 
+            this.txtStackSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStackSize.Location = new System.Drawing.Point(866, 419);
+            this.txtStackSize.MaxLength = 3;
+            this.txtStackSize.Name = "txtStackSize";
+            this.txtStackSize.Size = new System.Drawing.Size(52, 20);
+            this.txtStackSize.TabIndex = 248;
+            this.txtStackSize.TextChanged += new System.EventHandler(this.txtStackSize_TextChanged);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(485, 324);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(45, 13);
+            this.label59.TabIndex = 247;
+            this.label59.Text = "Preview";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(835, 43);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(32, 13);
+            this.label71.TabIndex = 246;
+            this.label71.Text = "Items";
+            // 
+            // inventoryItemsList
+            // 
+            this.inventoryItemsList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.inventoryItemsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.inventoryItemListName,
+            this.inventoryItemListNetId,
+            this.inventoryItemListStackSize,
+            this.inventoryItemListPrefix});
+            this.inventoryItemsList.Location = new System.Drawing.Point(803, 63);
+            this.inventoryItemsList.MultiSelect = false;
+            this.inventoryItemsList.Name = "inventoryItemsList";
+            this.inventoryItemsList.Size = new System.Drawing.Size(130, 295);
+            this.inventoryItemsList.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.inventoryItemsList.TabIndex = 245;
+            this.inventoryItemsList.UseCompatibleStateImageBehavior = false;
+            this.inventoryItemsList.View = System.Windows.Forms.View.Details;
+            this.inventoryItemsList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.inventoryItemsList_ItemDrag);
+            this.inventoryItemsList.DoubleClick += new System.EventHandler(this.inventoryItemsList_DoubleClick);
+            // 
+            // inventoryItemListName
+            // 
+            this.inventoryItemListName.Text = "Item";
+            this.inventoryItemListName.Width = 130;
+            // 
+            // inventoryItemListNetId
+            // 
+            this.inventoryItemListNetId.Width = 0;
+            // 
+            // inventoryItemListStackSize
+            // 
+            this.inventoryItemListStackSize.Width = 0;
+            // 
+            // inventoryItemListPrefix
+            // 
+            this.inventoryItemListPrefix.Width = 0;
+            // 
             // inventoryUpdate
             // 
             this.inventoryUpdate.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.inventoryUpdate.Location = new System.Drawing.Point(473, 20);
+            this.inventoryUpdate.Location = new System.Drawing.Point(470, 447);
             this.inventoryUpdate.Name = "inventoryUpdate";
             this.inventoryUpdate.Size = new System.Drawing.Size(75, 23);
             this.inventoryUpdate.TabIndex = 244;
             this.inventoryUpdate.Text = "Update";
             this.inventoryUpdate.UseVisualStyleBackColor = false;
-            this.inventoryUpdate.Visible = false;
             this.inventoryUpdate.Click += new System.EventHandler(this.inventoryUpdate_Click);
             // 
-            // label59
+            // itemPreview
             // 
-            this.label59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label59.Location = new System.Drawing.Point(553, 265);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(42, 42);
-            this.label59.TabIndex = 243;
-            this.label59.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label59.Visible = false;
+            this.itemPreview.AllowDrop = true;
+            this.itemPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.itemPreview.Location = new System.Drawing.Point(486, 345);
+            this.itemPreview.Name = "itemPreview";
+            this.itemPreview.Size = new System.Drawing.Size(42, 42);
+            this.itemPreview.TabIndex = 243;
+            this.itemPreview.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.itemPreview.DragDrop += new System.Windows.Forms.DragEventHandler(this.preview_DragDrop);
+            this.itemPreview.DragEnter += new System.Windows.Forms.DragEventHandler(this.preview_DragEnter);
             // 
             // label60
             // 
@@ -3203,748 +3416,901 @@
             // 
             // sscItem64
             // 
-            this.sscItem64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem64.Location = new System.Drawing.Point(748, 265);
+            this.sscItem64.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem64.Location = new System.Drawing.Point(748, 263);
             this.sscItem64.Name = "sscItem64";
             this.sscItem64.Size = new System.Drawing.Size(42, 42);
-            this.sscItem64.TabIndex = 236;
+            this.sscItem64.TabIndex = 237;
             this.sscItem64.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem64.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem72
             // 
-            this.sscItem72.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem72.Location = new System.Drawing.Point(700, 265);
+            this.sscItem72.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem72.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem72.Location = new System.Drawing.Point(700, 263);
             this.sscItem72.Name = "sscItem72";
             this.sscItem72.Size = new System.Drawing.Size(42, 42);
-            this.sscItem72.TabIndex = 235;
+            this.sscItem72.TabIndex = 229;
             this.sscItem72.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem72.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem80
             // 
-            this.sscItem80.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem80.Location = new System.Drawing.Point(652, 265);
+            this.sscItem80.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem80.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem80.Location = new System.Drawing.Point(652, 263);
             this.sscItem80.Name = "sscItem80";
             this.sscItem80.Size = new System.Drawing.Size(42, 42);
-            this.sscItem80.TabIndex = 234;
+            this.sscItem80.TabIndex = 221;
             this.sscItem80.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem80.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem14
             // 
-            this.sscItem14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem14.Location = new System.Drawing.Point(189, 113);
+            this.sscItem14.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem14.Location = new System.Drawing.Point(190, 113);
             this.sscItem14.Name = "sscItem14";
             this.sscItem14.Size = new System.Drawing.Size(42, 42);
-            this.sscItem14.TabIndex = 233;
+            this.sscItem14.TabIndex = 171;
             this.sscItem14.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem14.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem34
             // 
-            this.sscItem34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem34.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem34.Location = new System.Drawing.Point(190, 213);
             this.sscItem34.Name = "sscItem34";
             this.sscItem34.Size = new System.Drawing.Size(42, 42);
-            this.sscItem34.TabIndex = 232;
+            this.sscItem34.TabIndex = 191;
             this.sscItem34.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem34.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem24
             // 
-            this.sscItem24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem24.Location = new System.Drawing.Point(189, 165);
+            this.sscItem24.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem24.Location = new System.Drawing.Point(190, 163);
             this.sscItem24.Name = "sscItem24";
             this.sscItem24.Size = new System.Drawing.Size(42, 42);
-            this.sscItem24.TabIndex = 231;
+            this.sscItem24.TabIndex = 181;
             this.sscItem24.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem24.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem44
             // 
-            this.sscItem44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem44.Location = new System.Drawing.Point(189, 265);
+            this.sscItem44.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem44.Location = new System.Drawing.Point(190, 263);
             this.sscItem44.Name = "sscItem44";
             this.sscItem44.Size = new System.Drawing.Size(42, 42);
-            this.sscItem44.TabIndex = 230;
+            this.sscItem44.TabIndex = 201;
             this.sscItem44.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem44.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem4
             // 
-            this.sscItem4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem4.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem4.Location = new System.Drawing.Point(190, 63);
             this.sscItem4.Name = "sscItem4";
             this.sscItem4.Size = new System.Drawing.Size(42, 42);
-            this.sscItem4.TabIndex = 229;
+            this.sscItem4.TabIndex = 161;
             this.sscItem4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem4.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem15
             // 
-            this.sscItem15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem15.Location = new System.Drawing.Point(238, 113);
+            this.sscItem15.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem15.Location = new System.Drawing.Point(239, 113);
             this.sscItem15.Name = "sscItem15";
             this.sscItem15.Size = new System.Drawing.Size(42, 42);
-            this.sscItem15.TabIndex = 228;
+            this.sscItem15.TabIndex = 172;
             this.sscItem15.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem15.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem35
             // 
-            this.sscItem35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem35.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem35.Location = new System.Drawing.Point(239, 213);
             this.sscItem35.Name = "sscItem35";
             this.sscItem35.Size = new System.Drawing.Size(42, 42);
-            this.sscItem35.TabIndex = 227;
+            this.sscItem35.TabIndex = 192;
             this.sscItem35.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem35.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem67
             // 
-            this.sscItem67.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem67.Location = new System.Drawing.Point(748, 422);
+            this.sscItem67.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem67.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem67.Location = new System.Drawing.Point(748, 413);
             this.sscItem67.Name = "sscItem67";
             this.sscItem67.Size = new System.Drawing.Size(42, 42);
-            this.sscItem67.TabIndex = 226;
+            this.sscItem67.TabIndex = 240;
             this.sscItem67.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem67.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem66
             // 
-            this.sscItem66.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem66.Location = new System.Drawing.Point(748, 370);
+            this.sscItem66.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem66.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem66.Location = new System.Drawing.Point(748, 363);
             this.sscItem66.Name = "sscItem66";
             this.sscItem66.Size = new System.Drawing.Size(42, 42);
-            this.sscItem66.TabIndex = 225;
+            this.sscItem66.TabIndex = 239;
             this.sscItem66.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem66.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem65
             // 
-            this.sscItem65.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem65.Location = new System.Drawing.Point(748, 316);
+            this.sscItem65.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem65.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem65.Location = new System.Drawing.Point(748, 313);
             this.sscItem65.Name = "sscItem65";
             this.sscItem65.Size = new System.Drawing.Size(42, 42);
-            this.sscItem65.TabIndex = 224;
+            this.sscItem65.TabIndex = 238;
             this.sscItem65.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem65.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem26
             // 
-            this.sscItem26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem26.Location = new System.Drawing.Point(287, 165);
+            this.sscItem26.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem26.Location = new System.Drawing.Point(288, 163);
             this.sscItem26.Name = "sscItem26";
             this.sscItem26.Size = new System.Drawing.Size(42, 42);
-            this.sscItem26.TabIndex = 223;
+            this.sscItem26.TabIndex = 183;
             this.sscItem26.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem26.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem63
             // 
-            this.sscItem63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem63.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem63.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem63.Location = new System.Drawing.Point(748, 213);
             this.sscItem63.Name = "sscItem63";
             this.sscItem63.Size = new System.Drawing.Size(42, 42);
-            this.sscItem63.TabIndex = 222;
+            this.sscItem63.TabIndex = 236;
             this.sscItem63.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem63.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem62
             // 
-            this.sscItem62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem62.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem62.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem62.Location = new System.Drawing.Point(748, 163);
             this.sscItem62.Name = "sscItem62";
             this.sscItem62.Size = new System.Drawing.Size(42, 42);
-            this.sscItem62.TabIndex = 221;
+            this.sscItem62.TabIndex = 235;
             this.sscItem62.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem62.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem61
             // 
-            this.sscItem61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem61.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem61.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem61.Location = new System.Drawing.Point(748, 113);
             this.sscItem61.Name = "sscItem61";
             this.sscItem61.Size = new System.Drawing.Size(42, 42);
-            this.sscItem61.TabIndex = 220;
+            this.sscItem61.TabIndex = 234;
             this.sscItem61.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem61.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem75
             // 
-            this.sscItem75.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem75.Location = new System.Drawing.Point(700, 422);
+            this.sscItem75.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem75.Location = new System.Drawing.Point(700, 413);
             this.sscItem75.Name = "sscItem75";
             this.sscItem75.Size = new System.Drawing.Size(42, 42);
-            this.sscItem75.TabIndex = 219;
+            this.sscItem75.TabIndex = 232;
             this.sscItem75.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem75.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem74
             // 
-            this.sscItem74.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem74.Location = new System.Drawing.Point(700, 370);
+            this.sscItem74.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem74.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem74.Location = new System.Drawing.Point(700, 363);
             this.sscItem74.Name = "sscItem74";
             this.sscItem74.Size = new System.Drawing.Size(42, 42);
-            this.sscItem74.TabIndex = 218;
+            this.sscItem74.TabIndex = 231;
             this.sscItem74.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem74.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem73
             // 
-            this.sscItem73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem73.Location = new System.Drawing.Point(700, 316);
+            this.sscItem73.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem73.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem73.Location = new System.Drawing.Point(700, 313);
             this.sscItem73.Name = "sscItem73";
             this.sscItem73.Size = new System.Drawing.Size(42, 42);
-            this.sscItem73.TabIndex = 217;
+            this.sscItem73.TabIndex = 230;
             this.sscItem73.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem73.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem36
             // 
-            this.sscItem36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem36.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem36.Location = new System.Drawing.Point(288, 213);
             this.sscItem36.Name = "sscItem36";
             this.sscItem36.Size = new System.Drawing.Size(42, 42);
-            this.sscItem36.TabIndex = 216;
+            this.sscItem36.TabIndex = 193;
             this.sscItem36.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem36.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem71
             // 
-            this.sscItem71.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem71.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem71.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem71.Location = new System.Drawing.Point(700, 213);
             this.sscItem71.Name = "sscItem71";
             this.sscItem71.Size = new System.Drawing.Size(42, 42);
-            this.sscItem71.TabIndex = 215;
+            this.sscItem71.TabIndex = 228;
             this.sscItem71.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem71.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem70
             // 
-            this.sscItem70.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem70.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem70.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem70.Location = new System.Drawing.Point(700, 163);
             this.sscItem70.Name = "sscItem70";
             this.sscItem70.Size = new System.Drawing.Size(42, 42);
-            this.sscItem70.TabIndex = 214;
+            this.sscItem70.TabIndex = 227;
             this.sscItem70.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem70.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem69
             // 
-            this.sscItem69.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem69.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem69.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem69.Location = new System.Drawing.Point(700, 113);
             this.sscItem69.Name = "sscItem69";
             this.sscItem69.Size = new System.Drawing.Size(42, 42);
-            this.sscItem69.TabIndex = 213;
+            this.sscItem69.TabIndex = 226;
             this.sscItem69.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem69.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem83
             // 
-            this.sscItem83.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem83.Location = new System.Drawing.Point(652, 422);
+            this.sscItem83.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem83.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem83.Location = new System.Drawing.Point(652, 413);
             this.sscItem83.Name = "sscItem83";
             this.sscItem83.Size = new System.Drawing.Size(42, 42);
-            this.sscItem83.TabIndex = 212;
+            this.sscItem83.TabIndex = 224;
             this.sscItem83.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem83.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem82
             // 
-            this.sscItem82.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem82.Location = new System.Drawing.Point(652, 370);
+            this.sscItem82.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem82.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem82.Location = new System.Drawing.Point(652, 363);
             this.sscItem82.Name = "sscItem82";
             this.sscItem82.Size = new System.Drawing.Size(42, 42);
-            this.sscItem82.TabIndex = 211;
+            this.sscItem82.TabIndex = 223;
             this.sscItem82.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem82.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem81
             // 
-            this.sscItem81.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem81.Location = new System.Drawing.Point(652, 316);
+            this.sscItem81.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem81.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem81.Location = new System.Drawing.Point(652, 313);
             this.sscItem81.Name = "sscItem81";
             this.sscItem81.Size = new System.Drawing.Size(42, 42);
-            this.sscItem81.TabIndex = 210;
+            this.sscItem81.TabIndex = 222;
             this.sscItem81.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem81.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem16
             // 
-            this.sscItem16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem16.Location = new System.Drawing.Point(287, 113);
+            this.sscItem16.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem16.Location = new System.Drawing.Point(288, 113);
             this.sscItem16.Name = "sscItem16";
             this.sscItem16.Size = new System.Drawing.Size(42, 42);
-            this.sscItem16.TabIndex = 209;
+            this.sscItem16.TabIndex = 173;
             this.sscItem16.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem16.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem79
             // 
-            this.sscItem79.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem79.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem79.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem79.Location = new System.Drawing.Point(652, 213);
             this.sscItem79.Name = "sscItem79";
             this.sscItem79.Size = new System.Drawing.Size(42, 42);
-            this.sscItem79.TabIndex = 208;
+            this.sscItem79.TabIndex = 220;
             this.sscItem79.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem79.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem78
             // 
-            this.sscItem78.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem78.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem78.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem78.Location = new System.Drawing.Point(652, 163);
             this.sscItem78.Name = "sscItem78";
             this.sscItem78.Size = new System.Drawing.Size(42, 42);
-            this.sscItem78.TabIndex = 207;
+            this.sscItem78.TabIndex = 219;
             this.sscItem78.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem78.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem77
             // 
-            this.sscItem77.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem77.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem77.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem77.Location = new System.Drawing.Point(652, 113);
             this.sscItem77.Name = "sscItem77";
             this.sscItem77.Size = new System.Drawing.Size(42, 42);
-            this.sscItem77.TabIndex = 206;
+            this.sscItem77.TabIndex = 218;
             this.sscItem77.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem77.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem5
             // 
-            this.sscItem5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem5.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem5.Location = new System.Drawing.Point(239, 63);
             this.sscItem5.Name = "sscItem5";
             this.sscItem5.Size = new System.Drawing.Size(42, 42);
-            this.sscItem5.TabIndex = 205;
+            this.sscItem5.TabIndex = 162;
             this.sscItem5.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem5.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem58
             // 
-            this.sscItem58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem58.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem58.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem58.Location = new System.Drawing.Point(600, 213);
             this.sscItem58.Name = "sscItem58";
             this.sscItem58.Size = new System.Drawing.Size(42, 42);
-            this.sscItem58.TabIndex = 204;
+            this.sscItem58.TabIndex = 215;
             this.sscItem58.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem58.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem25
             // 
-            this.sscItem25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem25.Location = new System.Drawing.Point(238, 165);
+            this.sscItem25.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem25.Location = new System.Drawing.Point(239, 163);
             this.sscItem25.Name = "sscItem25";
             this.sscItem25.Size = new System.Drawing.Size(42, 42);
-            this.sscItem25.TabIndex = 203;
+            this.sscItem25.TabIndex = 182;
             this.sscItem25.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem25.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem57
             // 
-            this.sscItem57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem57.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem57.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem57.Location = new System.Drawing.Point(600, 163);
             this.sscItem57.Name = "sscItem57";
             this.sscItem57.Size = new System.Drawing.Size(42, 42);
-            this.sscItem57.TabIndex = 202;
+            this.sscItem57.TabIndex = 214;
             this.sscItem57.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem57.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem54
             // 
-            this.sscItem54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem54.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem54.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem54.Location = new System.Drawing.Point(548, 213);
             this.sscItem54.Name = "sscItem54";
             this.sscItem54.Size = new System.Drawing.Size(42, 42);
-            this.sscItem54.TabIndex = 201;
+            this.sscItem54.TabIndex = 211;
             this.sscItem54.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem54.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem53
             // 
-            this.sscItem53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem53.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem53.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem53.Location = new System.Drawing.Point(548, 163);
             this.sscItem53.Name = "sscItem53";
             this.sscItem53.Size = new System.Drawing.Size(42, 42);
-            this.sscItem53.TabIndex = 200;
+            this.sscItem53.TabIndex = 210;
             this.sscItem53.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem53.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem56
             // 
-            this.sscItem56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem56.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem56.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem56.Location = new System.Drawing.Point(600, 113);
             this.sscItem56.Name = "sscItem56";
             this.sscItem56.Size = new System.Drawing.Size(42, 42);
-            this.sscItem56.TabIndex = 199;
+            this.sscItem56.TabIndex = 213;
             this.sscItem56.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem56.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem52
             // 
-            this.sscItem52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem52.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem52.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem52.Location = new System.Drawing.Point(548, 113);
             this.sscItem52.Name = "sscItem52";
             this.sscItem52.Size = new System.Drawing.Size(42, 42);
-            this.sscItem52.TabIndex = 198;
+            this.sscItem52.TabIndex = 209;
             this.sscItem52.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem52.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem19
             // 
-            this.sscItem19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem19.Location = new System.Drawing.Point(434, 113);
+            this.sscItem19.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem19.Location = new System.Drawing.Point(435, 113);
             this.sscItem19.Name = "sscItem19";
             this.sscItem19.Size = new System.Drawing.Size(42, 42);
-            this.sscItem19.TabIndex = 197;
+            this.sscItem19.TabIndex = 176;
             this.sscItem19.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem19.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem39
             // 
-            this.sscItem39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem39.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem39.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem39.Location = new System.Drawing.Point(435, 213);
             this.sscItem39.Name = "sscItem39";
             this.sscItem39.Size = new System.Drawing.Size(42, 42);
             this.sscItem39.TabIndex = 196;
             this.sscItem39.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem39.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem29
             // 
-            this.sscItem29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem29.Location = new System.Drawing.Point(434, 165);
+            this.sscItem29.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem29.Location = new System.Drawing.Point(435, 163);
             this.sscItem29.Name = "sscItem29";
             this.sscItem29.Size = new System.Drawing.Size(42, 42);
-            this.sscItem29.TabIndex = 195;
+            this.sscItem29.TabIndex = 186;
             this.sscItem29.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem29.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem49
             // 
-            this.sscItem49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem49.Location = new System.Drawing.Point(434, 265);
+            this.sscItem49.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem49.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem49.Location = new System.Drawing.Point(435, 263);
             this.sscItem49.Name = "sscItem49";
             this.sscItem49.Size = new System.Drawing.Size(42, 42);
-            this.sscItem49.TabIndex = 194;
+            this.sscItem49.TabIndex = 206;
             this.sscItem49.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem49.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem9
             // 
-            this.sscItem9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem9.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem9.Location = new System.Drawing.Point(435, 63);
             this.sscItem9.Name = "sscItem9";
             this.sscItem9.Size = new System.Drawing.Size(42, 42);
-            this.sscItem9.TabIndex = 193;
+            this.sscItem9.TabIndex = 166;
             this.sscItem9.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem9.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem20
             // 
-            this.sscItem20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem20.Location = new System.Drawing.Point(483, 113);
+            this.sscItem20.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem20.Location = new System.Drawing.Point(484, 113);
             this.sscItem20.Name = "sscItem20";
             this.sscItem20.Size = new System.Drawing.Size(42, 42);
-            this.sscItem20.TabIndex = 192;
+            this.sscItem20.TabIndex = 177;
             this.sscItem20.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem20.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem30
             // 
-            this.sscItem30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem30.Location = new System.Drawing.Point(483, 163);
+            this.sscItem30.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem30.Location = new System.Drawing.Point(484, 163);
             this.sscItem30.Name = "sscItem30";
             this.sscItem30.Size = new System.Drawing.Size(42, 42);
-            this.sscItem30.TabIndex = 191;
+            this.sscItem30.TabIndex = 187;
             this.sscItem30.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem30.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem40
             // 
-            this.sscItem40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem40.Location = new System.Drawing.Point(483, 213);
+            this.sscItem40.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem40.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem40.Location = new System.Drawing.Point(484, 213);
             this.sscItem40.Name = "sscItem40";
             this.sscItem40.Size = new System.Drawing.Size(42, 42);
-            this.sscItem40.TabIndex = 190;
+            this.sscItem40.TabIndex = 197;
             this.sscItem40.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem40.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem50
             // 
-            this.sscItem50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem50.Location = new System.Drawing.Point(483, 265);
+            this.sscItem50.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem50.Location = new System.Drawing.Point(484, 263);
             this.sscItem50.Name = "sscItem50";
             this.sscItem50.Size = new System.Drawing.Size(42, 42);
-            this.sscItem50.TabIndex = 189;
+            this.sscItem50.TabIndex = 207;
             this.sscItem50.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem50.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem2
             // 
-            this.sscItem2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem2.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem2.Location = new System.Drawing.Point(92, 63);
             this.sscItem2.Name = "sscItem2";
             this.sscItem2.Size = new System.Drawing.Size(42, 42);
-            this.sscItem2.TabIndex = 188;
+            this.sscItem2.TabIndex = 159;
             this.sscItem2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem2.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem42
             // 
-            this.sscItem42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem42.Location = new System.Drawing.Point(91, 265);
+            this.sscItem42.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem42.Location = new System.Drawing.Point(92, 263);
             this.sscItem42.Name = "sscItem42";
             this.sscItem42.Size = new System.Drawing.Size(42, 42);
-            this.sscItem42.TabIndex = 187;
+            this.sscItem42.TabIndex = 199;
             this.sscItem42.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem42.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem32
             // 
-            this.sscItem32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem32.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem32.Location = new System.Drawing.Point(92, 213);
             this.sscItem32.Name = "sscItem32";
             this.sscItem32.Size = new System.Drawing.Size(42, 42);
-            this.sscItem32.TabIndex = 186;
+            this.sscItem32.TabIndex = 189;
             this.sscItem32.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem32.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem12
             // 
-            this.sscItem12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem12.Location = new System.Drawing.Point(91, 113);
+            this.sscItem12.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem12.Location = new System.Drawing.Point(92, 113);
             this.sscItem12.Name = "sscItem12";
             this.sscItem12.Size = new System.Drawing.Size(42, 42);
-            this.sscItem12.TabIndex = 185;
+            this.sscItem12.TabIndex = 169;
             this.sscItem12.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem12.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem3
             // 
-            this.sscItem3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem3.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem3.Location = new System.Drawing.Point(141, 63);
             this.sscItem3.Name = "sscItem3";
             this.sscItem3.Size = new System.Drawing.Size(42, 42);
-            this.sscItem3.TabIndex = 184;
+            this.sscItem3.TabIndex = 160;
             this.sscItem3.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem3.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem41
             // 
-            this.sscItem41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem41.Location = new System.Drawing.Point(42, 265);
+            this.sscItem41.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem41.Location = new System.Drawing.Point(43, 263);
             this.sscItem41.Name = "sscItem41";
             this.sscItem41.Size = new System.Drawing.Size(42, 42);
-            this.sscItem41.TabIndex = 183;
+            this.sscItem41.TabIndex = 198;
             this.sscItem41.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem41.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem6
             // 
-            this.sscItem6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem6.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem6.Location = new System.Drawing.Point(288, 63);
             this.sscItem6.Name = "sscItem6";
             this.sscItem6.Size = new System.Drawing.Size(42, 42);
-            this.sscItem6.TabIndex = 182;
+            this.sscItem6.TabIndex = 163;
             this.sscItem6.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem6.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem43
             // 
-            this.sscItem43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem43.Location = new System.Drawing.Point(140, 265);
+            this.sscItem43.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem43.Location = new System.Drawing.Point(141, 263);
             this.sscItem43.Name = "sscItem43";
             this.sscItem43.Size = new System.Drawing.Size(42, 42);
-            this.sscItem43.TabIndex = 181;
+            this.sscItem43.TabIndex = 200;
             this.sscItem43.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem43.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem21
             // 
-            this.sscItem21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem21.Location = new System.Drawing.Point(42, 165);
+            this.sscItem21.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem21.Location = new System.Drawing.Point(43, 163);
             this.sscItem21.Name = "sscItem21";
             this.sscItem21.Size = new System.Drawing.Size(42, 42);
-            this.sscItem21.TabIndex = 180;
+            this.sscItem21.TabIndex = 178;
             this.sscItem21.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem21.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem17
             // 
-            this.sscItem17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem17.Location = new System.Drawing.Point(336, 113);
+            this.sscItem17.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem17.Location = new System.Drawing.Point(337, 113);
             this.sscItem17.Name = "sscItem17";
             this.sscItem17.Size = new System.Drawing.Size(42, 42);
-            this.sscItem17.TabIndex = 179;
+            this.sscItem17.TabIndex = 174;
             this.sscItem17.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem17.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem37
             // 
-            this.sscItem37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem37.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem37.Location = new System.Drawing.Point(337, 213);
             this.sscItem37.Name = "sscItem37";
             this.sscItem37.Size = new System.Drawing.Size(42, 42);
-            this.sscItem37.TabIndex = 178;
+            this.sscItem37.TabIndex = 194;
             this.sscItem37.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem37.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem33
             // 
-            this.sscItem33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem33.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem33.Location = new System.Drawing.Point(141, 213);
             this.sscItem33.Name = "sscItem33";
             this.sscItem33.Size = new System.Drawing.Size(42, 42);
-            this.sscItem33.TabIndex = 177;
+            this.sscItem33.TabIndex = 190;
             this.sscItem33.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem33.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem31
             // 
-            this.sscItem31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem31.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem31.Location = new System.Drawing.Point(43, 213);
             this.sscItem31.Name = "sscItem31";
             this.sscItem31.Size = new System.Drawing.Size(42, 42);
-            this.sscItem31.TabIndex = 176;
+            this.sscItem31.TabIndex = 188;
             this.sscItem31.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem31.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem27
             // 
-            this.sscItem27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem27.Location = new System.Drawing.Point(336, 165);
+            this.sscItem27.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem27.Location = new System.Drawing.Point(337, 163);
             this.sscItem27.Name = "sscItem27";
             this.sscItem27.Size = new System.Drawing.Size(42, 42);
-            this.sscItem27.TabIndex = 175;
+            this.sscItem27.TabIndex = 184;
             this.sscItem27.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem27.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem47
             // 
-            this.sscItem47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem47.Location = new System.Drawing.Point(336, 265);
+            this.sscItem47.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem47.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem47.Location = new System.Drawing.Point(337, 263);
             this.sscItem47.Name = "sscItem47";
             this.sscItem47.Size = new System.Drawing.Size(42, 42);
-            this.sscItem47.TabIndex = 174;
+            this.sscItem47.TabIndex = 204;
             this.sscItem47.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem47.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem22
             // 
-            this.sscItem22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem22.Location = new System.Drawing.Point(91, 165);
+            this.sscItem22.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem22.Location = new System.Drawing.Point(92, 163);
             this.sscItem22.Name = "sscItem22";
             this.sscItem22.Size = new System.Drawing.Size(42, 42);
-            this.sscItem22.TabIndex = 173;
+            this.sscItem22.TabIndex = 179;
             this.sscItem22.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem22.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem60
             // 
-            this.sscItem60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem60.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem60.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem60.Location = new System.Drawing.Point(748, 63);
             this.sscItem60.Name = "sscItem60";
             this.sscItem60.Size = new System.Drawing.Size(42, 42);
-            this.sscItem60.TabIndex = 172;
+            this.sscItem60.TabIndex = 233;
             this.sscItem60.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem60.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem68
             // 
-            this.sscItem68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem68.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem68.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem68.Location = new System.Drawing.Point(700, 63);
             this.sscItem68.Name = "sscItem68";
             this.sscItem68.Size = new System.Drawing.Size(42, 42);
-            this.sscItem68.TabIndex = 171;
+            this.sscItem68.TabIndex = 225;
             this.sscItem68.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem68.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem76
             // 
-            this.sscItem76.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem76.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem76.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem76.Location = new System.Drawing.Point(652, 63);
             this.sscItem76.Name = "sscItem76";
             this.sscItem76.Size = new System.Drawing.Size(42, 42);
-            this.sscItem76.TabIndex = 170;
+            this.sscItem76.TabIndex = 217;
             this.sscItem76.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem76.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem55
             // 
-            this.sscItem55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem55.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem55.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem55.Location = new System.Drawing.Point(600, 63);
             this.sscItem55.Name = "sscItem55";
             this.sscItem55.Size = new System.Drawing.Size(42, 42);
-            this.sscItem55.TabIndex = 169;
+            this.sscItem55.TabIndex = 212;
             this.sscItem55.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem55.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem51
             // 
-            this.sscItem51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem51.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem51.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem51.Location = new System.Drawing.Point(548, 63);
             this.sscItem51.Name = "sscItem51";
             this.sscItem51.Size = new System.Drawing.Size(42, 42);
-            this.sscItem51.TabIndex = 168;
+            this.sscItem51.TabIndex = 208;
             this.sscItem51.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem51.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem7
             // 
-            this.sscItem7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem7.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem7.Location = new System.Drawing.Point(337, 63);
             this.sscItem7.Name = "sscItem7";
             this.sscItem7.Size = new System.Drawing.Size(42, 42);
-            this.sscItem7.TabIndex = 167;
+            this.sscItem7.TabIndex = 164;
             this.sscItem7.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem7.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem18
             // 
-            this.sscItem18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem18.Location = new System.Drawing.Point(385, 113);
+            this.sscItem18.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem18.Location = new System.Drawing.Point(386, 113);
             this.sscItem18.Name = "sscItem18";
             this.sscItem18.Size = new System.Drawing.Size(42, 42);
-            this.sscItem18.TabIndex = 166;
+            this.sscItem18.TabIndex = 175;
             this.sscItem18.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem18.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem38
             // 
-            this.sscItem38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem38.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem38.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem38.Location = new System.Drawing.Point(386, 213);
             this.sscItem38.Name = "sscItem38";
             this.sscItem38.Size = new System.Drawing.Size(42, 42);
-            this.sscItem38.TabIndex = 165;
+            this.sscItem38.TabIndex = 195;
             this.sscItem38.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem38.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem28
             // 
-            this.sscItem28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem28.Location = new System.Drawing.Point(385, 165);
+            this.sscItem28.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem28.Location = new System.Drawing.Point(386, 163);
             this.sscItem28.Name = "sscItem28";
             this.sscItem28.Size = new System.Drawing.Size(42, 42);
-            this.sscItem28.TabIndex = 164;
+            this.sscItem28.TabIndex = 185;
             this.sscItem28.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem28.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem48
             // 
-            this.sscItem48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem48.Location = new System.Drawing.Point(385, 265);
+            this.sscItem48.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem48.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem48.Location = new System.Drawing.Point(386, 263);
             this.sscItem48.Name = "sscItem48";
             this.sscItem48.Size = new System.Drawing.Size(42, 42);
-            this.sscItem48.TabIndex = 163;
+            this.sscItem48.TabIndex = 205;
             this.sscItem48.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem48.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem8
             // 
-            this.sscItem8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem8.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem8.Location = new System.Drawing.Point(386, 63);
             this.sscItem8.Name = "sscItem8";
             this.sscItem8.Size = new System.Drawing.Size(42, 42);
-            this.sscItem8.TabIndex = 162;
+            this.sscItem8.TabIndex = 165;
             this.sscItem8.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem8.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem46
             // 
-            this.sscItem46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem46.Location = new System.Drawing.Point(287, 265);
+            this.sscItem46.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem46.Location = new System.Drawing.Point(288, 263);
             this.sscItem46.Name = "sscItem46";
             this.sscItem46.Size = new System.Drawing.Size(42, 42);
-            this.sscItem46.TabIndex = 161;
+            this.sscItem46.TabIndex = 203;
             this.sscItem46.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem46.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem45
             // 
-            this.sscItem45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem45.Location = new System.Drawing.Point(238, 265);
+            this.sscItem45.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem45.Location = new System.Drawing.Point(239, 263);
             this.sscItem45.Name = "sscItem45";
             this.sscItem45.Size = new System.Drawing.Size(42, 42);
-            this.sscItem45.TabIndex = 160;
+            this.sscItem45.TabIndex = 202;
             this.sscItem45.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem45.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem13
             // 
-            this.sscItem13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem13.Location = new System.Drawing.Point(140, 113);
+            this.sscItem13.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem13.Location = new System.Drawing.Point(141, 113);
             this.sscItem13.Name = "sscItem13";
             this.sscItem13.Size = new System.Drawing.Size(42, 42);
-            this.sscItem13.TabIndex = 159;
+            this.sscItem13.TabIndex = 170;
             this.sscItem13.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // sscItem1
-            // 
-            this.sscItem1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem1.Location = new System.Drawing.Point(43, 63);
-            this.sscItem1.Name = "sscItem1";
-            this.sscItem1.Size = new System.Drawing.Size(42, 42);
-            this.sscItem1.TabIndex = 158;
-            this.sscItem1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem13.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem11
             // 
-            this.sscItem11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem11.Location = new System.Drawing.Point(42, 113);
+            this.sscItem11.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem11.Location = new System.Drawing.Point(43, 113);
             this.sscItem11.Name = "sscItem11";
             this.sscItem11.Size = new System.Drawing.Size(42, 42);
-            this.sscItem11.TabIndex = 157;
+            this.sscItem11.TabIndex = 168;
             this.sscItem11.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem11.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem23
             // 
-            this.sscItem23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sscItem23.Location = new System.Drawing.Point(140, 165);
+            this.sscItem23.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem23.Location = new System.Drawing.Point(141, 163);
             this.sscItem23.Name = "sscItem23";
             this.sscItem23.Size = new System.Drawing.Size(42, 42);
-            this.sscItem23.TabIndex = 156;
+            this.sscItem23.TabIndex = 180;
             this.sscItem23.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem23.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem10
             // 
-            this.sscItem10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sscItem10.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sscItem10.Location = new System.Drawing.Point(484, 63);
             this.sscItem10.Name = "sscItem10";
             this.sscItem10.Size = new System.Drawing.Size(42, 42);
-            this.sscItem10.TabIndex = 155;
+            this.sscItem10.TabIndex = 167;
             this.sscItem10.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem10.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // label158
             // 
-            this.label158.Location = new System.Drawing.Point(115, 240);
+            this.label158.Location = new System.Drawing.Point(0, 0);
             this.label158.Name = "label158";
-            this.label158.Size = new System.Drawing.Size(332, 13);
-            this.label158.TabIndex = 154;
+            this.label158.Size = new System.Drawing.Size(100, 23);
+            this.label158.TabIndex = 257;
             // 
             // sscShoesColor
             // 
@@ -3956,6 +4322,7 @@
             this.sscShoesColor.Size = new System.Drawing.Size(76, 18);
             this.sscShoesColor.TabIndex = 149;
             this.sscShoesColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sscShoesColor.Click += new System.EventHandler(this.bodyColor_Click);
             // 
             // sscPantsColor
             // 
@@ -3967,6 +4334,7 @@
             this.sscPantsColor.Size = new System.Drawing.Size(76, 18);
             this.sscPantsColor.TabIndex = 148;
             this.sscPantsColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sscPantsColor.Click += new System.EventHandler(this.bodyColor_Click);
             // 
             // sscUnderShirtColor
             // 
@@ -3978,6 +4346,7 @@
             this.sscUnderShirtColor.Size = new System.Drawing.Size(76, 18);
             this.sscUnderShirtColor.TabIndex = 147;
             this.sscUnderShirtColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sscUnderShirtColor.Click += new System.EventHandler(this.bodyColor_Click);
             // 
             // sscShirtColor
             // 
@@ -3989,6 +4358,7 @@
             this.sscShirtColor.Size = new System.Drawing.Size(76, 18);
             this.sscShirtColor.TabIndex = 146;
             this.sscShirtColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sscShirtColor.Click += new System.EventHandler(this.bodyColor_Click);
             // 
             // sscEyeColor
             // 
@@ -4000,6 +4370,7 @@
             this.sscEyeColor.Size = new System.Drawing.Size(76, 18);
             this.sscEyeColor.TabIndex = 145;
             this.sscEyeColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sscEyeColor.Click += new System.EventHandler(this.bodyColor_Click);
             // 
             // sscSkinColor
             // 
@@ -4011,6 +4382,7 @@
             this.sscSkinColor.Size = new System.Drawing.Size(76, 18);
             this.sscSkinColor.TabIndex = 144;
             this.sscSkinColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sscSkinColor.Click += new System.EventHandler(this.bodyColor_Click);
             // 
             // sscHairColor
             // 
@@ -4022,6 +4394,7 @@
             this.sscHairColor.Size = new System.Drawing.Size(76, 18);
             this.sscHairColor.TabIndex = 143;
             this.sscHairColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sscHairColor.Click += new System.EventHandler(this.bodyColor_Click);
             // 
             // label167
             // 
@@ -4133,6 +4506,7 @@
             // tabGroup
             // 
             this.tabGroup.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabGroup.Controls.Add(this.groupsUpdateStatus);
             this.tabGroup.Controls.Add(this.label4);
             this.tabGroup.Controls.Add(this.label39);
             this.tabGroup.Controls.Add(this.tabUpdatePermissions);
@@ -4145,6 +4519,14 @@
             this.tabGroup.Size = new System.Drawing.Size(942, 539);
             this.tabGroup.TabIndex = 7;
             this.tabGroup.Text = "Groups";
+            // 
+            // groupsUpdateStatus
+            // 
+            this.groupsUpdateStatus.Location = new System.Drawing.Point(177, 14);
+            this.groupsUpdateStatus.Name = "groupsUpdateStatus";
+            this.groupsUpdateStatus.Size = new System.Drawing.Size(254, 13);
+            this.groupsUpdateStatus.TabIndex = 260;
+            this.groupsUpdateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
@@ -4213,8 +4595,8 @@
             // 
             // permissionsDataNote
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle12;
             this.permissionsDataNote.HeaderText = "Note";
             this.permissionsDataNote.Name = "permissionsDataNote";
             this.permissionsDataNote.ReadOnly = true;
@@ -4319,8 +4701,8 @@
             // 
             // configDataKey
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.configDataKey.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.configDataKey.DefaultCellStyle = dataGridViewCellStyle13;
             this.configDataKey.HeaderText = "Key";
             this.configDataKey.Name = "configDataKey";
             this.configDataKey.ReadOnly = true;
@@ -4328,8 +4710,8 @@
             // 
             // configDataValue
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataValue.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataValue.DefaultCellStyle = dataGridViewCellStyle14;
             this.configDataValue.HeaderText = "Value";
             this.configDataValue.Name = "configDataValue";
             this.configDataValue.ReadOnly = true;
@@ -4337,8 +4719,8 @@
             // 
             // configDataDefinition
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataDefinition.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefinition.DefaultCellStyle = dataGridViewCellStyle15;
             this.configDataDefinition.HeaderText = "Definition";
             this.configDataDefinition.Name = "configDataDefinition";
             this.configDataDefinition.ReadOnly = true;
@@ -4346,8 +4728,8 @@
             // 
             // configDataDefault
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataDefault.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefault.DefaultCellStyle = dataGridViewCellStyle16;
             this.configDataDefault.HeaderText = "Default";
             this.configDataDefault.Name = "configDataDefault";
             this.configDataDefault.ReadOnly = true;
@@ -4380,8 +4762,8 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "sscconfigDataKey";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridViewTextBoxColumn1.HeaderText = "Key";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -4390,8 +4772,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "sscconfigDataValue";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewTextBoxColumn2.HeaderText = "Value";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -4500,14 +4882,14 @@
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.Size = new System.Drawing.Size(942, 539);
             this.tabSettings.TabIndex = 10;
-            this.tabSettings.Text = "Settings";
+            this.tabSettings.Text = "Login";
             // 
             // txtURL
             // 
             this.txtURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtURL.Location = new System.Drawing.Point(259, 178);
             this.txtURL.Name = "txtURL";
-            this.txtURL.Size = new System.Drawing.Size(157, 20);
+            this.txtURL.Size = new System.Drawing.Size(213, 20);
             this.txtURL.TabIndex = 30;
             // 
             // passwordField
@@ -4760,6 +5142,7 @@
             // stopServer
             // 
             this.stopServer.BackColor = System.Drawing.Color.White;
+            this.stopServer.Enabled = false;
             this.stopServer.Location = new System.Drawing.Point(796, 36);
             this.stopServer.Name = "stopServer";
             this.stopServer.Size = new System.Drawing.Size(75, 23);
@@ -5063,7 +5446,6 @@
         private System.Windows.Forms.DataGridView usersDataList;
         private System.Windows.Forms.ListView usersListPermissions;
         private System.Windows.Forms.ColumnHeader usersListPermission;
-        private System.Windows.Forms.Label query;
         private System.Windows.Forms.Button usersAddUser;
         private System.Windows.Forms.Label aboutSQLSupport;
         private System.Windows.Forms.Label aboutVersion;
@@ -5127,95 +5509,95 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button consoleRefresh;
         private System.Windows.Forms.TabPage tabInventory;
-        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label itemPreview;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label sscItem64;
-        private System.Windows.Forms.Label sscItem72;
-        private System.Windows.Forms.Label sscItem80;
-        private System.Windows.Forms.Label sscItem14;
-        private System.Windows.Forms.Label sscItem34;
-        private System.Windows.Forms.Label sscItem24;
-        private System.Windows.Forms.Label sscItem44;
-        private System.Windows.Forms.Label sscItem4;
-        private System.Windows.Forms.Label sscItem15;
-        private System.Windows.Forms.Label sscItem35;
-        private System.Windows.Forms.Label sscItem67;
-        private System.Windows.Forms.Label sscItem66;
-        private System.Windows.Forms.Label sscItem65;
-        private System.Windows.Forms.Label sscItem26;
-        private System.Windows.Forms.Label sscItem63;
-        private System.Windows.Forms.Label sscItem62;
-        private System.Windows.Forms.Label sscItem61;
-        private System.Windows.Forms.Label sscItem75;
-        private System.Windows.Forms.Label sscItem74;
-        private System.Windows.Forms.Label sscItem73;
-        private System.Windows.Forms.Label sscItem36;
-        private System.Windows.Forms.Label sscItem71;
-        private System.Windows.Forms.Label sscItem70;
-        private System.Windows.Forms.Label sscItem69;
-        private System.Windows.Forms.Label sscItem83;
-        private System.Windows.Forms.Label sscItem82;
-        private System.Windows.Forms.Label sscItem81;
-        private System.Windows.Forms.Label sscItem16;
-        private System.Windows.Forms.Label sscItem79;
-        private System.Windows.Forms.Label sscItem78;
-        private System.Windows.Forms.Label sscItem77;
-        private System.Windows.Forms.Label sscItem5;
-        private System.Windows.Forms.Label sscItem58;
-        private System.Windows.Forms.Label sscItem25;
-        private System.Windows.Forms.Label sscItem57;
-        private System.Windows.Forms.Label sscItem54;
-        private System.Windows.Forms.Label sscItem53;
-        private System.Windows.Forms.Label sscItem56;
-        private System.Windows.Forms.Label sscItem52;
-        private System.Windows.Forms.Label sscItem19;
-        private System.Windows.Forms.Label sscItem39;
-        private System.Windows.Forms.Label sscItem29;
-        private System.Windows.Forms.Label sscItem49;
-        private System.Windows.Forms.Label sscItem9;
-        private System.Windows.Forms.Label sscItem20;
-        private System.Windows.Forms.Label sscItem30;
-        private System.Windows.Forms.Label sscItem40;
-        private System.Windows.Forms.Label sscItem50;
-        private System.Windows.Forms.Label sscItem2;
-        private System.Windows.Forms.Label sscItem42;
-        private System.Windows.Forms.Label sscItem32;
-        private System.Windows.Forms.Label sscItem12;
-        private System.Windows.Forms.Label sscItem3;
-        private System.Windows.Forms.Label sscItem41;
-        private System.Windows.Forms.Label sscItem6;
-        private System.Windows.Forms.Label sscItem43;
-        private System.Windows.Forms.Label sscItem21;
-        private System.Windows.Forms.Label sscItem17;
-        private System.Windows.Forms.Label sscItem37;
-        private System.Windows.Forms.Label sscItem33;
-        private System.Windows.Forms.Label sscItem31;
-        private System.Windows.Forms.Label sscItem27;
-        private System.Windows.Forms.Label sscItem47;
-        private System.Windows.Forms.Label sscItem22;
-        private System.Windows.Forms.Label sscItem60;
-        private System.Windows.Forms.Label sscItem68;
-        private System.Windows.Forms.Label sscItem76;
-        private System.Windows.Forms.Label sscItem55;
-        private System.Windows.Forms.Label sscItem51;
-        private System.Windows.Forms.Label sscItem7;
-        private System.Windows.Forms.Label sscItem18;
-        private System.Windows.Forms.Label sscItem38;
-        private System.Windows.Forms.Label sscItem28;
-        private System.Windows.Forms.Label sscItem48;
-        private System.Windows.Forms.Label sscItem8;
-        private System.Windows.Forms.Label sscItem46;
-        private System.Windows.Forms.Label sscItem45;
-        private System.Windows.Forms.Label sscItem13;
-        private System.Windows.Forms.Label sscItem1;
-        private System.Windows.Forms.Label sscItem11;
-        private System.Windows.Forms.Label sscItem23;
-        private System.Windows.Forms.Label sscItem10;
+        private System.Windows.Forms.Button sscItem64;
+        private System.Windows.Forms.Button sscItem72;
+        private System.Windows.Forms.Button sscItem80;
+        private System.Windows.Forms.Button sscItem14;
+        private System.Windows.Forms.Button sscItem34;
+        private System.Windows.Forms.Button sscItem24;
+        private System.Windows.Forms.Button sscItem44;
+        private System.Windows.Forms.Button sscItem4;
+        private System.Windows.Forms.Button sscItem15;
+        private System.Windows.Forms.Button sscItem35;
+        private System.Windows.Forms.Button sscItem67;
+        private System.Windows.Forms.Button sscItem66;
+        private System.Windows.Forms.Button sscItem65;
+        private System.Windows.Forms.Button sscItem26;
+        private System.Windows.Forms.Button sscItem63;
+        private System.Windows.Forms.Button sscItem62;
+        private System.Windows.Forms.Button sscItem61;
+        private System.Windows.Forms.Button sscItem75;
+        private System.Windows.Forms.Button sscItem74;
+        private System.Windows.Forms.Button sscItem73;
+        private System.Windows.Forms.Button sscItem36;
+        private System.Windows.Forms.Button sscItem71;
+        private System.Windows.Forms.Button sscItem70;
+        private System.Windows.Forms.Button sscItem69;
+        private System.Windows.Forms.Button sscItem83;
+        private System.Windows.Forms.Button sscItem82;
+        private System.Windows.Forms.Button sscItem81;
+        private System.Windows.Forms.Button sscItem16;
+        private System.Windows.Forms.Button sscItem79;
+        private System.Windows.Forms.Button sscItem78;
+        private System.Windows.Forms.Button sscItem77;
+        private System.Windows.Forms.Button sscItem5;
+        private System.Windows.Forms.Button sscItem58;
+        private System.Windows.Forms.Button sscItem25;
+        private System.Windows.Forms.Button sscItem57;
+        private System.Windows.Forms.Button sscItem54;
+        private System.Windows.Forms.Button sscItem53;
+        private System.Windows.Forms.Button sscItem56;
+        private System.Windows.Forms.Button sscItem52;
+        private System.Windows.Forms.Button sscItem19;
+        private System.Windows.Forms.Button sscItem39;
+        private System.Windows.Forms.Button sscItem29;
+        private System.Windows.Forms.Button sscItem49;
+        private System.Windows.Forms.Button sscItem9;
+        private System.Windows.Forms.Button sscItem20;
+        private System.Windows.Forms.Button sscItem30;
+        private System.Windows.Forms.Button sscItem40;
+        private System.Windows.Forms.Button sscItem50;
+        private System.Windows.Forms.Button sscItem2;
+        private System.Windows.Forms.Button sscItem42;
+        private System.Windows.Forms.Button sscItem32;
+        private System.Windows.Forms.Button sscItem12;
+        private System.Windows.Forms.Button sscItem3;
+        private System.Windows.Forms.Button sscItem41;
+        private System.Windows.Forms.Button sscItem6;
+        private System.Windows.Forms.Button sscItem43;
+        private System.Windows.Forms.Button sscItem21;
+        private System.Windows.Forms.Button sscItem17;
+        private System.Windows.Forms.Button sscItem37;
+        private System.Windows.Forms.Button sscItem33;
+        private System.Windows.Forms.Button sscItem31;
+        private System.Windows.Forms.Button sscItem27;
+        private System.Windows.Forms.Button sscItem47;
+        private System.Windows.Forms.Button sscItem22;
+        private System.Windows.Forms.Button sscItem60;
+        private System.Windows.Forms.Button sscItem68;
+        private System.Windows.Forms.Button sscItem76;
+        private System.Windows.Forms.Button sscItem55;
+        private System.Windows.Forms.Button sscItem51;
+        private System.Windows.Forms.Button sscItem7;
+        private System.Windows.Forms.Button sscItem18;
+        private System.Windows.Forms.Button sscItem38;
+        private System.Windows.Forms.Button sscItem28;
+        private System.Windows.Forms.Button sscItem48;
+        private System.Windows.Forms.Button sscItem8;
+        private System.Windows.Forms.Button sscItem46;
+        private System.Windows.Forms.Button sscItem45;
+        private System.Windows.Forms.Button sscItem13;
+        private System.Windows.Forms.Button sscItem1;
+        private System.Windows.Forms.Button sscItem11;
+        private System.Windows.Forms.Button sscItem23;
+        private System.Windows.Forms.Button sscItem10;
         private System.Windows.Forms.Label label158;
         private System.Windows.Forms.Label sscShoesColor;
         private System.Windows.Forms.Label sscPantsColor;
@@ -5294,5 +5676,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button inventoryUpdate;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.ListView inventoryItemsList;
+        private System.Windows.Forms.ColumnHeader inventoryItemListName;
+        private System.Windows.Forms.ColumnHeader inventoryItemListNetId;
+        private System.Windows.Forms.ColumnHeader inventoryItemListStackSize;
+        private System.Windows.Forms.ColumnHeader inventoryItemListPrefix;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.ComboBox cmbxUserItemPrefix;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.TextBox txtStackSize;
+        private System.Windows.Forms.Button clearPreviewItem;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.TextBox txtItemFilter;
+        private System.Windows.Forms.Label usersSearchResults;
+        private System.Windows.Forms.Button inventorySlotReplace;
+        private System.Windows.Forms.Label inventoryUpdateStatus;
+        private System.Windows.Forms.Label itemPreviewText;
+        private System.Windows.Forms.Label banSearchResults;
+        private System.Windows.Forms.Label groupsUpdateStatus;
+        private System.Windows.Forms.Label usersUpdateStatus;
     }
 }

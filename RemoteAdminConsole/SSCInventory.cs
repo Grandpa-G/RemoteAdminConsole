@@ -31,7 +31,7 @@ namespace RemoteAdminConsole
             PantsColor = pantscolor;
             ShirtColor = shirtcolor;
             UnderShirtColor = undershirtcolor;
-            ShoeColor = haircolor;
+            ShoeColor = shoecolor;
             SkinColor = skincolor;
             EyeColor = eyecolor;
         }

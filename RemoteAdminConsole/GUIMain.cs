@@ -35,6 +35,7 @@ namespace RemoteAdminConsole
 
         public static String PROGRAMNAME = "Remote Admin Console";
         public static bool DEBUG = false;
+        public static bool DEVELOPMENT = false;
 
         public static int ITEMOFFSET = 48;
         public static int MAXITEMS = 2748 + ITEMOFFSET + 1;
@@ -45,17 +46,6 @@ namespace RemoteAdminConsole
         Bitmap[] sprites = new Bitmap[MAXITEMS];
         Bitmap item_0;
         Bitmap sprite;
-        String[] inventory;
-
-        private Image[] spriteImages;
-
-        private String[] itemNames;
-        private String[] itemIds;
-        private String[] itemPrefix;
-        private int[] itemMaxStack;
-        private String[] itemSortedNames;
-        private String[] itemSortedIds;
-        private int[] itemSortedMaxStack;
 
         private Item[] itemList = new Item[MAXITEMS];
         private Prefixs[] prefixList = new Prefixs[MAXPREFIX];
@@ -94,15 +84,26 @@ namespace RemoteAdminConsole
                     DEBUG = true;
                     Console.WriteLine("Debug Mode On.");
                 }
+                if (arg.Length > 0 && arg.Equals("-dev"))
+                {
+                    DEVELOPMENT = true;
+                    Console.WriteLine("Development Mode On.");
+                }
 
             }
 
             getDefaults();
-            if (ru.conn.Server.Length > 0 && ru.getToken())
-            {
-                userIcon.Visible = true;
-                userLoggedIn.Text = "Logged in as " + ru.conn.UserId + ".";
-            }
+            bool connected = false;
+            stopServer.Visible = false;
+            if (ru.conn != null)
+                if (ru.conn.Server != null)
+                    if (ru.conn.Server.Length > 0 && ru.getToken())
+                    {
+                        connected = true;
+                        stopServer.Visible = true;
+                        userIcon.Visible = true;
+                        userLoggedIn.Text = "Logged in as " + ru.conn.UserId + ".";
+                    }
 
             getServerDetails();
             getItemSpriteImage();
@@ -123,8 +124,20 @@ namespace RemoteAdminConsole
             groupDataPermissions.RowHeadersWidth = 10;
             usersDataList.RowHeadersWidth = 22;
 
-            if (DEBUG)
-                query.Visible = true;
+            inventoryToolTip = new ToolTip();
+            inventoryToolTip.IsBalloon = false;
+            inventoryToolTip.ShowAlways = true;
+
+            if (!connected)
+                tabPane.SelectedTab = tabSettings;
+
+            if (!DEVELOPMENT)
+            {
+            }
+            else
+            {
+
+            }
         }
 
         private void tabPane_Selected(object sender, TabControlEventArgs e)
@@ -133,6 +146,9 @@ namespace RemoteAdminConsole
             {
                 case BANTAB:
                     //                   getBannedList(true);
+                    break;
+                case SERVERTAB:
+                    getServerDetails();
                     break;
                 case USERSTAB:
                     //                   getUsers();
@@ -603,13 +619,10 @@ namespace RemoteAdminConsole
 
                     lbl.Image = sprites[ITEMOFFSET + netId];
 
-                    ToolTip itemTip = new ToolTip();
-                    itemTip.IsBalloon = false;
-                    itemTip.ShowAlways = true;
                     if (prefix > 0 && prefix <= prefixList.Length)
-                        itemTip.SetToolTip(lbl, prefixList[prefix - 1].Name + " " + itemList[ITEMOFFSET + netId].Name);
+                        inventoryToolTip.SetToolTip(lbl, prefixList[prefix - 1].Name + " " + itemList[ITEMOFFSET + netId].Name);
                     else
-                        itemTip.SetToolTip(lbl, itemList[ITEMOFFSET + netId].Name);
+                        inventoryToolTip.SetToolTip(lbl, itemList[ITEMOFFSET + netId].Name);
                 }
             }
             else
@@ -626,6 +639,7 @@ namespace RemoteAdminConsole
         private void setupAbout()
         {
             aboutVersion.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
         }
 
 
@@ -635,7 +649,7 @@ namespace RemoteAdminConsole
         #region  Ban Tab
         //      Ban Tab
 
-         private void getBannedList(bool fullSearch)
+        private void getBannedList(bool fullSearch)
         {
             JArray bans = null;
             String name = null;
@@ -646,6 +660,8 @@ namespace RemoteAdminConsole
             String dateExpiration = null;
             DateTime BannedDt;
             DateTime ExpirationDt;
+
+            banSearchResults.Text = "";
 
             string whereClause = "";
             string andClause = " where ";
@@ -671,7 +687,7 @@ namespace RemoteAdminConsole
                     else
                         whereClause = whereClause + andClause + " IP like '" + banSearchIP.Text + "'";
                     andClause = " and ";
-                } query.Text = whereClause;
+                }
 
 
             banUnBan.Enabled = false;
@@ -683,6 +699,12 @@ namespace RemoteAdminConsole
             if (status.Equals("200"))
             {
                 bans = (JArray)results["bans"];
+                if (bans.Count == 0)
+                    banSearchResults.Text = "No players found.";
+                if (bans.Count == 1)
+                    banSearchResults.Text = bans.Count.ToString() + " player found.";
+                if (bans.Count > 1)
+                    banSearchResults.Text = bans.Count.ToString() + " payers found.";
 
                 for (int i = 0; i < bans.Count; i++)
                 {
@@ -737,6 +759,7 @@ namespace RemoteAdminConsole
             banSearchIP.Text = "";
             banFuzzyName.Checked = false;
             banFuzzyIP.Checked = false;
+            banSearchResults.Text = "";
 
             getBannedList(true);
         }
@@ -745,7 +768,7 @@ namespace RemoteAdminConsole
             if (e.RowIndex == -1) return; //check if row index is not selected
             if (e.ColumnIndex != 0)
                 return;
-//            DataGridViewCheckBoxCell cbc = (DataGridViewCheckBoxCell)banDataBan.CurrentCell;
+
             DataGridViewCheckBoxCell unBan = new DataGridViewCheckBoxCell();
             unBan = (DataGridViewCheckBoxCell)banDataBan.Rows[e.RowIndex].Cells[0];
             if (unBan.Value == null)
@@ -811,6 +834,9 @@ namespace RemoteAdminConsole
         //     Group tab
 
         // Group Tab
+        private int groupRowIndex = -1;
+        private string groupRowName = "";
+
         private void getGroupList()
         {
             JArray groups;
@@ -825,6 +851,8 @@ namespace RemoteAdminConsole
             groupDataList.Rows.Clear();
             groupDataPermissions.Rows.Clear();
             groupDataParentList.Items.Clear();
+            groupDataList.ClearSelection();
+
             // And now use this to connect server
             JObject results = ru.communicateWithTerraria("AdminREST/GroupList", "");
             string status = (string)results["status"];
@@ -883,6 +911,22 @@ namespace RemoteAdminConsole
             }
             groupDataParentList.Sorted = true;
             this.groupDataList.Sort(this.groupDatagroup, ListSortDirection.Ascending);
+            groupDataList.ClearSelection();
+ /*
+            if (groupRowName.Length > 0)
+            {
+                groupDataList.ClearSelection();
+                for (int i = 0; i < groupDataList.RowCount; i++)
+                {
+                    if (groupDataList.Rows[i].Cells[0].Equals(groupRowName))
+                    {
+                        groupDataList.Rows[i].Selected = true;
+                        break;
+                    }
+                }
+                groupDataList_CellClick(groupDataList, new DataGridViewCellEventArgs(0, 0));
+            }
+  * */
         }
 
         private System.Drawing.Color tabColorDecode(string colorString)
@@ -992,7 +1036,8 @@ namespace RemoteAdminConsole
 
             if (group.Length == 0)
             {
-                usersChoice = MessageBox.Show("No group given.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                groupsUpdateStatus.Text = "No group given.";
+//                usersChoice = MessageBox.Show("No group given.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -1003,11 +1048,13 @@ namespace RemoteAdminConsole
                 string status = (string)results["status"];
                 if (status.Equals("200"))
                 {
-
-                    usersChoice = MessageBox.Show("Group " + group + " updated", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    groupRowIndex = selectedRow.Index;
+                groupsUpdateStatus.Text = "Group " + group + " updated";
+//                   usersChoice = MessageBox.Show("Group " + group + " updated", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    usersChoice = MessageBox.Show("Group " + group + " already exists!\r\n" + (string)results["error"], PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                groupsUpdateStatus.Text = "Group " + group + " already exists!";
+//                   usersChoice = MessageBox.Show("Group " + group + " already exists!\r\n" + (string)results["error"], PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -1016,48 +1063,15 @@ namespace RemoteAdminConsole
                 string status = (string)results["status"];
                 if (status.Equals("200"))
                 {
-
-                    usersChoice = MessageBox.Show("Group " + group + " added", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                groupsUpdateStatus.Text = "Group " + group + " added";
+                    groupRowIndex = selectedRow.Index;
+//                     usersChoice = MessageBox.Show("Group " + group + " added", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    usersChoice = MessageBox.Show("Group " + group + " already exists!\r\n" + (string)results["error"], PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                groupsUpdateStatus.Text = "Group " + group + " already exists!";
+//                    usersChoice = MessageBox.Show("Group " + group + " already exists!\r\n" + (string)results["error"], PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             getGroupList();
-            /*
-                            try
-                            {
-                                TShock.Groups.AddGroup(group, parent, permissions, chatColor);
-                            }
-                            catch (GroupExistsException e1)
-                            {
-                                Console.WriteLine("Group " + group + " already exists!");
-                                usersChoice = MessageBox.Show("Group " + group + " already exists!", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                return;
-                            }
-                            TShock.Log.ConsoleInfo(PROGRAMNAME + " added  group " + group);
-                        }
-                        try
-                        {
-                            TShock.Groups.UpdateGroup(group, parent, permissions, chatColor, suffix, prefix);
-                        }
-                        catch (GroupNotExistsException e1)
-                        {
-                            Console.WriteLine("Group " + group + " does not exist!");
-                            usersChoice = MessageBox.Show("Group " + group + " does not exist!", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-                        if (DEBUG)
-                            Console.WriteLine("update g " + group);
-
-                        if (deletedPermissions.Count > 0)
-                        {
-                            result = TShock.Groups.DeletePermissions(group, deletedPermissions);
-
-                            if (DEBUG)
-                                Console.WriteLine("del p " + group + ":" + result);
-                        }
-                        getGroupList();
-                         * */
         }
 
         private void groupDataList_RowsAdded(object sender, System.Windows.Forms.DataGridViewRowsAddedEventArgs e)
@@ -1138,13 +1152,12 @@ namespace RemoteAdminConsole
                                 }
                             this.groupDataPermissions.Sort(this.permissionsDataPermissons, ListSortDirection.Ascending);
                         }
-                        catch (NullReferenceException e1)
+                        catch (NullReferenceException)
                         {
                             totalPermissions = null;
                         }
                     }
                 }
-                //                   totalPermissions = (JArray)innerObj["totalPermissions"];
                 usersDataGroup.Items.Add(name);
             }
 
@@ -1192,11 +1205,14 @@ namespace RemoteAdminConsole
             string status = (string)results["status"];
             if (status.Equals("200"))
             {
-                usersChoice = MessageBox.Show("Group " + name + " was deleted", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                groupsUpdateStatus.Text = "Group " + name + " was deleted";
+//                usersChoice = MessageBox.Show("Group " + name + " was deleted", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                groupRowIndex = -1;
             }
             else
-                usersChoice = MessageBox.Show("Group " + name + " could not be deleted, check console for details.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                groupsUpdateStatus.Text = "Group " + name + " could not be deleted, check console for details.";
+//            usersChoice = MessageBox.Show("Group " + name + " could not be deleted, check console for details.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            getGroupList();
         }
 
         #endregion
@@ -1275,30 +1291,30 @@ namespace RemoteAdminConsole
             int id = 0;
             String name = null;
             String group = null;
-            String dateRegistered = null;
-            String dateLastAccessed = null;
             DateTime registeredDt;
             DateTime lastAccessedDt;
 
             string knownIPs;
             string[] IPString;
-            string registeredDate = "";
-            string lastAccessedDate = "";
-            string[] inventoryList;
             int inventoryCount;
             bool hasInventory;
             String searchString;
 
             String whereClause = "";
             String andClause = " where ";
-            String column = "username";
             searchString = "%";
 
+            usersSearchName.Text = "";
+            usersSearchGroup.Text = "";
+            usersSearchIP.Text = "";
+            usersFuzzyName.Checked = false;
+            usersFuzzyGroup.Checked = false;
+            usersFuzzyIP.Checked = false;
+            usersSearchResults.Text = "";
 
             if (usersSearchName.Text != null)
                 if (usersSearchName.Text.Length > 0)
                 {
-                    column = "UserName";
                     searchString = usersSearchName.Text;
                     if (usersFuzzyName != null && usersFuzzyName.Checked)
                         whereClause = whereClause + andClause + " UserName like '%25" + usersSearchName.Text + "%25'";
@@ -1309,7 +1325,6 @@ namespace RemoteAdminConsole
             if (usersSearchGroup.Text != null)
                 if (usersSearchGroup.Text.Length > 0)
                 {
-                    column = "UserGroup";
                     searchString = usersSearchGroup.Text;
                     if (usersFuzzyGroup != null && usersFuzzyGroup.Checked)
                         whereClause = whereClause + andClause + " UserGroup like '%25" + usersSearchGroup.Text + "%25'";
@@ -1320,14 +1335,13 @@ namespace RemoteAdminConsole
             if (usersSearchIP.Text != null)
                 if (usersSearchIP.Text.Length > 0)
                 {
-                    column = "KnownIPs";
                     searchString = usersSearchIP.Text;
                     if (usersFuzzyIP != null && usersFuzzyIP.Checked)
                         whereClause = whereClause + andClause + " KnownIPs like '%25" + usersSearchIP.Text + "%25'";
                     else
                         whereClause = whereClause + andClause + " KnownIPs like '" + usersSearchIP.Text + "'";
                     andClause = " and ";
-                } query.Text = whereClause;
+                }
 
             String registered = "";
             String lastAccessed = "";
@@ -1340,6 +1354,12 @@ namespace RemoteAdminConsole
                 usersDataList.Rows.Clear();
                 usersListPermissions.Items.Clear();
                 userList = (JArray)results["Users"];
+                if (userList.Count == 0)
+                    usersSearchResults.Text = "No users found.";
+                if (userList.Count == 1)
+                    usersSearchResults.Text = userList.Count.ToString() + " user found.";
+                if (userList.Count > 1)
+                    usersSearchResults.Text = userList.Count.ToString() + " users found.";
                 for (int i = 0; i < userList.Count; i++)
                 {
                     JObject innerObj = (JObject)userList[i];
@@ -1385,10 +1405,8 @@ namespace RemoteAdminConsole
                     try
                     {
                         registered = (String)innerObj["Registered"];
-                        //                        registered = registered.Replace("T", " ");
                         registeredDt = DateTime.Parse(registered);
                         registered = String.Format("{0:G}", registeredDt.ToLocalTime());
-                        Console.WriteLine(registeredDt);
                     }
                     catch (NullReferenceException e)
                     {
@@ -1398,7 +1416,6 @@ namespace RemoteAdminConsole
                     try
                     {
                         lastAccessed = (String)innerObj["LastAccessed"];
-                        //                        lastAccessed = lastAccessed.Replace("T", " ");
                         if (lastAccessed != null)
                         {
                             lastAccessedDt = DateTime.Parse(lastAccessed);
@@ -1421,10 +1438,12 @@ namespace RemoteAdminConsole
                 }
 
             }
+            else
+                usersSearchResults.Text = "No users found.";
 
             this.usersDataList.Sort(this.usersDataUser, ListSortDirection.Ascending);
             usersAddUser.Enabled = false;
-
+            usersDataList.ClearSelection();
         }
         private Boolean usersModified;
         private void usersDataList_RowsAdded(object sender, System.Windows.Forms.DataGridViewRowsAddedEventArgs e)
@@ -1512,6 +1531,7 @@ namespace RemoteAdminConsole
             usersFuzzyName.Checked = false;
             usersFuzzyGroup.Checked = false;
             usersFuzzyIP.Checked = false;
+            usersSearchResults.Text = "";
         }
 
         private void usersAddUser_Click(object sender, EventArgs e)
@@ -1537,13 +1557,13 @@ namespace RemoteAdminConsole
 
             if (name.Length == 0)
             {
-                usersChoice = MessageBox.Show("No name given.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                usersUpdateStatus.Text = "No name given.";
                 return;
             }
             if (group.Length == 0)
             {
-                usersChoice = MessageBox.Show("No group given.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                usersUpdateStatus.Text = "No group given.";
+              return;
             }
             if (usersModified)
             {
@@ -1552,23 +1572,21 @@ namespace RemoteAdminConsole
                 string status = (string)results["status"];
                 if (status.Equals("200"))
                 {
-                    Console.WriteLine("Player " + name + " was added");
-                    usersChoice = MessageBox.Show("User " + name + " was updated", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    usersUpdateStatus.Text = name + " updated";
                 }
                 else
                 {
+                    usersUpdateStatus.Text = "User " + name + " could not be updated";
                     string error = (string)results["error"];
-                    usersChoice = MessageBox.Show("User " + name + " could not be updated\r\n" + error, PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 string password = promptPassword("Password for " + name + "?");
-                DialogResult usersChoice;
                 if (password.Length == 0)
                 {
-                    usersChoice = MessageBox.Show("Invalid password.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    usersUpdateStatus.Text = "Invalid password.";
+                     return;
                 }
                 action = action + "&password=" + password;
                 // And now use this to connect server
@@ -1576,13 +1594,12 @@ namespace RemoteAdminConsole
                 string status = (string)results["status"];
                 if (status.Equals("200"))
                 {
-                    Console.WriteLine("Player " + name + " was added");
-                    usersChoice = MessageBox.Show("User " + name + " was added", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    usersUpdateStatus.Text = "Invalid password.";
                 }
                 else
                 {
+                    usersUpdateStatus.Text = "User " + name + " could not be added";
                     string error = (string)results["error"];
-                    usersChoice = MessageBox.Show("User " + name + " could not be added\r\n" + error, PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             getUsers();
@@ -1611,10 +1628,10 @@ namespace RemoteAdminConsole
             string status = (string)results["status"];
             if (status.Equals("200"))
             {
-                usersChoice = MessageBox.Show("User " + name + " was deleted", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                usersUpdateStatus.Text = "User " + name + " was deleted";
             }
             else
-                usersChoice = MessageBox.Show("User " + name + " could not be deleted, check console for details.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                usersUpdateStatus.Text = "User " + name + " could not be deleted";
         }
 
         public static string promptPassword(string text)
@@ -1802,7 +1819,7 @@ namespace RemoteAdminConsole
             for (int i = 0; i < prefixList.Length; i++)
                 prefixList[i] = new Prefixs();
             counter = 0;
-
+            inventoryItemsList.Items.Clear();
             string[] line = RemoteAdminConsole.Properties.Resources.itemlist.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < line.Length; i++)
             {
@@ -1812,9 +1829,20 @@ namespace RemoteAdminConsole
                 stackSize = Int32.Parse(linearray[3].Trim());
                 prefix = Int32.Parse(linearray[2].Trim());
                 itemList[counter] = new Item(name, netId, stackSize, prefix);
+                if (name.Length > 0)
+                {
+                    ListViewItem item = new ListViewItem(name);
+                    item.SubItems.Add(netId.ToString());
+                    item.SubItems.Add(stackSize.ToString());
+                    item.SubItems.Add(prefix.ToString());
+                    inventoryItemsList.Items.Add(item);
+                }
                 counter++;
             }
             counter = 0;
+            cmbxUserItemPrefix.Items.Clear();
+            cmbxUserItemPrefix.Items.Add("<none>");
+
             line = RemoteAdminConsole.Properties.Resources.prefixlist.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < line.Length; i++)
             {
@@ -1822,6 +1850,8 @@ namespace RemoteAdminConsole
                 name = linearray[0].Trim();
                 prefix = Int32.Parse(linearray[1].Trim());
                 prefixList[counter] = new Prefixs(name, prefix);
+                cmbxUserItemPrefix.Items.Add(name);
+
                 counter++;
             }
 
@@ -1920,25 +1950,6 @@ namespace RemoteAdminConsole
                 }
             }
             consoleOutput.Text = output;
-            /*
-      HashMap results = communicateWithTerraria( "v3/server/rawcmd", "cmd=/" + textCommandLine.getText());
-      JSONArray response = (JSONArray)results.get("response");
-      // get an array from the JSON object 
-      String output = "";
-      for(int i=0; i<response.size(); i++){ 
-          output = output + response.get(i) + "\n";
-      }
-        TSRestPlayer tr = new TSRestPlayer("console", null);
-          Commands.HandleCommand(tr, "/" + consoleCommand.Text);
-          List<string> output = tr.GetCommandOutput();
-          consoleOutput.Text = "";
-          string crlf = "";
-          foreach (String s in output)
-          {
-              consoleOutput.Text = consoleOutput.Text + crlf + s.ToString();
-              crlf = "\r\n";
-          }
-           * */
         }
 
         private void consoleSubmitBroadcast_Click(object sender, EventArgs e)
@@ -1953,12 +1964,6 @@ namespace RemoteAdminConsole
                 // add text to it; we want to make it scroll
                 consoleBroadcast.Text = response;
             }
-            /*
-             TShock.Utils.Broadcast(
-                     "(Server Broadcast) " + consoleBroadcast.Text,
-                     Convert.ToByte(TShock.Config.BroadcastRGB[0]), Convert.ToByte(TShock.Config.BroadcastRGB[1]),
-                     Convert.ToByte(TShock.Config.BroadcastRGB[2]));
-              * */
         }
 
         private void consoleSubmitMOTD_Click(object sender, EventArgs e)
@@ -2053,15 +2058,19 @@ namespace RemoteAdminConsole
                     eyeColor = Color.FromArgb((int)colorObj["A"], (int)colorObj["R"], (int)colorObj["G"], (int)colorObj["B"]);
 
                 }
-                catch (NullReferenceException e)
+                catch (NullReferenceException)
                 {
-                    SSCInventory.Inventory = "";
+                    inventoryList = "0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~";
+                }
+                catch (InvalidCastException)
+                {
+                    inventoryList = "0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~";
                 }
             }
             SSCInventory = new SSCInventory(account, inventoryList, hair, hairDye, hairColor, pantsColor, shirtColor, underShirtColor, shoeColor, skinColor, eyeColor);
             return SSCInventory;
         }
-
+        SSCInventory SSCInventory;
         private void getInventory()
         {
             if (!playerFound)
@@ -2071,12 +2080,24 @@ namespace RemoteAdminConsole
             DataGridViewRow selectedRow = usersDataList.CurrentRow;
             string name = selectedRow.Cells[0].Value.ToString();
             int account = Int32.Parse(selectedRow.Cells[5].Value.ToString());
-            SSCInventory SSCInventory = GetSSCInventory(account);
+            SSCInventory = GetSSCInventory(account);
             sscAccountName.Text = name;
 
-            string[] inventory = SSCInventory.Inventory.Split('~');
+            inventoryUpdateStatus.Text = "";
+            itemPreview.Image = item_0;
+            itemPreview.Text = "";
+            itemPreviewText.Text = "";
+            txtStackSize.Text = "";
 
-            SetInventorySlot(this, "sscItem", inventory);
+            inventoryToolTip.SetToolTip(itemPreview, "");
+            inventoryPreviewNetId = 0;
+            inventoryPrefixIndex = 0;
+
+            string[] inventory = SSCInventory.Inventory.Split('~');
+            for (int i = 0; i < slotItems.Length; i++)
+                slotItems[i] = new Item();
+
+            SetSSCInventorySlot(this, "sscItem", inventory);
 
             sscHairColor.BackColor = getColor(SSCInventory.HairColor);
             ToolTipColor(sscHairColor, SSCInventory.HairColor);
@@ -2092,14 +2113,67 @@ namespace RemoteAdminConsole
             ToolTipColor(sscPantsColor, SSCInventory.PantsColor);
             sscShoesColor.BackColor = getColor(SSCInventory.ShoeColor);
             ToolTipColor(sscShoesColor, SSCInventory.ShoeColor);
-        }
 
+        }
+        private Item[] slotItems = new Item[MAXITEMS];
+        public void SetSSCInventorySlot(Control control, String group, string[] inventory)
+        {
+            if (control is Button)
+            {
+                Button lbl = (Button)control;
+                if (lbl.Name.StartsWith(group))
+                {
+                    int slotIndex = Int32.Parse(lbl.Name.Substring(group.Length)) - 1;
+                    String n;
+                    if (slotIndex >= inventory.Length)
+                        n = "0,0,0";
+                    else
+                        n = inventory[slotIndex];
+                    int netId = Int32.Parse(n.Split(',')[0]);
+                    int prefix = 0;
+                    int stacks = 0;
+                    try
+                    {
+                        stacks = Int32.Parse(n.Split(',')[1]);
+                        prefix = Int32.Parse(n.Split(',')[2]);
+                    }
+                    catch (IndexOutOfRangeException e)
+                    {
+                        prefix = 0;
+                        stacks = 0;
+                    }
+                    if (slotIndex > EQUIPMENTITEMS || netId == 0)
+                        lbl.Text = "";
+                    else
+                    {
+                        if (stacks == 0)
+                            lbl.Text = "";
+                        else
+                            lbl.Text = stacks.ToString();
+                    }
+
+                    lbl.Image = sprites[ITEMOFFSET + netId];
+
+                    if (prefix > 0 && prefix <= prefixList.Length)
+                        inventoryToolTip.SetToolTip(lbl, prefixList[prefix - 1].Name + " " + itemList[ITEMOFFSET + netId].Name);
+                    else
+                        inventoryToolTip.SetToolTip(lbl, itemList[ITEMOFFSET + netId].Name);
+                    Item slot = new Item(itemList[ITEMOFFSET + netId].Name, netId, stacks, prefix);
+                    slotItems[slotIndex] = slot;
+                }
+            }
+            else
+                foreach (Control child in control.Controls)
+                {
+                    SetSSCInventorySlot(child, group, inventory);
+                }
+
+        }
         private void ToolTipColor(Label lbl, Color c)
         {
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
             ToolTip1.SetToolTip(lbl, "RGB(" + c.R + "," + c.G + "," + c.B + ")");
         }
-
 
         private int findInventoryItem(String name)
         {
@@ -2120,6 +2194,33 @@ namespace RemoteAdminConsole
             return BitConverter.ToInt32(new[] { color.Value.R, color.Value.G, color.Value.B, color.Value.A }, 0);
         }
 
+        private void inventorySlotReplace_Click(object sender, EventArgs e)
+        {
+            if (itemLastClicked != null)
+            {
+                if (itemLastClicked.Image != null)
+                    if (itemPreview.Image != null)
+                        itemLastClicked.Image = itemPreview.Image;
+
+                string name = itemLastClicked.Name.Substring(7);
+                int slot = Int32.Parse(name) - 1;
+                string[] inventory = SSCInventory.Inventory.Split('~');
+                if (slot > EQUIPMENTITEMS)
+                {
+                    itemLastClicked.Text = "";
+                    inventoryToolTip.SetToolTip(itemLastClicked, inventoryToolTip.GetToolTip(itemPreview));
+                    inventory[slot] = inventoryPreviewNetId.ToString() + ",0," + inventoryPrefixStackSize.ToString();
+                }
+                else
+                {
+                    itemLastClicked.Text = itemPreview.Text;
+                    inventoryToolTip.SetToolTip(itemLastClicked, inventoryToolTip.GetToolTip(itemPreview));
+                    inventory[slot] = inventoryPreviewNetId.ToString() + "," + inventoryPrefixStackSize.ToString() + "," + inventoryPrefixStackSize.ToString();
+                }
+                SSCInventory.Inventory = string.Join("~", inventory);
+            }
+        }
+
         private void inventoryUpdate_Click(object sender, EventArgs e)
         {
             string update = "UPDATE tsCharacter set ";
@@ -2130,17 +2231,232 @@ namespace RemoteAdminConsole
             update += ",UnderShirtColor=" + EncodeColor(sscUnderShirtColor.BackColor).ToString();
             update += ",PantsColor=" + EncodeColor(sscPantsColor.BackColor).ToString();
             update += ",ShoeColor=" + EncodeColor(sscShoesColor.BackColor).ToString();
- 
+            update += ",Inventory='" + SSCInventory.Inventory + "'";
 
+            DataGridViewRow row = usersDataList.CurrentRow;
+            int account = Int32.Parse(row.Cells[5].Value.ToString());
+
+            Console.WriteLine(SSCInventory.Inventory);
             // And now use this to connect server
-            JObject results = ru.communicateWithTerraria("update", "&update=" + update);
+            JObject results = ru.communicateWithTerraria("AdminREST/updateSSCAccount", "account=" + account + "&update=" + update);
             string status = (string)results["status"];
             if (status.Equals("200"))
             {
+                inventoryUpdateStatus.Text = (string)results["update"];
+
             }
 
         }
+        private Button itemLastClicked = null;
+        private void sscItem_Click(object sender, EventArgs e)
+        {
+            if (itemLastClicked != null)
+            {
+                itemLastClicked.FlatAppearance.BorderColor = Color.SteelBlue;
+            }
+            Button btn = (Button)sender;
+            btn.FlatAppearance.BorderColor = Color.Red;
+            itemLastClicked = btn;
 
+            if (itemPreview.Image == item_0)
+            {
+                string name = btn.Name.Substring(7);
+                int slot = Int32.Parse(name) - 1;
+
+                inventoryPreviewNetId = slotItems[slot].NetId;
+                itemPreview.Image = sprites[ITEMOFFSET + inventoryPreviewNetId];
+                if (slotItems[slot].StackSize == 0)
+                    itemPreview.Text = "";
+                else
+                    itemPreview.Text = slotItems[slot].StackSize.ToString();
+                inventoryPrefixStackSize = slotItems[slot].StackSize;
+                txtStackSize.Text = itemPreview.Text;
+
+                if (slotItems[slot].Prefix > 0 && slotItems[slot].Prefix <= prefixList.Length)
+                    inventoryToolTip.SetToolTip(itemPreview, prefixList[slotItems[slot].Prefix - 1].Name + " " + itemList[ITEMOFFSET + slotItems[slot].NetId].Name);
+                else
+                    inventoryToolTip.SetToolTip(itemPreview, itemList[ITEMOFFSET + slotItems[slot].NetId].Name);
+                itemPreviewText.Text = inventoryToolTip.GetToolTip(itemPreview);
+
+            }
+        }
+
+        int inventoryPrefixStackSize = 0;
+        int inventoryPrefixIndex = 0;
+        int inventoryPreviewNetId;
+        ToolTip inventoryToolTip;
+        private void txtStackSize_TextChanged(object sender, EventArgs e)
+        {
+            int priorPrefixStackSize = inventoryPrefixStackSize;
+            if (txtStackSize.Text.Length == 0)
+            {
+                itemPreview.Text = "";
+                return;
+            }
+            if (!Int32.TryParse(txtStackSize.Text, out inventoryPrefixStackSize))
+            {
+                MessageBox.Show("Invalid input - numbers only.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (inventoryPreviewNetId > 0)
+            {
+                int maxStackSize = itemList[ITEMOFFSET + inventoryPreviewNetId].StackSize;
+                if (inventoryPrefixStackSize > maxStackSize)
+                {
+                    inventoryPrefixStackSize = maxStackSize;
+                    txtStackSize.Text = maxStackSize.ToString();
+                    MessageBox.Show("Stack Size greater than allowed for " + itemList[ITEMOFFSET + inventoryPreviewNetId].Name + "\nMax = " + maxStackSize.ToString() + ".", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            if (inventoryPrefixStackSize == 0)
+                itemPreview.Text = "";
+            else
+                itemPreview.Text = inventoryPrefixStackSize.ToString();
+        }
+
+        private void cmbxUserItemPrefix_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cmb = sender as ComboBox;
+
+            string prefix = cmb.SelectedItem.ToString();
+            if (prefix.Equals("<none>"))
+            {
+                inventoryPrefixIndex = 0;
+                inventoryToolTip.SetToolTip(itemPreview, " " + itemList[ITEMOFFSET + inventoryPreviewNetId].Name);
+                return;
+            }
+            for (int i = 0; i < prefixList.Length; i++)
+            {
+                if (prefix.Equals(prefixList[i].Name))
+                {
+                    inventoryPrefixIndex = prefixList[i].Prefix;
+                    inventoryToolTip.SetToolTip(itemPreview, prefixList[i].Name + " " + itemList[ITEMOFFSET + inventoryPreviewNetId].Name);
+                    itemPreviewText.Text = inventoryToolTip.GetToolTip(itemPreview);
+                    break;
+                }
+
+            }
+        }
+
+        ListViewItem lastFoundItem = null;
+        private void txtItemFilter_TextChanged(object sender, EventArgs e)
+        {
+            string search = txtItemFilter.Text.ToLower();
+            if (lastFoundItem != null)
+                lastFoundItem.BackColor = Color.Transparent;
+            if (search.Length > 0)
+                foreach (ListViewItem item in inventoryItemsList.Items)
+                    if (item.Text.ToLower().Contains(search))
+                    {
+                        inventoryItemsList.Items[item.Index].Selected = true;
+                        inventoryItemsList.Select();
+                        inventoryItemsList.EnsureVisible(item.Index);
+                        item.BackColor = Color.LightSteelBlue;
+                        lastFoundItem = item;
+                        break;
+                    }
+
+            txtItemFilter.Focus();
+        }
+        private void clearPreviewItem_Click(object sender, EventArgs e)
+        {
+            inventoryUpdateStatus.Text = "";
+            itemPreview.Image = item_0;
+            itemPreview.Text = "";
+            itemPreviewText.Text = "";
+            txtStackSize.Text = "";
+
+            inventoryToolTip.SetToolTip(itemPreview, "");
+            inventoryPreviewNetId = 0;
+            inventoryPrefixIndex = 0;
+        }
+
+        private void inventoryItemsList_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            DoDragDrop(e.Item, DragDropEffects.Move);
+        }
+        private void slot_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(ListViewItem)))
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+            // others...
+        }
+
+        private void slot_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(ListViewItem)))
+            {
+                var item = e.Data.GetData(typeof(ListViewItem)) as ListViewItem;
+
+            }
+            // others...
+        }
+        private void preview_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(ListViewItem)))
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+            // others...
+        }
+
+        private void preview_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(ListViewItem)))
+            {
+                ListViewItem item = e.Data.GetData(typeof(ListViewItem)) as ListViewItem;
+                string name = item.SubItems[0].Text;
+                int netId = Int32.Parse(item.SubItems[1].Text);
+                int stacks = Int32.Parse(item.SubItems[2].Text);
+                int prefix = Int32.Parse(item.SubItems[3].Text);
+
+                inventoryPreviewNetId = netId;
+                itemPreview.Image = sprites[ITEMOFFSET + netId];
+                if (stacks == 0)
+                    itemPreview.Text = "";
+                else
+                    itemPreview.Text = stacks.ToString();
+                inventoryPrefixStackSize = stacks;
+                txtStackSize.Text = itemPreview.Text;
+
+                if (prefix > 0 && prefix <= prefixList.Length)
+                    inventoryToolTip.SetToolTip(itemPreview, prefixList[prefix - 1].Name + " " + itemList[ITEMOFFSET + netId].Name);
+                else
+                    inventoryToolTip.SetToolTip(itemPreview, itemList[ITEMOFFSET + netId].Name);
+                itemPreviewText.Text = inventoryToolTip.GetToolTip(itemPreview);
+            }
+        }
+        private void inventoryItemsList_DoubleClick(object sender, EventArgs e)
+        {
+
+            if (inventoryItemsList.SelectedItems.Count > 0)
+            {
+                ListViewItem item = inventoryItemsList.SelectedItems[0];
+
+                string name = item.SubItems[0].Text;
+                int netId = Int32.Parse(item.SubItems[1].Text);
+                int stacks = Int32.Parse(item.SubItems[2].Text);
+                int prefix = Int32.Parse(item.SubItems[3].Text);
+
+                inventoryPreviewNetId = netId;
+                itemPreview.Image = sprites[ITEMOFFSET + netId];
+                if (stacks == 0)
+                    itemPreview.Text = "";
+                else
+                    itemPreview.Text = stacks.ToString();
+                inventoryPrefixStackSize = stacks;
+                txtStackSize.Text = itemPreview.Text;
+
+                if (prefix > 0 && prefix <= prefixList.Length)
+                    inventoryToolTip.SetToolTip(itemPreview, prefixList[prefix - 1].Name + " " + itemList[ITEMOFFSET + netId].Name);
+                else
+                    inventoryToolTip.SetToolTip(itemPreview, itemList[ITEMOFFSET + netId].Name);
+                itemPreviewText.Text = inventoryToolTip.GetToolTip(itemPreview);
+            }
+        }
         #endregion
 
         #region Settings
@@ -2162,6 +2478,7 @@ namespace RemoteAdminConsole
                 MessageBox.Show("Invalid userid/password/server", GUIMain.PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            stopServer.Visible = true;
             userIcon.Visible = true;
             userLoggedIn.Text = "Logged in as " + ru.conn.UserId + ".";
             getServerDetails();
@@ -2173,7 +2490,7 @@ namespace RemoteAdminConsole
         #region  Config Tab
         // Player Config
         /// <summary>
- 
+
         Dictionary<string, JObject> configDescription = new Dictionary<string, JObject>();
         private void getConfig()
         {
@@ -2238,7 +2555,7 @@ namespace RemoteAdminConsole
         #region  SSCConfig Tab
         // Player SSCConfig
         /// <summary>
-  
+
         private void getSSCConfig()
         {
 
@@ -2265,7 +2582,24 @@ namespace RemoteAdminConsole
         }
         #endregion
 
- 
+        private void bodyColor_Click(object sender, EventArgs e)
+        {
+            //attempt to cast the sender as a label
+            Label lbl = sender as Label;
+
+            if (lbl != null)
+            {
+                System.Drawing.Color newColor = tabColorPickerDialog(lbl.BackColor.R.ToString() + "," + lbl.BackColor.G.ToString() + "," + lbl.BackColor.B.ToString());
+                lbl.BackColor = newColor;
+
+            }
+        }
+
+
+
+
+
+
 
     }
 }
