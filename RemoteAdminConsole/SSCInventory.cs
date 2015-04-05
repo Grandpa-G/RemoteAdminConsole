@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 using System.Drawing;
 namespace RemoteAdminConsole
 {
-     public class SSCInventory
+    public class SSCInventory
     {
         public Int32 Id { get; set; }
         public string Inventory { get; set; }
         public Int32 Hair { get; set; }
         public Int32 HairDye { get; set; }
-        public System.Drawing.Color HairColor { get; set; }
+        public Color HairColor { get; set; }
         public Color PantsColor { get; set; }
         public Color ShirtColor { get; set; }
         public Color UnderShirtColor { get; set; }
         public Color ShoeColor { get; set; }
         public Color SkinColor { get; set; }
         public Color EyeColor { get; set; }
+        public Boolean IsPlaying { get; set; }
 
         public SSCInventory(Int32 id, string inventory, Int32 hair, Int32 hairdye, Color haircolor,
-            Color pantscolor, Color shirtcolor, Color undershirtcolor, Color shoecolor, Color skincolor, Color eyecolor)
+            Color pantscolor, Color shirtcolor, Color undershirtcolor, Color shoecolor, Color skincolor, Color eyecolor, Boolean isplaying)
         {
             Id = id;
             Inventory = inventory;
@@ -34,6 +35,7 @@ namespace RemoteAdminConsole
             ShoeColor = shoecolor;
             SkinColor = skincolor;
             EyeColor = eyecolor;
+            IsPlaying = isplaying;
         }
 
         public SSCInventory()
@@ -42,14 +44,14 @@ namespace RemoteAdminConsole
             Inventory = string.Empty;
             Hair = 0;
             HairDye = 0;
-            HairColor = Color.FromArgb(0, 0, 0);
-            PantsColor = Color.FromArgb(0, 0, 0);
-            ShirtColor = Color.FromArgb(0, 0, 0);
-            UnderShirtColor = Color.FromArgb(0, 0, 0);
-            ShoeColor = Color.FromArgb(0, 0, 0);
-            SkinColor = Color.FromArgb(0, 0, 0);
-            EyeColor = Color.FromArgb(0, 0, 0);
-
+            HairColor = Color.Black;
+            PantsColor = Color.Black;
+            ShirtColor = Color.Black;
+            UnderShirtColor = Color.Black;
+            ShoeColor = Color.Black;
+            SkinColor = Color.Black;
+            EyeColor = Color.Black;
+            IsPlaying = false;
         }
     }
 }

@@ -61,6 +61,10 @@
     </Compile>
     <Compile Include="Items.cs" />
     <Compile Include="KickBan.cs" />
+    <Compile Include="Player\Buff.cs" />
+    <Compile Include="Player\Color.cs" />
+    <Compile Include="Player\Item.cs" />
+    <Compile Include="Player\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoteUtils.cs" />

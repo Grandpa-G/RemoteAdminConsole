@@ -105,12 +105,11 @@ namespace RemoteAdminConsole
                         userLoggedIn.Text = "Logged in as " + ru.conn.UserId + ".";
                     }
 
-            getServerDetails();
             getItemSpriteImage();
             loadItemNames();
             setupAbout();
 
-            this.serverDataPlayers.CellClick += serverDataPlayers_Click;
+
             this.banDataBan.CellClick += this.banDataBan_CellClick;
 
             this.groupDataPermissions.CellClick += this.groupDataPermissions_CellClick;
@@ -136,8 +135,8 @@ namespace RemoteAdminConsole
             }
             else
             {
-
             }
+            getServerDetails();
         }
 
         private void tabPane_Selected(object sender, TabControlEventArgs e)
@@ -204,7 +203,6 @@ namespace RemoteAdminConsole
 
         private void getServerDetails()
         {
-            string response = null;
             string name = "";
             JObject rules = null;
             JArray players = null;
@@ -219,12 +217,16 @@ namespace RemoteAdminConsole
             string username = "";
             int account;
             string group = "";
-            string nickName = "";
             string ip = "";
             int index = 0;
             Boolean state;
             String extraAdminRESTVersion = "";
             String dbSupported = "";
+
+            serverChatStatus.Text = "";
+            serverChat.Text = "";
+            serverChat.Enabled = false;
+            serverChatPlayer.Text = "Chat closed.";
 
             JObject results = ru.communicateWithTerraria("v2/server/status", "players=true&rules=true");
             string status = (string)results["status"];
@@ -245,7 +247,6 @@ namespace RemoteAdminConsole
                 lblWorldName.Text = world;
                 lblWorldId.Text = "";
                 lblInvasionSizeValue.Text = "";
-                //            lblWorldSizeValue.Text = Main.maxTilesX + "*" + Main.maxTilesY;
                 lblVersionValue.Text = version;
                 aboutServerVersion.Text = version;
 
@@ -330,6 +331,7 @@ namespace RemoteAdminConsole
                     }
                 }
                 serverDataPlayers.Rows.Clear();
+
                 results = ru.communicateWithTerraria("AdminREST/PlayerList", "");
                 status = (string)results["status"];
                 if (status.Equals("200"))
@@ -350,11 +352,12 @@ namespace RemoteAdminConsole
                             if (nickname != null)
                             {
                                 serverDataPlayers.Rows.Add(nickname, username, group.ToString(), ip, index, account);
-                            }
+                              }
                         }
                     }
                 }
-
+                serverDataPlayers.ClearSelection();
+                //                serverDataPlayers.Rows[0].Cells[0].DefaultCellStyle.SelectionBackColor = serverDataPlayers.DefaultCellStyle.BackColor;
                 tabPlayer.Enabled = false;
                 playerFound = false;
 
@@ -421,7 +424,10 @@ namespace RemoteAdminConsole
                     lblWorldId.Text = worldId.ToString();
                 }
                 lblServerRefresh.Text = DateTime.Now.ToString("ddd h:mm:ss tt");
+
                 serverDataPlayers.ClearSelection();
+                serverDataPlayers.ClearSelection();
+
             }
         }
         private void serverRefresh_Click(object sender, EventArgs e)
@@ -432,12 +438,26 @@ namespace RemoteAdminConsole
         {
             e.Cancel = !e.TabPage.Enabled;
         }
-        private void serverDataPlayers_Click(object sender, EventArgs e)
+        private void serverDataPlayers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return; //check if row index is not selected
+            DataGridViewRow row = serverDataPlayers.Rows[e.RowIndex];
+
+            serverDataPlayers.Rows[e.RowIndex].Selected = true;
+
+            string name = row.Cells[0].Value.ToString();
+
+            serverChatStatus.Text = "";
+            serverChat.Text = "";
+            serverChat.Enabled = true;
+            serverChatPlayer.Text = "Chat with " + name;
+
             playerFound = true;
             tabPlayer.Enabled = true;
-            tabPane.SelectedIndex = PLAYERTAB;
+
         }
+
+
         #endregion
 
         #region  Player Tab
@@ -914,21 +934,21 @@ namespace RemoteAdminConsole
             groupDataParentList.Sorted = true;
             this.groupDataList.Sort(this.groupDatagroup, ListSortDirection.Ascending);
             groupDataList.ClearSelection();
- /*
-            if (groupRowName.Length > 0)
-            {
-                groupDataList.ClearSelection();
-                for (int i = 0; i < groupDataList.RowCount; i++)
-                {
-                    if (groupDataList.Rows[i].Cells[0].Equals(groupRowName))
-                    {
-                        groupDataList.Rows[i].Selected = true;
-                        break;
-                    }
-                }
-                groupDataList_CellClick(groupDataList, new DataGridViewCellEventArgs(0, 0));
-            }
-  * */
+            /*
+                       if (groupRowName.Length > 0)
+                       {
+                           groupDataList.ClearSelection();
+                           for (int i = 0; i < groupDataList.RowCount; i++)
+                           {
+                               if (groupDataList.Rows[i].Cells[0].Equals(groupRowName))
+                               {
+                                   groupDataList.Rows[i].Selected = true;
+                                   break;
+                               }
+                           }
+                           groupDataList_CellClick(groupDataList, new DataGridViewCellEventArgs(0, 0));
+                       }
+             * */
         }
 
         private System.Drawing.Color tabColorDecode(string colorString)
@@ -1039,7 +1059,7 @@ namespace RemoteAdminConsole
             if (group.Length == 0)
             {
                 groupsUpdateStatus.Text = "No group given.";
-//                usersChoice = MessageBox.Show("No group given.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //                usersChoice = MessageBox.Show("No group given.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -1051,12 +1071,12 @@ namespace RemoteAdminConsole
                 if (status.Equals("200"))
                 {
                     groupRowIndex = selectedRow.Index;
-                groupsUpdateStatus.Text = "Group " + group + " updated";
-//                   usersChoice = MessageBox.Show("Group " + group + " updated", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    groupsUpdateStatus.Text = "Group " + group + " updated";
+                    //                   usersChoice = MessageBox.Show("Group " + group + " updated", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                groupsUpdateStatus.Text = "Group " + group + " already exists!";
-//                   usersChoice = MessageBox.Show("Group " + group + " already exists!\r\n" + (string)results["error"], PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    groupsUpdateStatus.Text = "Group " + group + " already exists!";
+                //                   usersChoice = MessageBox.Show("Group " + group + " already exists!\r\n" + (string)results["error"], PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -1065,13 +1085,13 @@ namespace RemoteAdminConsole
                 string status = (string)results["status"];
                 if (status.Equals("200"))
                 {
-                groupsUpdateStatus.Text = "Group " + group + " added";
+                    groupsUpdateStatus.Text = "Group " + group + " added";
                     groupRowIndex = selectedRow.Index;
-//                     usersChoice = MessageBox.Show("Group " + group + " added", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //                     usersChoice = MessageBox.Show("Group " + group + " added", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                groupsUpdateStatus.Text = "Group " + group + " already exists!";
-//                    usersChoice = MessageBox.Show("Group " + group + " already exists!\r\n" + (string)results["error"], PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    groupsUpdateStatus.Text = "Group " + group + " already exists!";
+                //                    usersChoice = MessageBox.Show("Group " + group + " already exists!\r\n" + (string)results["error"], PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             getGroupList();
         }
@@ -1208,12 +1228,12 @@ namespace RemoteAdminConsole
             if (status.Equals("200"))
             {
                 groupsUpdateStatus.Text = "Group " + name + " was deleted";
-//                usersChoice = MessageBox.Show("Group " + name + " was deleted", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //                usersChoice = MessageBox.Show("Group " + name + " was deleted", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 groupRowIndex = -1;
             }
             else
                 groupsUpdateStatus.Text = "Group " + name + " could not be deleted, check console for details.";
-//            usersChoice = MessageBox.Show("Group " + name + " could not be deleted, check console for details.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            usersChoice = MessageBox.Show("Group " + name + " could not be deleted, check console for details.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
             getGroupList();
         }
 
@@ -1524,6 +1544,7 @@ namespace RemoteAdminConsole
             playerFound = true;
             tabInventory.Enabled = true;
             tabPane.SelectedIndex = INVENTORYTAB;
+            inputFromImport = false;
         }
         private void clearUserSearch_Click(object sender, EventArgs e)
         {
@@ -1565,7 +1586,7 @@ namespace RemoteAdminConsole
             if (group.Length == 0)
             {
                 usersUpdateStatus.Text = "No group given.";
-              return;
+                return;
             }
             if (usersModified)
             {
@@ -1588,7 +1609,7 @@ namespace RemoteAdminConsole
                 if (password.Length == 0)
                 {
                     usersUpdateStatus.Text = "Invalid password.";
-                     return;
+                    return;
                 }
                 action = action + "&password=" + password;
                 // And now use this to connect server
@@ -1953,10 +1974,38 @@ namespace RemoteAdminConsole
             }
             consoleOutput.Text = output;
         }
+        private void serverChat_TextChanged(object sender, EventArgs e)
+        {
+            serverChatStatus.Text = "";
+        }
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                int rowIndex = serverDataPlayers.CurrentRow.Index;
+                if (rowIndex < 0)
+                {
+                    serverChatStatus.Text = "No player selected.";
+                    return;
+                }
+                string playerIndex = serverDataPlayers.Rows[rowIndex].Cells[4].Value.ToString();
+                JObject results = ru.communicateWithTerraria("AdminREST/Chat", "index=" + playerIndex + "&msg=" + serverChat.Text);
+                string status = (string)results["status"];
+                if (status.Equals("200"))
+                {
+                    String response = (String)results["response"];
+                    // get an array from the JSON object 
+
+                    // add text to it; we want to make it scroll
+                    serverChatStatus.Text = response;
+                }
+            }
+        }
 
         private void consoleSubmitBroadcast_Click(object sender, EventArgs e)
         {
-            JObject results = ru.communicateWithTerraria("AdminREST/Broadcast", "&msg=" + consoleBroadcast.Text);
+            JObject results = ru.communicateWithTerraria("AdminREST/Broadcast", "index=0&msg=" + consoleBroadcast.Text);
             string status = (string)results["status"];
             if (status.Equals("200"))
             {
@@ -2021,6 +2070,7 @@ namespace RemoteAdminConsole
             Color eyeColor;
             int hair = 0;
             int hairDye = 0;
+            bool isPlaying = false;
 
             SSCInventory SSCInventory = new SSCInventory();
             SSCInventory.Inventory = "";
@@ -2058,7 +2108,7 @@ namespace RemoteAdminConsole
                     shoeColor = Color.FromArgb((int)colorObj["A"], (int)colorObj["R"], (int)colorObj["G"], (int)colorObj["B"]);
                     colorObj = (JObject)innerObj["EyeColor"];
                     eyeColor = Color.FromArgb((int)colorObj["A"], (int)colorObj["R"], (int)colorObj["G"], (int)colorObj["B"]);
-
+                    isPlaying = (Boolean)innerObj["IsPlaying"];
                 }
                 catch (NullReferenceException)
                 {
@@ -2069,7 +2119,7 @@ namespace RemoteAdminConsole
                     inventoryList = "0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~";
                 }
             }
-            SSCInventory = new SSCInventory(account, inventoryList, hair, hairDye, hairColor, pantsColor, shirtColor, underShirtColor, shoeColor, skinColor, eyeColor);
+            SSCInventory = new SSCInventory(account, inventoryList, hair, hairDye, hairColor, pantsColor, shirtColor, underShirtColor, shoeColor, skinColor, eyeColor, isPlaying);
             return SSCInventory;
         }
         SSCInventory SSCInventory;
@@ -2082,8 +2132,16 @@ namespace RemoteAdminConsole
             DataGridViewRow selectedRow = usersDataList.CurrentRow;
             string name = selectedRow.Cells[0].Value.ToString();
             int account = Int32.Parse(selectedRow.Cells[5].Value.ToString());
+            if(!inputFromImport)
             SSCInventory = GetSSCInventory(account);
-            sscAccountName.Text = name;
+            inventoryUpdate.Enabled = true;
+            if (SSCInventory.IsPlaying)
+            {
+                sscAccountName.Text = name + " [Player Active]";
+                inventoryUpdate.Enabled = false;
+            }
+            else
+                sscAccountName.Text = name;
 
             inventoryUpdateStatus.Text = "";
             itemPreview.Image = item_0;
@@ -2597,10 +2655,149 @@ namespace RemoteAdminConsole
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
+        bool inputFromImport = false;
+        private void inventoryImport_Click(object sender, EventArgs e)
+        {
+            Color hairColor;
+            Color pantsColor;
+            Color shirtColor;
+            Color underShirtColor;
+            Color shoeColor;
+            Color skinColor;
+            Color eyeColor;
+            int hair = 0;
+            int hairDye = 0;
+            int account = -1;
+            bool isPlaying = false;
+ 
+            // Create an instance of the open file dialog box.
+            OpenFileDialog playerFile = new OpenFileDialog();
 
+            // Set filter options and filter index.
+            playerFile.Filter = "Player Files (.plr)|*.plr|All Files (*.*)|*.*";
+            playerFile.FilterIndex = 1;
 
+            playerFile.Multiselect = true;
 
+            // Call the ShowDialog method to show the dialog box.
+           DialogResult response = playerFile.ShowDialog();
 
+            // Process input if the user clicked OK.
+           if (response == DialogResult.OK)
+            {
+
+                Player p = new Player(playerFile.FileName);
+                p.LoadPlayer("");
+                inputFromImport = true;
+                int i = 0;
+
+                hairColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                skinColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                eyeColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                shirtColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                underShirtColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                pantsColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                shoeColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                isPlaying = false;
+                string inventoryList = "";
+                string sep = "";
+    
+                for (int j = 0; j < p.inv.Length; j++)
+                {
+                    inventoryList = inventoryList + sep + p.inv[j].NetId + "," + p.inv[j].StackSize + "," + p.inv[j].Prefix;
+                    sep = "~";
+                }
+                for (int j = 0; j < p.armor.Length; j++)
+                    inventoryList = inventoryList + sep + p.armor[j].NetId + "," + p.armor[j].StackSize + "," + p.armor[j].Prefix;
+
+                for (int j = 0; j < p.accessories.Length; j++)
+                    inventoryList = inventoryList + sep + p.accessories[j].NetId + "," + p.accessories[j].StackSize + "," + p.accessories[j].Prefix;
+
+                for (int j = 0; j < p.vanity.Length; j++)
+                    inventoryList = inventoryList + sep + p.vanity[j].NetId + "," + p.vanity[j].StackSize + "," + p.vanity[j].Prefix;
+
+                for (int j = 0; j < p.socialAccessories.Length; j++)
+                    inventoryList = inventoryList + sep + p.socialAccessories[j].NetId + "," + p.socialAccessories[j].StackSize + "," + p.socialAccessories[j].Prefix;
+
+                for (int j = 0; j < p.dye.Length; j++)
+                    inventoryList = inventoryList + sep + p.dye[j].NetId + "," + p.dye[j].StackSize + "," + p.dye[j].Prefix;
+                SSCInventory = new SSCInventory(account, inventoryList, hair, hairDye, hairColor, pantsColor, shirtColor, underShirtColor, shoeColor, skinColor, eyeColor, isPlaying);
+                getInventory();
+            }
+        }
+
+        private void inventoryExport_Click(object sender, EventArgs e)
+        {
+            Color hairColor;
+            Color pantsColor;
+            Color shirtColor;
+            Color underShirtColor;
+            Color shoeColor;
+            Color skinColor;
+            Color eyeColor;
+            int hair = 0;
+            int hairDye = 0;
+            int account = -1;
+            bool isPlaying = false;
+
+            // Create an instance of the open file dialog box.
+            OpenFileDialog playerFile = new OpenFileDialog();
+
+            // Set filter options and filter index.
+            playerFile.Filter = "Player Files (.plr)|*.plr|All Files (*.*)|*.*";
+            playerFile.FilterIndex = 1;
+
+            playerFile.Multiselect = true;
+
+            // Call the ShowDialog method to show the dialog box.
+            DialogResult response = playerFile.ShowDialog();
+
+            // Process input if the user clicked OK.
+            if (response == DialogResult.OK)
+            {
+
+                Player p = new Player(playerFile.FileName);
+                p.SavePlayer(playerFile.FileName);
+                int i = 0;
+
+                hairColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                skinColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                eyeColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                shirtColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                underShirtColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                pantsColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                shoeColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
+                isPlaying = false;
+                string inventoryList = "";
+                string sep = "";
+
+                for (int j = 0; j < p.inv.Length; j++)
+                {
+                    inventoryList = inventoryList + sep + p.inv[j].NetId + "," + p.inv[j].StackSize + "," + p.inv[j].Prefix;
+                    sep = "~";
+                }
+                for (int j = 0; j < p.armor.Length; j++)
+                    inventoryList = inventoryList + sep + p.armor[j].NetId + "," + p.armor[j].StackSize + "," + p.armor[j].Prefix;
+
+                for (int j = 0; j < p.accessories.Length; j++)
+                    inventoryList = inventoryList + sep + p.accessories[j].NetId + "," + p.accessories[j].StackSize + "," + p.accessories[j].Prefix;
+
+                for (int j = 0; j < p.vanity.Length; j++)
+                    inventoryList = inventoryList + sep + p.vanity[j].NetId + "," + p.vanity[j].StackSize + "," + p.vanity[j].Prefix;
+
+                for (int j = 0; j < p.socialAccessories.Length; j++)
+                    inventoryList = inventoryList + sep + p.socialAccessories[j].NetId + "," + p.socialAccessories[j].StackSize + "," + p.socialAccessories[j].Prefix;
+
+                for (int j = 0; j < p.dye.Length; j++)
+                    inventoryList = inventoryList + sep + p.dye[j].NetId + "," + p.dye[j].StackSize + "," + p.dye[j].Prefix;
+                SSCInventory = new SSCInventory(account, inventoryList, hair, hairDye, hairColor, pantsColor, shirtColor, underShirtColor, shoeColor, skinColor, eyeColor, isPlaying);
+                getInventory();
+            }
+
+        }
 
 
     }

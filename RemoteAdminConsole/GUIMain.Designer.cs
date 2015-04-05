@@ -40,6 +40,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
             this.tabPane = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
+            this.serverChatStatus = new System.Windows.Forms.Label();
+            this.serverChat = new System.Windows.Forms.TextBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.serverChatPlayer = new System.Windows.Forms.Label();
             this.serverDaytime = new System.Windows.Forms.PictureBox();
             this.lable65 = new System.Windows.Forms.Label();
             this.serverBloodmoon = new System.Windows.Forms.PictureBox();
@@ -478,6 +482,8 @@
             this.userIcon = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.lblPortValue = new System.Windows.Forms.Label();
+            this.inventoryImport = new System.Windows.Forms.Button();
+            this.inventoryExport = new System.Windows.Forms.Button();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -539,6 +545,10 @@
             // tabServer
             // 
             this.tabServer.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabServer.Controls.Add(this.serverChatStatus);
+            this.tabServer.Controls.Add(this.serverChat);
+            this.tabServer.Controls.Add(this.label79);
+            this.tabServer.Controls.Add(this.serverChatPlayer);
             this.tabServer.Controls.Add(this.serverDaytime);
             this.tabServer.Controls.Add(this.lable65);
             this.tabServer.Controls.Add(this.serverBloodmoon);
@@ -600,6 +610,40 @@
             this.tabServer.TabIndex = 0;
             this.tabServer.Text = "Server";
             // 
+            // serverChatStatus
+            // 
+            this.serverChatStatus.Location = new System.Drawing.Point(550, 435);
+            this.serverChatStatus.Name = "serverChatStatus";
+            this.serverChatStatus.Size = new System.Drawing.Size(282, 13);
+            this.serverChatStatus.TabIndex = 59;
+            // 
+            // serverChat
+            // 
+            this.serverChat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.serverChat.Location = new System.Drawing.Point(550, 401);
+            this.serverChat.Name = "serverChat";
+            this.serverChat.Size = new System.Drawing.Size(351, 20);
+            this.serverChat.TabIndex = 58;
+            this.serverChat.TextChanged += new System.EventHandler(this.serverChat_TextChanged);
+            this.serverChat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label79.Location = new System.Drawing.Point(515, 404);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(29, 13);
+            this.label79.TabIndex = 57;
+            this.label79.Text = "Chat";
+            // 
+            // serverChatPlayer
+            // 
+            this.serverChatPlayer.Location = new System.Drawing.Point(550, 382);
+            this.serverChatPlayer.Name = "serverChatPlayer";
+            this.serverChatPlayer.Size = new System.Drawing.Size(176, 13);
+            this.serverChatPlayer.TabIndex = 56;
+            // 
             // serverDaytime
             // 
             this.serverDaytime.BackColor = System.Drawing.Color.AliceBlue;
@@ -652,12 +696,13 @@
             this.serverDataId,
             this.serverDataAccount});
             this.serverDataPlayers.Location = new System.Drawing.Point(499, 57);
+            this.serverDataPlayers.MultiSelect = false;
             this.serverDataPlayers.Name = "serverDataPlayers";
             this.serverDataPlayers.ReadOnly = true;
             this.serverDataPlayers.RowHeadersVisible = false;
             this.serverDataPlayers.Size = new System.Drawing.Size(431, 300);
             this.serverDataPlayers.TabIndex = 51;
-            this.serverDataPlayers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serverDataPlayers_Click);
+            this.serverDataPlayers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serverDataPlayers_CellClick);
             // 
             // serverDataNickname
             // 
@@ -2688,23 +2733,27 @@
             // 
             this.banDataUser.HeaderText = "User";
             this.banDataUser.Name = "banDataUser";
+            this.banDataUser.ReadOnly = true;
             this.banDataUser.Width = 150;
             // 
             // banDataIP
             // 
             this.banDataIP.HeaderText = "IP";
             this.banDataIP.Name = "banDataIP";
+            this.banDataIP.ReadOnly = true;
             // 
             // banDataReason
             // 
             this.banDataReason.HeaderText = "Reason";
             this.banDataReason.Name = "banDataReason";
+            this.banDataReason.ReadOnly = true;
             this.banDataReason.Width = 150;
             // 
             // banDataBanningUser
             // 
             this.banDataBanningUser.HeaderText = "Banning User";
             this.banDataBanningUser.Name = "banDataBanningUser";
+            this.banDataBanningUser.ReadOnly = true;
             this.banDataBanningUser.Width = 150;
             // 
             // banDataDate
@@ -2712,6 +2761,7 @@
             this.banDataDate.FillWeight = 50F;
             this.banDataDate.HeaderText = "Date";
             this.banDataDate.Name = "banDataDate";
+            this.banDataDate.ReadOnly = true;
             this.banDataDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // banDataExpiration
@@ -2719,6 +2769,7 @@
             this.banDataExpiration.FillWeight = 50F;
             this.banDataExpiration.HeaderText = "Expiration";
             this.banDataExpiration.Name = "banDataExpiration";
+            this.banDataExpiration.ReadOnly = true;
             this.banDataExpiration.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // tabUsers
@@ -3047,6 +3098,8 @@
             // 
             this.tabInventory.AllowDrop = true;
             this.tabInventory.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabInventory.Controls.Add(this.inventoryExport);
+            this.tabInventory.Controls.Add(this.inventoryImport);
             this.tabInventory.Controls.Add(this.itemPreviewText);
             this.tabInventory.Controls.Add(this.inventoryUpdateStatus);
             this.tabInventory.Controls.Add(this.inventorySlotReplace);
@@ -5192,6 +5245,29 @@
             this.lblPortValue.TabIndex = 21;
             this.lblPortValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // inventoryImport
+            // 
+            this.inventoryImport.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.inventoryImport.Location = new System.Drawing.Point(354, 419);
+            this.inventoryImport.Name = "inventoryImport";
+            this.inventoryImport.Size = new System.Drawing.Size(75, 23);
+            this.inventoryImport.TabIndex = 261;
+            this.inventoryImport.Text = "Import";
+            this.inventoryImport.UseVisualStyleBackColor = false;
+            this.inventoryImport.Click += new System.EventHandler(this.inventoryImport_Click);
+            // 
+            // inventoryExport
+            // 
+            this.inventoryExport.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.inventoryExport.Location = new System.Drawing.Point(354, 447);
+            this.inventoryExport.Name = "inventoryExport";
+            this.inventoryExport.Size = new System.Drawing.Size(75, 23);
+            this.inventoryExport.TabIndex = 262;
+            this.inventoryExport.Text = "Export";
+            this.inventoryExport.UseVisualStyleBackColor = false;
+            this.inventoryExport.Visible = false;
+            this.inventoryExport.Click += new System.EventHandler(this.inventoryExport_Click);
+            // 
             // GUIMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5487,13 +5563,6 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.DataGridView serverDataPlayers;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn banDataUnban;
-        private System.Windows.Forms.DataGridViewTextBoxColumn banDataUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn banDataIP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn banDataReason;
-        private System.Windows.Forms.DataGridViewTextBoxColumn banDataBanningUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn banDataDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn banDataExpiration;
         private System.Windows.Forms.TabPage tabConsole;
         private System.Windows.Forms.TextBox consoleOutput;
         private System.Windows.Forms.Button consoleSubmitCommand;
@@ -5657,12 +5726,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usersDataIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn usersDataID;
         private System.Windows.Forms.DataGridViewCheckBoxColumn usersDataInventory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataNickname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataUserName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataGroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataIP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataAccount;
         private System.Windows.Forms.TabPage tabConfig;
         private System.Windows.Forms.Button refreshConfig;
         private System.Windows.Forms.DataGridView configDataList;
@@ -5697,5 +5760,24 @@
         private System.Windows.Forms.Label banSearchResults;
         private System.Windows.Forms.Label groupsUpdateStatus;
         private System.Windows.Forms.Label usersUpdateStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataNickname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataUserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataGroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serverDataAccount;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn banDataUnban;
+        private System.Windows.Forms.DataGridViewTextBoxColumn banDataUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn banDataIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn banDataReason;
+        private System.Windows.Forms.DataGridViewTextBoxColumn banDataBanningUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn banDataDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn banDataExpiration;
+        private System.Windows.Forms.TextBox serverChat;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label serverChatPlayer;
+        private System.Windows.Forms.Label serverChatStatus;
+        private System.Windows.Forms.Button inventoryImport;
+        private System.Windows.Forms.Button inventoryExport;
     }
 }
