@@ -13,7 +13,9 @@ namespace RemoteAdminConsole
         public string CharName { get; set; }
         public byte Difficulty { get; set; }
         public int CharHairType { get; set; }
+        public int HairDye { get; set; }
         public bool Gender { get; set; }
+        public int HideVisual { get; set; }
         public int CurrentLife { get; set; }
         public int MaxLife { get; set; }
         public int CurrentMana { get; set; }
@@ -26,7 +28,8 @@ namespace RemoteAdminConsole
         public Item[] dye { get; set; }
 
         public Item[] inv { get; set; }
-        public Item[] bank { get; set; }
+        public Item[] bank1 { get; set; }
+        public Item[] bank2 { get; set; }
         public Buff[] buffs { get; set; }
 
         public int[] spX { get; set; }
@@ -36,7 +39,8 @@ namespace RemoteAdminConsole
 
         public bool hbLocked { get; set; }
         public string FilePath { get; set; }
-
+        public int AnglerQuestsFinished { get; set; }
+       
         public Player(string path)
         {
             this.FilePath = path;
@@ -47,7 +51,6 @@ namespace RemoteAdminConsole
             spN = new string[200];
             for (int i = 0; i < 200; i++)
             {
-
                 this.spN[i] = "";
             }
 
@@ -81,11 +84,15 @@ namespace RemoteAdminConsole
             for (int i = 0; i < inv.Length; i++)
                 inv[i] = new Item();
 
-            bank = new Item[40];
-            for (int i = 0; i < bank.Length; i++)
-                bank[i] = new Item();
+            bank1 = new Item[40];
+            for (int i = 0; i < bank1.Length; i++)
+                bank1[i] = new Item();
 
-            buffs = new Buff[10];
+            bank2 = new Item[40];
+            for (int i = 0; i < bank2.Length; i++)
+                bank2[i] = new Item();
+
+            buffs = new Buff[22];
             for (int i = 0; i < buffs.Length; i++)
                 buffs[i] = new Buff();
         }
@@ -114,17 +121,17 @@ namespace RemoteAdminConsole
                     using (stream = new FileStream(outputFile, FileMode.Open))
                     {
                         using (reader = new BinaryReader(stream))
-                        {
-                            this.GameVersion = reader.ReadInt32();
+                        { 
+                              this.GameVersion = reader.ReadInt32();
                             this.CharName = reader.ReadString();
 
                             Difficulty = reader.ReadByte();
 
                             this.CharHairType = reader.ReadInt32();
-                            Byte HairDye = reader.ReadByte();
+                            HairDye = reader.ReadByte();
 
                             Gender = reader.ReadBoolean();
-                            Byte HideVisual = reader.ReadByte();
+                            HideVisual = reader.ReadByte();
 
                             this.CurrentLife = reader.ReadInt32();
                             if (this.CurrentLife > 1000)
@@ -184,31 +191,26 @@ namespace RemoteAdminConsole
                                 this.inv[i].Prefix = reader.ReadByte();
                             }
 
-                            for (int i = 0; i < 40; i++)
+                            for (int i = 0; i < bank1.Length; i++)
                             {
-                                if (i < 20)
-                                {
-                                    this.bank[i].Name = reader.ReadString();
-                                    this.bank[i].StackSize = reader.ReadInt32();
-                                }
+                                      this.bank1[i].NetId = reader.ReadInt32();
+                                    this.bank1[i].StackSize = reader.ReadInt32();
+                                    this.bank1[i].Prefix = reader.ReadByte();
+                           }
 
-                                if (GameVersion >= 20 && i > 19)
-                                {
-                                    this.bank[i].Name = reader.ReadString();
-                                    this.bank[i].StackSize = reader.ReadInt32();
-                                }
+                            for (int i = 0; i < bank2.Length; i++)
+                            {
+                                this.bank2[i].NetId = reader.ReadInt32();
+                                this.bank2[i].StackSize = reader.ReadInt32();
+                                this.bank2[i].Prefix = reader.ReadByte();
+                            }
+                            for (int i = 0; i < buffs.Length; i++)
+                            {
+                                this.buffs[i].BuffType = reader.ReadInt32();
+                                this.buffs[i].BuffTime = reader.ReadInt32();
                             }
 
-                            if (GameVersion >= 11)
-                            {
-                                for (int i = 0; i < 10; i++)
-                                {
-                                    this.buffs[i].BuffType = reader.ReadInt32();
-                                    this.buffs[i].BuffTime = reader.ReadInt32();
-                                }
-                            }
-
-                            for (int m = 0; m < 200; m++)
+                            for (int m = 0; m < spX.Length; m++)
                             {
                                 int num = reader.ReadInt32();
                                 if (num == -1)
@@ -223,6 +225,7 @@ namespace RemoteAdminConsole
 
                             this.hbLocked = reader.ReadBoolean();
 
+                            int AnglerQuestsFinished = reader.ReadInt32();
                             reader.Close();
                         }
                     }
@@ -254,14 +257,14 @@ namespace RemoteAdminConsole
             BinaryWriter writer;
             this.FilePath = path;
 
-            string destinationFile = this.FilePath + ".bak";
+            string destinationFile = path + ".bak";
 
-            if (File.Exists(this.FilePath))
+            if (File.Exists(path))
             {
-                File.Copy(this.FilePath, destinationFile, true);
+                File.Copy(path, destinationFile, true);
             }
 
-            string tempFile = this.FilePath + ".dat";
+            string tempFile = path + ".dat";
 
             using (stream = new FileStream(tempFile, FileMode.Create))
             {
@@ -271,11 +274,14 @@ namespace RemoteAdminConsole
                     writer.Write(this.CharName);
                     writer.Write(this.Difficulty);
                     writer.Write(this.CharHairType);
+                    writer.Write(this.HairDye);
                     writer.Write(this.Gender);
+                    writer.Write(this.HideVisual);
                     writer.Write(this.CurrentLife);
                     writer.Write(this.MaxLife);
                     writer.Write(this.CurrentMana);
                     writer.Write(this.MaxMana);
+
 
                     for (int i = 0; i < Colors.Length; i++)
                     {
@@ -284,56 +290,62 @@ namespace RemoteAdminConsole
                         writer.Write(this.Colors[i].B);
                     }
 
-                    for (int i = 0; i < 8; i++)
+                    for (int i = 0; i < armor.Length; i++)
                     {
-                        if (this.armor[i] == null)
-                            this.armor[i].Name = "";
-
-                        writer.Write(this.armor[i].Name);
+                        writer.Write(this.armor[i].NetId);
+                        writer.Write(this.armor[i].StackSize);
                     }
 
-                    for (int i = 8; i < armor.Length; i++)
+                    for (int i = 0; i < accessories.Length; i++)
                     {
-                        if (this.armor[i] == null)
-                            this.armor[i].Name = "";
-
-                        writer.Write(this.armor[i].Name);
+                        writer.Write(this.accessories[i].NetId);
+                        writer.Write(this.accessories[i].StackSize);
                     }
 
-                    for (int i = 0; i < 44; i++)
+                    for (int i = 0; i < vanity.Length; i++)
                     {
-                        if (this.inv[i] == null)
-                            this.inv[i].Name = "";
+                        writer.Write(this.vanity[i].NetId);
+                        writer.Write(this.vanity[i].StackSize);
+                    }
 
-                        writer.Write(this.inv[i].Name);
+                    for (int i = 0; i < socialAccessories.Length; i++)
+                    {
+                        writer.Write(this.socialAccessories[i].NetId);
+                        writer.Write(this.socialAccessories[i].StackSize);
+                    }
+                    for (int i = 0; i < dye.Length; i++)
+                    {
+                        writer.Write(this.dye[i].NetId);
+                        writer.Write(this.dye[i].StackSize);
+                    }
+
+                    for (int i = 0; i < inv.Length; i++)
+                    {
+                        writer.Write(this.inv[i].NetId);
                         writer.Write(this.inv[i].StackSize);
+                        writer.Write(this.inv[i].Prefix);
                     }
 
-                    for (int i = 44; i < inv.Length; i++)
+                    for (int i = 0; i < bank1.Length; i++)
                     {
-                        if (this.inv[i].Name == null)
-                            this.inv[i].Name = "";
 
-                        writer.Write(this.inv[i].Name);
-                        writer.Write(this.inv[i].StackSize);
+                        writer.Write(this.bank1[i].Name);
+                        writer.Write(this.bank1[i].StackSize);
                     }
 
-                    for (int i = 0; i < 40; i++)
+                    for (int i = 0; i < bank2.Length; i++)
                     {
-                        if (this.bank[i] == null)
-                            this.bank[i].Name = "";
 
-                        writer.Write(this.bank[i].Name);
-                        writer.Write(this.bank[i].StackSize);
+                        writer.Write(this.bank2[i].Name);
+                        writer.Write(this.bank2[i].StackSize);
                     }
-
-                    for (int i = 0; i < 10; i++)
+                    for (int i = 0; i < buffs.Length; i++)
                     {
                         writer.Write(this.buffs[i].BuffType);
                         writer.Write(this.buffs[i].BuffTime);
                     }
 
-                    for (int m = 0; m < 200; m++)
+                    for (int m = 0; m < spX.Length; m++)
                     {
                         writer.Write(this.spX[m]);
                         writer.Write(this.spY[m]);
@@ -341,11 +353,12 @@ namespace RemoteAdminConsole
                         writer.Write(this.spN[m]);
                     }
                     writer.Write(this.hbLocked);
+                    writer.Write(this.AnglerQuestsFinished);
                     writer.Close();
                 }
             }
             EncryptFile(tempFile, this.FilePath);
-            File.Delete(tempFile);
+ //           File.Delete(tempFile);
         }
 
         /// <summary>
@@ -362,13 +375,16 @@ namespace RemoteAdminConsole
             try
             {
                 int num;
+                int counter = 0;
                 while ((num = cryptoStream.ReadByte()) != -1)
                 {
                     fileStream2.WriteByte((byte)num);
+                    counter++;
                 }
                 fileStream2.Close();
                 cryptoStream.Close();
                 fileStream1.Close();
+                Console.WriteLine("Bytes:" + counter);
             }
             catch
             {

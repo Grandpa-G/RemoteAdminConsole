@@ -290,6 +290,8 @@
             this.usersDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersDataInventory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabInventory = new System.Windows.Forms.TabPage();
+            this.inventoryExport = new System.Windows.Forms.Button();
+            this.inventoryImport = new System.Windows.Forms.Button();
             this.itemPreviewText = new System.Windows.Forms.Label();
             this.inventoryUpdateStatus = new System.Windows.Forms.Label();
             this.inventorySlotReplace = new System.Windows.Forms.Button();
@@ -482,8 +484,10 @@
             this.userIcon = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.lblPortValue = new System.Windows.Forms.Label();
-            this.inventoryImport = new System.Windows.Forms.Button();
-            this.inventoryExport = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.inventoryClearAll = new System.Windows.Forms.Button();
+            this.inventoryInit = new System.Windows.Forms.Button();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -3098,6 +3102,8 @@
             // 
             this.tabInventory.AllowDrop = true;
             this.tabInventory.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabInventory.Controls.Add(this.inventoryInit);
+            this.tabInventory.Controls.Add(this.inventoryClearAll);
             this.tabInventory.Controls.Add(this.inventoryExport);
             this.tabInventory.Controls.Add(this.inventoryImport);
             this.tabInventory.Controls.Add(this.itemPreviewText);
@@ -3226,6 +3232,29 @@
             this.tabInventory.Size = new System.Drawing.Size(942, 539);
             this.tabInventory.TabIndex = 9;
             this.tabInventory.Text = "Inventory";
+            // 
+            // inventoryExport
+            // 
+            this.inventoryExport.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.inventoryExport.Location = new System.Drawing.Point(354, 447);
+            this.inventoryExport.Name = "inventoryExport";
+            this.inventoryExport.Size = new System.Drawing.Size(75, 23);
+            this.inventoryExport.TabIndex = 262;
+            this.inventoryExport.Text = "Export";
+            this.inventoryExport.UseVisualStyleBackColor = false;
+            this.inventoryExport.Visible = false;
+            this.inventoryExport.Click += new System.EventHandler(this.inventoryExport_Click);
+            // 
+            // inventoryImport
+            // 
+            this.inventoryImport.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.inventoryImport.Location = new System.Drawing.Point(354, 419);
+            this.inventoryImport.Name = "inventoryImport";
+            this.inventoryImport.Size = new System.Drawing.Size(75, 23);
+            this.inventoryImport.TabIndex = 261;
+            this.inventoryImport.Text = "Import";
+            this.inventoryImport.UseVisualStyleBackColor = false;
+            this.inventoryImport.Click += new System.EventHandler(this.inventoryImport_Click);
             // 
             // itemPreviewText
             // 
@@ -5245,28 +5274,51 @@
             this.lblPortValue.TabIndex = 21;
             this.lblPortValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // inventoryImport
+            // button1
             // 
-            this.inventoryImport.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.inventoryImport.Location = new System.Drawing.Point(354, 419);
-            this.inventoryImport.Name = "inventoryImport";
-            this.inventoryImport.Size = new System.Drawing.Size(75, 23);
-            this.inventoryImport.TabIndex = 261;
-            this.inventoryImport.Text = "Import";
-            this.inventoryImport.UseVisualStyleBackColor = false;
-            this.inventoryImport.Click += new System.EventHandler(this.inventoryImport_Click);
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(458, 112);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 263;
+            this.button1.Text = "Import";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.inventoryImport_Click);
             // 
-            // inventoryExport
+            // button2
             // 
-            this.inventoryExport.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.inventoryExport.Location = new System.Drawing.Point(354, 447);
-            this.inventoryExport.Name = "inventoryExport";
-            this.inventoryExport.Size = new System.Drawing.Size(75, 23);
-            this.inventoryExport.TabIndex = 262;
-            this.inventoryExport.Text = "Export";
-            this.inventoryExport.UseVisualStyleBackColor = false;
-            this.inventoryExport.Visible = false;
-            this.inventoryExport.Click += new System.EventHandler(this.inventoryExport_Click);
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(557, 112);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 263;
+            this.button2.Text = "Export";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.inventoryExport_Click);
+            // 
+            // inventoryClearAll
+            // 
+            this.inventoryClearAll.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.inventoryClearAll.Location = new System.Drawing.Point(560, 419);
+            this.inventoryClearAll.Name = "inventoryClearAll";
+            this.inventoryClearAll.Size = new System.Drawing.Size(75, 23);
+            this.inventoryClearAll.TabIndex = 263;
+            this.inventoryClearAll.Text = "Clear";
+            this.inventoryClearAll.UseVisualStyleBackColor = false;
+            this.inventoryClearAll.Click += new System.EventHandler(this.inventoryClearAll_Click);
+            // 
+            // inventoryInit
+            // 
+            this.inventoryInit.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.inventoryInit.Location = new System.Drawing.Point(560, 447);
+            this.inventoryInit.Name = "inventoryInit";
+            this.inventoryInit.Size = new System.Drawing.Size(75, 23);
+            this.inventoryInit.TabIndex = 264;
+            this.inventoryInit.Text = "Initialize";
+            this.inventoryInit.UseVisualStyleBackColor = false;
+            this.inventoryInit.Click += new System.EventHandler(this.inventoryInit_Click);
             // 
             // GUIMain
             // 
@@ -5274,6 +5326,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 727);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblPortValue);
             this.Controls.Add(this.label70);
             this.Controls.Add(this.userIcon);
@@ -5779,5 +5833,9 @@
         private System.Windows.Forms.Label serverChatStatus;
         private System.Windows.Forms.Button inventoryImport;
         private System.Windows.Forms.Button inventoryExport;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button inventoryInit;
+        private System.Windows.Forms.Button inventoryClearAll;
     }
 }

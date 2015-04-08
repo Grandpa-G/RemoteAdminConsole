@@ -42,6 +42,8 @@ namespace RemoteAdminConsole
         public static int MAXITEMSPREFIX = 83 + 1;
         public static int MAXPREFIX = 86;
         public static int EQUIPMENTITEMS = 58;
+        public static int MAXITEMSLOTS = 58;
+        public static int MAXSLOTS = 58 + 3 + 5 + 3 + 5 + 8;
 
         Bitmap[] sprites = new Bitmap[MAXITEMS];
         Bitmap item_0;
@@ -135,6 +137,9 @@ namespace RemoteAdminConsole
             }
             else
             {
+                button1.Visible = true;
+                button2.Visible = true;
+                inventoryExport.Visible = true;
             }
             getServerDetails();
         }
@@ -352,7 +357,7 @@ namespace RemoteAdminConsole
                             if (nickname != null)
                             {
                                 serverDataPlayers.Rows.Add(nickname, username, group.ToString(), ip, index, account);
-                              }
+                            }
                         }
                     }
                 }
@@ -1516,6 +1521,7 @@ namespace RemoteAdminConsole
 
             playerFound = true;
             tabInventory.Enabled = true;
+            inputFromImport = false;
 
         }
         private void usersDataList_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -2132,8 +2138,8 @@ namespace RemoteAdminConsole
             DataGridViewRow selectedRow = usersDataList.CurrentRow;
             string name = selectedRow.Cells[0].Value.ToString();
             int account = Int32.Parse(selectedRow.Cells[5].Value.ToString());
-            if(!inputFromImport)
-            SSCInventory = GetSSCInventory(account);
+            if (!inputFromImport)
+                SSCInventory = GetSSCInventory(account);
             inventoryUpdate.Enabled = true;
             if (SSCInventory.IsPlaying)
             {
@@ -2254,6 +2260,56 @@ namespace RemoteAdminConsole
             return BitConverter.ToInt32(new[] { color.Value.R, color.Value.G, color.Value.B, color.Value.A }, 0);
         }
 
+        private void inventoryClearAll_Click(object sender, EventArgs e)
+        {
+            SSCInventory.Inventory = "0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~";
+
+            string[] inventory = SSCInventory.Inventory.Split('~');
+            for (int i = 0; i < slotItems.Length; i++)
+                slotItems[i] = new Item();
+
+            SetSSCInventorySlot(this, "sscItem", inventory);
+
+        }
+        private void inventoryInit_Click(object sender, EventArgs e)
+        {
+            // And now use this to connect server 
+            JObject results = ru.communicateWithTerraria("AdminREST/getConfig", "config=sscconfig.json");
+            string status = (string)results["status"];
+            if (status.Equals("200"))
+            {
+                JObject configOptions = (JObject)results["config"];
+                JArray startingInventory = (JArray)configOptions["StartingInventory"];
+
+                int netId = 0;
+                int stack = 0;
+                int prefix = 0;
+                int slot = 0;
+                string sep = "";
+                SSCInventory.Inventory = "";
+                for (int i = 0; i < startingInventory.Count; i++)
+                {
+                    netId = (int)startingInventory[i]["netID"];
+                    stack = (int)startingInventory[i]["stack"];
+                    prefix = (int)startingInventory[i]["prefix"];
+
+                    SSCInventory.Inventory = SSCInventory.Inventory + sep + netId.ToString() + "," + stack.ToString() + "," + prefix.ToString();
+                    sep = "~";
+                    slot++;
+                }
+                for (int i = slot; i < MAXITEMSLOTS; i++)
+                {
+                    SSCInventory.Inventory = SSCInventory.Inventory + sep + "0,0,0";
+                    sep = "~";
+                }
+
+                string[] inventory = SSCInventory.Inventory.Split('~');
+                for (int i = 0; i < slotItems.Length; i++)
+                    slotItems[i] = new Item();
+
+                SetSSCInventorySlot(this, "sscItem", inventory);
+            }
+        }
         private void inventorySlotReplace_Click(object sender, EventArgs e)
         {
             if (itemLastClicked != null)
@@ -2672,7 +2728,7 @@ namespace RemoteAdminConsole
             int hairDye = 0;
             int account = -1;
             bool isPlaying = false;
- 
+
             // Create an instance of the open file dialog box.
             OpenFileDialog playerFile = new OpenFileDialog();
 
@@ -2680,17 +2736,17 @@ namespace RemoteAdminConsole
             playerFile.Filter = "Player Files (.plr)|*.plr|All Files (*.*)|*.*";
             playerFile.FilterIndex = 1;
 
-            playerFile.Multiselect = true;
+            playerFile.Multiselect = false;
 
             // Call the ShowDialog method to show the dialog box.
-           DialogResult response = playerFile.ShowDialog();
+            DialogResult response = playerFile.ShowDialog();
 
             // Process input if the user clicked OK.
-           if (response == DialogResult.OK)
+            if (response == DialogResult.OK)
             {
 
                 Player p = new Player(playerFile.FileName);
-                p.LoadPlayer("");
+                p.LoadPlayer(playerFile.FileName);
                 inputFromImport = true;
                 int i = 0;
 
@@ -2704,7 +2760,7 @@ namespace RemoteAdminConsole
                 isPlaying = false;
                 string inventoryList = "";
                 string sep = "";
-    
+
                 for (int j = 0; j < p.inv.Length; j++)
                 {
                     inventoryList = inventoryList + sep + p.inv[j].NetId + "," + p.inv[j].StackSize + "," + p.inv[j].Prefix;
@@ -2744,13 +2800,11 @@ namespace RemoteAdminConsole
             bool isPlaying = false;
 
             // Create an instance of the open file dialog box.
-            OpenFileDialog playerFile = new OpenFileDialog();
+            SaveFileDialog playerFile = new SaveFileDialog();
 
             // Set filter options and filter index.
             playerFile.Filter = "Player Files (.plr)|*.plr|All Files (*.*)|*.*";
             playerFile.FilterIndex = 1;
-
-            playerFile.Multiselect = true;
 
             // Call the ShowDialog method to show the dialog box.
             DialogResult response = playerFile.ShowDialog();
@@ -2758,9 +2812,8 @@ namespace RemoteAdminConsole
             // Process input if the user clicked OK.
             if (response == DialogResult.OK)
             {
-
                 Player p = new Player(playerFile.FileName);
-                p.SavePlayer(playerFile.FileName);
+                p.LoadPlayer("");
                 int i = 0;
 
                 hairColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
@@ -2771,34 +2824,56 @@ namespace RemoteAdminConsole
                 pantsColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
                 shoeColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
                 isPlaying = false;
-                string inventoryList = "";
-                string sep = "";
 
+                string[] inventoryList = SSCInventory.Inventory.Split('~');
+                string[] inv;
+                i = 0;
                 for (int j = 0; j < p.inv.Length; j++)
                 {
-                    inventoryList = inventoryList + sep + p.inv[j].NetId + "," + p.inv[j].StackSize + "," + p.inv[j].Prefix;
-                    sep = "~";
+                    inv = inventoryList[i++].Split(',');
+                    p.inv[j].NetId = Int32.Parse(inv[0]);
+                    p.inv[j].StackSize = Int32.Parse(inv[0]);
+                    p.inv[j].Prefix = Int16.Parse(inv[0]);
                 }
                 for (int j = 0; j < p.armor.Length; j++)
-                    inventoryList = inventoryList + sep + p.armor[j].NetId + "," + p.armor[j].StackSize + "," + p.armor[j].Prefix;
+                {
+                    inv = inventoryList[i++].Split(',');
+                    p.armor[j].NetId = Int32.Parse(inv[0]);
+                    p.armor[j].Prefix = Int16.Parse(inv[0]);
+                }
 
                 for (int j = 0; j < p.accessories.Length; j++)
-                    inventoryList = inventoryList + sep + p.accessories[j].NetId + "," + p.accessories[j].StackSize + "," + p.accessories[j].Prefix;
+                {
+                    inv = inventoryList[i++].Split(',');
+                    p.accessories[j].NetId = Int32.Parse(inv[0]);
+                    p.accessories[j].Prefix = Int16.Parse(inv[0]);
+                }
 
                 for (int j = 0; j < p.vanity.Length; j++)
-                    inventoryList = inventoryList + sep + p.vanity[j].NetId + "," + p.vanity[j].StackSize + "," + p.vanity[j].Prefix;
+                {
+                    inv = inventoryList[i++].Split(',');
+                    p.vanity[j].NetId = Int32.Parse(inv[0]);
+                    p.vanity[j].Prefix = Int16.Parse(inv[0]);
+                }
 
                 for (int j = 0; j < p.socialAccessories.Length; j++)
-                    inventoryList = inventoryList + sep + p.socialAccessories[j].NetId + "," + p.socialAccessories[j].StackSize + "," + p.socialAccessories[j].Prefix;
+                {
+                    inv = inventoryList[i++].Split(',');
+                    p.socialAccessories[j].NetId = Int32.Parse(inv[0]);
+                    p.socialAccessories[j].Prefix = Int16.Parse(inv[0]);
+                }
 
                 for (int j = 0; j < p.dye.Length; j++)
-                    inventoryList = inventoryList + sep + p.dye[j].NetId + "," + p.dye[j].StackSize + "," + p.dye[j].Prefix;
-                SSCInventory = new SSCInventory(account, inventoryList, hair, hairDye, hairColor, pantsColor, shirtColor, underShirtColor, shoeColor, skinColor, eyeColor, isPlaying);
-                getInventory();
+                {
+                    inv = inventoryList[i++].Split(',');
+                    p.dye[j].NetId = Int32.Parse(inv[0]);
+                    p.dye[j].Prefix = Int16.Parse(inv[0]);
+                }
+                p.SavePlayer(playerFile.FileName);
             }
 
         }
 
-
+ 
     }
 }
