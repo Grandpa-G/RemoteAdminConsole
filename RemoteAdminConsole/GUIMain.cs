@@ -1331,12 +1331,6 @@ namespace RemoteAdminConsole
             String andClause = " where ";
             searchString = "%";
 
-            usersSearchName.Text = "";
-            usersSearchGroup.Text = "";
-            usersSearchIP.Text = "";
-            usersFuzzyName.Checked = false;
-            usersFuzzyGroup.Checked = false;
-            usersFuzzyIP.Checked = false;
             usersSearchResults.Text = "";
 
             if (usersSearchName.Text != null)
@@ -2262,6 +2256,13 @@ namespace RemoteAdminConsole
 
         private void inventoryClearAll_Click(object sender, EventArgs e)
         {
+            DialogResult usersChoice =
+MessageBox.Show("Are you sure you want to erase all items in this inventory?", PROGRAMNAME, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // cancel the delete event
+            if (usersChoice == DialogResult.No)
+                return;
+
             SSCInventory.Inventory = "0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~";
 
             string[] inventory = SSCInventory.Inventory.Split('~');
@@ -2273,6 +2274,13 @@ namespace RemoteAdminConsole
         }
         private void inventoryInit_Click(object sender, EventArgs e)
         {
+            DialogResult usersChoice =
+MessageBox.Show("Are you sure you want to replace all items in this inventory\r\nwith the default config inventory list?", PROGRAMNAME, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // cancel the delete event
+            if (usersChoice == DialogResult.No)
+                return;
+
             // And now use this to connect server 
             JObject results = ru.communicateWithTerraria("AdminREST/getConfig", "config=sscconfig.json");
             string status = (string)results["status"];
