@@ -51,7 +51,7 @@ namespace RemoteAdminConsole
 
             if (results == null)
             {
-                MessageBox.Show("Invalid userid/password/server", GUIMain.PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+      //          MessageBox.Show("Invalid userid/password/server", GUIMain.PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             // this can be a string or null

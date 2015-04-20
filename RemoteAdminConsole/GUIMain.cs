@@ -866,6 +866,8 @@ namespace RemoteAdminConsole
 
         private void getGroupList()
         {
+            List<DataGridViewRow> rows = new List<DataGridViewRow>();
+            List<string> parents = new List<string>();
             JArray groups;
             string name;
             string parent;
@@ -873,18 +875,22 @@ namespace RemoteAdminConsole
             string groupPrefix;
             string groupSuffix;
             JArray totalPermissions;
+            JArray permissions;
 
             usersDataGroup.Items.Clear();
             groupDataList.Rows.Clear();
             groupDataPermissions.Rows.Clear();
             groupDataParentList.Items.Clear();
             groupDataList.ClearSelection();
+            groupList.Clear();
+            parents.Clear();
 
             // And now use this to connect server
             JObject results = ru.communicateWithTerraria("AdminREST/GroupList", "");
             string status = (string)results["status"];
             if (status.Equals("200"))
             {
+                groupDataList.SuspendLayout();
                 groups = (JArray)results["groups"];
                 for (int i = 0; i < groups.Count; i++)
                 {
@@ -894,33 +900,29 @@ namespace RemoteAdminConsole
                     chatColor = (String)innerObj["chatcolor"];
                     groupPrefix = (String)innerObj["groupprefix"];
                     groupSuffix = (String)innerObj["groupsuffix"];
-                    if (name.Length > 0)
+                    try
                     {
-                        // And now use this to connect server
-                        JObject presults = ru.communicateWithTerraria("v2/groups/read", "group=" + name);
-
-                        totalPermissions = null;
-                        if (((string)presults["status"]).Equals("200"))
-                        {
-                            try
-                            {
-                                totalPermissions = (JArray)presults["totalpermissions"];
-                            }
-                            catch (NullReferenceException e)
-                            {
-                                totalPermissions = null;
-                            }
-
-                        }
-                        //                   totalPermissions = (JArray)innerObj["totalPermissions"];
-                        usersDataGroup.Items.Add(name);
-                        groupDataParentList.Items.Add(name);
-                        Group g = new Group(name, parent, chatColor, groupPrefix, groupSuffix, totalPermissions);
-                        groupList.Add(g);
-                        groupDataList.Rows.Add(name, parent, chatColor, "", groupPrefix, groupSuffix);
-
+                        totalPermissions = (JArray)innerObj["totalpermissions"];
+                        permissions = (JArray)innerObj["permissions"];
                     }
+                    catch (NullReferenceException e)
+                    {
+                        totalPermissions = null;
+                        permissions = null;
+                    }
+                    //                    usersDataGroup.Items.Add(name);
+                    parents.Add(name);
+                    //                   groupDataParentList.Items.Add(name);
+                    Group g = new Group(name, parent, chatColor, groupPrefix, groupSuffix, permissions, totalPermissions);
+                    groupList.Add(g);
+                    rows.Add(new DataGridViewRow());
+                    rows[rows.Count - 1].CreateCells(groupDataList, name, parent, chatColor, "", groupPrefix, groupSuffix);
+                    //                    groupDataList.Rows.Add(name, parent, chatColor, "", groupPrefix, groupSuffix);
+
                 }
+                groupDataList.Rows.AddRange(rows.ToArray());
+                groupDataParentList.Items.AddRange(parents.ToArray());
+                usersDataGroup.Items.AddRange(parents.ToArray());
 
             }
             foreach (DataGridViewRow row in groupDataList.Rows)
@@ -936,9 +938,11 @@ namespace RemoteAdminConsole
                         }
                 }
             }
+
             groupDataParentList.Sorted = true;
             this.groupDataList.Sort(this.groupDatagroup, ListSortDirection.Ascending);
             groupDataList.ClearSelection();
+
             /*
                        if (groupRowName.Length > 0)
                        {
@@ -1052,6 +1056,9 @@ namespace RemoteAdminConsole
                 if (row.Cells[0] != null)
                     if (row.Cells[0].Value != null)
                     {
+                        if (row.Cells[1].Value != null)
+                            if (row.Cells[1].Value.ToString().Equals("*"))
+                                continue;
                         permissions = permissions + comma + row.Cells[0].Value.ToString();
                         comma = ",";
                     }
@@ -1120,6 +1127,7 @@ namespace RemoteAdminConsole
         {
 
             if (e.RowIndex == -1) return; //check if row index is not selected
+
             DataGridViewRow row = groupDataList.Rows[e.RowIndex];
             groupsNewRow = e.RowIndex;
 
@@ -1143,16 +1151,12 @@ namespace RemoteAdminConsole
                 JArray permissions;
                 if (groupsModified && name.Length > 0)
                 {
-                    // And now use this to connect server
-                    JObject presults = ru.communicateWithTerraria("v2/groups/read", "group=" + name);
-
-                    totalPermissions = null;
-                    if (((string)presults["status"]).Equals("200"))
+                    for (int k = 0; k < groupList.Count; k++)
                     {
-                        try
+                        if (groupList[k].Name.Equals(name))
                         {
-                            permissions = (JArray)presults["permissions"];
-                            totalPermissions = (JArray)presults["totalpermissions"];
+                            permissions = groupList[k].Permissions;
+                            totalPermissions = groupList[k].TotalPermissions;
                             if (totalPermissions != null)
                                 if (totalPermissions.Count > 0)
                                 {
@@ -1174,18 +1178,16 @@ namespace RemoteAdminConsole
                                         permissionList[i, 1] = Inherited;
                                     }
 
-                                    for (int i = 0; i < totalPermissions.Count; i++)
-                                        groupDataPermissions.Rows.Add(permissionList[i, 0], permissionList[i, 1]);
+                                    for (int j = 0; j < totalPermissions.Count; j++)
+                                        groupDataPermissions.Rows.Add(permissionList[j, 0], permissionList[j, 1]);
+                                    break;
                                 }
-                            this.groupDataPermissions.Sort(this.permissionsDataPermissons, ListSortDirection.Ascending);
-                        }
-                        catch (NullReferenceException)
-                        {
-                            totalPermissions = null;
+                            break;
                         }
                     }
+                    this.groupDataPermissions.Sort(this.permissionsDataPermissons, ListSortDirection.Ascending);
                 }
-                usersDataGroup.Items.Add(name);
+                //?                usersDataGroup.Items.Add(name);
             }
 
         }
@@ -1256,7 +1258,11 @@ namespace RemoteAdminConsole
             string chatColor;
             string groupPrefix;
             string groupSuffix;
-            JArray totalPermissions;
+            JArray permissions = null;
+            JArray totalPermissions = null;
+
+            List<string> parents = new List<string>();
+            List<DataGridViewRow> rows = new List<DataGridViewRow>();
 
             groupList.Clear();
             usersDataGroup.Items.Clear();
@@ -1275,34 +1281,21 @@ namespace RemoteAdminConsole
                     chatColor = (String)innerObj["chatcolor"];
                     groupPrefix = (String)innerObj["groupprefix"];
                     groupSuffix = (String)innerObj["groupsuffix"];
+                    permissions = (JArray)innerObj["permissions"];
+                    totalPermissions = (JArray)innerObj["totalpermissions"];
                     if (name.Length > 0)
                     {
-                        // And now use this to connect server
-                        JObject presults = ru.communicateWithTerraria("v2/groups/read", "group=" + name);
-
-                        totalPermissions = null;
-                        if (((string)presults["status"]).Equals("200"))
-                        {
-                            try
-                            {
-                                totalPermissions = (JArray)presults["totalpermissions"];
-                            }
-                            catch (NullReferenceException e)
-                            {
-                                totalPermissions = null;
-                            }
-
-                        }
-                        //                   totalPermissions = (JArray)innerObj["totalPermissions"];
-                        usersDataGroup.Items.Add(name);
-                        groupDataParentList.Items.Add(name);
-                        Group g = new Group(name, parent, chatColor, groupPrefix, groupSuffix, totalPermissions);
+                        parents.Add(name);
+                        //                        usersDataGroup.Items.Add(name);
+                        //                        groupDataParentList.Items.Add(name);
+                        Group g = new Group(name, parent, chatColor, groupPrefix, groupSuffix, permissions, totalPermissions);
                         groupList.Add(g);
                     }
                 }
 
-                groupList.Sort(
-    delegate(Group p1, Group p2)
+                usersDataGroup.Items.AddRange(parents.ToArray());
+                //               groupDataParentList.Items.AddRange(parents.ToArray());
+                groupList.Sort(delegate(Group p1, Group p2)
     {
         return p1.Name.CompareTo(p2.Name);
     }
@@ -1312,6 +1305,37 @@ namespace RemoteAdminConsole
             return;
         }
 
+        private void DataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs anError)
+        {
+            
+            MessageBox.Show("Error happened " + anError.Context.ToString());
+
+            if (anError.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                MessageBox.Show("Commit error");
+            }
+            if (anError.Context == DataGridViewDataErrorContexts.CurrentCellChange)
+            {
+                MessageBox.Show("Cell change");
+            }
+            if (anError.Context == DataGridViewDataErrorContexts.Parsing)
+            {
+                MessageBox.Show("parsing error");
+            }
+            if (anError.Context == DataGridViewDataErrorContexts.LeaveControl)
+            {
+                MessageBox.Show("leave control error");
+            }
+
+            if ((anError.Exception) is ConstraintException)
+            {
+                DataGridView view = (DataGridView)sender;
+                view.Rows[anError.RowIndex].ErrorText = "an error";
+                view.Rows[anError.RowIndex].Cells[anError.ColumnIndex].ErrorText = "an error";
+
+                anError.ThrowException = false;
+            }
+        }
         private void getUsers()
         {
             JArray userList = null;
@@ -1397,7 +1421,7 @@ namespace RemoteAdminConsole
                     {
                         group = (String)innerObj["UserGroup"];
                     }
-                    catch (NullReferenceException e)
+                    catch (NullReferenceException)
                     {
                         group = "";
                     }
@@ -1418,7 +1442,7 @@ namespace RemoteAdminConsole
                             comma = ", ";
                         }
                     }
-                    catch (NullReferenceException e)
+                    catch (NullReferenceException)
                     {
                         knownIPs = "";
                     }
@@ -1429,7 +1453,7 @@ namespace RemoteAdminConsole
                         registeredDt = DateTime.Parse(registered);
                         registered = String.Format("{0:G}", registeredDt.ToLocalTime());
                     }
-                    catch (NullReferenceException e)
+                    catch (NullReferenceException)
                     {
                         registered = "";
                     }
@@ -1445,7 +1469,7 @@ namespace RemoteAdminConsole
                         else
                             lastAccessed = "";
                     }
-                    catch (NullReferenceException e)
+                    catch (NullReferenceException)
                     {
                         lastAccessed = "";
                     }
@@ -1477,7 +1501,8 @@ namespace RemoteAdminConsole
         }
         private void refreshUsers_Click(object sender, EventArgs e)
         {
-            loadDefaultGroups();
+            if (groupList == null || groupList.Count == 0)
+                loadDefaultGroups();
             getUsers();
         }
 
@@ -1913,6 +1938,22 @@ namespace RemoteAdminConsole
             consoleMOTD.Text = "";
 
             getMOTD();
+        }
+        private void consoleCommand_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                consoleSubmitCommand.PerformClick();
+            }
+        }
+        private void consoleBroadcast_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                consoleSubmitBroadcast.PerformClick();
+            }
         }
         private void getMOTD()
         {
@@ -2882,6 +2923,8 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
 
         }
 
- 
+
+
+
     }
 }

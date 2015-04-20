@@ -76,15 +76,17 @@ namespace RemoteAdminConsole
         public string ChatColor { get; set; }
         public string GroupPrefix { get; set; }
         public string GroupSuffix { get; set; }
+        public JArray Permissions { get; set; }
         public JArray TotalPermissions { get; set; }
 
-        public Group(string name, string parent, string chatcolor, string groupprefix, string groupsuffix, JArray totalpermissions)
+        public Group(string name, string parent, string chatcolor, string groupprefix, string groupsuffix, JArray permissions, JArray totalpermissions)
         {
             Name = name;
             Parent = parent;
             ChatColor = chatcolor;
             GroupPrefix = groupprefix;
             GroupSuffix = groupsuffix;
+            Permissions = permissions;
             TotalPermissions = totalpermissions;
         }
 
@@ -95,6 +97,7 @@ namespace RemoteAdminConsole
             ChatColor = "";
             GroupPrefix = "";
             GroupSuffix = "";
+            Permissions = null;
             TotalPermissions = null;
         }
     }

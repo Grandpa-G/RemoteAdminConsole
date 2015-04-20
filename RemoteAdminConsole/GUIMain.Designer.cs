@@ -290,6 +290,8 @@
             this.usersDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersDataInventory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabInventory = new System.Windows.Forms.TabPage();
+            this.inventoryInit = new System.Windows.Forms.Button();
+            this.inventoryClearAll = new System.Windows.Forms.Button();
             this.inventoryExport = new System.Windows.Forms.Button();
             this.inventoryImport = new System.Windows.Forms.Button();
             this.itemPreviewText = new System.Windows.Forms.Label();
@@ -486,8 +488,6 @@
             this.lblPortValue = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.inventoryClearAll = new System.Windows.Forms.Button();
-            this.inventoryInit = new System.Windows.Forms.Button();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -1253,6 +1253,7 @@
             this.consoleCommand.Name = "consoleCommand";
             this.consoleCommand.Size = new System.Drawing.Size(417, 20);
             this.consoleCommand.TabIndex = 12;
+            this.consoleCommand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.consoleCommand_KeyPress);
             // 
             // consoleSubmitMOTD
             // 
@@ -1305,6 +1306,7 @@
             this.consoleBroadcast.Name = "consoleBroadcast";
             this.consoleBroadcast.Size = new System.Drawing.Size(417, 20);
             this.consoleBroadcast.TabIndex = 7;
+            this.consoleBroadcast.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.consoleBroadcast_KeyPress);
             // 
             // consoleMOTD
             // 
@@ -3040,12 +3042,14 @@
             this.usersDataList.TabIndex = 0;
             this.usersDataList.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.usersDataList_CellBeginEdit);
             this.usersDataList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDataList_CellClick);
+            this.usersDataList.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DataGridView1_DataError);
             this.usersDataList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.usersDataList_RowsAdded);
             this.usersDataList.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.usersDataList_UserDeletedRow);
             this.usersDataList.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.usersDataList_UserDeletingRow);
             // 
             // usersDataUser
             // 
+            this.usersDataUser.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.usersDataUser.HeaderText = "User";
             this.usersDataUser.Name = "usersDataUser";
             this.usersDataUser.Width = 110;
@@ -3232,6 +3236,28 @@
             this.tabInventory.Size = new System.Drawing.Size(942, 539);
             this.tabInventory.TabIndex = 9;
             this.tabInventory.Text = "Inventory";
+            // 
+            // inventoryInit
+            // 
+            this.inventoryInit.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.inventoryInit.Location = new System.Drawing.Point(560, 447);
+            this.inventoryInit.Name = "inventoryInit";
+            this.inventoryInit.Size = new System.Drawing.Size(75, 23);
+            this.inventoryInit.TabIndex = 264;
+            this.inventoryInit.Text = "Initialize";
+            this.inventoryInit.UseVisualStyleBackColor = false;
+            this.inventoryInit.Click += new System.EventHandler(this.inventoryInit_Click);
+            // 
+            // inventoryClearAll
+            // 
+            this.inventoryClearAll.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.inventoryClearAll.Location = new System.Drawing.Point(560, 419);
+            this.inventoryClearAll.Name = "inventoryClearAll";
+            this.inventoryClearAll.Size = new System.Drawing.Size(75, 23);
+            this.inventoryClearAll.TabIndex = 263;
+            this.inventoryClearAll.Text = "Clear";
+            this.inventoryClearAll.UseVisualStyleBackColor = false;
+            this.inventoryClearAll.Click += new System.EventHandler(this.inventoryClearAll_Click);
             // 
             // inventoryExport
             // 
@@ -4710,6 +4736,7 @@
             // 
             this.groupDatagroup.HeaderText = "Group";
             this.groupDatagroup.Name = "groupDatagroup";
+            this.groupDatagroup.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.groupDatagroup.Width = 110;
             // 
             // groupDataParentList
@@ -4718,8 +4745,8 @@
             this.groupDataParentList.HeaderText = "Parent";
             this.groupDataParentList.Name = "groupDataParentList";
             this.groupDataParentList.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.groupDataParentList.Sorted = true;
             this.groupDataParentList.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.groupDataParentList.Width = 110;
             // 
             // groupDataChatColor
             // 
@@ -5298,28 +5325,6 @@
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.inventoryExport_Click);
             // 
-            // inventoryClearAll
-            // 
-            this.inventoryClearAll.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.inventoryClearAll.Location = new System.Drawing.Point(560, 419);
-            this.inventoryClearAll.Name = "inventoryClearAll";
-            this.inventoryClearAll.Size = new System.Drawing.Size(75, 23);
-            this.inventoryClearAll.TabIndex = 263;
-            this.inventoryClearAll.Text = "Clear";
-            this.inventoryClearAll.UseVisualStyleBackColor = false;
-            this.inventoryClearAll.Click += new System.EventHandler(this.inventoryClearAll_Click);
-            // 
-            // inventoryInit
-            // 
-            this.inventoryInit.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.inventoryInit.Location = new System.Drawing.Point(560, 447);
-            this.inventoryInit.Name = "inventoryInit";
-            this.inventoryInit.Size = new System.Drawing.Size(75, 23);
-            this.inventoryInit.TabIndex = 264;
-            this.inventoryInit.Text = "Initialize";
-            this.inventoryInit.UseVisualStyleBackColor = false;
-            this.inventoryInit.Click += new System.EventHandler(this.inventoryInit_Click);
-            // 
             // GUIMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5752,12 +5757,6 @@
         private System.Windows.Forms.Label lblBanningUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn permissionsDataPermissons;
         private System.Windows.Forms.DataGridViewTextBoxColumn permissionsDataNote;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupDatagroup;
-        private System.Windows.Forms.DataGridViewComboBoxColumn groupDataParentList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupDataChatColor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGroupColor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupDataPrefix;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupDataSuffix;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.TabPage tabSettings;
         private System.Windows.Forms.TextBox txtURL;
@@ -5773,13 +5772,6 @@
         private System.Windows.Forms.Label userIcon;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label lblPortValue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataUser;
-        private System.Windows.Forms.DataGridViewComboBoxColumn usersDataGroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataRegistered;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataLastOn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataIP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataID;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn usersDataInventory;
         private System.Windows.Forms.TabPage tabConfig;
         private System.Windows.Forms.Button refreshConfig;
         private System.Windows.Forms.DataGridView configDataList;
@@ -5837,5 +5829,18 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button inventoryInit;
         private System.Windows.Forms.Button inventoryClearAll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupDatagroup;
+        private System.Windows.Forms.DataGridViewComboBoxColumn groupDataParentList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupDataChatColor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGroupColor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupDataPrefix;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupDataSuffix;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataUser;
+        private System.Windows.Forms.DataGridViewComboBoxColumn usersDataGroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataRegistered;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataLastOn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usersDataID;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn usersDataInventory;
     }
 }
