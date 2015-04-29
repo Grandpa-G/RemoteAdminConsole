@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
             this.tabPane = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
@@ -488,6 +488,16 @@
             this.lblPortValue = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.txtHealth = new System.Windows.Forms.TextBox();
+            this.txtMaxHealth = new System.Windows.Forms.TextBox();
+            this.txtMana = new System.Windows.Forms.TextBox();
+            this.txtMaxMana = new System.Windows.Forms.TextBox();
+            this.txtQuestsCompleted = new System.Windows.Forms.TextBox();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -735,8 +745,8 @@
             // 
             // serverDataId
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle1;
             this.serverDataId.HeaderText = "Id";
             this.serverDataId.Name = "serverDataId";
             this.serverDataId.ReadOnly = true;
@@ -2563,6 +2573,7 @@
             this.lblPlayerName.Size = new System.Drawing.Size(505, 23);
             this.lblPlayerName.TabIndex = 4;
             this.lblPlayerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPlayerName.UseMnemonic = false;
             // 
             // tabBan
             // 
@@ -3086,8 +3097,8 @@
             // 
             // usersDataID
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle2;
             this.usersDataID.HeaderText = "Id";
             this.usersDataID.Name = "usersDataID";
             this.usersDataID.ReadOnly = true;
@@ -3106,6 +3117,16 @@
             // 
             this.tabInventory.AllowDrop = true;
             this.tabInventory.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabInventory.Controls.Add(this.txtQuestsCompleted);
+            this.tabInventory.Controls.Add(this.txtMaxMana);
+            this.tabInventory.Controls.Add(this.txtMana);
+            this.tabInventory.Controls.Add(this.txtMaxHealth);
+            this.tabInventory.Controls.Add(this.txtHealth);
+            this.tabInventory.Controls.Add(this.label83);
+            this.tabInventory.Controls.Add(this.label82);
+            this.tabInventory.Controls.Add(this.label81);
+            this.tabInventory.Controls.Add(this.label80);
+            this.tabInventory.Controls.Add(this.label78);
             this.tabInventory.Controls.Add(this.inventoryInit);
             this.tabInventory.Controls.Add(this.inventoryClearAll);
             this.tabInventory.Controls.Add(this.inventoryExport);
@@ -4703,8 +4724,8 @@
             // 
             // permissionsDataNote
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle3;
             this.permissionsDataNote.HeaderText = "Note";
             this.permissionsDataNote.Name = "permissionsDataNote";
             this.permissionsDataNote.ReadOnly = true;
@@ -4810,8 +4831,8 @@
             // 
             // configDataKey
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.configDataKey.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.configDataKey.DefaultCellStyle = dataGridViewCellStyle4;
             this.configDataKey.HeaderText = "Key";
             this.configDataKey.Name = "configDataKey";
             this.configDataKey.ReadOnly = true;
@@ -4819,8 +4840,8 @@
             // 
             // configDataValue
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataValue.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataValue.DefaultCellStyle = dataGridViewCellStyle5;
             this.configDataValue.HeaderText = "Value";
             this.configDataValue.Name = "configDataValue";
             this.configDataValue.ReadOnly = true;
@@ -4828,8 +4849,8 @@
             // 
             // configDataDefinition
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataDefinition.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefinition.DefaultCellStyle = dataGridViewCellStyle6;
             this.configDataDefinition.HeaderText = "Definition";
             this.configDataDefinition.Name = "configDataDefinition";
             this.configDataDefinition.ReadOnly = true;
@@ -4837,8 +4858,8 @@
             // 
             // configDataDefault
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataDefault.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefault.DefaultCellStyle = dataGridViewCellStyle7;
             this.configDataDefault.HeaderText = "Default";
             this.configDataDefault.Name = "configDataDefault";
             this.configDataDefault.ReadOnly = true;
@@ -4871,8 +4892,8 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "sscconfigDataKey";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn1.HeaderText = "Key";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -4881,8 +4902,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "sscconfigDataValue";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn2.HeaderText = "Value";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -5324,6 +5345,96 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.inventoryExport_Click);
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(467, 25);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(41, 13);
+            this.label78.TabIndex = 265;
+            this.label78.Text = "Health:";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(548, 25);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(64, 13);
+            this.label80.TabIndex = 266;
+            this.label80.Text = "Max Health:";
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(651, 25);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(37, 13);
+            this.label81.TabIndex = 267;
+            this.label81.Text = "Mana:";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(723, 25);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(57, 13);
+            this.label82.TabIndex = 268;
+            this.label82.Text = "MaxMana:";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(815, 25);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(43, 13);
+            this.label83.TabIndex = 269;
+            this.label83.Text = "Quests:";
+            // 
+            // txtHealth
+            // 
+            this.txtHealth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHealth.Location = new System.Drawing.Point(509, 21);
+            this.txtHealth.MaxLength = 3;
+            this.txtHealth.Name = "txtHealth";
+            this.txtHealth.Size = new System.Drawing.Size(36, 20);
+            this.txtHealth.TabIndex = 270;
+            // 
+            // txtMaxHealth
+            // 
+            this.txtMaxHealth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaxHealth.Location = new System.Drawing.Point(612, 21);
+            this.txtMaxHealth.MaxLength = 3;
+            this.txtMaxHealth.Name = "txtMaxHealth";
+            this.txtMaxHealth.Size = new System.Drawing.Size(36, 20);
+            this.txtMaxHealth.TabIndex = 271;
+            // 
+            // txtMana
+            // 
+            this.txtMana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMana.Location = new System.Drawing.Point(685, 21);
+            this.txtMana.MaxLength = 3;
+            this.txtMana.Name = "txtMana";
+            this.txtMana.Size = new System.Drawing.Size(36, 20);
+            this.txtMana.TabIndex = 272;
+            // 
+            // txtMaxMana
+            // 
+            this.txtMaxMana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaxMana.Location = new System.Drawing.Point(776, 21);
+            this.txtMaxMana.MaxLength = 3;
+            this.txtMaxMana.Name = "txtMaxMana";
+            this.txtMaxMana.Size = new System.Drawing.Size(36, 20);
+            this.txtMaxMana.TabIndex = 273;
+            // 
+            // txtQuestsCompleted
+            // 
+            this.txtQuestsCompleted.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQuestsCompleted.Location = new System.Drawing.Point(856, 21);
+            this.txtQuestsCompleted.MaxLength = 3;
+            this.txtQuestsCompleted.Name = "txtQuestsCompleted";
+            this.txtQuestsCompleted.Size = new System.Drawing.Size(36, 20);
+            this.txtQuestsCompleted.TabIndex = 274;
             // 
             // GUIMain
             // 
@@ -5842,5 +5953,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usersDataIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn usersDataID;
         private System.Windows.Forms.DataGridViewCheckBoxColumn usersDataInventory;
+        private System.Windows.Forms.TextBox txtMaxHealth;
+        private System.Windows.Forms.TextBox txtHealth;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.TextBox txtQuestsCompleted;
+        private System.Windows.Forms.TextBox txtMaxMana;
+        private System.Windows.Forms.TextBox txtMana;
     }
 }

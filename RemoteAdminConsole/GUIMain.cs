@@ -491,8 +491,9 @@ namespace RemoteAdminConsole
             if (account.Length == 0)
                 lblPlayerName.Text = String.Format("{0} [index={1} UserId= UserAccountName=]", player, index);
             else
-                lblPlayerName.Text = String.Format("{0} [index={1} UserId={2} UserAccountName={3}]", player, index, account, userId);
-
+//                lblPlayerName.Text = String.Format("{0} [index={1} UserId={2} UserAccountName={3}]", player, index, account, userId.Replace("%", "\\%"));
+            lblPlayerName.Text = player + "[index=" + index +" UserId=" + account + " UserAccountName=" + userId.Replace("%", "\\%") + "]";
+ 
             // And now use this to connect server
             JObject results = ru.communicateWithTerraria("AdminREST/getPlayerData", "player=" + player);
             string status = (string)results["status"];
@@ -1592,6 +1593,7 @@ namespace RemoteAdminConsole
                 if (selectedRow.Cells[0].Value != null)
                 {
                     name = selectedRow.Cells[0].Value.ToString();
+                    name = Uri.EscapeDataString(name);
                     action = action + "&user=" + name;
                 }
             string group = "";
@@ -1642,7 +1644,7 @@ namespace RemoteAdminConsole
                 string status = (string)results["status"];
                 if (status.Equals("200"))
                 {
-                    usersUpdateStatus.Text = "Invalid password.";
+                    usersUpdateStatus.Text = status = (string)results["response"];
                 }
                 else
                 {
@@ -2112,7 +2114,12 @@ namespace RemoteAdminConsole
             int hair = 0;
             int hairDye = 0;
             bool isPlaying = false;
-
+            int health = 0;
+            int maxHealth = 0;
+            int mana = 0;
+            int maxMana = 0;
+            int questsCompleted = 0;
+ 
             SSCInventory SSCInventory = new SSCInventory();
             SSCInventory.Inventory = "";
             hairColor = Color.Black;
@@ -2150,6 +2157,11 @@ namespace RemoteAdminConsole
                     colorObj = (JObject)innerObj["EyeColor"];
                     eyeColor = Color.FromArgb((int)colorObj["A"], (int)colorObj["R"], (int)colorObj["G"], (int)colorObj["B"]);
                     isPlaying = (Boolean)innerObj["IsPlaying"];
+                    health = (int)innerObj["Health"];
+                    maxHealth = (int)innerObj["MaxHealth"];
+                    mana = (int)innerObj["Mana"];
+                    maxMana = (int)innerObj["MaxMana"];
+                    questsCompleted = (int)innerObj["QuestsCompleted"];
                 }
                 catch (NullReferenceException)
                 {
@@ -2160,7 +2172,7 @@ namespace RemoteAdminConsole
                     inventoryList = "0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~0,0,0~";
                 }
             }
-            SSCInventory = new SSCInventory(account, inventoryList, hair, hairDye, hairColor, pantsColor, shirtColor, underShirtColor, shoeColor, skinColor, eyeColor, isPlaying);
+            SSCInventory = new SSCInventory(account, health, maxHealth, mana, maxMana, questsCompleted, inventoryList, hair, hairDye, hairColor, pantsColor, shirtColor, underShirtColor, shoeColor, skinColor, eyeColor, isPlaying);
             return SSCInventory;
         }
         SSCInventory SSCInventory;
@@ -2214,6 +2226,12 @@ namespace RemoteAdminConsole
             ToolTipColor(sscPantsColor, SSCInventory.PantsColor);
             sscShoesColor.BackColor = getColor(SSCInventory.ShoeColor);
             ToolTipColor(sscShoesColor, SSCInventory.ShoeColor);
+
+            txtHealth.Text = SSCInventory.Health.ToString();
+            txtMaxHealth.Text = SSCInventory.MaxHealth.ToString();
+            txtMana.Text = SSCInventory.Mana.ToString();
+            txtMaxMana.Text = SSCInventory.MaxMana.ToString();
+            txtQuestsCompleted.Text = SSCInventory.QuestsCompleted.ToString();
 
         }
         private Item[] slotItems = new Item[MAXITEMS];
@@ -2389,7 +2407,12 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
         private void inventoryUpdate_Click(object sender, EventArgs e)
         {
             string update = "UPDATE tsCharacter set ";
-            update += " HairColor=" + EncodeColor(sscHairColor.BackColor).ToString();
+            update += " Health=" + txtHealth.Text.ToString();
+            update += ",maxHealth=" + txtMaxHealth.Text.ToString();
+            update += ",Mana=" + txtMana.Text.ToString();
+            update += ",MaxMana=" + txtMaxMana.Text.ToString();
+            update += ",QuestsCompleted=" + txtQuestsCompleted.Text.ToString();
+            update += ",HairColor=" + EncodeColor(sscHairColor.BackColor).ToString();
             update += ",EyeColor=" + EncodeColor(sscEyeColor.BackColor).ToString();
             update += ",SkinColor=" + EncodeColor(sscSkinColor.BackColor).ToString();
             update += ",ShirtColor=" + EncodeColor(sscShirtColor.BackColor).ToString();
@@ -2401,6 +2424,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             DataGridViewRow row = usersDataList.CurrentRow;
             int account = Int32.Parse(row.Cells[5].Value.ToString());
 
+            if(DEBUG)
             Console.WriteLine(SSCInventory.Inventory);
             // And now use this to connect server
             JObject results = ru.communicateWithTerraria("AdminREST/updateSSCAccount", "account=" + account + "&update=" + update);
@@ -2777,6 +2801,11 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             int hairDye = 0;
             int account = -1;
             bool isPlaying = false;
+            int health = 0;
+            int maxHealth = 0;
+            int mana = 0;
+            int maxMana = 0;
+            int questsCompleted = 0;
 
             // Create an instance of the open file dialog box.
             OpenFileDialog playerFile = new OpenFileDialog();
@@ -2798,7 +2827,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 p.LoadPlayer(playerFile.FileName);
                 inputFromImport = true;
                 int i = 0;
-
+             
                 hairColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
                 skinColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
                 eyeColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
@@ -2807,6 +2836,12 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 pantsColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
                 shoeColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
                 isPlaying = false;
+                health = p.CurrentLife;
+                maxHealth = p.MaxLife;
+                mana = p.CurrentMana;
+                maxMana = p.MaxMana;
+                questsCompleted = p.AnglerQuestsFinished;
+
                 string inventoryList = "";
                 string sep = "";
 
@@ -2829,7 +2864,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
 
                 for (int j = 0; j < p.dye.Length; j++)
                     inventoryList = inventoryList + sep + p.dye[j].NetId + "," + p.dye[j].StackSize + "," + p.dye[j].Prefix;
-                SSCInventory = new SSCInventory(account, inventoryList, hair, hairDye, hairColor, pantsColor, shirtColor, underShirtColor, shoeColor, skinColor, eyeColor, isPlaying);
+                SSCInventory = new SSCInventory(account, p.CurrentLife, p.MaxLife, p.CurrentMana, p.MaxMana, p.AnglerQuestsFinished, inventoryList, hair, hairDye, hairColor, pantsColor, shirtColor, underShirtColor, shoeColor, skinColor, eyeColor, isPlaying);
                 getInventory();
             }
         }

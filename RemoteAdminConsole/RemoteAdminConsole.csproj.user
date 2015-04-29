@@ -4,7 +4,6 @@
     <StartArguments>-d</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <StartArguments>
-    </StartArguments>
+    <StartArguments>-d</StartArguments>
   </PropertyGroup>
 </Project>
