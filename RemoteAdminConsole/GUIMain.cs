@@ -2406,6 +2406,12 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
 
         private void inventoryUpdate_Click(object sender, EventArgs e)
         {
+            JObject results;
+            DataGridViewRow row = usersDataList.CurrentRow;
+            int account = Int32.Parse(row.Cells[5].Value.ToString());
+            bool hasInventory = (bool)row.Cells[6].Value;
+            if (hasInventory) 
+            { 
             string update = "UPDATE tsCharacter set ";
             update += " Health=" + txtHealth.Text.ToString();
             update += ",maxHealth=" + txtMaxHealth.Text.ToString();
@@ -2421,18 +2427,36 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             update += ",ShoeColor=" + EncodeColor(sscShoesColor.BackColor).ToString();
             update += ",Inventory='" + SSCInventory.Inventory + "'";
 
-            DataGridViewRow row = usersDataList.CurrentRow;
-            int account = Int32.Parse(row.Cells[5].Value.ToString());
-
             if(DEBUG)
             Console.WriteLine(SSCInventory.Inventory);
             // And now use this to connect server
-            JObject results = ru.communicateWithTerraria("AdminREST/updateSSCAccount", "account=" + account + "&update=" + update);
+            results = ru.communicateWithTerraria("AdminREST/updateSSCAccount", "account=" + account + "&update=" + update);
+        }
+        else {
+               string insert = "INSERT INTO tsCharacter (Account,Health,MaxHealth,Mana,MaxMana,Inventory,hairColor,pantsColor,shirtColor,underShirtColor,shoeColor,skinColor,eyeColor,questsCompleted) VALUES (";
+            insert += account.ToString();
+            insert += "," + txtHealth.Text.ToString();
+            insert += "," + txtMaxHealth.Text.ToString();
+            insert += "," + txtMana.Text.ToString();
+            insert += "," + txtMaxMana.Text.ToString();
+            insert += ",'" + SSCInventory.Inventory + "'";
+            insert += "," + EncodeColor(sscHairColor.BackColor).ToString();
+            insert += "," + EncodeColor(sscPantsColor.BackColor).ToString();
+            insert += "," + EncodeColor(sscShirtColor.BackColor).ToString();
+            insert += "," + EncodeColor(sscUnderShirtColor.BackColor).ToString();
+            insert += "," + EncodeColor(sscShoesColor.BackColor).ToString();
+            insert += "," + EncodeColor(sscSkinColor.BackColor).ToString();
+            insert += "," + EncodeColor(sscEyeColor.BackColor).ToString();
+            insert += "," + txtQuestsCompleted.Text.ToString();
+            insert += ")";
+            // And now use this to connect server
+            results = ru.communicateWithTerraria("AdminREST/insertSSCAccount", "account=" + account + "&insert=" + insert);
+        }
             string status = (string)results["status"];
             if (status.Equals("200"))
             {
-                inventoryUpdateStatus.Text = (string)results["update"];
-
+                inventoryUpdateStatus.Text = (string)results["response"];
+                row.Cells[6].Value = true;
             }
 
         }
