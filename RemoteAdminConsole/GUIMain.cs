@@ -491,9 +491,9 @@ namespace RemoteAdminConsole
             if (account.Length == 0)
                 lblPlayerName.Text = String.Format("{0} [index={1} UserId= UserAccountName=]", player, index);
             else
-//                lblPlayerName.Text = String.Format("{0} [index={1} UserId={2} UserAccountName={3}]", player, index, account, userId.Replace("%", "\\%"));
-            lblPlayerName.Text = player + "[index=" + index +" UserId=" + account + " UserAccountName=" + userId.Replace("%", "\\%") + "]";
- 
+                //                lblPlayerName.Text = String.Format("{0} [index={1} UserId={2} UserAccountName={3}]", player, index, account, userId.Replace("%", "\\%"));
+                lblPlayerName.Text = player + "[index=" + index + " UserId=" + account + " UserAccountName=" + userId.Replace("%", "\\%") + "]";
+
             // And now use this to connect server
             JObject results = ru.communicateWithTerraria("AdminREST/getPlayerData", "player=" + player);
             string status = (string)results["status"];
@@ -1308,7 +1308,7 @@ namespace RemoteAdminConsole
 
         private void DataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs anError)
         {
-            
+
             MessageBox.Show("Error happened " + anError.Context.ToString());
 
             if (anError.Context == DataGridViewDataErrorContexts.Commit)
@@ -2119,7 +2119,7 @@ namespace RemoteAdminConsole
             int mana = 0;
             int maxMana = 0;
             int questsCompleted = 0;
- 
+
             SSCInventory SSCInventory = new SSCInventory();
             SSCInventory.Inventory = "";
             hairColor = Color.Black;
@@ -2130,6 +2130,7 @@ namespace RemoteAdminConsole
             skinColor = Color.Black;
             eyeColor = Color.Black;
             inventoryList = "";
+            inventoryUpdateStatus.Text = "";
 
             // And now use this to connect server
             JObject results = ru.communicateWithTerraria("AdminREST/getinventory", "account=" + account);
@@ -2410,48 +2411,49 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             DataGridViewRow row = usersDataList.CurrentRow;
             int account = Int32.Parse(row.Cells[5].Value.ToString());
             bool hasInventory = (bool)row.Cells[6].Value;
-            if (hasInventory) 
-            { 
-            string update = "UPDATE tsCharacter set ";
-            update += " Health=" + txtHealth.Text.ToString();
-            update += ",maxHealth=" + txtMaxHealth.Text.ToString();
-            update += ",Mana=" + txtMana.Text.ToString();
-            update += ",MaxMana=" + txtMaxMana.Text.ToString();
-            update += ",QuestsCompleted=" + txtQuestsCompleted.Text.ToString();
-            update += ",HairColor=" + EncodeColor(sscHairColor.BackColor).ToString();
-            update += ",EyeColor=" + EncodeColor(sscEyeColor.BackColor).ToString();
-            update += ",SkinColor=" + EncodeColor(sscSkinColor.BackColor).ToString();
-            update += ",ShirtColor=" + EncodeColor(sscShirtColor.BackColor).ToString();
-            update += ",UnderShirtColor=" + EncodeColor(sscUnderShirtColor.BackColor).ToString();
-            update += ",PantsColor=" + EncodeColor(sscPantsColor.BackColor).ToString();
-            update += ",ShoeColor=" + EncodeColor(sscShoesColor.BackColor).ToString();
-            update += ",Inventory='" + SSCInventory.Inventory + "'";
+            if (hasInventory)
+            {
+                string update = "UPDATE tsCharacter set ";
+                update += " Health=" + txtHealth.Text.ToString();
+                update += ",maxHealth=" + txtMaxHealth.Text.ToString();
+                update += ",Mana=" + txtMana.Text.ToString();
+                update += ",MaxMana=" + txtMaxMana.Text.ToString();
+                update += ",QuestsCompleted=" + txtQuestsCompleted.Text.ToString();
+                update += ",HairColor=" + EncodeColor(sscHairColor.BackColor).ToString();
+                update += ",EyeColor=" + EncodeColor(sscEyeColor.BackColor).ToString();
+                update += ",SkinColor=" + EncodeColor(sscSkinColor.BackColor).ToString();
+                update += ",ShirtColor=" + EncodeColor(sscShirtColor.BackColor).ToString();
+                update += ",UnderShirtColor=" + EncodeColor(sscUnderShirtColor.BackColor).ToString();
+                update += ",PantsColor=" + EncodeColor(sscPantsColor.BackColor).ToString();
+                update += ",ShoeColor=" + EncodeColor(sscShoesColor.BackColor).ToString();
+                update += ",Inventory='" + SSCInventory.Inventory + "'";
 
-            if(DEBUG)
-            Console.WriteLine(SSCInventory.Inventory);
-            // And now use this to connect server
-            results = ru.communicateWithTerraria("AdminREST/updateSSCAccount", "account=" + account + "&update=" + update);
-        }
-        else {
-               string insert = "INSERT INTO tsCharacter (Account,Health,MaxHealth,Mana,MaxMana,Inventory,hairColor,pantsColor,shirtColor,underShirtColor,shoeColor,skinColor,eyeColor,questsCompleted) VALUES (";
-            insert += account.ToString();
-            insert += "," + txtHealth.Text.ToString();
-            insert += "," + txtMaxHealth.Text.ToString();
-            insert += "," + txtMana.Text.ToString();
-            insert += "," + txtMaxMana.Text.ToString();
-            insert += ",'" + SSCInventory.Inventory + "'";
-            insert += "," + EncodeColor(sscHairColor.BackColor).ToString();
-            insert += "," + EncodeColor(sscPantsColor.BackColor).ToString();
-            insert += "," + EncodeColor(sscShirtColor.BackColor).ToString();
-            insert += "," + EncodeColor(sscUnderShirtColor.BackColor).ToString();
-            insert += "," + EncodeColor(sscShoesColor.BackColor).ToString();
-            insert += "," + EncodeColor(sscSkinColor.BackColor).ToString();
-            insert += "," + EncodeColor(sscEyeColor.BackColor).ToString();
-            insert += "," + txtQuestsCompleted.Text.ToString();
-            insert += ")";
-            // And now use this to connect server
-            results = ru.communicateWithTerraria("AdminREST/insertSSCAccount", "account=" + account + "&insert=" + insert);
-        }
+                if (DEBUG)
+                    Console.WriteLine(SSCInventory.Inventory);
+                // And now use this to connect server
+                results = ru.communicateWithTerraria("AdminREST/updateSSCAccount", "account=" + account + "&update=" + update);
+            }
+            else
+            {
+                string insert = "INSERT INTO tsCharacter (Account,Health,MaxHealth,Mana,MaxMana,Inventory,hairColor,pantsColor,shirtColor,underShirtColor,shoeColor,skinColor,eyeColor,questsCompleted) VALUES (";
+                insert += account.ToString();
+                insert += "," + txtHealth.Text.ToString();
+                insert += "," + txtMaxHealth.Text.ToString();
+                insert += "," + txtMana.Text.ToString();
+                insert += "," + txtMaxMana.Text.ToString();
+                insert += ",'" + SSCInventory.Inventory + "'";
+                insert += "," + EncodeColor(sscHairColor.BackColor).ToString();
+                insert += "," + EncodeColor(sscPantsColor.BackColor).ToString();
+                insert += "," + EncodeColor(sscShirtColor.BackColor).ToString();
+                insert += "," + EncodeColor(sscUnderShirtColor.BackColor).ToString();
+                insert += "," + EncodeColor(sscShoesColor.BackColor).ToString();
+                insert += "," + EncodeColor(sscSkinColor.BackColor).ToString();
+                insert += "," + EncodeColor(sscEyeColor.BackColor).ToString();
+                insert += "," + txtQuestsCompleted.Text.ToString();
+                insert += ")";
+                // And now use this to connect server
+                results = ru.communicateWithTerraria("AdminREST/insertSSCAccount", "account=" + account + "&insert=" + insert);
+            }
             string status = (string)results["status"];
             if (status.Equals("200"))
             {
@@ -2728,6 +2730,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                     }
                 }
             }
+            configUpdateStatus.Text = "";
             configDataList.Rows.Clear();
             // And now use this to connect server 
             results = ru.communicateWithTerraria("AdminREST/getConfig", "config=config.json");
@@ -2737,6 +2740,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 string key;
                 String definition = "";
                 String defaultx = "";
+                string valueType = "";
                 object rawOption;
                 JObject description;
                 JObject configOptions = (JObject)results["config"];
@@ -2749,19 +2753,80 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                         description = (JObject)configDescription[key];
                         definition = (string)description["definition"];
                         defaultx = (string)description["default"];
+                        valueType = (string)description["type"];
                     }
                     catch (KeyNotFoundException)
                     {
                         definition = "";
                         defaultx = "";
+                        valueType = "";
                     }
-                    configDataList.Rows.Add(key, rawOption, definition, defaultx);
+                    configDataList.Rows.Add(key, rawOption, valueType, definition, defaultx);
                 }
+            }
+        }
+        private void configDataList_RowsAdded(Object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            bool checkBox = false;
+            string value = "";
+            DataGridViewRow row = configDataList.Rows[e.RowIndex];
+            row.Cells[1].ReadOnly = false;
+            string valueType = row.Cells[2].Value.ToString();
+            if (valueType.Equals("Boolean"))
+            {
+                value = row.Cells[1].Value.ToString();
+                if (value.Equals("True"))
+                    checkBox = true;
+                row.Cells[1] = new DataGridViewCheckBoxCell();
+                row.Cells[1].ReadOnly = false;
+                row.Cells[1].Value = checkBox;
+                row.Cells[1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            if (valueType.Equals("Int32"))
+            {
+                row.Cells[1].ReadOnly = false;
+            }
+            if (valueType.Equals("String"))
+            {
+                row.Cells[1].ReadOnly = false;
+                row.Cells[1].Style.BackColor = Color.AntiqueWhite;
             }
         }
         private void refreshConfig_Click(object sender, EventArgs e)
         {
             getConfig();
+        }
+        private void configUpdate_Click(object sender, EventArgs e)
+        {
+            JObject results;
+            string status;
+            string configOptions = "{";
+            string key;
+            string value;
+            string valueType;
+            string comma = "";
+            foreach (DataGridViewRow row in configDataList.Rows)
+            {
+                key = row.Cells[0].Value.ToString();
+                value = row.Cells[1].Value.ToString();
+                valueType = row.Cells[2].Value.ToString();
+                if(valueType.Equals("String"))
+                configOptions += comma + @"""" + key + @""":""" + value + "\"";
+                else if(valueType.Equals("Boolean"))
+                configOptions += comma + @"""" + key + @""":" + value.ToLower();
+                else
+                configOptions += comma + @"""" + key + @""":" + value;
+                comma = ",";
+            }
+            configOptions += "}";
+            // And now use this to connect server 
+            results = ru.communicateWithTerraria("AdminREST/updateConfig", "configFile=config.json&config=" + configOptions);
+            status = (string)results["status"];
+            if (status.Equals("200"))
+            {
+                getConfig();
+            }
+            configUpdateStatus.Text = (string)results["response"];
         }
         #endregion
 
@@ -2769,29 +2834,129 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
         // Player SSCConfig
         /// <summary>
 
+        Dictionary<string, JObject> sscConfigDescription = new Dictionary<string, JObject>();
         private void getSSCConfig()
         {
+            JObject results;
+            string status;
 
+            if (sscConfigDescription.Count == 0)
+            {
+                // And now use this to connect server 
+                results = ru.communicateWithTerraria("AdminREST/getConfigDescription", "configFile=sscconfig.json");
+                status = (string)results["status"];
+                if (status.Equals("200"))
+                {
+                    string key;
+
+                    JObject cd = (JObject)results["description"];
+                    foreach (JProperty prop in cd.Properties())
+                    {
+                        key = prop.Name;
+                        JObject d = (JObject)prop.Value;
+                        string x = (string)d["definition"];
+                        sscConfigDescription.Add(key, d);
+                    }
+                }
+            }
+            sscConfigUpdateStatus.Text = "";
             sscconfigDataList.Rows.Clear();
             // And now use this to connect server 
-            JObject results = ru.communicateWithTerraria("AdminREST/getConfig", "config=sscconfig.json");
-            string status = (string)results["status"];
-            if (status.Equals("200"))
+             results = ru.communicateWithTerraria("AdminREST/getConfig", "config=sscconfig.json");
+             status = (string)results["status"];
+             if (status.Equals("200"))
+             {
+                 string key;
+                 String definition = "";
+                 String defaultx = "";
+                 string valueType = "";
+                 object rawOption;
+                 JObject description;
+                 JObject configOptions = (JObject)results["config"];
+                 foreach (JProperty prop in configOptions.Properties())
+                 {
+                     key = prop.Name;
+                     rawOption = prop.Value;
+                     try
+                     {
+                         description = (JObject)sscConfigDescription[key];
+                         definition = (string)description["definition"];
+                         defaultx = (string)description["default"];
+                         valueType = (string)description["type"];
+                     }
+                     catch (KeyNotFoundException)
+                     {
+                         definition = "";
+                         defaultx = "";
+                         valueType = "";
+                     }
+                     sscconfigDataList.Rows.Add(key, rawOption, valueType, definition, defaultx);
+                 }
+             }
+        }
+        private void sscConfigDataList_RowsAdded(Object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            bool checkBox = false;
+            string value = "";
+            DataGridViewRow row = sscconfigDataList.Rows[e.RowIndex];
+            row.Cells[1].ReadOnly = false;
+            string valueType = row.Cells[2].Value.ToString();
+            if (valueType.Equals("Boolean"))
             {
-                string key;
-                object rawOption;
-                JObject configOptions = (JObject)results["config"];
-                foreach (JProperty prop in configOptions.Properties())
-                {
-                    key = prop.Name;
-                    rawOption = prop.Value;
-                    sscconfigDataList.Rows.Add(key, rawOption);
-                }
+                value = row.Cells[1].Value.ToString();
+                if (value.Equals("True"))
+                    checkBox = true;
+                row.Cells[1] = new DataGridViewCheckBoxCell();
+                row.Cells[1].ReadOnly = false;
+                row.Cells[1].Value = checkBox;
+                row.Cells[1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            if (valueType.Equals("Int32"))
+            {
+                row.Cells[1].ReadOnly = false;
+            }
+            if (valueType.Equals("String"))
+            {
+                row.Cells[1].ReadOnly = false;
+                row.Cells[1].Style.BackColor = Color.AntiqueWhite;
             }
         }
         private void refreshSSCConfig_Click(object sender, EventArgs e)
         {
             getSSCConfig();
+        }
+        private void sscConfigUpdate_Click(object sender, EventArgs e)
+        {
+            JObject results;
+            string status;
+            string configOptions = "{";
+            string key;
+            string value;
+            string valueType;
+            string comma = "";
+            foreach (DataGridViewRow row in sscconfigDataList.Rows)
+            {
+                key = row.Cells[0].Value.ToString();
+                value = row.Cells[1].Value.ToString();
+                valueType = row.Cells[2].Value.ToString();
+                if (valueType.Equals("String"))
+                    configOptions += comma + @"""" + key + @""":""" + value + "\"";
+                else if (valueType.Equals("Boolean"))
+                    configOptions += comma + @"""" + key + @""":" + value.ToLower();
+                else
+                    configOptions += comma + @"""" + key + @""":" + value;
+                comma = ",";
+            }
+            configOptions += "}";
+            // And now use this to connect server 
+            results = ru.communicateWithTerraria("AdminREST/updateConfig", "configFile=sscconfig.json&config=" + configOptions);
+            status = (string)results["status"];
+            if (status.Equals("200"))
+            {
+                getSSCConfig();
+            }
+            sscConfigUpdateStatus.Text = (string)results["response"];
+ 
         }
         #endregion
 
@@ -2851,7 +3016,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 p.LoadPlayer(playerFile.FileName);
                 inputFromImport = true;
                 int i = 0;
-             
+
                 hairColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
                 skinColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
                 eyeColor = Color.FromArgb(p.Colors[i].R, p.Colors[i].G, p.Colors[i++].B);
@@ -2875,19 +3040,19 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                     sep = "~";
                 }
                 for (int j = 0; j < p.armor.Length; j++)
-                    inventoryList = inventoryList + sep + p.armor[j].NetId + "," + p.armor[j].StackSize + "," + p.armor[j].Prefix;
+                    inventoryList = inventoryList + sep + p.armor[j].NetId + "," + 1 + "," + p.armor[j].Prefix;
 
                 for (int j = 0; j < p.accessories.Length; j++)
-                    inventoryList = inventoryList + sep + p.accessories[j].NetId + "," + p.accessories[j].StackSize + "," + p.accessories[j].Prefix;
+                    inventoryList = inventoryList + sep + p.accessories[j].NetId + "," + 1 + "," + p.accessories[j].Prefix;
 
                 for (int j = 0; j < p.vanity.Length; j++)
-                    inventoryList = inventoryList + sep + p.vanity[j].NetId + "," + p.vanity[j].StackSize + "," + p.vanity[j].Prefix;
+                    inventoryList = inventoryList + sep + p.vanity[j].NetId + "," + 1 + "," + p.vanity[j].Prefix;
 
                 for (int j = 0; j < p.socialAccessories.Length; j++)
-                    inventoryList = inventoryList + sep + p.socialAccessories[j].NetId + "," + p.socialAccessories[j].StackSize + "," + p.socialAccessories[j].Prefix;
+                    inventoryList = inventoryList + sep + p.socialAccessories[j].NetId + "," + 1 + "," + p.socialAccessories[j].Prefix;
 
                 for (int j = 0; j < p.dye.Length; j++)
-                    inventoryList = inventoryList + sep + p.dye[j].NetId + "," + p.dye[j].StackSize + "," + p.dye[j].Prefix;
+                    inventoryList = inventoryList + sep + p.dye[j].NetId + "," + 1 + "," + p.dye[j].Prefix;
                 SSCInventory = new SSCInventory(account, p.CurrentLife, p.MaxLife, p.CurrentMana, p.MaxMana, p.AnglerQuestsFinished, inventoryList, hair, hairDye, hairColor, pantsColor, shirtColor, underShirtColor, shoeColor, skinColor, eyeColor, isPlaying);
                 getInventory();
             }
@@ -2981,6 +3146,8 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             }
 
         }
+
+
 
 
 
