@@ -30,7 +30,10 @@ namespace RemoteAdminConsole
         private const int USERSTAB = BANTAB + 1;
         private const int INVENTORYTAB = USERSTAB + 1;
         private const int GROUPSTAB = INVENTORYTAB + 1;
-        private const int LOGTAB = GROUPSTAB + 1;
+        private const int WHITELIST = GROUPSTAB + 1;
+        private const int CONFIG = WHITELIST + 1;
+        private const int SSCCONFIG = CONFIG + 1;
+        private const int LOGTAB = SSCCONFIG + 1;
         private const int ABOUTTAB = LOGTAB + 1;
 
         public static String PROGRAMNAME = "Remote Admin Console";
@@ -97,12 +100,14 @@ namespace RemoteAdminConsole
             getDefaults();
             bool connected = false;
             stopServer.Visible = false;
+            stopServer.Enabled = false;
             if (ru.conn != null)
                 if (ru.conn.Server != null)
                     if (ru.conn.Server.Length > 0 && ru.getToken())
                     {
                         connected = true;
                         stopServer.Visible = true;
+                        stopServer.Enabled = true;
                         userIcon.Visible = true;
                         userLoggedIn.Text = "Logged in as " + ru.conn.UserId + ".";
                     }
@@ -460,6 +465,15 @@ namespace RemoteAdminConsole
             playerFound = true;
             tabPlayer.Enabled = true;
 
+        }
+        private void serverDataPlayers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return; //check if row index is not selected
+            DataGridViewRow row = serverDataPlayers.Rows[e.RowIndex];
+
+            serverDataPlayers.Rows[e.RowIndex].Selected = true;
+            tabPane.SelectedIndex = PLAYERTAB;
+            tabPane.SelectedTab = tabPlayer;
         }
 
 
@@ -1506,6 +1520,15 @@ namespace RemoteAdminConsole
                 loadDefaultGroups();
             getUsers();
         }
+        private void usersDataList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return; //check if row index is not selected
+            DataGridViewRow row = usersDataList.Rows[e.RowIndex];
+
+            usersDataList.Rows[e.RowIndex].Selected = true;
+            tabPane.SelectedIndex = USERSTAB;
+            tabPane.SelectedTab = tabInventory;
+        }
 
 
         private void usersDataList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1939,6 +1962,7 @@ namespace RemoteAdminConsole
             consoleOutput.Text = "";
             consoleMOTD.Text = "";
 
+            consoleSaveWorldStatus.Text = "";
             getMOTD();
         }
         private void consoleCommand_KeyPress(object sender, KeyPressEventArgs e)
@@ -2071,17 +2095,13 @@ namespace RemoteAdminConsole
         }
         private void consoleSaveWorld_Click(object sender, EventArgs e)
         {
-            //           TShockAPI.TShock.s SaveManager.Instance.wSaveWorld();
-
-        }
-
-        private void consoleReloadServer_Click(object sender, EventArgs e)
-        {
-            /*
-            TSPlayer tr = new TSPlayer(0);
-            TShock.Utils.Reload(tr);
-            MessageBox.Show("Configuration, permissions, and regions reload complete. Some changes may require a server restart.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-             * */
+           // And now use this to connect server
+            JObject results = ru.communicateWithTerraria("v2/world/save", "");
+            string status = (string)results["status"];
+            if (status.Equals("200"))
+                consoleSaveWorldStatus.Text = (string)results["response"];
+            else
+            consoleSaveWorldStatus.Text = (string)results["error"];
         }
 
         private void tabConsole_Enter(object sender, EventArgs e)
@@ -2741,6 +2761,9 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 String definition = "";
                 String defaultx = "";
                 string valueType = "";
+                configUpdate.Enabled = true;
+                configSetDefaults.Enabled = true;
+                configUpdateStatus.Text = "";
                 object rawOption;
                 JObject description;
                 JObject configOptions = (JObject)results["config"];
@@ -2764,17 +2787,131 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                     configDataList.Rows.Add(key, rawOption, valueType, definition, defaultx);
                 }
             }
+            else
+                configUpdateStatus.Text = (string)results["error"];
         }
+        private void configDataList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return; //check if row index is not selected
+
+            int row = e.RowIndex;
+            int col = e.ColumnIndex;
+            configDataList.Rows[row].Cells[col].Selected = false;
+            if (col != 1)
+                return;
+            configDataList.Rows[row].Cells[col].Selected = true;
+            if (!configDataList.Rows[row].Cells[3].Value.ToString().Contains("RGB"))
+                return;
+
+            System.Drawing.Color newColor = tabColorPickerDialog(configDataList.Rows[row].Cells[1].Style.BackColor.R.ToString() + "," + configDataList.Rows[row].Cells[1].Style.BackColor.G.ToString() + "," + configDataList.Rows[row].Cells[1].Style.BackColor.B.ToString());
+
+            configDataList.Rows[row].Cells[1].Style.BackColor = newColor;
+            configDataList.Rows[row].Cells[1].Value = "[" + newColor.R + ",\r" + newColor.G + ",\r" + newColor.B + "\r]";
+        }
+
+        private void configDataList_DataError(object sender, DataGridViewDataErrorEventArgs anError)
+        {
+            DataGridViewRow row = configDataList.Rows[anError.RowIndex];
+            row.Cells[0].Style.BackColor = Color.Red;
+
+            anError.ThrowException = false;
+        }
+
+        private void configSetDefaults_Click(object sender, EventArgs e)
+        {
+            string valueType;
+            foreach (DataGridViewRow row in configDataList.Rows)
+            {
+                valueType = row.Cells[2].Value.ToString();
+                if (valueType.Equals("Boolean"))
+                {
+                    if (row.Cells[4].Value.ToString().Length > 0)
+                            row.Cells[1].Value = row.Cells[4].Value.ToString().ToLower().Equals("true");
+                }
+                if (valueType.Equals("String"))
+                {
+                    if (row.Cells[4].Value.ToString().Length > 0)
+                        row.Cells[1].Value = row.Cells[4].Value.ToString();
+                }
+                if (valueType.Contains("Int"))
+                {
+                    if (row.Cells[4].Value.ToString().Length > 0)
+                        row.Cells[1].Value = row.Cells[4].Value;
+                }
+            }
+        }
+
         private void configDataList_RowsAdded(Object sender, DataGridViewRowsAddedEventArgs e)
         {
             bool checkBox = false;
-            string value = "";
+ 
             DataGridViewRow row = configDataList.Rows[e.RowIndex];
             row.Cells[1].ReadOnly = false;
+            string key = row.Cells[0].Value.ToString().ToLower();
             string valueType = row.Cells[2].Value.ToString();
+            string description = row.Cells[3].Value.ToString();
+            string value = row.Cells[1].Value.ToString();
+            if (key.Contains("pvpmode"))
+            {
+                row.Cells[1] = new DataGridViewComboBoxCell();
+                DataGridViewComboBoxCell dgv = (DataGridViewComboBoxCell)row.Cells[1];
+                dgv.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton;
+                dgv.DropDownWidth = 100;
+                dgv.DataSource = new ArrayList(new string[] { "normal", "always", "disabled" });
+                try
+                {
+                    dgv.Value = value;
+                    row.Cells[1].Value = value;
+                }
+                catch (Exception)
+                {
+                    dgv.Value = "always";
+                    row.Cells[1].Value = "always";
+                }
+                return;
+            }
+            if (key.Contains("storagetype"))
+            {
+                row.Cells[1] = new DataGridViewComboBoxCell();
+                DataGridViewComboBoxCell dgv = (DataGridViewComboBoxCell)row.Cells[1];
+                dgv.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton;
+                dgv.DropDownWidth = 100;
+                dgv.DataSource = new ArrayList(new string[] { "sqlite", "mysql" });
+                row.Cells[1].Value = value;
+                return;
+            }
+            if (key.Contains("forcetime"))
+            {
+                row.Cells[1] = new DataGridViewComboBoxCell();
+                DataGridViewComboBoxCell dgv = (DataGridViewComboBoxCell)row.Cells[1];
+                dgv.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton;
+                dgv.DropDownWidth = 100;
+                dgv.DataSource = new ArrayList(new string[] { "normal", "day", "night" });
+                row.Cells[1].Value = value;
+                return;
+            }
+            if (key.Contains("hashalgorithm"))
+            {
+                row.Cells[1] = new DataGridViewComboBoxCell();
+                DataGridViewComboBoxCell dgv = (DataGridViewComboBoxCell)row.Cells[1];
+                dgv.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton;
+                dgv.DropDownWidth = 100;
+                dgv.DataSource = new ArrayList(new string[] { "sha512", "sha256", "md5", "sha512-xp", "sha256-xp", "md5-xp", });
+                row.Cells[1].Value = value;
+                return;
+            }
+            if (description.Contains("RGB"))
+            {
+                string[] c = value.Replace('\r', ' ').Replace('\n', ' ').Replace('[', ' ').Replace(']', ' ').Split(',');
+                int R = Convert.ToInt32(Convert.ToDouble(c[0]));
+                int G = Convert.ToInt32(Convert.ToDouble(c[1]));
+                int B = Convert.ToInt32(Convert.ToDouble(c[2]));
+                Color rgb = Color.FromArgb(R, G, B);
+                row.Cells[1].Style.BackColor = rgb;
+                return;
+            }
             if (valueType.Equals("Boolean"))
             {
-                value = row.Cells[1].Value.ToString();
                 if (value.Equals("True"))
                     checkBox = true;
                 row.Cells[1] = new DataGridViewCheckBoxCell();
@@ -2789,7 +2926,6 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             if (valueType.Equals("String"))
             {
                 row.Cells[1].ReadOnly = false;
-                row.Cells[1].Style.BackColor = Color.AntiqueWhite;
             }
         }
         private void refreshConfig_Click(object sender, EventArgs e)
@@ -2814,6 +2950,8 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 configOptions += comma + @"""" + key + @""":""" + value + "\"";
                 else if(valueType.Equals("Boolean"))
                 configOptions += comma + @"""" + key + @""":" + value.ToLower();
+                else if (valueType.Contains("Int"))
+                    configOptions += comma + @"""" + key + @""":" + value;
                 else
                 configOptions += comma + @"""" + key + @""":" + value;
                 comma = ",";
@@ -2871,6 +3009,8 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                  String defaultx = "";
                  string valueType = "";
                  object rawOption;
+                 sscConfigUpdate.Enabled = true;
+                 sscConfigSetDefaults.Enabled = true;
                  JObject description;
                  JObject configOptions = (JObject)results["config"];
                  foreach (JProperty prop in configOptions.Properties())
@@ -2894,6 +3034,30 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                  }
              }
         }
+        private void sscConfigSetDefaults_Click(object sender, EventArgs e)
+        {
+            string valueType;
+            foreach (DataGridViewRow row in sscconfigDataList.Rows)
+            {
+                valueType = row.Cells[2].Value.ToString();
+                if (valueType.Equals("Boolean"))
+                {
+                    if (row.Cells[4].Value.ToString().Length > 0)
+                        row.Cells[1].Value = row.Cells[4].Value.ToString().ToLower().Equals("true");
+                }
+                if (valueType.Equals("String"))
+                {
+                    if (row.Cells[4].Value.ToString().Length > 0)
+                        row.Cells[1].Value = row.Cells[4].Value.ToString();
+                }
+                if (valueType.Contains("Int"))
+                {
+                    if (row.Cells[4].Value.ToString().Length > 0)
+                        row.Cells[1].Value = row.Cells[4].Value;
+                }
+            }
+        }
+
         private void sscConfigDataList_RowsAdded(Object sender, DataGridViewRowsAddedEventArgs e)
         {
             bool checkBox = false;
@@ -3147,7 +3311,60 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
 
         }
 
+        #region  WhiteList Tab
+        /// <summary>
+        /// 
+        private void getWhiteList()
+        {
+            String output = "";
+            whiteListText.Text = "";
+            whiteListUpdateStatus.Text = "";
 
+            // And now use this to connect server
+            JObject results = ru.communicateWithTerraria("AdminREST/getWhiteList", "");
+            string status = (string)results["status"];
+            if (status.Equals("200"))
+            {
+                whiteListUpdate.Enabled = true;
+                JArray whitelist = (JArray)results["whitelist"];
+                // get an array from the JSON object 
+
+                for (int i = 0; i < whitelist.Count(); i++)
+                {
+                    output = output + whitelist[i] + "\r\n";
+                }
+
+            }
+            whiteListText.Text = output;
+  
+        }
+        private void tabWiteListUpdateRefresh_Click(object sender, EventArgs e)
+        {
+            getWhiteList();
+       }
+
+        private void whiteListUpdate_Click(object sender, EventArgs e)
+        {
+            JObject results = ru.communicateWithTerraria("AdminREST/updateWhiteList", "&whitelist=" + whiteListText.Text);
+            string status = (string)results["status"];
+            if (status.Equals("200"))
+            {
+                getWhiteList();
+                whiteListUpdateStatus.Text = "Update Successful.";
+            }
+            else
+                whiteListUpdateStatus.Text = (string)results["response"];
+
+        }
+                #endregion
+
+        private void usersDataList_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+ 
+ 
 
 
 

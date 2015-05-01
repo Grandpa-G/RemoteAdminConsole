@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPane = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
             this.serverChatStatus = new System.Windows.Forms.Label();
@@ -110,7 +110,6 @@
             this.consoleSubmitCommand = new System.Windows.Forms.Button();
             this.consoleCommand = new System.Windows.Forms.TextBox();
             this.consoleSubmitMOTD = new System.Windows.Forms.Button();
-            this.consoleReloadServer = new System.Windows.Forms.Button();
             this.consoleSaveWorld = new System.Windows.Forms.Button();
             this.consoleSubmitBroadcast = new System.Windows.Forms.Button();
             this.consoleBroadcast = new System.Windows.Forms.TextBox();
@@ -445,11 +444,29 @@
             this.dataGroupColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupDataPrefix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupDataSuffix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabWhiteList = new System.Windows.Forms.TabPage();
+            this.whiteListUpdateStatus = new System.Windows.Forms.Label();
+            this.whiteListUpdate = new System.Windows.Forms.Button();
+            this.tabWiteListUpdateRefresh = new System.Windows.Forms.Button();
+            this.whiteListText = new System.Windows.Forms.TextBox();
             this.tabConfig = new System.Windows.Forms.TabPage();
+            this.configSetDefaults = new System.Windows.Forms.Button();
+            this.configUpdateStatus = new System.Windows.Forms.Label();
+            this.label84 = new System.Windows.Forms.Label();
+            this.configUpdate = new System.Windows.Forms.Button();
             this.refreshConfig = new System.Windows.Forms.Button();
             this.configDataList = new System.Windows.Forms.DataGridView();
             this.tabSSCConfig = new System.Windows.Forms.TabPage();
+            this.sscConfigSetDefaults = new System.Windows.Forms.Button();
+            this.sscConfigUpdateStatus = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.sscConfigUpdate = new System.Windows.Forms.Button();
             this.sscconfigDataList = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sscConfigType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sscConfigDefinition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sscConfigDefault = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.refreshSSCConfig = new System.Windows.Forms.Button();
             this.tabLog = new System.Windows.Forms.TabPage();
             this.logFilename = new System.Windows.Forms.Label();
@@ -492,22 +509,12 @@
             this.lblPortValue = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.configUpdate = new System.Windows.Forms.Button();
-            this.label84 = new System.Windows.Forms.Label();
-            this.configUpdateStatus = new System.Windows.Forms.Label();
+            this.consoleSaveWorldStatus = new System.Windows.Forms.Label();
             this.configDataKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.configDataValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.configDataType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.configDataDefinition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.configDataDefault = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sscConfigUpdateStatus = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
-            this.sscConfigUpdate = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sscConfigType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sscConfigDefinition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sscConfigDefault = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -534,6 +541,7 @@
             this.tabGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupDataPermissions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupDataList)).BeginInit();
+            this.tabWhiteList.SuspendLayout();
             this.tabConfig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.configDataList)).BeginInit();
             this.tabSSCConfig.SuspendLayout();
@@ -553,6 +561,7 @@
             this.tabPane.Controls.Add(this.tabUsers);
             this.tabPane.Controls.Add(this.tabInventory);
             this.tabPane.Controls.Add(this.tabGroup);
+            this.tabPane.Controls.Add(this.tabWhiteList);
             this.tabPane.Controls.Add(this.tabConfig);
             this.tabPane.Controls.Add(this.tabSSCConfig);
             this.tabPane.Controls.Add(this.tabLog);
@@ -727,6 +736,7 @@
             this.serverDataPlayers.Size = new System.Drawing.Size(431, 300);
             this.serverDataPlayers.TabIndex = 51;
             this.serverDataPlayers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serverDataPlayers_CellClick);
+            this.serverDataPlayers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serverDataPlayers_CellDoubleClick);
             // 
             // serverDataNickname
             // 
@@ -755,8 +765,8 @@
             // 
             // serverDataId
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle1;
             this.serverDataId.HeaderText = "Id";
             this.serverDataId.Name = "serverDataId";
             this.serverDataId.ReadOnly = true;
@@ -1213,12 +1223,12 @@
             // tabConsole
             // 
             this.tabConsole.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabConsole.Controls.Add(this.consoleSaveWorldStatus);
             this.tabConsole.Controls.Add(this.consoleRefresh);
             this.tabConsole.Controls.Add(this.consoleOutput);
             this.tabConsole.Controls.Add(this.consoleSubmitCommand);
             this.tabConsole.Controls.Add(this.consoleCommand);
             this.tabConsole.Controls.Add(this.consoleSubmitMOTD);
-            this.tabConsole.Controls.Add(this.consoleReloadServer);
             this.tabConsole.Controls.Add(this.consoleSaveWorld);
             this.tabConsole.Controls.Add(this.consoleSubmitBroadcast);
             this.tabConsole.Controls.Add(this.consoleBroadcast);
@@ -1285,17 +1295,6 @@
             this.consoleSubmitMOTD.Text = "Submit";
             this.consoleSubmitMOTD.UseVisualStyleBackColor = false;
             this.consoleSubmitMOTD.Click += new System.EventHandler(this.consoleSubmitMOTD_Click);
-            // 
-            // consoleReloadServer
-            // 
-            this.consoleReloadServer.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.consoleReloadServer.Location = new System.Drawing.Point(302, 488);
-            this.consoleReloadServer.Name = "consoleReloadServer";
-            this.consoleReloadServer.Size = new System.Drawing.Size(98, 23);
-            this.consoleReloadServer.TabIndex = 10;
-            this.consoleReloadServer.Text = "Reload Server";
-            this.consoleReloadServer.UseVisualStyleBackColor = false;
-            this.consoleReloadServer.Click += new System.EventHandler(this.consoleReloadServer_Click);
             // 
             // consoleSaveWorld
             // 
@@ -3063,6 +3062,7 @@
             this.usersDataList.TabIndex = 0;
             this.usersDataList.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.usersDataList_CellBeginEdit);
             this.usersDataList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDataList_CellClick);
+            this.usersDataList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDataList_CellDoubleClick);
             this.usersDataList.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DataGridView1_DataError);
             this.usersDataList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.usersDataList_RowsAdded);
             this.usersDataList.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.usersDataList_UserDeletedRow);
@@ -3107,8 +3107,8 @@
             // 
             // usersDataID
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle2;
             this.usersDataID.HeaderText = "Id";
             this.usersDataID.Name = "usersDataID";
             this.usersDataID.ReadOnly = true;
@@ -4824,8 +4824,8 @@
             // 
             // permissionsDataNote
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle3;
             this.permissionsDataNote.HeaderText = "Note";
             this.permissionsDataNote.Name = "permissionsDataNote";
             this.permissionsDataNote.ReadOnly = true;
@@ -4891,9 +4891,67 @@
             this.groupDataSuffix.HeaderText = "Suffix";
             this.groupDataSuffix.Name = "groupDataSuffix";
             // 
+            // tabWhiteList
+            // 
+            this.tabWhiteList.Controls.Add(this.whiteListUpdateStatus);
+            this.tabWhiteList.Controls.Add(this.whiteListUpdate);
+            this.tabWhiteList.Controls.Add(this.tabWiteListUpdateRefresh);
+            this.tabWhiteList.Controls.Add(this.whiteListText);
+            this.tabWhiteList.Location = new System.Drawing.Point(4, 22);
+            this.tabWhiteList.Name = "tabWhiteList";
+            this.tabWhiteList.Padding = new System.Windows.Forms.Padding(3);
+            this.tabWhiteList.Size = new System.Drawing.Size(942, 539);
+            this.tabWhiteList.TabIndex = 13;
+            this.tabWhiteList.Text = "WhiteList";
+            this.tabWhiteList.UseVisualStyleBackColor = true;
+            // 
+            // whiteListUpdateStatus
+            // 
+            this.whiteListUpdateStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.whiteListUpdateStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.whiteListUpdateStatus.Location = new System.Drawing.Point(168, 13);
+            this.whiteListUpdateStatus.Name = "whiteListUpdateStatus";
+            this.whiteListUpdateStatus.Size = new System.Drawing.Size(206, 15);
+            this.whiteListUpdateStatus.TabIndex = 268;
+            this.whiteListUpdateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // whiteListUpdate
+            // 
+            this.whiteListUpdate.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.whiteListUpdate.Enabled = false;
+            this.whiteListUpdate.Location = new System.Drawing.Point(89, 9);
+            this.whiteListUpdate.Name = "whiteListUpdate";
+            this.whiteListUpdate.Size = new System.Drawing.Size(75, 23);
+            this.whiteListUpdate.TabIndex = 267;
+            this.whiteListUpdate.Text = "Update";
+            this.whiteListUpdate.UseVisualStyleBackColor = false;
+            this.whiteListUpdate.Click += new System.EventHandler(this.whiteListUpdate_Click);
+            // 
+            // tabWiteListUpdateRefresh
+            // 
+            this.tabWiteListUpdateRefresh.Image = global::RemoteAdminConsole.Properties.Resources.refresh;
+            this.tabWiteListUpdateRefresh.Location = new System.Drawing.Point(5, 5);
+            this.tabWiteListUpdateRefresh.Name = "tabWiteListUpdateRefresh";
+            this.tabWiteListUpdateRefresh.Size = new System.Drawing.Size(30, 30);
+            this.tabWiteListUpdateRefresh.TabIndex = 266;
+            this.tabWiteListUpdateRefresh.UseVisualStyleBackColor = true;
+            this.tabWiteListUpdateRefresh.Click += new System.EventHandler(this.tabWiteListUpdateRefresh_Click);
+            // 
+            // whiteListText
+            // 
+            this.whiteListText.AcceptsReturn = true;
+            this.whiteListText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.whiteListText.Location = new System.Drawing.Point(22, 66);
+            this.whiteListText.Multiline = true;
+            this.whiteListText.Name = "whiteListText";
+            this.whiteListText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.whiteListText.Size = new System.Drawing.Size(403, 457);
+            this.whiteListText.TabIndex = 0;
+            // 
             // tabConfig
             // 
             this.tabConfig.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabConfig.Controls.Add(this.configSetDefaults);
             this.tabConfig.Controls.Add(this.configUpdateStatus);
             this.tabConfig.Controls.Add(this.label84);
             this.tabConfig.Controls.Add(this.configUpdate);
@@ -4905,6 +4963,53 @@
             this.tabConfig.Size = new System.Drawing.Size(942, 539);
             this.tabConfig.TabIndex = 11;
             this.tabConfig.Text = "Config.json";
+            // 
+            // configSetDefaults
+            // 
+            this.configSetDefaults.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.configSetDefaults.Enabled = false;
+            this.configSetDefaults.Location = new System.Drawing.Point(50, 10);
+            this.configSetDefaults.Name = "configSetDefaults";
+            this.configSetDefaults.Size = new System.Drawing.Size(75, 23);
+            this.configSetDefaults.TabIndex = 266;
+            this.configSetDefaults.Text = "Defaults";
+            this.configSetDefaults.UseVisualStyleBackColor = false;
+            this.configSetDefaults.Click += new System.EventHandler(this.configSetDefaults_Click);
+            // 
+            // configUpdateStatus
+            // 
+            this.configUpdateStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.configUpdateStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.configUpdateStatus.Location = new System.Drawing.Point(289, 14);
+            this.configUpdateStatus.Name = "configUpdateStatus";
+            this.configUpdateStatus.Size = new System.Drawing.Size(206, 15);
+            this.configUpdateStatus.TabIndex = 265;
+            this.configUpdateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label84.ForeColor = System.Drawing.Color.DarkRed;
+            this.label84.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label84.Location = new System.Drawing.Point(550, 14);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(382, 15);
+            this.label84.TabIndex = 264;
+            this.label84.Text = "Server Restart/Reload may be required for any changes to take effect.";
+            this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // configUpdate
+            // 
+            this.configUpdate.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.configUpdate.Enabled = false;
+            this.configUpdate.Location = new System.Drawing.Point(210, 10);
+            this.configUpdate.Name = "configUpdate";
+            this.configUpdate.Size = new System.Drawing.Size(75, 23);
+            this.configUpdate.TabIndex = 264;
+            this.configUpdate.Text = "Update";
+            this.configUpdate.UseVisualStyleBackColor = false;
+            this.configUpdate.Click += new System.EventHandler(this.configUpdate_Click);
             // 
             // refreshConfig
             // 
@@ -4919,6 +5024,7 @@
             // configDataList
             // 
             this.configDataList.AllowUserToAddRows = false;
+            this.configDataList.AllowUserToDeleteRows = false;
             this.configDataList.BackgroundColor = System.Drawing.Color.White;
             this.configDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.configDataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -4928,15 +5034,20 @@
             this.configDataDefinition,
             this.configDataDefault});
             this.configDataList.Location = new System.Drawing.Point(6, 39);
+            this.configDataList.MultiSelect = false;
             this.configDataList.Name = "configDataList";
             this.configDataList.RowHeadersVisible = false;
+            this.configDataList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.configDataList.Size = new System.Drawing.Size(930, 494);
             this.configDataList.TabIndex = 1;
+            this.configDataList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.configDataList_CellClick);
+            this.configDataList.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.configDataList_DataError);
             this.configDataList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.configDataList_RowsAdded);
             // 
             // tabSSCConfig
             // 
             this.tabSSCConfig.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabSSCConfig.Controls.Add(this.sscConfigSetDefaults);
             this.tabSSCConfig.Controls.Add(this.sscConfigUpdateStatus);
             this.tabSSCConfig.Controls.Add(this.label86);
             this.tabSSCConfig.Controls.Add(this.sscConfigUpdate);
@@ -4947,6 +5058,53 @@
             this.tabSSCConfig.Size = new System.Drawing.Size(942, 539);
             this.tabSSCConfig.TabIndex = 12;
             this.tabSSCConfig.Text = "SSCConfig.json";
+            // 
+            // sscConfigSetDefaults
+            // 
+            this.sscConfigSetDefaults.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.sscConfigSetDefaults.Enabled = false;
+            this.sscConfigSetDefaults.Location = new System.Drawing.Point(50, 10);
+            this.sscConfigSetDefaults.Name = "sscConfigSetDefaults";
+            this.sscConfigSetDefaults.Size = new System.Drawing.Size(75, 23);
+            this.sscConfigSetDefaults.TabIndex = 269;
+            this.sscConfigSetDefaults.Text = "Defaults";
+            this.sscConfigSetDefaults.UseVisualStyleBackColor = false;
+            this.sscConfigSetDefaults.Click += new System.EventHandler(this.sscConfigSetDefaults_Click);
+            // 
+            // sscConfigUpdateStatus
+            // 
+            this.sscConfigUpdateStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sscConfigUpdateStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sscConfigUpdateStatus.Location = new System.Drawing.Point(291, 14);
+            this.sscConfigUpdateStatus.Name = "sscConfigUpdateStatus";
+            this.sscConfigUpdateStatus.Size = new System.Drawing.Size(206, 15);
+            this.sscConfigUpdateStatus.TabIndex = 268;
+            this.sscConfigUpdateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label86.ForeColor = System.Drawing.Color.DarkRed;
+            this.label86.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label86.Location = new System.Drawing.Point(550, 14);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(382, 15);
+            this.label86.TabIndex = 266;
+            this.label86.Text = "Server Restart/Reload may be required for any changes to take effect.";
+            this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // sscConfigUpdate
+            // 
+            this.sscConfigUpdate.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.sscConfigUpdate.Enabled = false;
+            this.sscConfigUpdate.Location = new System.Drawing.Point(210, 10);
+            this.sscConfigUpdate.Name = "sscConfigUpdate";
+            this.sscConfigUpdate.Size = new System.Drawing.Size(75, 23);
+            this.sscConfigUpdate.TabIndex = 267;
+            this.sscConfigUpdate.Text = "Update";
+            this.sscConfigUpdate.UseVisualStyleBackColor = false;
+            this.sscConfigUpdate.Click += new System.EventHandler(this.sscConfigUpdate_Click);
             // 
             // sscconfigDataList
             // 
@@ -4965,6 +5123,46 @@
             this.sscconfigDataList.Size = new System.Drawing.Size(930, 494);
             this.sscconfigDataList.TabIndex = 13;
             this.sscconfigDataList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.sscConfigDataList_RowsAdded);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "sscconfigDataKey";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Key (Red if invalid value given)";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "sscconfigDataValue";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Value";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // sscConfigType
+            // 
+            this.sscConfigType.HeaderText = "Type";
+            this.sscConfigType.Name = "sscConfigType";
+            this.sscConfigType.ReadOnly = true;
+            this.sscConfigType.Visible = false;
+            // 
+            // sscConfigDefinition
+            // 
+            this.sscConfigDefinition.HeaderText = "Definition";
+            this.sscConfigDefinition.Name = "sscConfigDefinition";
+            this.sscConfigDefinition.ReadOnly = true;
+            this.sscConfigDefinition.Width = 500;
+            // 
+            // sscConfigDefault
+            // 
+            this.sscConfigDefault.HeaderText = "Default";
+            this.sscConfigDefault.Name = "sscConfigDefault";
+            this.sscConfigDefault.ReadOnly = true;
             // 
             // refreshSSCConfig
             // 
@@ -5403,57 +5601,34 @@
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.inventoryExport_Click);
             // 
-            // configUpdate
+            // consoleSaveWorldStatus
             // 
-            this.configUpdate.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.configUpdate.Location = new System.Drawing.Point(210, 10);
-            this.configUpdate.Name = "configUpdate";
-            this.configUpdate.Size = new System.Drawing.Size(75, 23);
-            this.configUpdate.TabIndex = 264;
-            this.configUpdate.Text = "Update";
-            this.configUpdate.UseVisualStyleBackColor = false;
-            this.configUpdate.Click += new System.EventHandler(this.configUpdate_Click);
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label84.ForeColor = System.Drawing.Color.DarkRed;
-            this.label84.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label84.Location = new System.Drawing.Point(550, 14);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(382, 15);
-            this.label84.TabIndex = 264;
-            this.label84.Text = "Server Restart/Reload may be required for any changes to take effect.";
-            this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // configUpdateStatus
-            // 
-            this.configUpdateStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.configUpdateStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.configUpdateStatus.Location = new System.Drawing.Point(289, 14);
-            this.configUpdateStatus.Name = "configUpdateStatus";
-            this.configUpdateStatus.Size = new System.Drawing.Size(206, 15);
-            this.configUpdateStatus.TabIndex = 265;
-            this.configUpdateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.consoleSaveWorldStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consoleSaveWorldStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.consoleSaveWorldStatus.Location = new System.Drawing.Point(267, 492);
+            this.consoleSaveWorldStatus.Name = "consoleSaveWorldStatus";
+            this.consoleSaveWorldStatus.Size = new System.Drawing.Size(206, 15);
+            this.consoleSaveWorldStatus.TabIndex = 266;
+            this.consoleSaveWorldStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // configDataKey
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.configDataKey.DefaultCellStyle = dataGridViewCellStyle13;
-            this.configDataKey.HeaderText = "Key";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.configDataKey.DefaultCellStyle = dataGridViewCellStyle4;
+            this.configDataKey.HeaderText = "Key (Red if invalid value given)";
             this.configDataKey.Name = "configDataKey";
             this.configDataKey.ReadOnly = true;
             this.configDataKey.Width = 200;
             // 
             // configDataValue
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.configDataValue.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.configDataValue.DefaultCellStyle = dataGridViewCellStyle5;
             this.configDataValue.HeaderText = "Value";
             this.configDataValue.Name = "configDataValue";
             this.configDataValue.ReadOnly = true;
+            this.configDataValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // configDataType
             // 
@@ -5464,8 +5639,8 @@
             // 
             // configDataDefinition
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataDefinition.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefinition.DefaultCellStyle = dataGridViewCellStyle6;
             this.configDataDefinition.HeaderText = "Definition";
             this.configDataDefinition.Name = "configDataDefinition";
             this.configDataDefinition.ReadOnly = true;
@@ -5473,85 +5648,11 @@
             // 
             // configDataDefault
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataDefault.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefault.DefaultCellStyle = dataGridViewCellStyle7;
             this.configDataDefault.HeaderText = "Default";
             this.configDataDefault.Name = "configDataDefault";
             this.configDataDefault.ReadOnly = true;
-            // 
-            // sscConfigUpdateStatus
-            // 
-            this.sscConfigUpdateStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sscConfigUpdateStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.sscConfigUpdateStatus.Location = new System.Drawing.Point(291, 14);
-            this.sscConfigUpdateStatus.Name = "sscConfigUpdateStatus";
-            this.sscConfigUpdateStatus.Size = new System.Drawing.Size(206, 15);
-            this.sscConfigUpdateStatus.TabIndex = 268;
-            this.sscConfigUpdateStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label86.ForeColor = System.Drawing.Color.DarkRed;
-            this.label86.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label86.Location = new System.Drawing.Point(550, 14);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(382, 15);
-            this.label86.TabIndex = 266;
-            this.label86.Text = "Server Restart/Reload may be required for any changes to take effect.";
-            this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // sscConfigUpdate
-            // 
-            this.sscConfigUpdate.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.sscConfigUpdate.Location = new System.Drawing.Point(210, 10);
-            this.sscConfigUpdate.Name = "sscConfigUpdate";
-            this.sscConfigUpdate.Size = new System.Drawing.Size(75, 23);
-            this.sscConfigUpdate.TabIndex = 267;
-            this.sscConfigUpdate.Text = "Update";
-            this.sscConfigUpdate.UseVisualStyleBackColor = false;
-            this.sscConfigUpdate.Click += new System.EventHandler(this.sscConfigUpdate_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "sscconfigDataKey";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Key";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "sscconfigDataValue";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Value";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // sscConfigType
-            // 
-            this.sscConfigType.HeaderText = "Type";
-            this.sscConfigType.Name = "sscConfigType";
-            this.sscConfigType.ReadOnly = true;
-            this.sscConfigType.Visible = false;
-            // 
-            // sscConfigDefinition
-            // 
-            this.sscConfigDefinition.HeaderText = "Definition";
-            this.sscConfigDefinition.Name = "sscConfigDefinition";
-            this.sscConfigDefinition.ReadOnly = true;
-            this.sscConfigDefinition.Width = 500;
-            // 
-            // sscConfigDefault
-            // 
-            this.sscConfigDefault.HeaderText = "Default";
-            this.sscConfigDefault.Name = "sscConfigDefault";
-            this.sscConfigDefault.ReadOnly = true;
             // 
             // GUIMain
             // 
@@ -5604,6 +5705,8 @@
             this.tabGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupDataPermissions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupDataList)).EndInit();
+            this.tabWhiteList.ResumeLayout(false);
+            this.tabWhiteList.PerformLayout();
             this.tabConfig.ResumeLayout(false);
             this.tabConfig.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.configDataList)).EndInit();
@@ -5857,7 +5960,6 @@
         private System.Windows.Forms.Button consoleSubmitCommand;
         private System.Windows.Forms.TextBox consoleCommand;
         private System.Windows.Forms.Button consoleSubmitMOTD;
-        private System.Windows.Forms.Button consoleReloadServer;
         private System.Windows.Forms.Button consoleSaveWorld;
         private System.Windows.Forms.Button consoleSubmitBroadcast;
         private System.Windows.Forms.TextBox consoleBroadcast;
@@ -6079,18 +6181,26 @@
         private System.Windows.Forms.Button configUpdate;
         private System.Windows.Forms.Label configUpdateStatus;
         private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.DataGridViewTextBoxColumn configDataKey;
-        private System.Windows.Forms.DataGridViewTextBoxColumn configDataValue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn configDataType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn configDataDefinition;
-        private System.Windows.Forms.DataGridViewTextBoxColumn configDataDefault;
         private System.Windows.Forms.Label sscConfigUpdateStatus;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Button sscConfigUpdate;
+        private System.Windows.Forms.TabPage tabWhiteList;
+        private System.Windows.Forms.Label whiteListUpdateStatus;
+        private System.Windows.Forms.Button whiteListUpdate;
+        private System.Windows.Forms.Button tabWiteListUpdateRefresh;
+        private System.Windows.Forms.TextBox whiteListText;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn sscConfigType;
         private System.Windows.Forms.DataGridViewTextBoxColumn sscConfigDefinition;
         private System.Windows.Forms.DataGridViewTextBoxColumn sscConfigDefault;
+        private System.Windows.Forms.Button configSetDefaults;
+        private System.Windows.Forms.Button sscConfigSetDefaults;
+        private System.Windows.Forms.Label consoleSaveWorldStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn configDataKey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn configDataValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn configDataType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn configDataDefinition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn configDataDefault;
     }
 }
