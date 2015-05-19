@@ -52,7 +52,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatForm.Designer.cs">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChatTools\ChatServer.cs" />
+    <Compile Include="ChatTools\Communicate.cs" />
     <Compile Include="ClassDefinition.cs" />
+    <Compile Include="ChatTools\DoCommunicate.cs" />
     <Compile Include="GUIMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +81,9 @@
     <Compile Include="UserList.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="ChatForm.resx">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUIMain.resx">
       <DependentUpon>GUIMain.cs</DependentUpon>
     </EmbeddedResource>

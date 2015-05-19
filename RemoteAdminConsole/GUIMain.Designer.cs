@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPane = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
             this.serverChatStatus = new System.Windows.Forms.Label();
@@ -105,6 +106,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabConsole = new System.Windows.Forms.TabPage();
+            this.consoleSaveWorldStatus = new System.Windows.Forms.Label();
             this.consoleRefresh = new System.Windows.Forms.Button();
             this.consoleOutput = new System.Windows.Forms.TextBox();
             this.consoleSubmitCommand = new System.Windows.Forms.Button();
@@ -235,6 +237,21 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.lblPlayerName = new System.Windows.Forms.Label();
+            this.tabChat = new System.Windows.Forms.TabPage();
+            this.chatClear = new System.Windows.Forms.Button();
+            this.chatConnectionStatus = new System.Windows.Forms.Label();
+            this.chatRefresh = new System.Windows.Forms.Button();
+            this.chatPlayers = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chatSend = new System.Windows.Forms.Button();
+            this.chatText = new System.Windows.Forms.TextBox();
+            this.chatStart = new System.Windows.Forms.Button();
+            this.chatList = new System.Windows.Forms.ListBox();
             this.tabBan = new System.Windows.Forms.TabPage();
             this.banSearchResults = new System.Windows.Forms.Label();
             this.lblBanningUser = new System.Windows.Forms.Label();
@@ -456,6 +473,11 @@
             this.configUpdate = new System.Windows.Forms.Button();
             this.refreshConfig = new System.Windows.Forms.Button();
             this.configDataList = new System.Windows.Forms.DataGridView();
+            this.configDataKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.configDataValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.configDataType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.configDataDefinition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.configDataDefault = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabSSCConfig = new System.Windows.Forms.TabPage();
             this.sscConfigSetDefaults = new System.Windows.Forms.Button();
             this.sscConfigUpdateStatus = new System.Windows.Forms.Label();
@@ -509,12 +531,9 @@
             this.lblPortValue = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.consoleSaveWorldStatus = new System.Windows.Forms.Label();
-            this.configDataKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.configDataValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.configDataType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.configDataDefinition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.configDataDefault = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chatCommands = new System.Windows.Forms.ListBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.commandClear = new System.Windows.Forms.Button();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -533,6 +552,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.serverAutoSave)).BeginInit();
             this.tabConsole.SuspendLayout();
             this.tabPlayer.SuspendLayout();
+            this.tabChat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chatPlayers)).BeginInit();
             this.tabBan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.banDataBan)).BeginInit();
             this.tabUsers.SuspendLayout();
@@ -557,6 +578,7 @@
             this.tabPane.Controls.Add(this.tabServer);
             this.tabPane.Controls.Add(this.tabConsole);
             this.tabPane.Controls.Add(this.tabPlayer);
+            this.tabPane.Controls.Add(this.tabChat);
             this.tabPane.Controls.Add(this.tabBan);
             this.tabPane.Controls.Add(this.tabUsers);
             this.tabPane.Controls.Add(this.tabInventory);
@@ -572,6 +594,7 @@
             this.tabPane.SelectedIndex = 0;
             this.tabPane.Size = new System.Drawing.Size(950, 565);
             this.tabPane.TabIndex = 0;
+            this.tabPane.SelectedIndexChanged += new System.EventHandler(this.tabPane_SelectedIndexChanged);
             this.tabPane.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabPane_Selecting);
             this.tabPane.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabPane_Selected);
             // 
@@ -765,8 +788,8 @@
             // 
             // serverDataId
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle12;
             this.serverDataId.HeaderText = "Id";
             this.serverDataId.Name = "serverDataId";
             this.serverDataId.ReadOnly = true;
@@ -1243,6 +1266,16 @@
             this.tabConsole.TabIndex = 8;
             this.tabConsole.Text = "Console";
             this.tabConsole.Enter += new System.EventHandler(this.tabConsole_Enter);
+            // 
+            // consoleSaveWorldStatus
+            // 
+            this.consoleSaveWorldStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consoleSaveWorldStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.consoleSaveWorldStatus.Location = new System.Drawing.Point(267, 492);
+            this.consoleSaveWorldStatus.Name = "consoleSaveWorldStatus";
+            this.consoleSaveWorldStatus.Size = new System.Drawing.Size(206, 15);
+            this.consoleSaveWorldStatus.TabIndex = 266;
+            this.consoleSaveWorldStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // consoleRefresh
             // 
@@ -2584,6 +2617,163 @@
             this.lblPlayerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblPlayerName.UseMnemonic = false;
             // 
+            // tabChat
+            // 
+            this.tabChat.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabChat.Controls.Add(this.commandClear);
+            this.tabChat.Controls.Add(this.label85);
+            this.tabChat.Controls.Add(this.chatCommands);
+            this.tabChat.Controls.Add(this.chatClear);
+            this.tabChat.Controls.Add(this.chatConnectionStatus);
+            this.tabChat.Controls.Add(this.chatRefresh);
+            this.tabChat.Controls.Add(this.chatPlayers);
+            this.tabChat.Controls.Add(this.chatSend);
+            this.tabChat.Controls.Add(this.chatText);
+            this.tabChat.Controls.Add(this.chatStart);
+            this.tabChat.Controls.Add(this.chatList);
+            this.tabChat.Location = new System.Drawing.Point(4, 22);
+            this.tabChat.Name = "tabChat";
+            this.tabChat.Size = new System.Drawing.Size(942, 539);
+            this.tabChat.TabIndex = 14;
+            this.tabChat.Text = "Chat";
+            // 
+            // chatClear
+            // 
+            this.chatClear.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.chatClear.Location = new System.Drawing.Point(362, 16);
+            this.chatClear.Name = "chatClear";
+            this.chatClear.Size = new System.Drawing.Size(75, 23);
+            this.chatClear.TabIndex = 270;
+            this.chatClear.Text = "Clear";
+            this.chatClear.UseVisualStyleBackColor = false;
+            this.chatClear.Click += new System.EventHandler(this.chatClear_Click);
+            // 
+            // chatConnectionStatus
+            // 
+            this.chatConnectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chatConnectionStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chatConnectionStatus.Location = new System.Drawing.Point(57, 20);
+            this.chatConnectionStatus.Name = "chatConnectionStatus";
+            this.chatConnectionStatus.Size = new System.Drawing.Size(142, 15);
+            this.chatConnectionStatus.TabIndex = 269;
+            this.chatConnectionStatus.Text = "Not Connected.";
+            this.chatConnectionStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // chatRefresh
+            // 
+            this.chatRefresh.Image = global::RemoteAdminConsole.Properties.Resources.refresh;
+            this.chatRefresh.Location = new System.Drawing.Point(5, 5);
+            this.chatRefresh.Name = "chatRefresh";
+            this.chatRefresh.Size = new System.Drawing.Size(30, 30);
+            this.chatRefresh.TabIndex = 268;
+            this.chatRefresh.UseVisualStyleBackColor = true;
+            this.chatRefresh.Click += new System.EventHandler(this.chatRefresh_Click);
+            // 
+            // chatPlayers
+            // 
+            this.chatPlayers.AllowUserToAddRows = false;
+            this.chatPlayers.AllowUserToDeleteRows = false;
+            this.chatPlayers.AllowUserToResizeRows = false;
+            this.chatPlayers.BackgroundColor = System.Drawing.Color.White;
+            this.chatPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.chatPlayers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.chatPlayers.Location = new System.Drawing.Point(22, 263);
+            this.chatPlayers.MultiSelect = false;
+            this.chatPlayers.Name = "chatPlayers";
+            this.chatPlayers.ReadOnly = true;
+            this.chatPlayers.RowHeadersVisible = false;
+            this.chatPlayers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.chatPlayers.Size = new System.Drawing.Size(431, 251);
+            this.chatPlayers.TabIndex = 267;
+            this.chatPlayers.DoubleClick += new System.EventHandler(this.chatPlayers_DoubleClick);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nickname";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "User Name";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Group";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "IP";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Account";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Visible = false;
+            // 
+            // chatSend
+            // 
+            this.chatSend.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.chatSend.Location = new System.Drawing.Point(374, 231);
+            this.chatSend.Name = "chatSend";
+            this.chatSend.Size = new System.Drawing.Size(63, 23);
+            this.chatSend.TabIndex = 266;
+            this.chatSend.Text = "Send";
+            this.chatSend.UseVisualStyleBackColor = false;
+            this.chatSend.Click += new System.EventHandler(this.chatSend_Click);
+            // 
+            // chatText
+            // 
+            this.chatText.Location = new System.Drawing.Point(22, 232);
+            this.chatText.Name = "chatText";
+            this.chatText.Size = new System.Drawing.Size(346, 20);
+            this.chatText.TabIndex = 265;
+            this.chatText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.chatText_KeyPress);
+            // 
+            // chatStart
+            // 
+            this.chatStart.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.chatStart.Location = new System.Drawing.Point(205, 16);
+            this.chatStart.Name = "chatStart";
+            this.chatStart.Size = new System.Drawing.Size(75, 23);
+            this.chatStart.TabIndex = 264;
+            this.chatStart.Text = "Reset";
+            this.chatStart.UseVisualStyleBackColor = false;
+            this.chatStart.Click += new System.EventHandler(this.chatStart_Click);
+            // 
+            // chatList
+            // 
+            this.chatList.BackColor = System.Drawing.Color.White;
+            this.chatList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chatList.FormattingEnabled = true;
+            this.chatList.Location = new System.Drawing.Point(22, 44);
+            this.chatList.Name = "chatList";
+            this.chatList.Size = new System.Drawing.Size(431, 171);
+            this.chatList.TabIndex = 0;
+            // 
             // tabBan
             // 
             this.tabBan.BackColor = System.Drawing.Color.AliceBlue;
@@ -3107,8 +3297,8 @@
             // 
             // usersDataID
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle13;
             this.usersDataID.HeaderText = "Id";
             this.usersDataID.Name = "usersDataID";
             this.usersDataID.ReadOnly = true;
@@ -4824,8 +5014,8 @@
             // 
             // permissionsDataNote
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle14;
             this.permissionsDataNote.HeaderText = "Note";
             this.permissionsDataNote.Name = "permissionsDataNote";
             this.permissionsDataNote.ReadOnly = true;
@@ -5044,6 +5234,49 @@
             this.configDataList.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.configDataList_DataError);
             this.configDataList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.configDataList_RowsAdded);
             // 
+            // configDataKey
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.configDataKey.DefaultCellStyle = dataGridViewCellStyle15;
+            this.configDataKey.HeaderText = "Key (Red if invalid value given)";
+            this.configDataKey.Name = "configDataKey";
+            this.configDataKey.ReadOnly = true;
+            this.configDataKey.Width = 200;
+            // 
+            // configDataValue
+            // 
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.configDataValue.DefaultCellStyle = dataGridViewCellStyle16;
+            this.configDataValue.HeaderText = "Value";
+            this.configDataValue.Name = "configDataValue";
+            this.configDataValue.ReadOnly = true;
+            this.configDataValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // configDataType
+            // 
+            this.configDataType.HeaderText = "Type";
+            this.configDataType.Name = "configDataType";
+            this.configDataType.Visible = false;
+            this.configDataType.Width = 20;
+            // 
+            // configDataDefinition
+            // 
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefinition.DefaultCellStyle = dataGridViewCellStyle17;
+            this.configDataDefinition.HeaderText = "Definition";
+            this.configDataDefinition.Name = "configDataDefinition";
+            this.configDataDefinition.ReadOnly = true;
+            this.configDataDefinition.Width = 500;
+            // 
+            // configDataDefault
+            // 
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefault.DefaultCellStyle = dataGridViewCellStyle18;
+            this.configDataDefault.HeaderText = "Default";
+            this.configDataDefault.Name = "configDataDefault";
+            this.configDataDefault.ReadOnly = true;
+            // 
             // tabSSCConfig
             // 
             this.tabSSCConfig.BackColor = System.Drawing.Color.AliceBlue;
@@ -5127,8 +5360,8 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "sscconfigDataKey";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewTextBoxColumn1.HeaderText = "Key (Red if invalid value given)";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -5137,12 +5370,13 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "sscconfigDataValue";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewTextBoxColumn2.HeaderText = "Value";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // sscConfigType
             // 
@@ -5601,58 +5835,38 @@
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.inventoryExport_Click);
             // 
-            // consoleSaveWorldStatus
+            // chatCommands
             // 
-            this.consoleSaveWorldStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consoleSaveWorldStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.consoleSaveWorldStatus.Location = new System.Drawing.Point(267, 492);
-            this.consoleSaveWorldStatus.Name = "consoleSaveWorldStatus";
-            this.consoleSaveWorldStatus.Size = new System.Drawing.Size(206, 15);
-            this.consoleSaveWorldStatus.TabIndex = 266;
-            this.consoleSaveWorldStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.chatCommands.BackColor = System.Drawing.Color.White;
+            this.chatCommands.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chatCommands.FormattingEnabled = true;
+            this.chatCommands.Location = new System.Drawing.Point(473, 44);
+            this.chatCommands.Name = "chatCommands";
+            this.chatCommands.Size = new System.Drawing.Size(415, 470);
+            this.chatCommands.TabIndex = 271;
             // 
-            // configDataKey
+            // label85
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.configDataKey.DefaultCellStyle = dataGridViewCellStyle4;
-            this.configDataKey.HeaderText = "Key (Red if invalid value given)";
-            this.configDataKey.Name = "configDataKey";
-            this.configDataKey.ReadOnly = true;
-            this.configDataKey.Width = 200;
+            this.label85.AutoSize = true;
+            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label85.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label85.Location = new System.Drawing.Point(639, 24);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(82, 15);
+            this.label85.TabIndex = 272;
+            this.label85.Text = "Activity History";
+            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // configDataValue
+            // commandClear
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.configDataValue.DefaultCellStyle = dataGridViewCellStyle5;
-            this.configDataValue.HeaderText = "Value";
-            this.configDataValue.Name = "configDataValue";
-            this.configDataValue.ReadOnly = true;
-            this.configDataValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // configDataType
-            // 
-            this.configDataType.HeaderText = "Type";
-            this.configDataType.Name = "configDataType";
-            this.configDataType.Visible = false;
-            this.configDataType.Width = 20;
-            // 
-            // configDataDefinition
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataDefinition.DefaultCellStyle = dataGridViewCellStyle6;
-            this.configDataDefinition.HeaderText = "Definition";
-            this.configDataDefinition.Name = "configDataDefinition";
-            this.configDataDefinition.ReadOnly = true;
-            this.configDataDefinition.Width = 500;
-            // 
-            // configDataDefault
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataDefault.DefaultCellStyle = dataGridViewCellStyle7;
-            this.configDataDefault.HeaderText = "Default";
-            this.configDataDefault.Name = "configDataDefault";
-            this.configDataDefault.ReadOnly = true;
+            this.commandClear.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.commandClear.Location = new System.Drawing.Point(813, 16);
+            this.commandClear.Name = "commandClear";
+            this.commandClear.Size = new System.Drawing.Size(75, 23);
+            this.commandClear.TabIndex = 273;
+            this.commandClear.Text = "Clear";
+            this.commandClear.UseVisualStyleBackColor = false;
+            this.commandClear.Click += new System.EventHandler(this.commandClear_Click);
             // 
             // GUIMain
             // 
@@ -5672,6 +5886,7 @@
             this.Controls.Add(this.tabPane);
             this.Name = "GUIMain";
             this.Text = "Admin Console";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GUIMain_FormClosing);
             this.Load += new System.EventHandler(this.GUIMain_Load);
             this.tabPane.ResumeLayout(false);
             this.tabServer.ResumeLayout(false);
@@ -5694,6 +5909,9 @@
             this.tabConsole.PerformLayout();
             this.tabPlayer.ResumeLayout(false);
             this.tabPlayer.PerformLayout();
+            this.tabChat.ResumeLayout(false);
+            this.tabChat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chatPlayers)).EndInit();
             this.tabBan.ResumeLayout(false);
             this.tabBan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.banDataBan)).EndInit();
@@ -6189,11 +6407,6 @@
         private System.Windows.Forms.Button whiteListUpdate;
         private System.Windows.Forms.Button tabWiteListUpdateRefresh;
         private System.Windows.Forms.TextBox whiteListText;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sscConfigType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sscConfigDefinition;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sscConfigDefault;
         private System.Windows.Forms.Button configSetDefaults;
         private System.Windows.Forms.Button sscConfigSetDefaults;
         private System.Windows.Forms.Label consoleSaveWorldStatus;
@@ -6202,5 +6415,28 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn configDataType;
         private System.Windows.Forms.DataGridViewTextBoxColumn configDataDefinition;
         private System.Windows.Forms.DataGridViewTextBoxColumn configDataDefault;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sscConfigType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sscConfigDefinition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sscConfigDefault;
+        private System.Windows.Forms.TabPage tabChat;
+        private System.Windows.Forms.Button chatStart;
+        private System.Windows.Forms.ListBox chatList;
+        private System.Windows.Forms.Button chatSend;
+        private System.Windows.Forms.TextBox chatText;
+        private System.Windows.Forms.DataGridView chatPlayers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Button chatRefresh;
+        private System.Windows.Forms.Label chatConnectionStatus;
+        private System.Windows.Forms.Button chatClear;
+        private System.Windows.Forms.ListBox chatCommands;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Button commandClear;
     }
 }

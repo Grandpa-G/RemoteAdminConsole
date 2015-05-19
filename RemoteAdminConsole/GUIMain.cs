@@ -14,11 +14,15 @@ using System.Text.RegularExpressions;
 using System.Resources;
 using System.Runtime.Serialization.Json;
 
-
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
+using System.Net.Sockets;
+using System.Net;
+
+// Declare the delegate prototype to send data back to the form
+delegate void AddMessage(string sNewMessage);
+
 namespace RemoteAdminConsole
 {
     public partial class GUIMain : Form
@@ -26,7 +30,8 @@ namespace RemoteAdminConsole
         private const int SERVERTAB = 0;
         private const int CONSOLETAB = 1;
         private const int PLAYERTAB = CONSOLETAB + 1;
-        private const int BANTAB = PLAYERTAB + 1;
+        private const int CHATTAB = PLAYERTAB + 1;
+        private const int BANTAB = CHATTAB + 1;
         private const int USERSTAB = BANTAB + 1;
         private const int INVENTORYTAB = USERSTAB + 1;
         private const int GROUPSTAB = INVENTORYTAB + 1;
@@ -34,7 +39,8 @@ namespace RemoteAdminConsole
         private const int CONFIG = WHITELIST + 1;
         private const int SSCCONFIG = CONFIG + 1;
         private const int LOGTAB = SSCCONFIG + 1;
-        private const int ABOUTTAB = LOGTAB + 1;
+        private const int SETTINGSTAB = LOGTAB + 1;
+        private const int ABOUTTAB = SETTINGSTAB + 1;
 
         public static String PROGRAMNAME = "Remote Admin Console";
         public static bool DEBUG = false;
@@ -52,23 +58,56 @@ namespace RemoteAdminConsole
         Bitmap item_0;
         Bitmap sprite;
 
+        public static int chatPort = 0;
+        public static bool chatOn = false;
+        public static IPAddress ipServer = null;
+
         private Item[] itemList = new Item[MAXITEMS];
         private Prefixs[] prefixList = new Prefixs[MAXPREFIX];
         private List<Group> groupList = new List<Group>();
-        DialogResult usersChoice;
 
         RemoteUtils ru = new RemoteUtils();
 
         private bool playerFound = false;
+        private event AddMessage m_AddMessage;
+        private event AddMessage m_AddCommand;
+        private event AddMessage m_RefreshChatPlayers;
 
         public GUIMain()
         {
+
+            // Add Message Event handler for Form decoupling from input thread
+            m_AddMessage = new AddMessage(OnAddMessage);
+            m_AddCommand = new AddMessage(OnAddCommand);
+            m_RefreshChatPlayers = new AddMessage(onRefreshChatPlayers);
             AppDomain.CurrentDomain.UnhandledException += MyHandler;
             try
             {
                 AdminConsole();
             }
-            catch (IndexOutOfRangeException e) { Console.WriteLine("error"); }
+            catch (IndexOutOfRangeException) { Console.WriteLine("error"); }
+        }
+        public void OnAddMessage(string sMessage)
+        {
+            // Thread safe operation here
+            chatList.Items.Add(sMessage);
+            chatList.SelectedIndex = chatList.Items.Count - 1;
+            chatList.ClearSelected();
+        }
+        public void OnAddCommand(string sMessage)
+        {
+            // Thread safe operation here
+            // Get current date and time.
+            DateTime now = DateTime.Now;
+
+            chatCommands.Items.Add(now.ToString("t") + " " + sMessage);
+            chatCommands.SelectedIndex = chatCommands.Items.Count - 1;
+            chatCommands.ClearSelected();
+        }
+        public void onRefreshChatPlayers(string sMessage)
+        {
+            // Thread safe operation here
+            getChat();
         }
         static void MyHandler(object sender, UnhandledExceptionEventArgs args)
         {
@@ -147,6 +186,9 @@ namespace RemoteAdminConsole
                 inventoryExport.Visible = true;
             }
             getServerDetails();
+
+            tabChat.Text = "";
+            tabChat.Enabled = false;
         }
 
         private void tabPane_Selected(object sender, TabControlEventArgs e)
@@ -174,6 +216,8 @@ namespace RemoteAdminConsole
                 case ABOUTTAB:
                     setupAbout();
                     break;
+                case CHATTAB:
+                     break;
             }
         }
 
@@ -421,6 +465,9 @@ namespace RemoteAdminConsole
                     dbSupported = (string)results["db"];
                     dbSupported = dbSupported + " currently being used.";
 
+                    chatPort = (Int32)results["chatPort"];
+                    chatOn = (Boolean)results["chatOn"];
+                    ipServer = IPAddress.Parse((string)results["ipServer"]);
                     aboutExtraAdminRestVersion.Text = extraAdminRESTVersion;
                     aboutSQLSupport.Text = dbSupported;
                 }
@@ -913,8 +960,8 @@ namespace RemoteAdminConsole
                     name = (String)innerObj["name"];
                     parent = (String)innerObj["parent"];
                     chatColor = (String)innerObj["chatcolor"];
-                    groupPrefix = (String)innerObj["groupprefix"];
-                    groupSuffix = (String)innerObj["groupsuffix"];
+                    groupPrefix = (String)innerObj["prefix"];
+                    groupSuffix = (String)innerObj["suffix"];
                     try
                     {
                         totalPermissions = (JArray)innerObj["totalpermissions"];
@@ -1043,17 +1090,17 @@ namespace RemoteAdminConsole
                     action = action + "&chatColor=" + chatColor;
                 }
             string prefix = "";
-            if (selectedRow.Cells[3] != null)
-                if (selectedRow.Cells[3].Value != null)
-                {
-                    prefix = selectedRow.Cells[3].Value.ToString();
-                    action = action + "&prefix=" + prefix;
-                }
-            string suffix = "";
             if (selectedRow.Cells[4] != null)
                 if (selectedRow.Cells[4].Value != null)
                 {
-                    suffix = selectedRow.Cells[4].Value.ToString();
+                    prefix = selectedRow.Cells[4].Value.ToString();
+                    action = action + "&prefix=" + prefix;
+                }
+            string suffix = "";
+            if (selectedRow.Cells[5] != null)
+                if (selectedRow.Cells[5].Value != null)
+                {
+                    suffix = selectedRow.Cells[5].Value.ToString();
                     action = action + "&suffix=" + suffix;
                 }
             string permissions = "";
@@ -1093,7 +1140,7 @@ namespace RemoteAdminConsole
             if (groupsModified)
             {
                 // And now use this to connect server
-                JObject results = ru.communicateWithTerraria("v2/groups/update", action);
+                JObject results = ru.communicateWithTerraria("AdminREST/GroupUpdate", action);
                 string status = (string)results["status"];
                 if (status.Equals("200"))
                 {
@@ -1294,8 +1341,8 @@ namespace RemoteAdminConsole
                     name = (String)innerObj["name"];
                     parent = (String)innerObj["parent"];
                     chatColor = (String)innerObj["chatcolor"];
-                    groupPrefix = (String)innerObj["groupprefix"];
-                    groupSuffix = (String)innerObj["groupsuffix"];
+                    groupPrefix = (String)innerObj["prefix"];
+                    groupSuffix = (String)innerObj["suffix"];
                     permissions = (JArray)innerObj["permissions"];
                     totalPermissions = (JArray)innerObj["totalpermissions"];
                     if (name.Length > 0)
@@ -2095,13 +2142,13 @@ namespace RemoteAdminConsole
         }
         private void consoleSaveWorld_Click(object sender, EventArgs e)
         {
-           // And now use this to connect server
+            // And now use this to connect server
             JObject results = ru.communicateWithTerraria("v2/world/save", "");
             string status = (string)results["status"];
             if (status.Equals("200"))
                 consoleSaveWorldStatus.Text = (string)results["response"];
             else
-            consoleSaveWorldStatus.Text = (string)results["error"];
+                consoleSaveWorldStatus.Text = (string)results["error"];
         }
 
         private void tabConsole_Enter(object sender, EventArgs e)
@@ -2419,7 +2466,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 {
                     itemLastClicked.Text = itemPreview.Text;
                     inventoryToolTip.SetToolTip(itemLastClicked, inventoryToolTip.GetToolTip(itemPreview));
-                    inventory[slot] = inventoryPreviewNetId.ToString() + "," + inventoryPrefixStackSize.ToString() + "," + inventoryPrefixStackSize.ToString();
+                    inventory[slot] = inventoryPreviewNetId.ToString() + "," + inventoryPrefixStackSize.ToString() + "," + inventoryPrefixIndex.ToString();
                 }
                 SSCInventory.Inventory = string.Join("~", inventory);
             }
@@ -2718,6 +2765,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             userLoggedIn.Text = "Logged in as " + ru.conn.UserId + ".";
             getServerDetails();
             tabPane.SelectedTab = tabServer;
+            getChatDetails();
         }
 
         #endregion
@@ -2826,7 +2874,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 if (valueType.Equals("Boolean"))
                 {
                     if (row.Cells[4].Value.ToString().Length > 0)
-                            row.Cells[1].Value = row.Cells[4].Value.ToString().ToLower().Equals("true");
+                        row.Cells[1].Value = row.Cells[4].Value.ToString().ToLower().Equals("true");
                 }
                 if (valueType.Equals("String"))
                 {
@@ -2844,7 +2892,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
         private void configDataList_RowsAdded(Object sender, DataGridViewRowsAddedEventArgs e)
         {
             bool checkBox = false;
- 
+
             DataGridViewRow row = configDataList.Rows[e.RowIndex];
             row.Cells[1].ReadOnly = false;
             string key = row.Cells[0].Value.ToString().ToLower();
@@ -2946,14 +2994,14 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 key = row.Cells[0].Value.ToString();
                 value = row.Cells[1].Value.ToString();
                 valueType = row.Cells[2].Value.ToString();
-                if(valueType.Equals("String"))
-                configOptions += comma + @"""" + key + @""":""" + value + "\"";
-                else if(valueType.Equals("Boolean"))
-                configOptions += comma + @"""" + key + @""":" + value.ToLower();
+                if (valueType.Equals("String"))
+                    configOptions += comma + @"""" + key + @""":""" + value + "\"";
+                else if (valueType.Equals("Boolean"))
+                    configOptions += comma + @"""" + key + @""":" + value.ToLower();
                 else if (valueType.Contains("Int"))
                     configOptions += comma + @"""" + key + @""":" + value;
                 else
-                configOptions += comma + @"""" + key + @""":" + value;
+                    configOptions += comma + @"""" + key + @""":" + value;
                 comma = ",";
             }
             configOptions += "}";
@@ -3000,39 +3048,39 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             sscConfigUpdateStatus.Text = "";
             sscconfigDataList.Rows.Clear();
             // And now use this to connect server 
-             results = ru.communicateWithTerraria("AdminREST/getConfig", "config=sscconfig.json");
-             status = (string)results["status"];
-             if (status.Equals("200"))
-             {
-                 string key;
-                 String definition = "";
-                 String defaultx = "";
-                 string valueType = "";
-                 object rawOption;
-                 sscConfigUpdate.Enabled = true;
-                 sscConfigSetDefaults.Enabled = true;
-                 JObject description;
-                 JObject configOptions = (JObject)results["config"];
-                 foreach (JProperty prop in configOptions.Properties())
-                 {
-                     key = prop.Name;
-                     rawOption = prop.Value;
-                     try
-                     {
-                         description = (JObject)sscConfigDescription[key];
-                         definition = (string)description["definition"];
-                         defaultx = (string)description["default"];
-                         valueType = (string)description["type"];
-                     }
-                     catch (KeyNotFoundException)
-                     {
-                         definition = "";
-                         defaultx = "";
-                         valueType = "";
-                     }
-                     sscconfigDataList.Rows.Add(key, rawOption, valueType, definition, defaultx);
-                 }
-             }
+            results = ru.communicateWithTerraria("AdminREST/getConfig", "config=sscconfig.json");
+            status = (string)results["status"];
+            if (status.Equals("200"))
+            {
+                string key;
+                String definition = "";
+                String defaultx = "";
+                string valueType = "";
+                object rawOption;
+                sscConfigUpdate.Enabled = true;
+                sscConfigSetDefaults.Enabled = true;
+                JObject description;
+                JObject configOptions = (JObject)results["config"];
+                foreach (JProperty prop in configOptions.Properties())
+                {
+                    key = prop.Name;
+                    rawOption = prop.Value;
+                    try
+                    {
+                        description = (JObject)sscConfigDescription[key];
+                        definition = (string)description["definition"];
+                        defaultx = (string)description["default"];
+                        valueType = (string)description["type"];
+                    }
+                    catch (KeyNotFoundException)
+                    {
+                        definition = "";
+                        defaultx = "";
+                        valueType = "";
+                    }
+                    sscconfigDataList.Rows.Add(key, rawOption, valueType, definition, defaultx);
+                }
+            }
         }
         private void sscConfigSetDefaults_Click(object sender, EventArgs e)
         {
@@ -3120,7 +3168,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 getSSCConfig();
             }
             sscConfigUpdateStatus.Text = (string)results["response"];
- 
+
         }
         #endregion
 
@@ -3336,12 +3384,12 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
 
             }
             whiteListText.Text = output;
-  
+
         }
         private void tabWiteListUpdateRefresh_Click(object sender, EventArgs e)
         {
             getWhiteList();
-       }
+        }
 
         private void whiteListUpdate_Click(object sender, EventArgs e)
         {
@@ -3356,17 +3404,300 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 whiteListUpdateStatus.Text = (string)results["response"];
 
         }
-                #endregion
+        #endregion
 
         private void usersDataList_DoubleClick(object sender, EventArgs e)
         {
 
         }
+        #region  Chat Tab
+        private void chatRefresh_Click(object sender, EventArgs e)
+        {
+            getChat();
+        }
+        private void getChat()
+        {
+            JObject results;
+            string status;
+            JArray players = null;
+            string nickname = "";
+            string username = "";
+            int account;
+            string group = "";
+            string ip = "";
+            int index = 0;
 
- 
- 
+            chatPlayers.Rows.Clear();
+            results = ru.communicateWithTerraria("AdminREST/PlayerList", "");
+            status = (string)results["status"];
+            if (status.Equals("200"))
+            {
+                players = (JArray)results["players"];
 
+                if (players != null)
+                {
+                    for (int i = 0; i < players.Count; i++)
+                    {
+                        JObject innerObj = (JObject)players[i];
+                        index = (int)innerObj["index"];
+                        account = (int)innerObj["account"];
+                        ip = (string)innerObj["ip"];
+                        nickname = (string)innerObj["nickname"];
+                        username = (string)innerObj["username"];
+                        group = (string)innerObj["group"];
+                        if (nickname != null)
+                        {
+                            Console.WriteLine("p:" + nickname);
+                            chatPlayers.Rows.Add(nickname, username, group.ToString(), ip, index, account);
+                        }
+                    }
+                }
+            }
+            chatPlayers.ClearSelection();
 
+        }
+        byte[] m_dataBuffer = new byte[10];
+        IAsyncResult m_result;
+        public AsyncCallback m_pfnCallBack;
+        public Socket m_clientSocket;
+        private void getChatDetails()
+        {
+            Disconnect();
+            Connect();
+            getChat();
+            chatList.Items.Clear();
+            chatCommands.Items.Clear();
+        }
+        private void tabPane_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            return;
+            if (chatConnectionStatus.Text.StartsWith("Not"))
+                Connect();
+            getChat();
+        }
+        
+        private void chatStart_Click(object sender, System.EventArgs e)
+        {
+            Disconnect();
+            Connect();
+            getChat();
+            chatList.Items.Clear();
+            chatCommands.Items.Clear();
+        }
+        private void chatSend_Click(object sender, EventArgs e)
+        {
+
+            string chat = string.Format("`2:{0}:{1}", "   0", chatText.Text);
+            string message = "`8:``" + chatText.Text;
+            if (SendMessage(chat))
+            {
+                //            chatList.Items.Add("To->All: " + chatText.Text);
+                chatText.Text = "";
+            }
+            SendMessage(message);
+        }
+
+        private void Connect()
+        {
+            try
+            {
+                UpdateControls(false);
+                // Create the socket instance
+                m_clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+                // Create the end point 
+                IPEndPoint ipEnd = new IPEndPoint(ipServer, chatPort);
+                // Connect to the remote host
+                m_clientSocket.Connect(ipEnd);
+                if (m_clientSocket.Connected)
+                {
+                    UpdateControls(true);
+                    //Wait for data asynchronously 
+                    WaitForData();
+                }
+            }
+            catch (SocketException se)
+            {
+                string str;
+                str = "\nConnection failed, is the server running?\n" + se.Message;
+                Console.WriteLine(str);
+                UpdateControls(false);
+            }
+        }
+        private void Disconnect()
+        {
+            string chat = string.Format("`9:`{0}", -1);
+            SendMessage(chat);
+        }
+        bool SendMessage(string msg)
+        {
+
+            if (m_clientSocket == null || !m_clientSocket.Connected)
+                 return false;
+
+            try
+            {
+                // New code to send strings
+                NetworkStream networkStream = new NetworkStream(m_clientSocket);
+                System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(networkStream);
+                streamWriter.Write(msg);
+                streamWriter.Flush();
+ //               Console.WriteLine("Sent>" + msg);
+                /* Use the following code to send bytes
+                byte[] byData = System.Text.Encoding.ASCII.GetBytes(objData.ToString ());
+                if(m_clientSocket != null){
+                    m_clientSocket.Send (byData);
+                }
+                */
+            }
+            catch (SocketException se)
+            {
+                Console.WriteLine(se.Message);
+                return false;
+            }
+            return true;
+        }
+        public void WaitForData()
+        {
+            try
+            {
+                if (m_pfnCallBack == null)
+                {
+                    m_pfnCallBack = new AsyncCallback(OnDataReceived);
+                }
+                SocketPacket theSocPkt = new SocketPacket();
+                theSocPkt.thisSocket = m_clientSocket;
+                // Start listening to the data asynchronously
+                m_result = m_clientSocket.BeginReceive(theSocPkt.dataBuffer, 0, theSocPkt.dataBuffer.Length, SocketFlags.None, m_pfnCallBack, theSocPkt);
+            }
+            catch (SocketException se)
+            {
+                Console.WriteLine(se.Message);
+            }
+
+        }
+        public class SocketPacket
+        {
+            public System.Net.Sockets.Socket thisSocket;
+            public byte[] dataBuffer = new byte[1024];
+        }
+
+        public void OnDataReceived(IAsyncResult asyn)
+        {
+            try
+            {
+                SocketPacket theSockId = (SocketPacket)asyn.AsyncState;
+                int iRx = theSockId.thisSocket.EndReceive(asyn);
+                char[] chars = new char[iRx];
+                System.Text.Decoder d = System.Text.Encoding.UTF8.GetDecoder();
+                int charLen = d.GetChars(theSockId.dataBuffer, 0, iRx, chars, 0);
+                System.String sRecieved = new System.String(chars);
+                string action = sRecieved.Substring(0, 3);
+                string message = "";
+                if (sRecieved.Length > 8)
+                    message = sRecieved.Substring(8);
+                string[] s = sRecieved.Split('`');
+//                Console.WriteLine("|" + action + "|" + sRecieved);
+                switch (action)
+                {
+                    case "`1:":
+                        Invoke(m_RefreshChatPlayers, new string[] { sRecieved });
+                        break;
+                    case "`3:":
+                        Invoke(m_AddMessage, new string[] { s[3] });
+                        string chat = string.Format("`3:`");
+                        SendMessage(chat);
+                        break;
+
+                    case "`8:":     //put this in history list
+                        Invoke(m_AddCommand, new string[] { s[3] });
+                        break;
+                    default:
+                        Invoke(m_AddMessage, new string[] { sRecieved });
+                        break;
+                }
+
+                WaitForData();
+            }
+            catch (ObjectDisposedException)
+            {
+                System.Diagnostics.Debugger.Log(0, "1", "\nOnDataReceived: Socket has been closed\n");
+            }
+            catch (SocketException se)
+            {
+                Console.WriteLine(se.Message);
+                //                chatConnectionStatus.Text = se.Message + " Server Connect failed!";
+            }
+        }
+        private void UpdateControls(bool connected)
+        {
+
+            string connectStatus = connected ? "Connected" : "Not Connected";
+            Console.WriteLine(connectStatus);
+            chatConnectionStatus.Text = connectStatus;
+
+        }
+        void CloseConnection()
+        {
+            if (m_clientSocket != null)
+            {
+                m_clientSocket.Close();
+                m_clientSocket = null;
+            }
+        }
+
+        void DisconnectConnection()
+        {
+            if (m_clientSocket != null)
+            {
+                m_clientSocket.Close();
+                m_clientSocket = null;
+                UpdateControls(false);
+            }
+        }
+
+         private void chatClear_Click(object sender, EventArgs e)
+        {
+            chatList.Items.Clear();
+            chatText.Text = "";
+        }
+        private void commandClear_Click(object sender, EventArgs e)
+        {
+            chatCommands.Items.Clear();
+        }
+        private void chatText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                chatSend.PerformClick();
+            }
+        }
+
+        private void chatPlayers_DoubleClick(object sender, EventArgs e)
+        {
+            int itemIndex;
+
+            if (chatPlayers.SelectedRows.Count > 0)
+            {
+                itemIndex = chatPlayers.SelectedRows[0].Index;
+                ChatForm frm = new ChatForm(chatPlayers.Rows[itemIndex].Cells[0].Value.ToString(), chatPlayers.Rows[itemIndex].Cells[4].Value.ToString());
+                frm.Show();
+            }
+
+        }
+        #endregion
+
+        private void GUIMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                if (Application.OpenForms[i].Name != "GUIMain")
+                    Application.OpenForms[i].Close();
+            }
+            string chat = string.Format("`9:`{0}", -1);
+            SendMessage(chat);
+        }
 
 
     }
