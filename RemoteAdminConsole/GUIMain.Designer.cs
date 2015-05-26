@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,10 +41,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
             this.tabPane = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
-            this.serverChatStatus = new System.Windows.Forms.Label();
-            this.serverChat = new System.Windows.Forms.TextBox();
-            this.label79 = new System.Windows.Forms.Label();
-            this.serverChatPlayer = new System.Windows.Forms.Label();
             this.serverDaytime = new System.Windows.Forms.PictureBox();
             this.lable65 = new System.Windows.Forms.Label();
             this.serverBloodmoon = new System.Windows.Forms.PictureBox();
@@ -238,6 +234,8 @@
             this.label18 = new System.Windows.Forms.Label();
             this.lblPlayerName = new System.Windows.Forms.Label();
             this.tabChat = new System.Windows.Forms.TabPage();
+            this.commandClear = new System.Windows.Forms.Button();
+            this.label85 = new System.Windows.Forms.Label();
             this.chatClear = new System.Windows.Forms.Button();
             this.chatConnectionStatus = new System.Windows.Forms.Label();
             this.chatRefresh = new System.Windows.Forms.Button();
@@ -532,8 +530,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.chatCommands = new System.Windows.Forms.ListBox();
-            this.label85 = new System.Windows.Forms.Label();
-            this.commandClear = new System.Windows.Forms.Button();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -601,10 +597,6 @@
             // tabServer
             // 
             this.tabServer.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabServer.Controls.Add(this.serverChatStatus);
-            this.tabServer.Controls.Add(this.serverChat);
-            this.tabServer.Controls.Add(this.label79);
-            this.tabServer.Controls.Add(this.serverChatPlayer);
             this.tabServer.Controls.Add(this.serverDaytime);
             this.tabServer.Controls.Add(this.lable65);
             this.tabServer.Controls.Add(this.serverBloodmoon);
@@ -665,40 +657,6 @@
             this.tabServer.Size = new System.Drawing.Size(942, 539);
             this.tabServer.TabIndex = 0;
             this.tabServer.Text = "Server";
-            // 
-            // serverChatStatus
-            // 
-            this.serverChatStatus.Location = new System.Drawing.Point(550, 435);
-            this.serverChatStatus.Name = "serverChatStatus";
-            this.serverChatStatus.Size = new System.Drawing.Size(282, 13);
-            this.serverChatStatus.TabIndex = 59;
-            // 
-            // serverChat
-            // 
-            this.serverChat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.serverChat.Location = new System.Drawing.Point(550, 401);
-            this.serverChat.Name = "serverChat";
-            this.serverChat.Size = new System.Drawing.Size(351, 20);
-            this.serverChat.TabIndex = 58;
-            this.serverChat.TextChanged += new System.EventHandler(this.serverChat_TextChanged);
-            this.serverChat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label79.Location = new System.Drawing.Point(515, 404);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(29, 13);
-            this.label79.TabIndex = 57;
-            this.label79.Text = "Chat";
-            // 
-            // serverChatPlayer
-            // 
-            this.serverChatPlayer.Location = new System.Drawing.Point(550, 382);
-            this.serverChatPlayer.Name = "serverChatPlayer";
-            this.serverChatPlayer.Size = new System.Drawing.Size(176, 13);
-            this.serverChatPlayer.TabIndex = 56;
             // 
             // serverDaytime
             // 
@@ -788,8 +746,8 @@
             // 
             // serverDataId
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle11;
             this.serverDataId.HeaderText = "Id";
             this.serverDataId.Name = "serverDataId";
             this.serverDataId.ReadOnly = true;
@@ -2637,6 +2595,29 @@
             this.tabChat.TabIndex = 14;
             this.tabChat.Text = "Chat";
             // 
+            // commandClear
+            // 
+            this.commandClear.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.commandClear.Location = new System.Drawing.Point(813, 16);
+            this.commandClear.Name = "commandClear";
+            this.commandClear.Size = new System.Drawing.Size(75, 23);
+            this.commandClear.TabIndex = 273;
+            this.commandClear.Text = "Clear";
+            this.commandClear.UseVisualStyleBackColor = false;
+            this.commandClear.Click += new System.EventHandler(this.commandClear_Click);
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label85.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label85.Location = new System.Drawing.Point(639, 24);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(82, 15);
+            this.label85.TabIndex = 272;
+            this.label85.Text = "Activity History";
+            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // chatClear
             // 
             this.chatClear.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -2720,8 +2701,8 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn7.HeaderText = "Id";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -5845,29 +5826,6 @@
             this.chatCommands.Size = new System.Drawing.Size(415, 470);
             this.chatCommands.TabIndex = 271;
             // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label85.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label85.Location = new System.Drawing.Point(639, 24);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(82, 15);
-            this.label85.TabIndex = 272;
-            this.label85.Text = "Activity History";
-            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // commandClear
-            // 
-            this.commandClear.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.commandClear.Location = new System.Drawing.Point(813, 16);
-            this.commandClear.Name = "commandClear";
-            this.commandClear.Size = new System.Drawing.Size(75, 23);
-            this.commandClear.TabIndex = 273;
-            this.commandClear.Text = "Clear";
-            this.commandClear.UseVisualStyleBackColor = false;
-            this.commandClear.Click += new System.EventHandler(this.commandClear_Click);
-            // 
             // GUIMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6363,10 +6321,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn banDataBanningUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn banDataDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn banDataExpiration;
-        private System.Windows.Forms.TextBox serverChat;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.Label serverChatPlayer;
-        private System.Windows.Forms.Label serverChatStatus;
         private System.Windows.Forms.Button inventoryImport;
         private System.Windows.Forms.Button inventoryExport;
         private System.Windows.Forms.Button button1;
@@ -6435,8 +6389,8 @@
         private System.Windows.Forms.Button chatRefresh;
         private System.Windows.Forms.Label chatConnectionStatus;
         private System.Windows.Forms.Button chatClear;
-        private System.Windows.Forms.ListBox chatCommands;
         private System.Windows.Forms.Label label85;
         private System.Windows.Forms.Button commandClear;
+        private System.Windows.Forms.ListBox chatCommands;
     }
 }

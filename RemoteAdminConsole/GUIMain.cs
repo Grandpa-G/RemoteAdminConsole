@@ -90,7 +90,10 @@ namespace RemoteAdminConsole
         public void OnAddMessage(string sMessage)
         {
             // Thread safe operation here
-            chatList.Items.Add(sMessage);
+            // Get current date and time.
+            DateTime now = DateTime.Now;
+
+            chatList.Items.Add(now.ToString("t") + " " + sMessage);
             chatList.SelectedIndex = chatList.Items.Count - 1;
             chatList.ClearSelected();
         }
@@ -187,8 +190,8 @@ namespace RemoteAdminConsole
             }
             getServerDetails();
 
-            tabChat.Text = "";
-            tabChat.Enabled = false;
+ //           tabChat.Text = "";
+ //           tabChat.Enabled = false;
         }
 
         private void tabPane_Selected(object sender, TabControlEventArgs e)
@@ -276,11 +279,6 @@ namespace RemoteAdminConsole
             Boolean state;
             String extraAdminRESTVersion = "";
             String dbSupported = "";
-
-            serverChatStatus.Text = "";
-            serverChat.Text = "";
-            serverChat.Enabled = false;
-            serverChatPlayer.Text = "Chat closed.";
 
             JObject results = ru.communicateWithTerraria("v2/server/status", "players=true&rules=true");
             string status = (string)results["status"];
@@ -503,11 +501,6 @@ namespace RemoteAdminConsole
             serverDataPlayers.Rows[e.RowIndex].Selected = true;
 
             string name = row.Cells[0].Value.ToString();
-
-            serverChatStatus.Text = "";
-            serverChat.Text = "";
-            serverChat.Enabled = true;
-            serverChatPlayer.Text = "Chat with " + name;
 
             playerFound = true;
             tabPlayer.Enabled = true;
@@ -2088,34 +2081,6 @@ namespace RemoteAdminConsole
             }
             consoleOutput.Text = output;
         }
-        private void serverChat_TextChanged(object sender, EventArgs e)
-        {
-            serverChatStatus.Text = "";
-        }
-
-        private void OnKeyDownHandler(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                int rowIndex = serverDataPlayers.CurrentRow.Index;
-                if (rowIndex < 0)
-                {
-                    serverChatStatus.Text = "No player selected.";
-                    return;
-                }
-                string playerIndex = serverDataPlayers.Rows[rowIndex].Cells[4].Value.ToString();
-                JObject results = ru.communicateWithTerraria("AdminREST/Chat", "index=" + playerIndex + "&msg=" + serverChat.Text);
-                string status = (string)results["status"];
-                if (status.Equals("200"))
-                {
-                    String response = (String)results["response"];
-                    // get an array from the JSON object 
-
-                    // add text to it; we want to make it scroll
-                    serverChatStatus.Text = response;
-                }
-            }
-        }
 
         private void consoleSubmitBroadcast_Click(object sender, EventArgs e)
         {
@@ -3470,7 +3435,6 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
         }
         private void tabPane_SelectedIndexChanged(object sender, EventArgs e)
         {
-            return;
             if (chatConnectionStatus.Text.StartsWith("Not"))
                 Connect();
             getChat();
@@ -3491,10 +3455,9 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             string message = "`8:``" + chatText.Text;
             if (SendMessage(chat))
             {
-                //            chatList.Items.Add("To->All: " + chatText.Text);
-                chatText.Text = "";
+                 chatText.Text = "";
             }
-            SendMessage(message);
+ //           SendMessage(message);
         }
 
         private void Connect()
@@ -3681,7 +3644,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             if (chatPlayers.SelectedRows.Count > 0)
             {
                 itemIndex = chatPlayers.SelectedRows[0].Index;
-                ChatForm frm = new ChatForm(chatPlayers.Rows[itemIndex].Cells[0].Value.ToString(), chatPlayers.Rows[itemIndex].Cells[4].Value.ToString());
+                ChatForm frm = new ChatForm(chatPlayers.Rows[itemIndex].Cells[0].Value.ToString(), chatPlayers.Rows[itemIndex].Cells[4].Value.ToString(), ru.conn.UserId);
                 frm.Show();
             }
 

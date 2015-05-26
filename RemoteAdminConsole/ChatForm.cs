@@ -18,13 +18,13 @@ namespace RemoteAdminConsole
     {
         private static string chatWith = "";
         private static string chatWithIndex = "";
-
+        private static string chatBy = "";
         byte[] m_dataBuffer = new byte[10];
         IAsyncResult m_result;
         public AsyncCallback m_pfnCallBack;
         public Socket m_clientSocket;
         private event AddMessage m_AddMessage;
-        public ChatForm(string with, string index)
+        public ChatForm(string with, string index, string me)
         {
             // Add Message Event handler for Form decoupling from input thread
             m_AddMessage = new AddMessage(OnAddMessage);
@@ -33,6 +33,7 @@ namespace RemoteAdminConsole
             chatWith = with;
             chatWithIndex = index;
             chatformChatWith.Text = with;
+            chatBy = me;
         }
         public void OnAddMessage(string sMessage)
         {
@@ -77,10 +78,9 @@ namespace RemoteAdminConsole
              string message = "`8:``" + chatformText.Text;
             if (SendMessage(chat))
             {
-                //            chatList.Items.Add("To->All: " + chatText.Text);
                 chatformText.Text = "";
             }
-            SendMessage(message);
+ //           SendMessage(message);
         }
         private void Connect()
         {
@@ -99,7 +99,8 @@ namespace RemoteAdminConsole
                     UpdateControls(true);
                     //Wait for data asynchronously 
                     WaitForData();
-                    string chat = string.Format("`0:{0}:{1}", chatWithIndex.PadLeft(4, '0'), "Requesting private chat: use /rc <reply> to respond.");
+
+                    string chat = string.Format("`0:{0}:<{1}>{2}", chatWithIndex.PadLeft(4, '0'), chatBy, "has opened a private chat with you. Use /rc <reply> to respond.");
                     SendMessage(chat);
                 }
             }
