@@ -177,8 +177,11 @@ namespace RemoteAdminConsole
             inventoryToolTip.ShowAlways = true;
 
             if (!connected)
+            {
+                DialogResult usersChoice =
+               MessageBox.Show("No server has responded.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 tabPane.SelectedTab = tabSettings;
-
+            }
             if (!DEVELOPMENT)
             {
             }
@@ -282,6 +285,12 @@ namespace RemoteAdminConsole
 
             JObject results = ru.communicateWithTerraria("v2/server/status", "players=true&rules=true");
             string status = (string)results["status"];
+            if (status.Equals("500"))
+            {
+                DialogResult usersChoice =
+               MessageBox.Show("Connection to server has been lost.", PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                tabPane.SelectedTab = tabSettings;
+            }
             if (status.Equals("200"))
             {
                 name = (string)results["name"];
@@ -842,6 +851,7 @@ namespace RemoteAdminConsole
             banFuzzyName.Checked = false;
             banFuzzyIP.Checked = false;
             banSearchResults.Text = "";
+            banStatus.Text = "";
 
             getBannedList(true);
         }
@@ -880,16 +890,25 @@ namespace RemoteAdminConsole
                         unBan = (DataGridViewCheckBoxCell)row.Cells[0];
                         if (unBan.Value.ToString().Equals("True"))
                         {
-                            // And now use this to connect server
-                            JObject results = ru.communicateWithTerraria("v2/bans/destroy", "type=name&ban=" + ((DataGridViewCell)row.Cells[1]).Value.ToString());
-                            string status = (string)results["status"];
-                            if (status.Equals("200"))
+                            string action = "name";
+                            string name = ((DataGridViewCell)row.Cells[1]).Value.ToString();
+                            if (name.Length == 0)
                             {
-
+                                action = "ip";
+                                name = ((DataGridViewCell)row.Cells[2]).Value.ToString();
                             }
-                            //                        if (unBan.Value.ToString().Equals("True"))
-                            //                            TShock.Bans.RemoveBan(((DataGridViewCell)row.Cells[1]).Value.ToString(), true, true, true);
-                            someUnBanned = true;
+                            else
+                             name = name.Replace("#", "%23");
+                            // And now use this to connect server
+                            JObject results = ru.communicateWithTerraria("v2/bans/destroy", "type=" + action + "&ban=" + name);
+                            string status = (string)results["status"];
+                            string response = (string)results["response"];
+                            if (status.Equals("200"))
+                                banStatus.Text = response;
+                            else
+                                banStatus.Text = response;
+
+                           someUnBanned = true;
                         }
                     }
                 }
@@ -1070,11 +1089,11 @@ namespace RemoteAdminConsole
 
             string parent = "";
             if (selectedRow.Cells[1] != null)
+            {
                 if (selectedRow.Cells[1].Value != null)
-                {
                     parent = selectedRow.Cells[1].Value.ToString();
-                    action = action + "&parent=" + parent;
-                }
+                action = action + "&parent=" + parent;
+            }
             string chatColor = "";
             if (selectedRow.Cells[2] != null)
                 if (selectedRow.Cells[2].Value != null)
@@ -1178,13 +1197,22 @@ namespace RemoteAdminConsole
             row.Selected = true;
         }
 
+        private void groupDataList_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return; //check if row index is not selected
+            if (e.ColumnIndex == -1) return; //check if column index is not selected
+            groupsNewRow = e.RowIndex;
+            groupsModified = true;
+
+        }
+
         private void groupDataList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
             if (e.RowIndex == -1) return; //check if row index is not selected
 
             DataGridViewRow row = groupDataList.Rows[e.RowIndex];
-            groupsNewRow = e.RowIndex;
+//            groupsNewRow = e.RowIndex;
 
             if (e.ColumnIndex == 3) // chat color
             {
@@ -1322,6 +1350,7 @@ namespace RemoteAdminConsole
             groupList.Clear();
             usersDataGroup.Items.Clear();
             groupDataParentList.Items.Clear();
+            parents.Clear();
             // And now use this to connect server
             JObject results = ru.communicateWithTerraria("AdminREST/GroupList", "");
             string status = (string)results["status"];
@@ -2163,6 +2192,7 @@ namespace RemoteAdminConsole
             eyeColor = Color.Black;
             inventoryList = "";
             inventoryUpdateStatus.Text = "";
+            inventoryPreviewImage0 = true;
 
             // And now use this to connect server
             JObject results = ru.communicateWithTerraria("AdminREST/getinventory", "account=" + account);
@@ -2238,6 +2268,7 @@ namespace RemoteAdminConsole
             inventoryToolTip.SetToolTip(itemPreview, "");
             inventoryPreviewNetId = 0;
             inventoryPrefixIndex = 0;
+            inventoryPreviewImage0 = true;
 
             string[] inventory = SSCInventory.Inventory.Split('~');
             for (int i = 0; i < slotItems.Length; i++)
@@ -2362,7 +2393,7 @@ MessageBox.Show("Are you sure you want to erase all items in this inventory?", P
                 slotItems[i] = new Item();
 
             SetSSCInventorySlot(this, "sscItem", inventory);
-
+            inventoryPreviewImage0 = true;
         }
         private void inventoryInit_Click(object sender, EventArgs e)
         {
@@ -2425,7 +2456,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 {
                     itemLastClicked.Text = "";
                     inventoryToolTip.SetToolTip(itemLastClicked, inventoryToolTip.GetToolTip(itemPreview));
-                    inventory[slot] = inventoryPreviewNetId.ToString() + ",0," + inventoryPrefixStackSize.ToString();
+                    inventory[slot] = inventoryPreviewNetId.ToString() + ",0," + inventoryPrefixIndex.ToString();
                 }
                 else
                 {
@@ -2433,6 +2464,11 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                     inventoryToolTip.SetToolTip(itemLastClicked, inventoryToolTip.GetToolTip(itemPreview));
                     inventory[slot] = inventoryPreviewNetId.ToString() + "," + inventoryPrefixStackSize.ToString() + "," + inventoryPrefixIndex.ToString();
                 }
+
+                slotItems[slot].NetId = inventoryPreviewNetId;
+                slotItems[slot].StackSize = inventoryPrefixStackSize;
+                slotItems[slot].Prefix = inventoryPrefixIndex;
+
                 SSCInventory.Inventory = string.Join("~", inventory);
             }
         }
@@ -2505,8 +2541,10 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             btn.FlatAppearance.BorderColor = Color.Red;
             itemLastClicked = btn;
 
-            if (itemPreview.Image == item_0)
+//            if (itemPreview.Image == item_0)
+            if (inventoryPreviewImage0)
             {
+                inventoryPreviewImage0 = false;
                 string name = btn.Name.Substring(7);
                 int slot = Int32.Parse(name) - 1;
 
@@ -2524,13 +2562,15 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 else
                     inventoryToolTip.SetToolTip(itemPreview, itemList[ITEMOFFSET + slotItems[slot].NetId].Name);
                 itemPreviewText.Text = inventoryToolTip.GetToolTip(itemPreview);
-
+                if (inventoryPreviewNetId == 0)
+                    inventoryPreviewImage0 = true;
             }
         }
 
         int inventoryPrefixStackSize = 0;
         int inventoryPrefixIndex = 0;
         int inventoryPreviewNetId;
+        bool inventoryPreviewImage0 = true;
         ToolTip inventoryToolTip;
         private void txtStackSize_TextChanged(object sender, EventArgs e)
         {
@@ -2617,6 +2657,8 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             inventoryToolTip.SetToolTip(itemPreview, "");
             inventoryPreviewNetId = 0;
             inventoryPrefixIndex = 0;
+            inventoryPrefixStackSize = 0;
+            inventoryPreviewImage0 = true;
         }
 
         private void inventoryItemsList_ItemDrag(object sender, ItemDragEventArgs e)
@@ -3502,10 +3544,10 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
             {
                 // New code to send strings
                 NetworkStream networkStream = new NetworkStream(m_clientSocket);
-                System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(networkStream);
+                System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(networkStream, Encoding.UTF8);
                 streamWriter.Write(msg);
                 streamWriter.Flush();
- //               Console.WriteLine("Sent>" + msg);
+                Console.WriteLine("Sent>" + msg);
                 /* Use the following code to send bytes
                 byte[] byData = System.Text.Encoding.ASCII.GetBytes(objData.ToString ());
                 if(m_clientSocket != null){
@@ -3567,7 +3609,7 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                         Invoke(m_RefreshChatPlayers, new string[] { sRecieved });
                         break;
                     case "`3:":
-                        Invoke(m_AddMessage, new string[] { s[3] });
+//                        Invoke(m_AddMessage, new string[] { s[3] });
                         string chat = string.Format("`3:`");
                         SendMessage(chat);
                         break;

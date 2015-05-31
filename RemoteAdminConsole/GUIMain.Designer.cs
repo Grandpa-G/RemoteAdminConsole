@@ -236,6 +236,7 @@
             this.tabChat = new System.Windows.Forms.TabPage();
             this.commandClear = new System.Windows.Forms.Button();
             this.label85 = new System.Windows.Forms.Label();
+            this.chatCommands = new System.Windows.Forms.ListBox();
             this.chatClear = new System.Windows.Forms.Button();
             this.chatConnectionStatus = new System.Windows.Forms.Label();
             this.chatRefresh = new System.Windows.Forms.Button();
@@ -529,7 +530,7 @@
             this.lblPortValue = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.chatCommands = new System.Windows.Forms.ListBox();
+            this.banStatus = new System.Windows.Forms.Label();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -2618,6 +2619,16 @@
             this.label85.Text = "Activity History";
             this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // chatCommands
+            // 
+            this.chatCommands.BackColor = System.Drawing.Color.White;
+            this.chatCommands.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chatCommands.FormattingEnabled = true;
+            this.chatCommands.Location = new System.Drawing.Point(473, 44);
+            this.chatCommands.Name = "chatCommands";
+            this.chatCommands.Size = new System.Drawing.Size(415, 470);
+            this.chatCommands.TabIndex = 271;
+            // 
             // chatClear
             // 
             this.chatClear.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -2758,6 +2769,7 @@
             // tabBan
             // 
             this.tabBan.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabBan.Controls.Add(this.banStatus);
             this.tabBan.Controls.Add(this.banSearchResults);
             this.tabBan.Controls.Add(this.lblBanningUser);
             this.tabBan.Controls.Add(this.banClearSearch);
@@ -2787,7 +2799,7 @@
             // 
             // lblBanningUser
             // 
-            this.lblBanningUser.Location = new System.Drawing.Point(423, 449);
+            this.lblBanningUser.Location = new System.Drawing.Point(423, 441);
             this.lblBanningUser.Name = "lblBanningUser";
             this.lblBanningUser.Size = new System.Drawing.Size(103, 13);
             this.lblBanningUser.TabIndex = 24;
@@ -2893,7 +2905,7 @@
             // 
             this.banUnBan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.banUnBan.Enabled = false;
-            this.banUnBan.Location = new System.Drawing.Point(445, 460);
+            this.banUnBan.Location = new System.Drawing.Point(437, 460);
             this.banUnBan.Name = "banUnBan";
             this.banUnBan.Size = new System.Drawing.Size(75, 23);
             this.banUnBan.TabIndex = 1;
@@ -5020,6 +5032,7 @@
             this.groupDataList.Size = new System.Drawing.Size(600, 461);
             this.groupDataList.TabIndex = 0;
             this.groupDataList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupDataList_CellClick);
+            this.groupDataList.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupDataList_CellValueChanged);
             this.groupDataList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.groupDataList_RowsAdded);
             this.groupDataList.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.groupDataList_UserDeletedRow);
             this.groupDataList.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.groupDataList_UserDeletingRow);
@@ -5816,15 +5829,13 @@
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.inventoryExport_Click);
             // 
-            // chatCommands
+            // banStatus
             // 
-            this.chatCommands.BackColor = System.Drawing.Color.White;
-            this.chatCommands.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.chatCommands.FormattingEnabled = true;
-            this.chatCommands.Location = new System.Drawing.Point(473, 44);
-            this.chatCommands.Name = "chatCommands";
-            this.chatCommands.Size = new System.Drawing.Size(415, 470);
-            this.chatCommands.TabIndex = 271;
+            this.banStatus.Location = new System.Drawing.Point(365, 503);
+            this.banStatus.Name = "banStatus";
+            this.banStatus.Size = new System.Drawing.Size(218, 13);
+            this.banStatus.TabIndex = 72;
+            this.banStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GUIMain
             // 
@@ -6392,5 +6403,6 @@
         private System.Windows.Forms.Label label85;
         private System.Windows.Forms.Button commandClear;
         private System.Windows.Forms.ListBox chatCommands;
+        private System.Windows.Forms.Label banStatus;
     }
 }

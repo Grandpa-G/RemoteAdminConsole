@@ -100,7 +100,7 @@ namespace RemoteAdminConsole
                     //Wait for data asynchronously 
                     WaitForData();
 
-                    string chat = string.Format("`0:{0}:<{1}>{2}", chatWithIndex.PadLeft(4, '0'), chatBy, "has opened a private chat with you. Use /rc <reply> to respond.");
+                    string chat = string.Format("`0:{0}:{1} {2}", chatWithIndex.PadLeft(4, '0'), chatBy, "has opened a private chat with you. Use /rc <reply> to respond.");
                     SendMessage(chat);
                 }
             }
@@ -121,10 +121,10 @@ namespace RemoteAdminConsole
             {
                 // New code to send strings
                 NetworkStream networkStream = new NetworkStream(m_clientSocket);
-                System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(networkStream);
+                System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(networkStream, Encoding.UTF8);
                 streamWriter.Write(msg);
                 streamWriter.Flush();
- //               Console.WriteLine("Sent>" + msg);
+//                Console.WriteLine("Sent>" + msg);
 
                 /* Use the following code to send bytes
                 byte[] byData = System.Text.Encoding.ASCII.GetBytes(objData.ToString ());
@@ -181,6 +181,7 @@ namespace RemoteAdminConsole
                 if (sRecieved.Length > 8)
                     message = sRecieved.Substring(8);
                  string[] s = sRecieved.Split('`');
+//                 Console.WriteLine("|" + action + "|" + sRecieved);
                 switch (action)
                 {
                     case "`0:":

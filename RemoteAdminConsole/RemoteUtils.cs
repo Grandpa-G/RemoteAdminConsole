@@ -28,7 +28,9 @@ namespace RemoteAdminConsole
         {
             string errorResponse = "{ 'status': '100' }";
             JObject response = JObject.Parse(errorResponse);
-            
+            string error500 = "{ 'status': '500' }";
+            JObject response500 = JObject.Parse(error500);
+
             if (conn.Server == null)
             {
                 MessageBox.Show("Invalid userid/password/server", GUIMain.PROGRAMNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -46,6 +48,9 @@ namespace RemoteAdminConsole
             if (GUIMain.DEBUG)
                 Console.WriteLine(sendCommand);
             JObject results = Utils.GetHTTP(sendCommand);
+            if (results == null)
+                return false;
+
             if (GUIMain.DEBUG)
                 Console.WriteLine(results);
 
@@ -74,6 +79,8 @@ namespace RemoteAdminConsole
         {
             string errorResponse = "{ 'status': '100' }";
             JObject response = JObject.Parse(errorResponse);
+            string error500 = "{ 'status': '500' }";
+            JObject response500 = JObject.Parse(error500);
 
             if (conn.Server == null)
                 return response;
@@ -96,6 +103,11 @@ namespace RemoteAdminConsole
             if (GUIMain.DEBUG)
                 Console.WriteLine(sendCommand);
             JObject results = Utils.GetHTTP(sendCommand);
+
+            if (results == null)
+            {
+                return response500;
+            }
 
             if (GUIMain.DEBUG)
                 Console.WriteLine(results);
