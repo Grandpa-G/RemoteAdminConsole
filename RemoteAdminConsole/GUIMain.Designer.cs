@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUIMain));
             this.tabPane = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
@@ -252,6 +252,7 @@
             this.chatStart = new System.Windows.Forms.Button();
             this.chatList = new System.Windows.Forms.ListBox();
             this.tabBan = new System.Windows.Forms.TabPage();
+            this.banStatus = new System.Windows.Forms.Label();
             this.banSearchResults = new System.Windows.Forms.Label();
             this.lblBanningUser = new System.Windows.Forms.Label();
             this.banClearSearch = new System.Windows.Forms.Button();
@@ -530,7 +531,6 @@
             this.lblPortValue = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.banStatus = new System.Windows.Forms.Label();
             this.tabPane.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serverDaytime)).BeginInit();
@@ -747,8 +747,8 @@
             // 
             // serverDataId
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.serverDataId.DefaultCellStyle = dataGridViewCellStyle1;
             this.serverDataId.HeaderText = "Id";
             this.serverDataId.Name = "serverDataId";
             this.serverDataId.ReadOnly = true;
@@ -2712,8 +2712,8 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn7.HeaderText = "Id";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -2761,6 +2761,7 @@
             this.chatList.BackColor = System.Drawing.Color.White;
             this.chatList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.chatList.FormattingEnabled = true;
+            this.chatList.HorizontalScrollbar = true;
             this.chatList.Location = new System.Drawing.Point(22, 44);
             this.chatList.Name = "chatList";
             this.chatList.Size = new System.Drawing.Size(431, 171);
@@ -2789,6 +2790,14 @@
             this.tabBan.Size = new System.Drawing.Size(942, 539);
             this.tabBan.TabIndex = 4;
             this.tabBan.Text = "Ban";
+            // 
+            // banStatus
+            // 
+            this.banStatus.Location = new System.Drawing.Point(365, 503);
+            this.banStatus.Name = "banStatus";
+            this.banStatus.Size = new System.Drawing.Size(218, 13);
+            this.banStatus.TabIndex = 72;
+            this.banStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // banSearchResults
             // 
@@ -3290,8 +3299,8 @@
             // 
             // usersDataID
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.usersDataID.DefaultCellStyle = dataGridViewCellStyle3;
             this.usersDataID.HeaderText = "Id";
             this.usersDataID.Name = "usersDataID";
             this.usersDataID.ReadOnly = true;
@@ -5007,8 +5016,8 @@
             // 
             // permissionsDataNote
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.permissionsDataNote.DefaultCellStyle = dataGridViewCellStyle4;
             this.permissionsDataNote.HeaderText = "Note";
             this.permissionsDataNote.Name = "permissionsDataNote";
             this.permissionsDataNote.ReadOnly = true;
@@ -5230,8 +5239,8 @@
             // 
             // configDataKey
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.configDataKey.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.configDataKey.DefaultCellStyle = dataGridViewCellStyle5;
             this.configDataKey.HeaderText = "Key (Red if invalid value given)";
             this.configDataKey.Name = "configDataKey";
             this.configDataKey.ReadOnly = true;
@@ -5239,9 +5248,9 @@
             // 
             // configDataValue
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.configDataValue.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.configDataValue.DefaultCellStyle = dataGridViewCellStyle6;
             this.configDataValue.HeaderText = "Value";
             this.configDataValue.Name = "configDataValue";
             this.configDataValue.ReadOnly = true;
@@ -5256,8 +5265,8 @@
             // 
             // configDataDefinition
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataDefinition.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefinition.DefaultCellStyle = dataGridViewCellStyle7;
             this.configDataDefinition.HeaderText = "Definition";
             this.configDataDefinition.Name = "configDataDefinition";
             this.configDataDefinition.ReadOnly = true;
@@ -5265,8 +5274,8 @@
             // 
             // configDataDefault
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.configDataDefault.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.configDataDefault.DefaultCellStyle = dataGridViewCellStyle8;
             this.configDataDefault.HeaderText = "Default";
             this.configDataDefault.Name = "configDataDefault";
             this.configDataDefault.ReadOnly = true;
@@ -5354,8 +5363,8 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "sscconfigDataKey";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn1.HeaderText = "Key (Red if invalid value given)";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -5364,9 +5373,9 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "sscconfigDataValue";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn2.HeaderText = "Value";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -5729,9 +5738,9 @@
             // label25
             // 
             this.label25.Image = ((System.Drawing.Image)(resources.GetObject("label25.Image")));
-            this.label25.Location = new System.Drawing.Point(218, 25);
+            this.label25.Location = new System.Drawing.Point(192, 25);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(417, 37);
+            this.label25.Size = new System.Drawing.Size(443, 37);
             this.label25.TabIndex = 0;
             // 
             // pictureBox2
@@ -5828,14 +5837,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.inventoryExport_Click);
-            // 
-            // banStatus
-            // 
-            this.banStatus.Location = new System.Drawing.Point(365, 503);
-            this.banStatus.Name = "banStatus";
-            this.banStatus.Size = new System.Drawing.Size(218, 13);
-            this.banStatus.TabIndex = 72;
-            this.banStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GUIMain
             // 

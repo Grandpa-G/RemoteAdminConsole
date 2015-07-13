@@ -2095,7 +2095,8 @@ namespace RemoteAdminConsole
         private void consoleSubmitCommand_Click(object sender, EventArgs e)
         {
             string output = "";
-            JObject results = ru.communicateWithTerraria("v3/server/rawcmd", "&cmd=/" + consoleCommand.Text);
+            string sendCommand = Uri.EscapeDataString(consoleCommand.Text);
+            JObject results = ru.communicateWithTerraria("v3/server/rawcmd", "cmd=/" + sendCommand);
             string status = (string)results["status"];
             if (status.Equals("200"))
             {
@@ -2113,7 +2114,8 @@ namespace RemoteAdminConsole
 
         private void consoleSubmitBroadcast_Click(object sender, EventArgs e)
         {
-            JObject results = ru.communicateWithTerraria("AdminREST/Broadcast", "index=0&msg=" + consoleBroadcast.Text);
+            string sendCommand = Uri.EscapeDataString(consoleBroadcast.Text);
+            JObject results = ru.communicateWithTerraria("AdminREST/Broadcast", "index=0&msg=" + sendCommand);
             string status = (string)results["status"];
             if (status.Equals("200"))
             {
@@ -3454,7 +3456,6 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                         group = (string)innerObj["group"];
                         if (nickname != null)
                         {
-                            Console.WriteLine("p:" + nickname);
                             chatPlayers.Rows.Add(nickname, username, group.ToString(), ip, index, account);
                         }
                     }
@@ -3547,7 +3548,6 @@ MessageBox.Show("Are you sure you want to replace all items in this inventory\r\
                 System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(networkStream, Encoding.UTF8);
                 streamWriter.Write(msg);
                 streamWriter.Flush();
-                Console.WriteLine("Sent>" + msg);
                 /* Use the following code to send bytes
                 byte[] byData = System.Text.Encoding.ASCII.GetBytes(objData.ToString ());
                 if(m_clientSocket != null){

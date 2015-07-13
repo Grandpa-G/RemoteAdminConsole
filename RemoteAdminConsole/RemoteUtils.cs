@@ -97,9 +97,8 @@ namespace RemoteAdminConsole
             else
                 sendCommand = "http://" + conn.Server + "/" + "token=" + token;
             if (options.Length > 0)
-                sendCommand = sendCommand + "&" + options.Replace(" ", "%20");
-
-
+             sendCommand = sendCommand + "&" + options.Replace(" ", "%20");
+ 
             if (GUIMain.DEBUG)
                 Console.WriteLine(sendCommand);
             JObject results = Utils.GetHTTP(sendCommand);

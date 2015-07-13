@@ -85,6 +85,7 @@
             // chatformList
             // 
             this.chatformList.FormattingEnabled = true;
+            this.chatformList.HorizontalScrollbar = true;
             this.chatformList.Location = new System.Drawing.Point(15, 78);
             this.chatformList.Name = "chatformList";
             this.chatformList.Size = new System.Drawing.Size(366, 251);
@@ -114,7 +115,7 @@
             this.Name = "ChatForm";
             this.Text = "ChatForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChatForm_FormClosing);
-             this.Load += new System.EventHandler(this.ChatForm_Load);
+            this.Load += new System.EventHandler(this.ChatForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
