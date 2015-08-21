@@ -348,7 +348,7 @@
             this.label65 = new System.Windows.Forms.Label();
             this.sscItem64 = new System.Windows.Forms.Button();
             this.sscItem72 = new System.Windows.Forms.Button();
-            this.sscItem80 = new System.Windows.Forms.Button();
+            this.sscItem84 = new System.Windows.Forms.Button();
             this.sscItem14 = new System.Windows.Forms.Button();
             this.sscItem34 = new System.Windows.Forms.Button();
             this.sscItem24 = new System.Windows.Forms.Button();
@@ -370,13 +370,13 @@
             this.sscItem71 = new System.Windows.Forms.Button();
             this.sscItem70 = new System.Windows.Forms.Button();
             this.sscItem69 = new System.Windows.Forms.Button();
+            this.sscItem87 = new System.Windows.Forms.Button();
+            this.sscItem86 = new System.Windows.Forms.Button();
+            this.sscItem85 = new System.Windows.Forms.Button();
+            this.sscItem16 = new System.Windows.Forms.Button();
             this.sscItem83 = new System.Windows.Forms.Button();
             this.sscItem82 = new System.Windows.Forms.Button();
             this.sscItem81 = new System.Windows.Forms.Button();
-            this.sscItem16 = new System.Windows.Forms.Button();
-            this.sscItem79 = new System.Windows.Forms.Button();
-            this.sscItem78 = new System.Windows.Forms.Button();
-            this.sscItem77 = new System.Windows.Forms.Button();
             this.sscItem5 = new System.Windows.Forms.Button();
             this.sscItem58 = new System.Windows.Forms.Button();
             this.sscItem25 = new System.Windows.Forms.Button();
@@ -412,7 +412,7 @@
             this.sscItem22 = new System.Windows.Forms.Button();
             this.sscItem60 = new System.Windows.Forms.Button();
             this.sscItem68 = new System.Windows.Forms.Button();
-            this.sscItem76 = new System.Windows.Forms.Button();
+            this.sscItem80 = new System.Windows.Forms.Button();
             this.sscItem55 = new System.Windows.Forms.Button();
             this.sscItem51 = new System.Windows.Forms.Button();
             this.sscItem7 = new System.Windows.Forms.Button();
@@ -3357,7 +3357,7 @@
             this.tabInventory.Controls.Add(this.label65);
             this.tabInventory.Controls.Add(this.sscItem64);
             this.tabInventory.Controls.Add(this.sscItem72);
-            this.tabInventory.Controls.Add(this.sscItem80);
+            this.tabInventory.Controls.Add(this.sscItem84);
             this.tabInventory.Controls.Add(this.sscItem14);
             this.tabInventory.Controls.Add(this.sscItem34);
             this.tabInventory.Controls.Add(this.sscItem24);
@@ -3379,13 +3379,13 @@
             this.tabInventory.Controls.Add(this.sscItem71);
             this.tabInventory.Controls.Add(this.sscItem70);
             this.tabInventory.Controls.Add(this.sscItem69);
+            this.tabInventory.Controls.Add(this.sscItem87);
+            this.tabInventory.Controls.Add(this.sscItem86);
+            this.tabInventory.Controls.Add(this.sscItem85);
+            this.tabInventory.Controls.Add(this.sscItem16);
             this.tabInventory.Controls.Add(this.sscItem83);
             this.tabInventory.Controls.Add(this.sscItem82);
             this.tabInventory.Controls.Add(this.sscItem81);
-            this.tabInventory.Controls.Add(this.sscItem16);
-            this.tabInventory.Controls.Add(this.sscItem79);
-            this.tabInventory.Controls.Add(this.sscItem78);
-            this.tabInventory.Controls.Add(this.sscItem77);
             this.tabInventory.Controls.Add(this.sscItem5);
             this.tabInventory.Controls.Add(this.sscItem58);
             this.tabInventory.Controls.Add(this.sscItem25);
@@ -3421,7 +3421,7 @@
             this.tabInventory.Controls.Add(this.sscItem22);
             this.tabInventory.Controls.Add(this.sscItem60);
             this.tabInventory.Controls.Add(this.sscItem68);
-            this.tabInventory.Controls.Add(this.sscItem76);
+            this.tabInventory.Controls.Add(this.sscItem80);
             this.tabInventory.Controls.Add(this.sscItem55);
             this.tabInventory.Controls.Add(this.sscItem51);
             this.tabInventory.Controls.Add(this.sscItem7);
@@ -3857,16 +3857,16 @@
             this.sscItem72.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.sscItem72.Click += new System.EventHandler(this.sscItem_Click);
             // 
-            // sscItem80
+            // sscItem84
             // 
-            this.sscItem80.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.sscItem80.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sscItem80.Location = new System.Drawing.Point(652, 263);
-            this.sscItem80.Name = "sscItem80";
-            this.sscItem80.Size = new System.Drawing.Size(42, 42);
-            this.sscItem80.TabIndex = 221;
-            this.sscItem80.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.sscItem80.Click += new System.EventHandler(this.sscItem_Click);
+            this.sscItem84.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem84.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem84.Location = new System.Drawing.Point(652, 263);
+            this.sscItem84.Name = "sscItem84";
+            this.sscItem84.Size = new System.Drawing.Size(42, 42);
+            this.sscItem84.TabIndex = 221;
+            this.sscItem84.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem84.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem14
             // 
@@ -4099,38 +4099,38 @@
             this.sscItem69.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.sscItem69.Click += new System.EventHandler(this.sscItem_Click);
             // 
-            // sscItem83
+            // sscItem87
             // 
-            this.sscItem83.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.sscItem83.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sscItem83.Location = new System.Drawing.Point(652, 413);
-            this.sscItem83.Name = "sscItem83";
-            this.sscItem83.Size = new System.Drawing.Size(42, 42);
-            this.sscItem83.TabIndex = 224;
-            this.sscItem83.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.sscItem83.Click += new System.EventHandler(this.sscItem_Click);
+            this.sscItem87.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem87.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem87.Location = new System.Drawing.Point(652, 413);
+            this.sscItem87.Name = "sscItem87";
+            this.sscItem87.Size = new System.Drawing.Size(42, 42);
+            this.sscItem87.TabIndex = 224;
+            this.sscItem87.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem87.Click += new System.EventHandler(this.sscItem_Click);
             // 
-            // sscItem82
+            // sscItem86
             // 
-            this.sscItem82.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.sscItem82.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sscItem82.Location = new System.Drawing.Point(652, 363);
-            this.sscItem82.Name = "sscItem82";
-            this.sscItem82.Size = new System.Drawing.Size(42, 42);
-            this.sscItem82.TabIndex = 223;
-            this.sscItem82.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.sscItem82.Click += new System.EventHandler(this.sscItem_Click);
+            this.sscItem86.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem86.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem86.Location = new System.Drawing.Point(652, 363);
+            this.sscItem86.Name = "sscItem86";
+            this.sscItem86.Size = new System.Drawing.Size(42, 42);
+            this.sscItem86.TabIndex = 223;
+            this.sscItem86.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem86.Click += new System.EventHandler(this.sscItem_Click);
             // 
-            // sscItem81
+            // sscItem85
             // 
-            this.sscItem81.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.sscItem81.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sscItem81.Location = new System.Drawing.Point(652, 313);
-            this.sscItem81.Name = "sscItem81";
-            this.sscItem81.Size = new System.Drawing.Size(42, 42);
-            this.sscItem81.TabIndex = 222;
-            this.sscItem81.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.sscItem81.Click += new System.EventHandler(this.sscItem_Click);
+            this.sscItem85.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem85.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem85.Location = new System.Drawing.Point(652, 313);
+            this.sscItem85.Name = "sscItem85";
+            this.sscItem85.Size = new System.Drawing.Size(42, 42);
+            this.sscItem85.TabIndex = 222;
+            this.sscItem85.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem85.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem16
             // 
@@ -4143,38 +4143,38 @@
             this.sscItem16.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.sscItem16.Click += new System.EventHandler(this.sscItem_Click);
             // 
-            // sscItem79
+            // sscItem83
             // 
-            this.sscItem79.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.sscItem79.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sscItem79.Location = new System.Drawing.Point(652, 213);
-            this.sscItem79.Name = "sscItem79";
-            this.sscItem79.Size = new System.Drawing.Size(42, 42);
-            this.sscItem79.TabIndex = 220;
-            this.sscItem79.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.sscItem79.Click += new System.EventHandler(this.sscItem_Click);
+            this.sscItem83.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem83.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem83.Location = new System.Drawing.Point(652, 213);
+            this.sscItem83.Name = "sscItem83";
+            this.sscItem83.Size = new System.Drawing.Size(42, 42);
+            this.sscItem83.TabIndex = 220;
+            this.sscItem83.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem83.Click += new System.EventHandler(this.sscItem_Click);
             // 
-            // sscItem78
+            // sscItem82
             // 
-            this.sscItem78.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.sscItem78.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sscItem78.Location = new System.Drawing.Point(652, 163);
-            this.sscItem78.Name = "sscItem78";
-            this.sscItem78.Size = new System.Drawing.Size(42, 42);
-            this.sscItem78.TabIndex = 219;
-            this.sscItem78.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.sscItem78.Click += new System.EventHandler(this.sscItem_Click);
+            this.sscItem82.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem82.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem82.Location = new System.Drawing.Point(652, 163);
+            this.sscItem82.Name = "sscItem82";
+            this.sscItem82.Size = new System.Drawing.Size(42, 42);
+            this.sscItem82.TabIndex = 219;
+            this.sscItem82.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem82.Click += new System.EventHandler(this.sscItem_Click);
             // 
-            // sscItem77
+            // sscItem81
             // 
-            this.sscItem77.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.sscItem77.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sscItem77.Location = new System.Drawing.Point(652, 113);
-            this.sscItem77.Name = "sscItem77";
-            this.sscItem77.Size = new System.Drawing.Size(42, 42);
-            this.sscItem77.TabIndex = 218;
-            this.sscItem77.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.sscItem77.Click += new System.EventHandler(this.sscItem_Click);
+            this.sscItem81.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem81.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem81.Location = new System.Drawing.Point(652, 113);
+            this.sscItem81.Name = "sscItem81";
+            this.sscItem81.Size = new System.Drawing.Size(42, 42);
+            this.sscItem81.TabIndex = 218;
+            this.sscItem81.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem81.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem5
             // 
@@ -4561,16 +4561,16 @@
             this.sscItem68.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.sscItem68.Click += new System.EventHandler(this.sscItem_Click);
             // 
-            // sscItem76
+            // sscItem80
             // 
-            this.sscItem76.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.sscItem76.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sscItem76.Location = new System.Drawing.Point(652, 63);
-            this.sscItem76.Name = "sscItem76";
-            this.sscItem76.Size = new System.Drawing.Size(42, 42);
-            this.sscItem76.TabIndex = 217;
-            this.sscItem76.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.sscItem76.Click += new System.EventHandler(this.sscItem_Click);
+            this.sscItem80.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.sscItem80.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sscItem80.Location = new System.Drawing.Point(652, 63);
+            this.sscItem80.Name = "sscItem80";
+            this.sscItem80.Size = new System.Drawing.Size(42, 42);
+            this.sscItem80.TabIndex = 217;
+            this.sscItem80.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.sscItem80.Click += new System.EventHandler(this.sscItem_Click);
             // 
             // sscItem55
             // 
@@ -6166,7 +6166,7 @@
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Button sscItem64;
         private System.Windows.Forms.Button sscItem72;
-        private System.Windows.Forms.Button sscItem80;
+        private System.Windows.Forms.Button sscItem84;
         private System.Windows.Forms.Button sscItem14;
         private System.Windows.Forms.Button sscItem34;
         private System.Windows.Forms.Button sscItem24;
@@ -6188,13 +6188,13 @@
         private System.Windows.Forms.Button sscItem71;
         private System.Windows.Forms.Button sscItem70;
         private System.Windows.Forms.Button sscItem69;
+        private System.Windows.Forms.Button sscItem87;
+        private System.Windows.Forms.Button sscItem86;
+        private System.Windows.Forms.Button sscItem85;
+        private System.Windows.Forms.Button sscItem16;
         private System.Windows.Forms.Button sscItem83;
         private System.Windows.Forms.Button sscItem82;
         private System.Windows.Forms.Button sscItem81;
-        private System.Windows.Forms.Button sscItem16;
-        private System.Windows.Forms.Button sscItem79;
-        private System.Windows.Forms.Button sscItem78;
-        private System.Windows.Forms.Button sscItem77;
         private System.Windows.Forms.Button sscItem5;
         private System.Windows.Forms.Button sscItem58;
         private System.Windows.Forms.Button sscItem25;
@@ -6230,7 +6230,7 @@
         private System.Windows.Forms.Button sscItem22;
         private System.Windows.Forms.Button sscItem60;
         private System.Windows.Forms.Button sscItem68;
-        private System.Windows.Forms.Button sscItem76;
+        private System.Windows.Forms.Button sscItem80;
         private System.Windows.Forms.Button sscItem55;
         private System.Windows.Forms.Button sscItem51;
         private System.Windows.Forms.Button sscItem7;

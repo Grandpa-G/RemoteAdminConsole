@@ -47,10 +47,17 @@ namespace RemoteAdminConsole
 
             if (GUIMain.DEBUG)
                 Console.WriteLine(sendCommand);
-            JObject results = Utils.GetHTTP(sendCommand);
-            if (results == null)
+JObject results = null;
+            try
+            {
+                 results = Utils.GetHTTP(sendCommand);
+                if (results == null)
+                    return false;
+            }
+            catch
+            {
                 return false;
-
+            }
             if (GUIMain.DEBUG)
                 Console.WriteLine(results);
 

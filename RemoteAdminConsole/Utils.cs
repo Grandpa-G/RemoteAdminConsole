@@ -39,6 +39,7 @@ namespace RemoteAdminConsole
             try
             {
                 HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                request.ServicePoint.Expect100Continue = false; 
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                 {
                     if (response.StatusCode != HttpStatusCode.OK)

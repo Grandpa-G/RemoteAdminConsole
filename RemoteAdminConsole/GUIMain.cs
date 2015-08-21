@@ -46,6 +46,46 @@ namespace RemoteAdminConsole
         public static bool DEBUG = false;
         public static bool DEVELOPMENT = false;
 
+        /// <summary>
+        /// 40 - The number of slots in a piggy bank
+        /// </summary>
+        public static readonly int PiggySlots = 40;
+
+        /// <summary>
+        /// 40 - The number of slots in a safe
+        /// </summary>
+        public static readonly int SafeSlots = PiggySlots;
+
+        /// <summary>
+        /// 59 - The size of the player's inventory (inventory, coins, ammo, held item)
+        /// </summary>
+        public static readonly int InventorySlots = 59;
+
+        /// <summary>
+        /// 20 - The number of armor slots.
+        /// </summary>
+        public static readonly int ArmorSlots = 20;
+
+        /// <summary>
+        /// 5 - The number of other equippable items
+        /// </summary>
+        public static readonly int MiscEquipSlots = 5;
+
+        /// <summary>
+        /// 10 - The number of dye slots.
+        /// </summary>
+        public static readonly int DyeSlots = 10;
+
+        /// <summary>
+        /// 5 - The number of other dye slots (for <see cref="MiscEquipSlots"/>)
+        /// </summary>
+        public static readonly int MiscDyeSlots = MiscEquipSlots;
+
+        /// <summary>
+        /// 180 - The inventory size (inventory, held item, armour, dies, coins, ammo, piggy, safe, and trash)
+        /// </summary>
+        public static readonly int MaxInventory = InventorySlots + ArmorSlots + DyeSlots + MiscEquipSlots + MiscDyeSlots + PiggySlots + SafeSlots + 1;
+        /*
         public static int ITEMOFFSET = 48;
         public static int MAXITEMS = 2748 + ITEMOFFSET + 1;
         public static int MAXITEMSPREFIX = 83 + 1;
@@ -53,6 +93,14 @@ namespace RemoteAdminConsole
         public static int EQUIPMENTITEMS = 58;
         public static int MAXITEMSLOTS = 58;
         public static int MAXSLOTS = 58 + 3 + 5 + 3 + 5 + 8;
+        */
+                public static int ITEMOFFSET = 48;
+        public static int MAXITEMS = 2748 + ITEMOFFSET + 1;
+        public static int MAXITEMSPREFIX = InventorySlots + ArmorSlots + DyeSlots + 1;
+        public static int MAXPREFIX = 86;
+        public static int EQUIPMENTITEMS = 58;
+        public static int MAXITEMSLOTS = 58;
+        public static int MAXSLOTS = MaxInventory;
 
         Bitmap[] sprites = new Bitmap[MAXITEMS];
         Bitmap item_0;
@@ -616,12 +664,20 @@ namespace RemoteAdminConsole
                     newInventory[counter++] = slot[0].ToString() + "," + slot[1] + "," + slot[2];
                     //                   newInventory[counter++] = slot[0].ToString() + "," + slot[1];
                 }
-                for (int i = 0; i < armorItems.Length; i++)
+                 for (int i = 0; i < 8; i++)
                 {
                     slot = armorItems[i].Split(':');
                     newInventory[counter++] = slot[0].ToString() + "," + slot[1];
                 }
-                for (int i = 0; i < dyeItems.Length; i++)
+
+                 for (int i = 10; i < armorItems.Length-2; i++)
+                 {
+                     slot = armorItems[i].Split(':');
+                     newInventory[counter++] = slot[0].ToString() + "," + slot[1];
+                 }
+
+
+                for (int i = 0; i < dyeItems.Length-2; i++)
                 {
                     slot = dyeItems[i].Split(':');
                     int netId = findInventoryItem(slot[0].Trim());
@@ -2275,7 +2331,7 @@ namespace RemoteAdminConsole
             string[] inventory = SSCInventory.Inventory.Split('~');
             for (int i = 0; i < slotItems.Length; i++)
                 slotItems[i] = new Item();
-
+            Console.WriteLine(SSCInventory.Inventory);
             SetSSCInventorySlot(this, "sscItem", inventory);
 
             sscHairColor.BackColor = getColor(SSCInventory.HairColor);
